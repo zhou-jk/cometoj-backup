@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #15]可能 AC 人数计算 (困难版)</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1981 [Contest #15]可能 AC 人数计算 (困难版)</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><strong>※ 简单版与困难版的唯一区别是 $T, n$ 以及 $n$ 的总和的数据范围。</strong></p><p>有个算法比赛只有一道题，共有 $n$ 人参赛，排名方式如右：先比答对题数，答对题数多的人名次在前，但若有多人答对题数相同，则 id 字典序较小的人名次靠前 (已知所有人 id 都不同)。</p><p>由于这个比赛参赛人数众多且题目的时间限制极长，所以需要花很多的时间判题。于是比赛结束后会先假设有上传代码的人都答对，并发布在此情况下所有参赛者的名次，直到判题结束后，才发布真正的名次。</p><p>现在给你一个数组 $a$，真正名次为第 $i$ 名的人在判题前的名次为 $a_i$，首先判断是否存在对应到此数组的可能情况，若有的话，计算答对一题人数的最小和最大可能值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $T$ 代表一个文件有几组数据。</p><p>每组数据佔 $2$ 行，第一行有一个正整数 $n$，第二行有 $n$ 个正整数 $a_1, a_2, \ldots, a_n$。</p><ul><li>$1 \le T \le 3 \times 10^4$</li><li>$1 \le n \le 2 \times 10^5$</li><li>所有数据的 $n$ 的总和不超过 $2 \times 10^5$</li><li>数组 $a$ 是 $1 \sim n$ 的一个排列</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每组数据输出两个整数于一行代表答案。若不存在满足此数据的可能情况，这两个整数都是 $-1$；否则，第一个数是答对一题人数的最小可能值，第二个数是答对一题人数的最大可能值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7
+4
+1 3 2 4
+3
+3 2 1
+1
+1
+4
+2 1 4 3
+5
+1 3 2 5 4
+6
+2 1 4 3 6 5
+5
+2 1 3 5 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0 2
+-1 -1
+0 1
+1 1
+2 2
+-1 -1
+1 1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

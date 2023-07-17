@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2006提高组-A]能量项链</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0059 [2006提高组-A]能量项链</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>在 Mars 星球上，每个 Mars 人都随身佩带着一串能量项链。在项链上有 $N$ 颗能量珠。能量珠是一颗有头标记与尾标记的珠子，这些标记对应着某个正整数。并且，对于相邻的两颗珠子，前一颗珠子的尾标记一定等于后一颗珠子的头标记。因为只有这样，通过吸盘（吸盘是 Mars 人吸收能量的一种器官）的作用，这两颗珠子才能聚合成一颗珠子，同时释放出可以被吸盘吸收的能量。如果前一颗能量珠的头标记为 $m$，尾标记为 $r$，后一颗能量珠的头标记为 $r$，尾标记为 $n$，则聚合后释放的能量为 $m \times r \times n$（Mars 单位），新产生的珠子的头标记为 $m$，尾标记为 $n$。<br></p><p>需要时，Mars 人就用吸盘夹住相邻的两颗珠子，通过聚合得到能量，直到项链上只剩下一颗珠子为止。显然，不同的聚合顺序得到的总能量是不同的，请你设计一个聚合顺序，使一串项链释放出的总能量最大。</p><p>例如：设 $N=4$，$4$ 颗珠子的头标记与尾标记依次为(2，3) (3，5)&nbsp; (5，10) (10，2)。我们用记号 ⊕ 表示两颗珠子的聚合操作，($j$ ⊕ $k$)表示第 $j$，$k$ 两颗珠子聚合后所释放的能量。则第 4、1 两颗珠子聚合后释放的能量为：</p><p>(4⊕1)=10*2*3=60。</p><p>这一串项链可以得到最优值的一个聚合顺序所释放的总能量为</p><p>((4⊕1)⊕2)⊕3）=10*2*3+10*3*5+10*5*10=710。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行是一个正整数 $N(4 \le N\le100)$，表示项链上珠子的个数。第二行是 $N$ 个用空格隔开的正整数，所有的数均不超过 1000。第 $i$ 个数为第 $i$ 颗珠子的头标记 $(1 \le i\le N)$，当 $i&lt;N$ 时，第 $i$ 颗珠子的尾标记应该等于第 $i+1$ 颗珠子的头标记。第 $N$ 颗珠子的尾标记应该等于第 $1$ 颗珠子的头标记。<br></p><p>至于珠子的顺序，你可以这样确定：将项链放到桌面上，不要出现交叉，随意指定第一颗珠子，然后按顺时针方向确定其他珠子的顺序。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>只有一行，是一个正整数 $E(E \le2.1*10^9)$，为一个最优聚合顺序所释放的总能量。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+2 3 5 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>710</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

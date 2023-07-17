@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2014]重建</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0688 [SDOI2014]重建</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>T 国有 $N$ 个城市，用若干双向道路连接。一对城市之间至多存在一条道路。</p><p>在一次洪水之后，一些道路受损无法通行。虽然已经有人开始调查道路的损毁情况，但直到现在几乎没有消息传回。</p><p>幸运的是，此前 T 国政府调查过每条道路的强度，现在他们希望只利用这些信息估计灾情。</p><p>具体地，给定每条道路在洪水后仍能通行的概率，请计算仍能通行的道路恰有 $N-1$ 条，且能联通所有城市的概率。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含一个整数 $N$。</p><p>接下来 $N$ 行，每行 $N$ 个实数，第 $i+1$ 行，$j$ 列的数 $G_{ij}$ 表示城市 $i$ 与 $j$ 之间仍有道路联通的概率。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个任意位数的实数表示答案。</p><p>你的答案与标准答案相对误差不超过 $10^{-4}$ 即视为正确。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+0 0.5 0.5
+0.5 0 0.5
+0.5 0.5 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0.375</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于所有的数据，$1 &lt; N \leq 50,\ 0 \leq G_{ij} \leq 1,\ G_{ij}=G_{ji}$，且 $G_{ii}=0$；$G_{ij}$ 至多包含三位小数。</p><p>数据保证答案非零时，答案不小于 $10^{-4}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2001Day1-C]聪明的打字员</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0295 [NOI2001Day1-C]聪明的打字员</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：8000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>阿兰是某机密部门的打字员，她现在接到一个任务：需要在一天之内输入几百个长度固定为6的密码。当然，她希望输入的过程中敲击键盘的总次数越少越好。</p><p>不幸的是，出于保密的需要，该部门用于输入密码的键盘是特殊设计的，键盘上没有数字键，而只有以下六个键：Swap0, Swap1, Up, Down, Left, Right，为了说明这6个键的作用，我们先定义录入区的6个位置的编号，从左至右依次为1，2，3，4，5，6。下面列出每个键的作用：</p><p>Swap0：按Swap0，光标位置不变，将光标所在位置的数字与录入区的1号位置的数字（左起第一个数字）交换。如果光标已经处在录入区的1号位置，则按Swap0键之后，录入区的数字不变；</p><p>Swap1：按Swap1，光标位置不变，将光标所在位置的数字与录入区的6号位置的数字（左起第六个数字）交换。如果光标已经处在录入区的6号位置，则按Swap1键之后，录入区的数字不变；</p><p>Up：按Up，光标位置不变，将光标所在位置的数字加1（除非该数字是9）。例如，如果光标所在位置的数字为2，按Up之后，该处的数字变为3；如果该处数字为9，则按Up之后，数字不变，光标位置也不变；</p><p>Down：按Down，光标位置不变，将光标所在位置的数字减1（除非该数字是0），如果该处数字为0，则按Down之后，数字不变，光标位置也不变；</p><p>Left：按Left，光标左移一个位置，如果光标已经在录入区的1号位置（左起第一个位置）上，则光标不动；</p><p>Right：按Right，光标右移一个位置，如果光标已经在录入区的6号位置（左起第六个位置）上，则光标不动。</p><p>当然，为了使这样的键盘发挥作用，每次录入密码之前，录入区总会随机出现一个长度为6的初始密码，而且光标固定出现在1号位置上。当巧妙地使用上述六个特殊键之后，可以得到目标密码，这时光标允许停在任何一个位置。</p><p>现在，阿兰需要你的帮助，编写一个程序，求出录入一个密码需要的最少的击键次数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅一行，含有两个长度为6的数，前者为初始密码，后者为目标密码，两个密码之间用一个空格隔开。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅一行，含有一个正整数，为最少需要的击键次数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>123456 654321</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>11</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>样例说明：</p><p>初始密码是123456，光标停在数字1上。对应上述最少击键次数的击键序列为：<br></p><p><img alt="屏幕快照 2019-06-12 下午5.15.11.png" src="../upload/6982a4bcd4.png" width="500" height="398.5623003194888"><br></p><p>最少的击键次数为11。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

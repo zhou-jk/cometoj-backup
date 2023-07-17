@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2009]电子字典</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1222 [JSOI2009]电子字典</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>人们在英文字典中查找某个单词的时候可能不知道该单词的完整拼法，而只知道该单词的一个错误的近似拼法，这时人们可能陷入困境，为了查找一个单词而浪费大量的时间。带有模糊查询功能的电子字典能够从一定程度上解决这一问题：用户只要输入一个字符串，电子字典就返回与该单词编辑距离最小的几个单词供用户选择。</p><p>字符串 $a$ 与字符串 $b$ 的编辑距离是指：允许对 $a$ 或 $b$ 串进行下列“编辑”操作，将 $a$ 变为 $b$ 或 $b$ 变为 $a$，最少“编辑”次数即为距离。</p><ul><li>删除串中某个位置的字母；</li><li>添加一个字母到串中某个位置；</li><li>替换串中某一位置的一个字母为另一个字母；</li></ul><p>JSOI 团队正在开发一款电子字典，你需要帮助团队实现一个用于模糊查询功能的计数部件：对于一个待查询字符串，如果它是单词，则返回 $-1$；如果它不是单词，则返回字典中有多少个单词与它的编辑距离为 $1$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个正整数 $N (N \le 10,000)$ 和 $M (M \le 10,000)$。</p><p>接下来的 $N$ 行，每行一个字符串，第 $i + 1$ 行为单词 $W_i$。单词长度在 $1$ 至 $20$ 之间。再接下来 $M$ 行，每行一个字符串，第 $i + N + 1$ 表示一个待查字符串 $Q_i$。待查字符串长度在 $1$ 至 $20$ 之间。 $W_i$ 和 $Q_i$ 均由小写字母构成，不包含多余空格。所有单词互不相同，但是查询字符串可能有重复。</p><p>提示：有 $50\%$ 的数据范围：$N \le 1,000$，$M \le 1,000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出应包括 $M$ 行，第 $i$ 行为一个整数 $X_i$。$X_i = -1$ 表示 $Q_i$ 为字典中的单词；否则 $X_i$表示与 $Q_i$ 编辑距离为 $1$ 的单词的个数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 3
+abcd
+abcde
+aabc
+abced
+abcd
+abc
+abcdd</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-1
+2
+3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

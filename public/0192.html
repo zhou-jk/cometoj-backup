@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2008普及组-B]排座椅</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0192 [2008普及组-B]排座椅</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>上课的时候总有一些同学和前后左右的人交头接耳，这是令小学班主任十分头疼的一件事情。不过，班主任小雪发现了一些有趣的现象，当同学们的座次确定下来之后，只有有限的 $D$ 对同学上课时会交头接耳。同学们在教室中坐成了 $M$ 行 $N$ 列，坐在第i行第j列的同学的位置是（$i,j$），为了方便同学们进出，在教室中设置了 $K$条横向的通道，$L$ 条纵向的通道。于是，聪明的小雪想到了一个办法，或许可以减少上课时学生交头接耳的问题：她打算重新摆放桌椅，改变同学们桌椅间通道的位置，因为如果一条通道隔开了两个会交头接耳的同学，那么他们就不会交头接耳了。</p><p>请你帮忙给小雪编写一个程序，给出最好的通道划分方案。在该方案下，上课时交头接耳的学生对数最少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行，有 $5$ 个用空格隔开的整数，分别是 $M$，$N$，$K$，$L$，$D$（$2 \le N，M \le 1000，0 \le K&lt;M，0 \le L&lt;N，D \le 2000$）。</p><p>接下来 $D$ 行，每行有 $4$ 个用空格隔开的整数，第 $i$ 行的 $4$ 个整数 $X_i，Y_i，P_i，Q_i$，表示坐在位置（$X_i,Y_i$）与（$P_i,Q_i$）的两个同学会交头接耳（输入保证他们前后相邻或者左右相邻）。</p><p>输入数据保证最优方案的唯一性。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含 $K$ 个整数，$a_1a_2......a_K$，表示第 $a_1$ 行和 $a_1+1$ 行之间、第 $a_2$ 行和第 $a_2+1$ 行之间、...、第 $a_K$ 行和第 $a_K+1$ 行之间要开辟通道，其中 $a_i&lt; a_{i+1}$，每两个整数之间用空格隔开（行尾没有空格）。</p><p>第二行包含 $L$ 个整数，$b_1b_2......b_k$，表示第 $b_1$ 列和 $b_1+1$ 列之间、第 $b_2$ 列和第 $b_2+1$ 列之间、...、第 $b_L$ 列和第 $b_L+1$ 列之间要开辟通道，其中 $b_i&lt; b_{i+1}$，每两个整数之间用空格隔开（行尾没有空格）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5 1 2 3
+4 2 4 3
+2 3 3 3
+2 5 2 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2 4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】<br></p><p><img alt="屏幕快照 2019-05-30 下午5.50.13.png" src="../upload/de6b377841.png" width="400" height="308"><br></p><p>上图中用符号 *、※、+ 标出了 $3$ 对会交头接耳的学生的位置，图中 $3$ 条粗线的位置表示通道，图示的通道划分方案是唯一的最佳方案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

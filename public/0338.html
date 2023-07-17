@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]回家</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0338 [USACO]回家</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>现在是晚餐时间，而母牛们在外面分散的牧场中。 农民约翰按响了电铃，所以她们开始向谷仓走去。 你的工作是要指出哪只母牛会最先到达谷仓（在给出的测试数据中,总会有且只有一只速度最快的母牛）。 在挤奶的时候（晚餐前），每只母牛都在她自己的牧场上，一些牧场上可能没有母牛。 每个牧场由一条条道路和一个或多个牧场连接（可能包括自己）。 有时，两个牧场（可能是字母相同的）之间会有超过一条道路相连。 至少有一个牧场和谷仓之间有道路连接。 因此，所有的母牛最后都能到达谷仓，并且母牛总是走最短的路径。 当然，母牛能向着任意一方向前进，并且她们以相同的速度前进。 牧场被标记为 'a'...'z' 和 'A'...'Y'，在用大写字母表示的牧场中有一只母牛，小写字母中则没有。 谷仓的标记是 'Z'，注意没有母牛在谷仓中。</p><p><b>注意 'm' 和 'M' 不是同一个牧场</b><b>否则错误</b></p><p>上面的意思是说：输入数据中可能会同时存在 $M,m$（郁闷ing)，比如</p><p>M a a m m z</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行：整数 $P(1&lt;= P&lt;=10000)$，表示连接牧场(谷仓)的道路的数目。</p><p>第 $2 ...P+1$ 行：用空格分开的两个字母和一个整数：</p><p>被道路连接牧场的标记和道路的长度 $(1 \le$ 长度 $\le 1000)$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>单独的一行包含二个项目：最先到达谷仓的母牛所在的牧场的标记，和这只母牛走过的路径的长度。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+A d 6
+B d 3
+C e 9
+d Z 8
+e Z 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>B 11</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

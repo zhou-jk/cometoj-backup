@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2010] The MP3 Player</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0526 [CEOI2010] The MP3 Player</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Georg's new MP3 player has many interesting features, one of them being the key lock. All the keys are locked after more than T seconds of inactivity. After the key lock is engaged, no key performs its original function, but if any key is pressed, the key lock is disengaged.</p><p>For example, assume that $T = 5$ and the player is currently locked. Georg presses the key $A$, waits for $3$ seconds, presses the key $B$, waits for $5$ seconds, presses $C$, waits for $6$ seconds, and presses $D$. In this case only the keys $B$ and $C$ perform their regular functions. Note that the keys became locked between $C$ and $D$ was pressed.</p><p>Sound level of the MP3 player is controlled by the + and - keys, increasing and decreasing volume by 1 unit respectively. The sound level is an integer between 0 and $V_{max}$. Pressing the + key at volume $V_{max}$ or pressing the - key at volume 0 leaves the volume unchanged.<br></p><p>Task specification</p><p>Georg does not know the value of T. He wanted to find it by an experiment. Starting with a locked keyboard, he pressed a sequence of N + and - keys. At the end of the experiment Georg read the final volume from the player's display. Unfortunately, he forgot to note the volume before his first keypress. For the purpose of this task, the unknown initial volume will be denoted $V_1$ and the known final volume will be denoted $V_2$.</p><p>You are given the value $V_2$ and a list of keystrokes in the order in which Georg made them. For each key, you are given the type of the key (+ or -) and the number of seconds from the beginning of the experiment to the moment when the key was pressed. The task is to find the largest possible integer value of $T$ which is consistent with the outcome of the experiment.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The first line of the input contains three space-separated integers $N$, $V_{max}$ and $V_2$ $(0 \le V_2 \le V_{max} )$. Each of the next $N$ lines contains a description of one key in the sequence: a character + or -, a space and an integer $C_i$ $(0 \le C_i \le 2 \cdot 10^9 )$, the number of seconds from the beginning of the experiment. You may assume that the keypresses are in sorted order and that all times are distinct (i.e., $C_i &lt; C_{i + 1}$ for all $1 \le i &lt; N$).<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>If $T$ can be arbitrarily large, output a single line containing the word "<code>infinity</code>" (quotes for clarity).</p><p>Otherwise, output a single line containing two integers $T$ and $V_1$ separated by a single space.</p><p>The values must be such that carrying out the experiment with locking time $T$ starting at volume $V_1$ gives the final volume $V_2$. If there are multiple possible answers, output the one with the largest $T$; if there are still multiple possible answers, output the one with the largest $V_1$.</p><p>(Note that at least one solution always exists: for $T = 0$ none of the keys performs its action, so it suffices to take $V_1 = V_2$.)<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 4 3
+- 0
++ 8
++ 9
++ 13
+- 19
+- 24</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 4</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 10 10
++ 1
++ 2
++ 47</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>infinity</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><b>Explanation</b></p><p>Sample 1:</p><p>For $T = 5$ the keys perform the following actions: unlock, unlock, +, +, unlock, -.</p><p>For any $V_1 \in \{2,3,4\}$ we would get $V_2 = 3$. Note that the output contains the largest possible $V_1$.</p><p>For $T \ge 6$ the last two keystrokes will both be active, hence it will be impossible to have $V_2 = 3$.<br></p><p>Sample 2:</p><p>If $V_1 = 10$ then for any $T$ we'll have $V_2 = 10$.<br></p><p><b>Constraints</b></p><p>You may assume that $2 \le N \le 100000$ and $2 \le V_{max} \le 5000$.</p><p>In test cases worth 40 points $N \le 4000$.</p><p>In test cases worth 70 points $N \cdot V_{max} \le 400000$.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

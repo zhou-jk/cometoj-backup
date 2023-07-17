@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2019]染色</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0706 [SDOI2019]染色</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给定 $2 \times n$ 的格点图。其中一些结点有着已知的颜色，其余的结点还没有被染色。一个合法的染色方案不允许相邻结点有相同的染色。</p><p>现在一共有 $c$ 种不同的颜色，依次记为 $1$ 到 $c$。请问有多少对未染色结点的合法染色方案？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有两个整数 $n$ 和 $c$，分别描述了格点图的大小和总的颜色个数。</p><p>之后两行，每行有 $n$ 个整数：如果是 $0$ 则表示对应结点未被染色，否则一定是一个 $1$ 到 $c$ 的整数表示对应结点已经染了某一种颜色。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个整数，为总的染色方案数对 $10^9 + 9$ 取模后的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5
+1 0 1
+0 0 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>172</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 7
+1 0 0 0 2
+0 0 3 0 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>116370</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 13
+0 2 0 0 1 0 2 0 0 3
+0 1 0 1 0 0 0 0 4 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>770175525</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>子任务 $1$（$44$分）：$1 ≤ n ≤ 10000$ 且 $5 ≤ c ≤ 10000$；不存在一列有$2$个已染色结点；被染色结点全部位于第一行；第一列和最后一列均有结点已被染色。</p><p>子任务 $2$（$32$分）：$1 ≤ n ≤ 10000$ 且 $5 ≤ c ≤ 10000$；不存在一列有$2$个已染色结点；第一列和最后一列均有结点已被染色。</p><p>子任务 $3$（$12$分）：$1 ≤ n ≤ 10000$ 且 $5 ≤ c ≤ 10000$；第一列和最后一列均有结点已被染色。</p><p>子任务 $4$（$8$分）：$1 ≤ n ≤ 10000$ 且 $5 ≤ c ≤ 10000$。</p><p>子任务 $5$（$4$分）：$1 ≤ n ≤ 100000$ 且 $5 ≤ c ≤ 100000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

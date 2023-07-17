@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2009Day1-A]变换序列</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0371 [NOI2009Day1-A]变换序列</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>对于$N$个整数$0, 1, ......,N-1$，一个变换序列$T$可以将$i$变成$T_i$，其中$T_i \in \{ 0,1,...,N-1 \}$且$\bigcup_{i=0}^{N-1} \{ T_i \}=\{ 0,1,...,N-1 \}$。$\forall x,y \in \{ 0, 1, ..., N-1 \}$ ，定义$x$和$y$之间的距离$D(x,y)=\{min|x-y|,N-|x-y|\}$。给定每个$i$和$T_i$之间的距离$D(i,T_i)$，你需要求出一个满足要求的变换序列$T$。如果有多个满足条件的序列，输出其中字典序最小的一个。</p><p>说明：对于两个变换序列$S$和$T$，如果存在$p&lt;N$，满足对于$i=0,1,......p-1，S_i=T_i$且$S_p&lt;T_p$，我们称$S$比$T$字典序小。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个整数$N$，表示序列的长度。接下来的一行包含$N$个整数$D_i$，其中$D_i$表示$i$和$T_i$之间的距离。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>如果至少存在一个满足要求的变换序列$T$，则输出文件中包含一行$N$个整数，表示你计算得到的字典序最小的$T$；否则输出”No Answer”（不含引号）。注意：输出文件中相邻两个数之间用一个空格分开，行末不包含多余空格。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 1 2 2 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2 4 0 3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模和约定】</p><p>20%的数据中$N≤50$;<br>60%的数据中$N≤500$;<br>100%的数据中$N≤10000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

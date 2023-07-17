@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2000Day1-A]瓷片项链</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0288 [NOI2000Day1-A]瓷片项链</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>原始部落用一种稀有的泥土烧制直径相同的圆瓷片并串成项链，串的时候沿瓷片的直径方向顺次连接，瓷片之间没有空隙也不重叠，一条项链至少由一个瓷片构成。</p><p>下图示出四片同样大小的瓷片串接所成的项链，其总长为单个瓷片直径的四倍。</p><p><img alt="屏幕快照 2019-06-12 下午6.33.30.png" src="../upload/0e73509de1.png" width="300" height="72.0554272517321"><br></p><p>每个烧制的瓷片厚度是一定的，直径$D$和所用泥土的体积$V$有以下关系：</p><p>$D= \begin{cases} 0.3\sqrt{V-V_0} &amp; (V &gt; V_0) \\ 0 &amp; (V \le V_0) \end{cases}$</p><p>其中$V_0$为烧制每一片的损耗，单位与$V$相同。当用料小于等于$V_0$时，不能烧制成瓷片。</p><p>例： $V_总 = 10，V_0 = 1$，若烧制成一片瓷片，$V = V_总= 10，D = 0.9$。如果把泥土均分成2份，每份泥土的体积为$V = V_总/2 = 5$，单个瓷片的直径为$D'=0.3\sqrt{5-1}=0.6$，串起来的总长为1.2。</p><p>给定了泥土的总体积和烧制单个瓷片的损耗，烧制的瓷片数不同，能够得到的项链总长度也不相同，请计算烧制多少个瓷片能使所得到的项链最长。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅有两行，每一行仅包含一个整数和一个换行/回车符。第一行的数字为泥土总体积$V_总 (0&lt;V_总&lt;60000)$，第二行为烧制单个瓷片的损耗$V_0(0&lt; V_0&lt;600)$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个数字和一个换行/回车符。该数字为能获得最长项链而烧制的瓷片数。如果不能烧制成瓷片或者最优解不唯一（存在两个或者两个以上方案均能获得最长项链），输出数字0。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

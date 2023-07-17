@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day2]Erase Numbers II</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1644 [Wannafly冬令营2018Day2]Erase Numbers II</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给定 $n$ 个正整数 $a_1, a_2, \cdots, a_n$，它们组成了序列 $A$。</p><p>你的任务是删除其中 $(n - 2)$ 数字，使得 $A$ 中剩余的数字连起来的所表示的数字最大，并给出这个值。</p><p>严格来讲，如果剩余数字在 $A$ 中的下标为 $p_1, p_2, \cdots, p_m$ ($1 \leq p_1 &lt; p_2 &lt; \cdots &lt; p_m \leq n$)，则它们连起来所表示的数字为 $\overline{a_{p_1} a_{p_2} \cdots a_{p_m}}$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含多组测试数据。第一行包含一个整数 $T$，表示测试数据的组数。随后的内容是各组测试数据。对于每组测试数据：</p><p>第一行包含一个整数 $n$。</p><p>第二行包含 $n$ 个整数 $a_1, a_2, \cdots, a_n$，保证每个数字不含前导零。</p><ul><li>$1 \leq T \leq 3000$</li><li>$2 \leq n \leq 6000$</li><li>$1 \leq a_i \leq 10^9$</li><li>所有测试数据的 $n$ 之和不超过 $6000$。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组测试数据，输出一行<code>Case #x: y</code>（不含引号），其中<code>x</code>是测试数据的编号（从 $1$ 开始编号），<code>y</code>是这组数据的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+3
+6 6 6
+4
+21 12 12 21
+2
+998244353 985661441</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Case #1: 66
+Case #2: 2121
+Case #3: 998244353985661441</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

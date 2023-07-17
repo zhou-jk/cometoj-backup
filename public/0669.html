@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[TJOI2019]甲苯先生的滚榜</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0669 [TJOI2019]甲苯先生的滚榜</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：10000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>甲苯先生在制作一个 Online Judge，他发现做比赛的人们很关心自己的排名（显而易见）。</p><p>在 ACM 赛制的比赛中，如果通过题目数量不相等，则通过题目数量多的人排名更靠前；如果通过题目数量相等，则罚时更少的人排名更高。</p><p>甲苯先生想让大家帮忙设计一个程序，每次有人通过之后，就告诉他排名在他的前面有多少人。</p><p>（不包括和他罚时题数都相同的同学）</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入一个整数 $T$ 表示测试样例的个数。</p><p>对于每一个样例，输入三个整数 $m, n, \text{seed}$。</p><p>$m$ 表示参赛总人数（编号 $1 \sim m$），$n$ 表示一共有 $n$ 次 AC（假设 AC 已经去重，即不存在相同人的相同题目提交）。</p><p>$\text{seed}$ 表示生成数据的种子。</p><p>接下来要求同学们使用之下的函数生成数据：</p><pre><code class="lang-c++">typedef unsigned int ui;
+ui randNum(ui&amp; seed, ui last, const ui m) { 
+    seed = seed ∗ 17 + last;
+&nbsp;&nbsp;&nbsp;&nbsp;return seed % m + 1; 
+}</code></pre><p>（$\texttt{last}$ 为上一次输出的结果，在没有输出结果时 $\texttt{last} = 7$，多组数据时 $\texttt{last}$ 不需要重新赋值）</p><p>要求每次生成两个数据 $\texttt{Ria}, \texttt{Rib}$，表示第 $\texttt{Ria}$ 个人 AC 了一道题目，他的罚时为 $\texttt{Rib}$。</p><p>（也就是说 $\texttt{Ria}$ 的题目数量 $+1$，罚时长度 $+\texttt{Rib}$）。</p><p>要求一共生成 $n$ 组数据，代表一共有 $n$ 次提交。</p><p>对于所有数据，保证罚时总和不超过 $1.5\times 10^6$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每次提交输出一行整数，表示在第 $\texttt{Ria}$ 个人 AC 后，比 $\texttt{Ria}$ 成绩高的有多少个选手。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+7 3 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+1
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><img alt="image.png" src="../upload/6c69200984.png" width="703" height="187"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

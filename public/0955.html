@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2018]染色</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0955 [HAOI2018]染色</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>为了报答小 C 的苹果，小 G 打算送给热爱美术的小 C 一块画布，这块画布可以抽象为一个长度为 $N$ 的序列，每个位置都可以被染成 $M$ 种颜色中的某一种。</p><p>然而小 C 只关心序列的 $N$ 个位置中出现次数恰好为 $S$ 的颜色种数，如果恰好出现了 $S$ 次的颜色有 $K$ 种，则小 C 会产生 $W_k$ 的愉悦度。</p><p>小 C 希望知道对于所有可能的染色方案，他能获得的愉悦度的和对 $1004535809$ 取模的结果是多少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个整数 $N, M, S$。</p><p>接下来一行 $M + 1$ 个整数，第 $i$ 个数表示 $W_{i-1}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 8 3
+3999 8477 9694 8454 3308 8961 3018 2255 4910 </span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>524070430</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $10\%$ 的数据，$N \le 10, M \le 5$；</p><p>对于 $30\%$ 的数据，$N \le 100, M \le 100$；</p><p>对于另外 $10\%$ 的数据，$M \le 1000$；</p><p>对于另外 $10\%$ 的数据，$\forall 1 \le i \le M, W_i = 0$；</p><p>对于 $100\%$ 的数据，$N \le 10^7, M \le 10^5, S \le 150, 0 \le W_i &lt; 1004535809$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

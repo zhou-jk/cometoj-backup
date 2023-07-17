@@ -1,0 +1,126 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[模拟赛 #测试-D2]图 (graph)</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1795 [模拟赛 #测试-D2]图 (graph)</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 X 得到了一张 $n$ 个点 $m$ 条边的无向简单图。</p><p>他想要从这张图中选出一些点（至少一个点），只保留这些点和<b>两端都在这些点中的边</b>。</p><p>小 X 希望，保留下来的这张图中，<b>度数最小的点</b>的度数尽可能大。其中，一个点的度数指的是与这个点相连的边的条数。</p><p>你能告诉小 X，<b>度数最小的点</b>的度数最大是多少吗？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行 $2$ 个正整数 $n,m$。</p><p>接下来的 $m$ 行，每行 $2$ 个正整数 $x,y$，表示编号为 $x,y$ 的点之间连有一条边。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数，表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 6
+1 2
+1 3
+1 4
+2 3
+2 4
+3 4
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 6
+1 2
+2 3
+3 4
+4 5
+3 5
+6 5
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 $3$】</p><p>见下发文件。<a href="https://pan.baidu.com/s/1j7I0f5LYR7sJ5S2hmDA3tw">大样例</a></p><p>【数据范围与提示】</p><p>对于 $10\%$ 的数据，$n \le 1$。</p><p>对于 $30\%$ 的数据，$n \le 10$。</p><p>对于 $60\%$ 的数据，$n \le 1000$。</p><p>对于 $100\%$ 的数据，保证形成的图为无向简单图，即<strong>无重边无自环</strong>，$1 \le n \le 10^5$，$0 \le m \le \min(\frac{n \times (n - 1)}{2}, 10^6)$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2013]费用流</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0939 [SDOI2013]费用流</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Alice 和 Bob 在图论课程上学习了最大流和最小费用最大流的相关知识。</p><p>最大流问题：给定一张有向图表示运输网络，一个源点 $S$ 和一个汇点 $T$，每条边都有最大流量。一个合法的网络流方案必须满足：</p><ol><li>每条边的实际流量都不超过其最大流量且非负；</li><li>除了源点 $S$ 和汇点 $T$ 之外，对于其余所有点，都满足该点总流入流量等于该点总流出流量；而 $S$ 点的净流出流量等于 $T$ 点的净流入流量，这个值也即该网络流方案的总运输量。</li></ol><p>最大流问题就是对于给定的运输网络，求总运输量最大的网络流方案。需要注意到，一个最大流问题的解可能不是唯一的。</p><p>对于一张给定的运输网络，Alice 先确定一个最大流，如果有多种解，Alice 可以任选一种；之后 Bob 在每条边上分配单位花费（单位花费必须是非负实数），要求所有边的单位花费之和等于 $P$。总费用等于每一条边的实际流量乘以该边的单位花费。需要注意到，Bob 在分配单位花费之前，已经知道 Alice 所给出的最大流方案。现在 Alice 希望总费用尽量小，而 Bob 希望总费用尽量大。我们想知道，如果两个人都执行最优策略，最大流的值和总费用分别为多少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个整数 $N$，$M$，$P$。$N$ 表示给定运输网络中节点的数量，$M$ 表示有向边的数量，$P$ 的含义见问题描述部分。为了简化问题，我们假设源点 $S$ 是点 $1$，汇点 $T$ 是点 $N$。</p><p>接下来 $M$ 行，每行三个整数 $A$，$B$，$C$，表示有一条从点 $A$ 到点 $B$ 的有向边，其最大流量是 $C$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数，表示最大流的值。</p><p>第二行一个实数，表示总费用。输出四位小数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2 1
+1 2 10
+2 3 15</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+10.0000</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $20\%$ 的测试数据：所有有向边的最大流量都是 $1$。</p><p>对于 $100\%$ 的测试数据：$N \le 100$，$M \le 1000$。</p><p>对于 $100\%$ 的测试数据：所有点的编号在 $1...N$ 范围内。$1 \le $ 每条边的最大流量 $ \le 50000$。$1 &lt; P \le 10$。给定运输网络中不会有起点和终点相同的边。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

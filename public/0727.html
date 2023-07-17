@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDWC2018]网格</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0727 [SDWC2018]网格</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：128 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Stange 来到了一个网格中，他想从 $(0,0)$ 跳到 $(T_x,T_y)$。</p><p>Stange 每一步只能向右上方跳，由于力气有限，每一步的横坐标变化不能超过 $M_x$，纵坐标变化不能超过 $M_y$。</p><p>即，如果他现在处于位置 $(x,y)$，他下一步能跳到的$(\text{newx},\text{newy})$ 需要满足：$x\leq \text{newx}\leq x+M_x , y\leq \text{newy}\leq y+M_y$。</p><p>同时，Stange 是个勤奋的人，他厌恶停在原地无所事事。因此每一步都不能够停在原地。</p><p>Stange 觉得这个游戏太没有挑战性了，于是他加入了一些限制：</p><p>有 $K$ 个向量是非法的，这些向量形如 $(k_i,k_i)$，会在读入中给出。也就是说，每一步 $x,y$ 的增量不能同时等于 $k_i$。</p><p>幸运的是，所有的 $k_i$ 都是 $G$ 的倍数。</p><p>现在 Stange 想求从 $(0,0)$，跳恰好 $R$ 步，跳到 $(T_x,T_y)$ 的方案数。对 $10^9+7$ 取模。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个正整数 $T_x,T_y$。$(T_x,T_y\leq10^6)$。</p><p>第二行两个正整数 $M_x,M_y, (M_x,M_y \leq 10^6,M_x \leq T_x , M_y \leq T_y)$。</p><p>第三行两个正整数 $R,G (R \leq 1000 , 10000 \leq G \leq 50000)$（为方便理解题意，样例中不满足 $10000 \leq G \leq 50000$ 的限制。大样例和评测的数据中都是满足的）。</p><p>第四行一个非负整数 $K (K \leq 50)$。</p><p>第五行（如果有的话），$K$ 个正整数，表示 $k_i$。$k_i \leq \min(M_x,M_y)$，（保证 $k_i$ 是 $G$ 的倍数，注意 $k_i$ 可能重复输入）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个非负整数，表示答案对 $10^9+7$ 取模的值 。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2
+1 2
+2 1
+1
+1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $30\%$的数据，$k=0, T_x,T_y \leq 1000$。</p><p>对于另外 $30\%$ 的数据，$k=0$。</p><p>对于剩余 $40\%$ 的数据，无特殊性质。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

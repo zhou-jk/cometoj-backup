@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2015]圈地</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1279 [JSOI2015]圈地</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>【故事背景】</p><p>JYY 在火星买了一大块矩形的地皮做房地产开发。由于地皮实在是太大了，JYY 把这块地皮划分成了 $N$ 行 $M$ 列的小方格，并在每一格中建造一栋房子。历时若干年，开发终于宣告结束，JYY 也可以把这些房子挂牌出售了。现在他找到了两位非同寻常的土豪买家：南南和强强。</p><p>麻烦的是，南南和强强是水火不容的。为了保证他们俩不发生矛盾，JYY 需要把卖给他们俩的房子用墙隔开。不过造墙是需要钱的，JYY 作为倒卖地皮的专家，自然想挣尽可能多的钱，因此他邀请到你帮他设计最优的出售方案。</p><p>【问题描述】</p><p>JYY 把这块地皮划分成了 $N$ 行 $M$ 列的矩形，且矩形的每一格中建造一栋房子。现在，南南和强强已经将他们的购买意见提交给了 JYY。对于每一栋房子，南南和强强已经给定了他们的出价（不想购买，或愿意以一定价格购买），并且由于他们已经协商好了各自的势力范围，因此不存在两个人同时想买一栋房子的情况。JYY 可以选择每一栋房子是否出售（因为不存在两个人同时想买一栋房子的情况，若 JYY 选择出售一栋房子，它的买家就是确定的）。房子卖给强强和南南以后，JYY 就能获得卖出房子出价的总和。</p><p>不过，作为售后服务，JYY 需要通过造墙（将两栋相邻的房子用一堵墙隔开）把两个人的房子完全隔开。所谓完全隔开，就是指造出的墙以及四周的边界将整个区域划分成若干个不连通的部分，每个部分里面只有一个人的房子。当然，造墙也是需要钱的，而且价格不菲。不过 JYY 当初在宣传时声称造墙完全免费，所以这部分钱只好由 JYY 自己出了。</p><p>JYY 请你为他规划每幢房子是否要卖出以及建造哪些围墙，才能使得卖房子的收益减去造围墙的花费最大。另外一个好消息是整个地皮的四周已经建好了墙，因此 JYY 可以利用这些建好的墙达到目的。下图就是用墙将区域划分成 $3$ 个不连通的部分的例子。格子中的数字代表出价（数字的含义参考输入格式），边上的数值代表造墙的价格。四周的墙（边界）本来就有，不需要 JYY 花额外的代价去建造。</p><p><img src="../upload/6d0adb9eae.png" alt="image.png"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行包含两个用空格隔开的自然数 $N$ 和 $M$。</p><p>接下来 $N$ 行，每行 $M$ 个整数，第 $i$ 行第 $j$ 列的整数 $a$ 描述了位于 $(i,j)$ 房子的出售信息。如果 $a=0$，说明强强和南南都不想买这个位置上的房子；如果 $a&gt;0$，说明强强想以价格 $a$ 买这个位置上的房子。如果 $a&lt;0$，说明南南想以价格 $-a$ 买这个位置上的房子。</p><p>接下来 $N-1$ 行，每行 $M$ 个整数。第 $i$ 行，第 $j$ 列的数表示第 $i$ 行，第 $j$ 列的房子与第 $i+1$ 行，第 $j$ 列的房子之间的墙的造价。</p><p>接下来 $N$ 行，每行 $M-1$ 个整数。第 $i$ 行，第 $j$ 列的数表示第 $i$ 行，第 $j$ 列的房子与第 $i$ 行，第 $j+1$ 列的房子之间的墙的造价。</p><p>$1≤N,M≤400$，任何价格都不超过 $1,000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出仅有一行包含一个整数，表示 JYY 的最大收益。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+-3 7 0 0 0
+8 0 7 -10 0
+0 7 0 1 0
+0 0 0 0 0
+-8 0 0 2 10
+4 50 50 1 50
+50 50 1 9 50
+50 50 1 1 50
+2 50 50 50 50
+2 50 50 50
+50 50 1 1
+50 1 8 1
+50 50 50 50
+1 50 50 50</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>48</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title> [CTSC2012Day1-A]梭哈游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0004  [CTSC2012Day1-A]梭哈游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小Y和小Z最近迷上了一种叫梭哈的扑克游戏。梭哈又称沙蟹，是英文 Show Hand 的音译，是一种使用黑桃、红心、梅花、方片的 A 到 K 共 52 张牌（没有大小王）来进行的扑克牌游戏。</p><p>和其他扑克游戏一样，梭哈的目的是得到最大的牌型并赢得牌局：每名玩家首先需要下基本的注额，之后将获得一张底牌，这张牌只有自己知道。普通梭哈游戏的规则是，在发完底牌后的第一轮时，每个玩家都将得到一张明牌（明牌是摆在台面上的，所有人都能看见），拥有最大明牌的玩家首先发言，他可以下注、不下注（让牌）或盖牌（放弃）也可以全压（梭哈），其他玩家可以跟注（有玩家全压时必须全压）、加注或盖牌（放弃），放弃的玩家将无法继续游戏，并且之前押的筹码无法取回。而全压之后将直接把每个人的手牌补充至 5 张进行最后的判定；第二圈、第三圈和第四圈的进程与第一圈是类似的。最后，每位玩家要比牌型的大小以确定赢家。牌最大的玩家赢得牌局。</p><p>所有五张牌的组合，按以下秩序， 由大至小 排行分为不同牌型：</p><ol><li>同花顺（Straight Flush）：同一花色，顺序的牌。 例： Q♦ J♦ 10♦ 9♦ 8♦；</li><li>四条（Four of a Kind）：有四张同一点数的牌。 例： 10♣ 10♦ 10♥ 10♠ 9♥；</li><li>满堂红（Full House）：三张同一点数的牌，加一对其他点数的牌。 例： 8♣ 8♦ 8♠ K♥ K♠；</li><li>同花（Flush）：五张同一花色的牌。 例： A♠ K♠ 10♠ 9♠ 8♠；</li><li>顺子（Straight）：五张顺连的牌。 例： K♦ Q♥ J♠ 10♦ 9♦；</li><li>三条（Three of a kind）：有三张同一点数的牌。 例： J♣ J♥ J♠ K♦ 9♠；</li><li>两对（Two Pairs）：两张相同点数的牌，加另外两张相同点数的牌。 例： A♣ A♦ 8♥ 8♠ Q♠；</li><li>一对（One Pair）：两张相同点数的牌。 例： 9♥ 9♠ A♣ J♠ 8♥；</li><li>无对（Zilch）：不能排成以上组合的牌，以点数决定大小。例： A♦ Q♦ J♠ 9♣ 8♣。</li></ol><p>若牌型一样则利用点数和花色决定胜负 。（点数优先）</p><p>点数的顺序（从大至小）为：A&gt;K&gt;Q&gt;J&gt;10&gt;9&gt;8&gt;7&gt;6&gt;5&gt;4&gt;3&gt;2。（注：当 5 张手牌是 5 4 3 2 A 的时候，A 可以看作最小的牌，此时的牌型仍然为顺子，是顺子里面最小的一个）。</p><p>花色的顺序（大至小） 为：黑桃(♠)&gt;红心(♥)&gt;梅花(♣)&gt;方块(♦)。</p><p>举例说明：</p><ol><li>Q♦ J♦ 10♦ 9♦ 8♦ &gt; 8♣ 8♥ 8♠ K♥ K♠ （前者牌型为同花顺，比后者大）；</li><li>9♣ 9♦ 9♠ Q♥ Q♠ &gt; 8♣ 8♦ 8♠ K♥ K♠ （两者牌型均为满堂红，比较牌型中三张同一点数的牌 9 比 8 大）；</li><li>A♣ A♦ 8♥ 8♠ Q♠ &gt; A♠ A♥ 7♥ 7♠ K♠ （两者牌型均为两对，且最大的对子相同，此时比较次大的对子，8 比 7 大）；</li><li>A♠ Q♠ J♥ 9♥ 8♥ &gt; A♦ Q♦ J♠ 9♣ 8♣ （两者牌型均为无对，所有数码均相同，此时比较最大牌的花色，A♠ &gt; A♦）。</li><li>4♠ 4♥ A♦ Q♦ 5♦ &gt; 4♣ 4♦ A♠ Q♠ 5♠ （两者牌型均为一对，所有数码均相同，此时对 4 为牌型里最大的部分，因此比较 4♠ &gt; 4♣）</li></ol><p>在小 Y 和小 Z 玩梭哈的过程中，小 Y 总希望能够实时了解目前的形势，即根据自己手上的牌算出自己的胜率。但是他的编程能力有限，你能帮他完成这个任务么？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含 1 个正整数 $N$，表示小 Y 自己手上牌的数量。</p><p>接下来 $N$ 行每行用两个整数描述一张小 Y 手上的牌：第一个数表示牌的数码（1 表示 A，13 表示 K，12 表示 Q，11 表示 J），第二个数表示牌的花色（1表示黑桃，2 表示红心，3 表示梅花，4 表示方块）。</p><p>接下来 $N – 1$ 行每行用两个整数描述一张小 Z 手上的明牌：第一个数表示牌的数码（1 表示 A，13 表示 K，12 表示 Q，11 表示 J），第二个数表示牌的花色（1 表示黑桃，2 表示红心，3 表示梅花，4 表示方块）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一行，格式为 $A/B$ 形式。$A,B$ 为两个互质的自然数，$A/B$ 表示了小 Y 当前局面下的获胜可能性。特别的，若 $A$ 为 $0$，则应输出 $0/1$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+2 1
+2 2
+2 3
+2 4
+3 1
+1 1
+1 2
+1 3
+3 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>42/43</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>小 Y 手上牌的型是四条，小 Z 若底牌是方块 A 则也能构成四条，并通过数码大获胜。其他情况下都是小 Y 获胜。</p><p>【数据规模和约定】</p><p>对于 10% 的数据，$N = 5$；</p><p>对于 30% 的数据，$3 ≤ N ≤ 5$；</p><p>对于 100% 的数据，$1 ≤ N ≤ 5$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

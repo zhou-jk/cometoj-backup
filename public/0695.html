@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[BJWC2012]灵魂宝石</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0695 [BJWC2012]灵魂宝石</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>“作为你们本体的灵魂，为了能够更好的运用魔法，被赋予了既小巧又安全的外形，……”</p><p>我们知道，魔法少女的生命被存放于一个称为灵魂宝石（Soul Gem）的装置内。而有时，当灵魂宝石与躯体的距离较远时，魔法少女就无法控制自己的躯体了。</p><p>在传说中，魔法少女 Abel仅通过推理就得到了这个现象的一般法则，被称为Abel定理：</p><p>存在宇宙常量&nbsp; $R$（是一个非负实数，或正无穷），被称为灵魂宝石常量，量纲为空间度量（即：长度）。如果某个魔法少女的灵魂宝石与她的躯体的距离严格超过 $R$，则她一定无法控制自己的躯体；如果这个距离严格小于 $R$，则她一定可以控制自己的躯体。 （这里的距离指平面的 Euclid 距离。）</p><p>注意：该定理不能预言距离刚好为 $R$ 的情形。可能存在魔法少女 $A$ 和 $B$，她们离自己的灵魂宝石的距离都恰好为 $R$，但是 $A$ 可以控制自己的躯体，而 $B$ 不可以。</p><p>现在这个世界上再也没有魔法少女了，但是我们却对这个宇宙常量感兴趣。</p><p>我们只能通过之前的世界遗留下来的数据来确定这个常量的范围了。</p><p>每一组数据包含以下信息：</p><ul><li>一共有$N$ 个魔法少女及她们的灵魂宝石，分别编号为 $1$ ~ $N$。</li><li>这 $N$ 个魔法少女所在的位置是（$X_i, Y_i$）。</li><li>这 $N$ 个灵魂宝石所在的位置是（$x_i, y_i$）。</li><li>此时恰好有 $K$个魔法少女能够控制自己的躯体。</li></ul><p>需要注意的是：</p><ol><li>我们认为这个世界是二维的 Euclid 空间。</li><li>魔法少女与灵魂宝石之间的对应关系是未知的。</li><li>我们不知道是具体是哪 $K$个魔法少女能够控制自己的躯体。</li></ol><p>根据以上信息，你需要确定灵魂宝石常量 $R$ 可能的最小值 $R_{min}$ 和最大值 $R_{max}$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包两个整数：$N$、$K$。</p><p>接下来 $N$ 行，每行包含两个整数：$X_i, Y_i$，由空格隔开。</p><p>再接下来 $N$ 行，每行包含两个整数：$x_i, y_i$，由空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出两个量：$R_{min}$、$R_{max}$，中间用空格隔开。</p><p>$R_{min}$ 一定是一个非负实数，四舍五入到小数点后两位。</p><p>$R_{max}$ 可能是非负实数，或者是正无穷：</p><ul><li>如果是非负实数，四舍五入到小数点后两位；</li><li>如果是正无穷，输出“+INF”（不包含引号）。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 1
+1 0
+4 0
+0 0
+4 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1.00 5.00</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于100%的数据：</p><p>$1 ≤&nbsp; N&nbsp; ≤&nbsp; 50$，</p><p>$0 ≤&nbsp; K&nbsp; ≤&nbsp; N$，</p><p>$-1000 ≤&nbsp; x_i, y_i , X_i , Y_i&nbsp; ≤&nbsp; 1000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

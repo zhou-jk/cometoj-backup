@@ -1,0 +1,115 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2010]工厂选址</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1410 [HAOI2010]工厂选址</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>某地区有 $m$ 座煤矿，其中第 $i$ 号矿每年产量为 $a_i$ 吨，现有火力发电厂一个，每年需用煤 $b$ 吨，每年运行的固定费用（包括折旧费，不包括煤的运费）为 $h$ 元，每吨原煤从第 $i$ 号矿运到原有发电厂的运费为 $C_{i0}$（$i=1,2,…,m$）。</p><p>现规划新建一个发电厂，$m$ 座煤矿每年开采的原煤将全部供给这两座发电厂。现有 $n$ 个备选的厂址。若在第 $j$ 号备选厂址建新厂，每年运行的固定费用为 $h_j$ 元。每吨原煤从第 $i$ 号矿运到 $j$ 号备选厂址的运费为 $C_{ij}$（$i=1,2,…,m$，$j=1,2,…,n$）。</p><p>试问：应把新厂厂址选取在何处？$m$ 座煤矿开采的原煤应如何分配给两个发电厂，才能使每年的总费用（发电厂运行费用与原煤运费之和）为最小。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行：$m\ b\ h\ n$</p><p>第 $2$ 行：$a_1\ a_2\ …\ a_m$（$0 \le a_i \le 500$，$a_1+a_2+...+a_m \ge b$）</p><p>第 $3$ 行：$h_1\ h_2\ …\ h_n$（$0 \le h_i \le 100$）</p><p>第 $4$ 行：$C_{10}\ C_{20}\ …\ C_{m0}$（$0 \le C_{ij} \le 50$）</p><p>第 $5$ 行：$C_{11}\ C_{21}\ … \ C_{m1}$</p><p>$…$</p><p>第 $n+4$ 行：$C_{1n}\ C_{2n}\ … \ C_{mn}$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行：新厂址编号，如果有多个编号满足要求，输出最小的。</p><p>第 $2$ 行：总费用。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 2 7 9
+3 1 10 3
+6 3 7 1 10 2 7 4 9
+1 2 4 3
+6 6 8 2
+4 10 8 4
+10 2 9 2
+7 6 6 2
+9 3 7 1
+2 1 6 9
+3 1 10 9
+4 2 1 8
+2 1 3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8
+49</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于所有数据，$n \le 50, m \le 50000, b \le 10000$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

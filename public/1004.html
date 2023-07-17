@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2017]期末考试</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1004 [SHOI2017]期末考试</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有 $n$ 位同学，每位同学都参加了全部的 $m$ 门课程的期末考试，都在焦急的等待成绩的公布。</p><p>第 $i$ 位同学希望在第 $t_i$ 天或之前得知<b>所有</b>课程的成绩。如果在第 $t_i$ 天，有至少一门课程的成绩没有公布，他就会等待最后公布成绩的课程公布成绩，每等待一天就会产生 $C$ 不愉快度。</p><p>对于第 $i$ 门课程，按照原本的计划，会在第 $b_i$ 天公布成绩。</p><p>有如下两种操作可以调整公布成绩的时间:</p><ol><li>将负责课程 $X$ 的部分老师调整到课程 $Y$，调整之后公布课程 $X$ 成绩的时间推迟一天，公布课程 $Y$ 成绩的时间提前一天；每次操作产生 $A$ 不愉快度。</li><li>增加一部分老师负责学科 $Z$，这将导致学科 $Z$ 的出成绩时间提前一天；每次操作产生 $B$ 不愉快度。</li></ol><p>上面两种操作中的参数 $X, Y, Z$ 均可任意指定，每种操作均可以执行多次，每次执行时都可以重新指定参数。</p><p>现在希望你通过合理的操作，使得最后总的不愉快度之和最小，输出最小的不愉快度之和即可。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个非负整数 $A, B, C$，描述三种不愉快度；</p><p>第二行两个正整数 $n, m$，分别表示学生的数量和课程的数量；</p><p>第三行 $n$ 个正整数 $t_i$，表示每个学生希望的公布成绩的时间；</p><p>第四行 $m$ 个正整数 $b_i$，表示按照原本的计划，每门课程公布成绩的时间。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数，表示最小的不愉快度之和。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>100 100 2
+4 5
+5 1 2 3
+1 1 2 3 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5 4
+5 6
+1 1 4 7 8
+2 3 3 1 8 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>33</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 1 解释】</p><p>由于调整操作产生的不愉快度太大，所以在本例中最好的方案是不进行调整；全部的 $5$ 门课程中，最慢的在第 $3$ 天出成绩；</p><p>同学 $1$ 希望在第 $5$ 天或之前出成绩，所以不会产生不愉快度；</p><p>同学 $2$ 希望在第 $1$ 天或之前出成绩，产生的不愉快度为 $(3 - 1) \times 2 = 4$；</p><p>同学 $3$ 希望在第 $2$ 天或之前出成绩，产生的不愉快度为 $(3 - 2) \times 2 = 2$；</p><p>同学 $4$ 希望在第 $3$ 天或之前出成绩，所以不会产生不愉快度；</p><p>不愉快度之和为 $4 + 2 = 6$。</p><p>【数据规模与约定】</p><p><img alt="image.png" src="../upload/8785753c98.png" width="699" height="326"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

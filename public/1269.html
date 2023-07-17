@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2013]快乐的jyy</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1269 [JSOI2013]快乐的jyy</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>【故事背景】</p><p>JYY 在 JSOI 有很多很多的好朋友，比如 PUPPY，KFC 还有 PUPPUP。因为有了这么多的好朋友，所以 JYY 每天都很快乐。某天，JYY 发现好朋友之间关系的好坏和名字有很大的关系，比如 PUPPY 和 PUPPUP 的关系就特别好，但是和 KFC 的关系就很一般。JYY 苦思冥想终于发现了其中的规律，现在 JYY 想知道两个朋友之间关系的好坏，你能帮助 JYY 么？</p><p>【问题描述】</p><p>给定两个字符串 $A$ 和 $B$，表示 JYY 的两个朋友的名字。我们用 $A(i,j)$ 表示 $A$ 字符串中从第 $i$ 个字母到第 $j$ 个字母所组成的子串。同样的，我们也可以定义 $B(x,y)$。</p><p>JYY 发现两个朋友关系的紧密程度，等于同时满足如下条件的四元组 $(i,j,x,y)$ 的个数：</p><ol><li>$1 \le i \le j \le |A|$</li><li>$1 \le x \le y \le |B|$</li><li>$A(i,j)=B(x,y)$</li><li>$A(i,j)$ 是回文串</li></ol><p>这里表示字符串 $A$ 的长度。</p><p>JYY 希望你帮助他计算出这两个朋友之间关系的紧密程度。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>数据包行两行由大写字母组成的字符串 $A$ 和 $B$</p><p>$1≤|A|,|B|≤50000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包含一行一个整数，表示紧密程度，也就是满足要求的 $4$ 元组个数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>PUPPY
+PUPPUP</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>17</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

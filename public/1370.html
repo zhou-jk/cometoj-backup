@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SCOI2009]围豆豆</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1370 [SCOI2009]围豆豆</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>是不是平时在手机玩吃豆豆游戏玩腻了呢？最近 MOKIA 手机上推出了一种新的围豆豆游戏，大家一起来试一试吧。</p><p>游戏的规则非常简单，在一个 $N\times M$ 的矩阵方格内分布着 $D$ 颗豆子，每颗豆有不同的分值 $V_i$。游戏者可以选择任意一个方格作为起始格，每次移动可以随意的走到相邻的四个格子，直到最终又回到起始格。最终游戏者的得分为所有被路径围住的豆豆的分值总和减去游戏者移动的步数。矩阵中某些格子内设有障碍物，任何时刻游戏者不能进入包含障碍物或豆子的格子。游戏者可能的最低得分为 $0$，即什么都不做。</p><p>注意路径包围的概念，即某一颗豆在路径所形成的的多边形（可能是含自交的复杂多边形）的内部。下面有两个例子：</p><p><img src="../upload/13de3c677b.png" alt="image.png"></p><p>第一个例子中，豆在路径围城的矩形内部，所以豆被围住了。第二个例子中，虽然路径经过了豆的周围的 $8$ 个格子，但是路径形成的多边形内部并不包含豆，所以没有围住豆子。布布最近迷上了这款游戏，但是怎么玩都拿不了高分。聪明的你决定写一个程序来帮助他顺利通关。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个整数 $N$ 和 $M$，为矩阵的边长。</p><p>第二行一个整数 $D$ ，为豆子的总个数。 </p><p>第三行包含 $D$ 个整数 $V_1$ 到 $V_D$，分别为每颗豆子的分值。</p><p>接着 $N$ 行有一个 $N×M$ 的字符矩阵来描述游戏矩阵状态， <code>0</code> 表示空格，<code>#</code> 表示障碍物。而数字 $1$ 到 $9$ 分别表示对应编号的豆子。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个整数，为最高可能获得的分值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 8
+3
+30 -100 30
+00000000
+010203#0
+00000000</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>38</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$50\%$ 的数据满足 $1≤D≤3$。</p><p>$100\%$ 的数据满足 $1≤D≤9，1≤N, M≤10，-10000≤V_i≤10000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

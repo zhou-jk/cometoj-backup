@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day1]吃豆豆</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1634 [Wannafly冬令营2018Day1]吃豆豆</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>$wls$ 在玩一个游戏。</p><p>$wls$ 有一个 $n$ 行 $m$ 列的棋盘，对于第 $i$ 行第 $j$ 列的格子，每过 $T_{i,j}$ 秒会在上面出现一个糖果，第一次糖果出现在第 $T_{i,j}$ 秒，糖果仅会在出现的那一秒存在，下一秒就会消失。</p><p>假如 $wls$ 第 $k$ 秒在第 $i$ 行第 $j$ 列的格子上，满足 $T_{i,j}|k$，则 $wls$ 会得到一个糖果。</p><p>假如当前 $wls$ 在第 $i$ 行第 $j$ 列的格子上，那么下一秒他可以选择往上下左右走一格或停在原地。</p><p>现在请问 $wls$ 从指定的 $S$ 出发到达指定的 $T$，并且在路上得到至少 $C$ 个糖果最少需要多少时间？</p><p>$wls$ 在 $S$ 的初始时间为第 $0$ 秒。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个整数$n$，$m$，$C$。</p><p>接下来 $n$ 行，每行 $m$ 个整数 $T[i][j]$。</p><p>接下来四个整数$xs$, $ys$, $xt$, $yt$，其中 $(xs, ys)$ 表示 $S$，$(xt, yt)$ 表示 $t$。</p><p>$1 \leq n, m, T[i][j] \leq 10$</p><p>$1 \leq C \leq 1018$</p><p>$1 \leq xs, xt \leq n$</p><p>$1 \leq ys, yt \leq m$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数表示答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 2
+1 2 3
+1 1 1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

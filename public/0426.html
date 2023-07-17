@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[WC2018-A]通道</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0426 [WC2018-A]通道</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>11328 年， C 国的科学家们研发了一种高速传送通道，可以在很短的时间内把居民从通道的一端送往另一端，这些通道都是双向的。</p><p>美中不足的是，这种传送通道需要进行大量的维护和检修。经过规划， C 国总统决定在 M 城中新建这种通道，在 M 城中，建立了 $n$ 个传送站和 $3∗(n−1)$ 条传送通道，这些传送通道被分为 $3$ 组，每一组都包含了 $(n−1)$ 条通道。</p><p>当任意一组通道运行时，居民都可以通过这组通道从任意一个传送站前往任意的另一个传送站。也就是说，所有的传送站都会被通道所连通。</p><p>三组通道按照1、2、3的顺序轮流运行，循环反复。在任意一个时刻，都有且只有一组传送通道可以使用。形式化地，在第 $i$ 天中，有且只有第 $((i−1)\mod3+1)$ 组通道运行。</p><p>C 国著名科学家 Access Globe 正在进行一项社会调查实验：调查两个传送站之间的传送通道使用者的信息。 Access Globe 的计划是这样的：</p><ul><li>选定两个传送站 $a$、$b$</li><li>第一天，他从 $a$ 出发，使用正在运行的这组通道沿最短路径到达 $b$，并调查经过的所有通道上使用者的信息</li><li>第二天，他从 $b$ 出发，使用正在运行的这组通道沿最短路径到达 $a$，并调查经过的所有通道上使用者的信息</li><li>第三天，他从 $a$ 出发，使用正在运行的这组通道沿最短路径到达 $b$，并调查经过的所有通道上使用者的信息</li></ul><p>Access Globe 知道每一条传输线路在运行时的使用者人数。他希望找出一对 $a$、$b$，使得在整个实验过程中所有经过的通道的使用者数量之和最大。</p><p>Access Globe 希望参加 CCF NOI 2018 冬令营的你帮他解决这个简单的小问题。如果你成功地解决了这个问题， Access Globe 会送你一份小礼物——100分！</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第 $1$ 行包含一个正整数 $n$，表示传送站的个数，传送站从 $1$ 到 $n$ 编号；</p><p>输入的第 $2$ 到第 $n$ 行，每行包含 $3$ 个数 $u,v,w$，表示第一组通道中有一条连接 $u,v$ 的通道，其运行时使用者数量为 $w$ 人；</p><p>输入的第 $(n+1)$ 到第 $(2n−1)$ 行，每行包含 $3$ 个数 $u,v,w$，表示第二组通道中有一条连接 $u,v$ 的通道，其运行时使用者数量为 $w$ 人；</p><p>输入的第 $2n$ 到第 $(3n−2)$ 行，每行包含 $3$ 个数 $u,v,w$，表示第三组通道中有一条连接 $u,v$ 的通道，其运行时使用者数量为 $w$ 人。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共 $1$ 行，包含一个整数，表示最大的使用者数量之和。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 2 2
+1 3 0
+1 4 1
+4 5 7
+1 2 0
+2 3 1
+2 4 1
+2 5 3
+1 5 2
+2 3 8
+3 4 5
+4 5 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>27</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】<br></p><p>下图为样例中 M 城的传送站和传输线路情况。其中点和虚线交替的线条、虚线条和实线条分别表示第一组、第二组和第三组通道。<br></p><p><img alt="屏幕快照 2019-06-25 下午2.33.41.png" src="../upload/ef3e48e092.png" width="400" height="270.5882352941176"><br></p><p>一种可行的方案是选择 $a=2,b=5$，这样的使用者数量之和为 $(3)+(8+5+1)+(2+1+7)=27$。<br></p><p>【子任务】<br></p><p>对于所有数据，$2≤n≤10^5,0≤w≤10^{12}$。</p><p>特殊性质0：任意两组通道构成完全相同。</p><p>特殊性质1：第二组通道和第三组通道构成完全相同。</p><p>特殊性质2：对于第二组的每一个传送站，最多只有两个通道可以到达它，且编号为 $x,y$ 的传送站之间通过一条通道直接连接充要条件是 $|x−y|=1$。</p><p>特殊性质3：对于第三组的每一个传送站，最多只有两个通道可以到达它。</p><p>特殊性质4：$n≤3000$。</p><p><img alt="屏幕快照 2019-06-25 下午2.43.21.png" src="../upload/eda86cfe42.png" width="600" height="234.59715639810426"><br></p><p>本题共31个测试点，每个子任务对应测试点如下：</p><p>子任务0对应测试点1−7；<br>子任务1对应测试点8；<br>子任务2对应测试点9−11；<br>子任务3对应测试点12−14；<br>子任务4对应测试点15−17；<br>子任务5对应测试点18−21；<br>子任务6对应测试点22−25；<br>子任务7对应测试点26−31；</p><p>【提示】</p><p>在两组通道中，可能都包含了连接传送站 $x,y$ 的通道，此时我们认为这两条通道是不同的。</p><p>特殊性质中， A 组通道和 B 组通道的 ‘‘构成完全相同’’ 是指：如果在 A 组中 $u,v$ 之间存在一条使用人数为 $w$ 的通道，那么在 B 组中 $u,v$ 之间一定也存在一条使用人数为 $w$ 的通道。是否相同与描述方式与描述顺序均无关。即在构成完全相同的两组通道 A 和 B 中，通道输入的顺序不一定相同，每条通道的端点的输入顺序也不一定相同（对于 A、 B 组中一条连接 $u,v$ 的使用人数为 $w$ 的通道，一种可能出现的输入为： A 组通道中输入 $uvw$，而 B 组通道中输入 $vuw$）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

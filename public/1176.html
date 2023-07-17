@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #2]言论的阴影里妄想初萌</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1176 [Contest #2]言论的阴影里妄想初萌</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">Takuru 是一名能力者，他在地震时获得了念力致动的能力。所以他经常用自己的能力去干一些奇奇怪怪的事情。</p><p>有一天他获得了一张 $n$ 个点的无向完全图，之后他使用了能力，导致这张图的 $\frac{n(n-1)}{2}$ 条边中的每一条都有 $\frac{x}{y}$ 的概率遭到破坏而消失。</p><p>现在 Takuru 想知道这张无向图点集的全部 $2^n$ 个的子集中，是独立集的子集数量的期望值。</p><p>一张无向图 $G$ 的一个子集是独立集的定义如下：此点集 $S$，满足对于任意的 $x, y \in S$，图 $G$ 中不存在连接 $x$ 和 $y$ 的边。(空集也是一个合法的独立集)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行三个整数 $n$，$x$ 和 $y$ ($1 \leqslant n \leqslant 10^5$，$1 \leqslant x \leqslant y &lt; 998244353 $)。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">输出一个整数，用如下方式计算：</p><p>这张图独立集数量的期望可以写成一个最简分数 $\frac{X}{Y}​$，那么你需要输出一个整数 $p​$，满足 $0\leqslant p &lt;998244353​$ 且 $pY \equiv X \pmod {998244353}​$。保证合法的 $p​$ 存在且唯一。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>374341638</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

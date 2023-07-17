@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[BJWC2017]星际穿越</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0720 [BJWC2017]星际穿越</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>21YY年，夏。</p><p>时过境迁，小诚已是星际联邦（FederationofPlanets）太空防御理事会的技术顾问。去年联邦举行大选，新总统刚刚宣誓就任。新政府的主要政策之一是对行政区域进行重新规划，将各个星球之间原有的行政关系精简。联邦有 $N$ 个星球，新的行政体系结构形如一个二叉树。联邦的行政中心为首都，其他所有星球分成至多两个区域，每个区域内部又是同样的结构。在此番行政改革之前，每个星球驻扎着一支太空舰队。其中，第 $i$ 个星球驻扎舰队的战斗力是 $F_i$。在行政改革的同时，太空防御理事会负责调整各个舰队的驻地，以符合军事条例中要求每个行政区域中心驻扎的舰队是区域内战斗力最强舰队的规定。此外，根据军事条例，舰队调整驻地的方式只有一种，就是两个星球的舰队交换驻防。现在，所有星球之间共有M条双向的星际航道。只有存在星际航道的两个星球才能进行舰队换防。为了节省开支，理事会希望总的换防次数尽量少。早在年初，理事会就委托了小诚制定换防计划，但是小诚至今还未完成任务。你能否帮助小诚，使他免于被解职的命运呢？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行，两个整数 $N,M$。</p><p>第二行，$N$ 个整数 $R_1,R_2,…,R_N$，由空格隔开。$R_i$ 表示星球i的直属上级星球编号。对于联邦首都，$R_i$ 用 $0$ 表示。</p><p>第三行，$N$ 个互不相同的整数 $F_1,F_2,…,F_N$，由空格隔开。其中 $F_i$ 表示当前驻扎在星球i的舰队的战斗力。</p><p>接下来 $M$行，每行两个整数 $X_i,Y_i$，表示在星球 $X_i$ 和星球 $Y_i$ 之间存在一条星际航道。</p><p>$N \le 12,M \le 20$</p><p>$1 ≤ F_i ≤ 100$。 输入数据保证星球之间的行政关系形成一个二叉树，任何两个星球之间至多有一条星际航道， 且星际航道不会出现自环。 数据保证有解。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅一行，一个整数，表示总换防次数的最小值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 4
+0 1 2 3
+1 2 3 4
+1 2
+1 4
+2 3
+1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

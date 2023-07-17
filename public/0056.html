@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2006提高组-D]2^k进制数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0056 [2006提高组-D]2^k进制数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>设 $r$ 是个 $2^k$ 进制数，并满足以下条件：<br></p><ol><li>$r$ 至少是个 2 位的 $2^k$ 进制数。</li><li>作为 $2^k$ 进制数，除最后一位外，$r$ 的每一位严格小于它右边相邻的那一位。</li><li>将 $r$ 转换为 2 进制数 $q$ 后，则 $q$ 的总位数不超过 $w$。</li></ol><p>在这里，正整数 $k(1≤k≤9)$ 和 $w(k&lt;w≤30000)$ 是事先给定的。</p><p>问：满足上述条件的不同的 $r$ 共有多少个？</p><p>我们再从另一角度作些解释：设 $S$ 是长度为 $w$ 的 01 字符串（即字符串 $S$ 由 $w$ 个 “0” 或 “1” 组成），$S$ 对应于上述条件（3）中的 $q$。将 $S$ 从右起划分为若干个长度为 $k$ 的段，每段对应一位 $2^k$ 进制的数，如果 $S$ 至少可分成 $2$ 段，则 $S$ 所对应的二进制数又可以转换为上述的 $2^k$ 进制数 $r$。</p><p>例：设 $k=3，w=7$。则 $r$ 是个八进制数（$2^3=8$）。由于 $w=7$，长度为 7 的 01 字符串按 3 位一段分，可分为 3 段（即 1，3，3，左边第一段只有一个二进制位），则满足条件的八进制数有：</p><ul><li>2 位数：高位为 1：6 个（即 12，13，14，15，16，17），高位为 2：5 个，…，高位为 6：1 个（即 67）。共 6+5+…+1=21 个。</li><li>3 位数：高位只能是 1，第 2 位为 2：5 个（即 123，124，125，126，127），第 2 位为 3：4 个，…，第 2 位为 6：1 个（即 167）。共 5+4+…+1=15 个。</li></ul><p>所以，满足要求的 $r$ 共有 36 个。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>只有 $1$ 行，为两个正整数 $k, w$，用一个空格隔开。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$1$ 行，是一个正整数，为所求的计算结果，即满足条件的不同的 $r$ 的个数（用十进制数表示），要求最高位不得为 0，各数字之间不得插入数字以外的其他字符（例如空格、换行符、逗号等）。<br></p><p>提示：作为结果的正整数可能很大，但不会超过 200 位<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3  7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>36</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2016提高组Day1-C]换教室</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0134 [2016提高组Day1-C]换教室</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>对于刚上大学的牛牛来说，他面临的第一个问题是如何根据实际情况申请合适的课程。</p><p>在可以选择的课程中，有 $2n$ 节课程安排在 $n$个时间段上。在第 $i(1 \le i \le n)$ 个时间段上，两节内容相同的课程同时在不同的地点进行，其中，牛牛预先被安排在 $c_i$ 教室上课，而另一节课程在教室 $d_i$ 进行。</p><p>在不提交任何申请的情况下，学生们需要按时间段的顺序依次完成所有的 $n$ 节安排好的课程。如果学生想更换第 $i$ 节课程的教室，则需要提出申请。若申请通过，学生就可以在第 $i$ 个时间段去 $d_i$ 教室上课，否则仍然在 $c_i$ 教室上课。</p><p>由于更换教室的需求太多，申请不一定能获得通过。通过计算，牛牛发现申请更换第 $i$ 节课程的教室时，申请被通过的概率是一个已知的实数 $k_i$，并且对于不同课程的申请，被通过的概率是互相独立的。</p><p>学校规定，所有的申请只能在学期开始前一次性提交，并且每个人只能选择<strong>至多</strong>$m$ 节课程进行申请。这意味着牛牛必须一次性决定是否申请更换每节课的教室，而不能根据某些课程的申请结果来决定其他课程是否申请；牛牛可以申请自己最希望更换教室的 $m$ 门课程，也可以<strong>不用完</strong>这 $m$ 个申请的机会，甚至可以一门课程都不申请。</p><p>因为不同的课程可能会被安排在不同的教室进行，所以牛牛需要利用课问时间从一间教室赶到另一间教室。</p><p>牛牛所在的大学有 $v$ 个教室，有 $e$ 条道路。每条道路连接两间教室，并且是可以<strong>双向通行</strong>的。由于道路的长度和拥堵程度不同，通过不同的道路耗费的体力可能会有所不同。当第 $i(1 \le i \le n-1)$ 节课结束后，牛牛就会从这节课的教室出发，选择一条耗费体力最少的<strong>路径</strong>前往下一节课的教室。</p><p>现在牛牛想知道，申请哪几门课程可以使他因在教室间移动耗费的体力值的总和的<strong>期望值</strong>最小，请你帮他求出这个最小值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行四个整数 $n, m, v, e$。$n$ 表示这个学期内的时间段的数量；$m$ 表示牛牛最多可以申请更换多少节课程的教室；$v$ 表示牛牛学校里教室的数量；$e$ 表示牛牛的学校里道路的数量。</p><p>第二行 $n$ 个正整数，第 $i(1 \le i \le n)$ 个正整数表示 $c_i$，即第 $i$ 个时间段牛牛被安排上课的教室；保证 $1 \le c_i \le v$。</p><p>第三行&nbsp;$n$ 个正整数，第&nbsp;$i(1 \le i \le n)$ 个正整数表示 $d_i$，即第&nbsp;$i$ 个时间段另一间上同样课程的教室；保证 $1 \le d_i \le v$。</p><p>第四行&nbsp;$n$ 个实数，第&nbsp;$i(1 \le i \le n)$ 个实数表示 $k_i$，即牛牛申请在第&nbsp;$i$ 个时间段更换教室获得通过的概率。保证 $0 \le k_i \le 1$。</p><p>接下来 $e$ 行，每行三个正整数 $a_j,b_j,w_j$，表示有一条双向道路连接教室 $a_j,b_j,$，通过这条道路需要耗费的体力值是 $w_j$；保证 $1 \le a_j,b_j \le v, 1 \le w_j \le 100$。</p><p>保证 $1 \le n \le 2000$，$0 \le m \le 2000$，$1 \le v \le 300$，$0 \le e \le 90000$。</p><p>保证通过学校里的道路，从任何一间教室出发，都能到达其他所有的教室。</p><p>保证输入的实数最多包含 3 位小数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行，包含一个实数，四舍五入精确到小数点后<b>恰好 2 位</b>，表示答案。你的输出必须和标准输出<b>完全一样</b>才算正确。</p><p>测试数据保证四舍五入后的答案和准确答案的差的绝对值不大于 $4 \times 10^{-3}$。（如果你不知道什么是浮点误差，这段话可以理解为：对于大多数的算法，你可以正常地使用浮点数类型而不用对它进行特殊的处理）</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2 3 3
+2 1 2
+1 2 1
+0.8 0.2 0.5 
+1 2 5
+1 3 3
+2 3 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2.80</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>所有可行的申请方案和期望收益如下表：</p><p><img alt="屏幕快照 2019-05-22 下午7.29.02.png" src="../upload/d5de1d09cc.png" width="500" height="443.16436251920123"><br></p><p>【提示】</p><ol><li>道路中可能会有<b>多条</b>双向道路连接相同的两间教室。也有可能道路两端连接的是<b>同一间</b>教室。</li><li>请注意区分 $n,m,v,e$ 的意义，$n$<b>不是</b>教室的数量，$m$<b>不是</b>道路的数量。</li></ol><p>【数据规模与特点】</p><p><img alt="屏幕快照 2019-05-22 下午7.32.23.png" src="../upload/97aee70879.png" width="500" height="544.2748091603054"><br></p><p>特殊性质 1：图上任意两点 $a_i,b_i,a_i \ne b_i$ 间，存在一条耗费体力最少的路径只包含一条道路。</p><p>特殊性质 2：对于所有的 $1 \le i \le n, k_i =1$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

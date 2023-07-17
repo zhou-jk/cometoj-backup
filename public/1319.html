@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI/JSOI2014]奇怪的计算器</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1319 [AHOI/JSOI2014]奇怪的计算器</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>JYY 有个奇怪的计算器，有一天这个计算器坏了，JYY 希望你能帮助他写一个程序来模拟这个计算器的运算。</p><p>JYY 的计算器可以执行 $N$ 条预设好的指令。每次 JYY 向计算器输入一个正整数 $X$，计算器就会以 $X$ 作为初始值，接着依次执行预设的 $N$ 条指令，最后把最终得出的结果返回给 JYY。</p><p>每一条指令可以是以下四种指令之一：（这里 $a$ 表示一个正整数。）</p><ul><li><code>+a</code>：表示将当前的结果加上 $a$；</li><li><code>-a</code>：表示将当前的结果减去 $a$；</li><li><code>*a</code>：表示将当前的结果乘以 $a$；</li><li><code>@a</code>：表示将当前的结果加上 $a \times X$（$X$ 是一开始 JYY 输入的数）。</li></ul><p>计算器用于记录运算结果的变量的存储范围是有限的，所以每次运算结束之后会有计算结果溢出的问题。</p><p>JYY 的计算器中，存储每计算结果的变量只能存储 $L$ 到 $R$ 之间的正整数，如果一次指令执行过后，计算结果超过了 $R$，那么计算器就会自动把结果变成 $R$，然后再以 $R$ 作为当前结果继续进行之后的计算。同理，如果运算结果小于 $L$，计算器也会把结果变成 $L$，再接着计算。</p><p>比如，假设计算器可以存储 $1$ 到 $6$ 之间的值，如果当前的计算结果是 $2$，那么在执行<code>+5</code>操作之后，存储结果的变量中的值将会是 $6$。虽然 $2+5$ 的实际结果是 $7$，但是由于 $7$ 超过了存储范围的上界，所以结果就被自动更正成了上界的大小，也就是 $6$。</p><p>JYY一共想在计算器上输入 $Q$ 个值，他想知道这 $Q$ 个值输入计算器之后，分别会得到什么结果呢？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含三个正整数，$N$，$L$ 和 $R$；</p><p>接下来 $N$行，每行一个指令，每个指令如题述，由一个字符和一个正整数组成，字符和正整数中间有一个空格隔开；</p><p>第 $N+2$ 行包含一个整数 $Q$，表示 JYY 希望输入的数的数量；</p><p>接下来 $Q$ 行每行一个正整数，第 $k$ 个正整数 $X_k$ 表示 JYY 在第 $k$ 次输入的整数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $Q$ 行每行一个正整数，第 $k$ 行的整数表示输入 $X_k$ 后，依次经过 $N$ 个指令进行计算所得到的结果。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 1 6
++ 5
+- 3
+* 2
+- 7
+@ 2
+3
+2
+1
+5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+3
+6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>当 JYY 输入 $2$ 时，计算器会进行 $5$ 次运算，每一次运算之后得到的结果分别是 $6$（实际计算结果为 $7$ 但是超过了上界），$3$，$6$，$1$（实际结果为 $-1$ 但是低于了下界）和 $5$（由于一开始输入的是 $2$，所以这一次计算为 $1+2×2$）。</p><p>【数据规模】</p><p>对于所有的数据，$1 \leq N,Q \leq 10^5,\ 1 \leq L \leq X_k \leq R \leq 10^9,\ 1 \leq a \leq 10^9$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

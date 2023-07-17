@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2008Day2] Fence</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0516 [CEOI2008Day2] Fence</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>One morning, fruit farmer Fred visits his apple trees and notices that one of them was cut overnight. This means a loss of 111€ – the money he can make from the apples of a tree on average. In order to prevent further losses, he decides to erect a fence on his plantation.</p><p>The fence consists of posts connected by wire. The fence posts can only be placed at a given set of pre-drilled holes. While Fred can get wire for free, he needs to buy the fence posts for 20€ each. So it might not always be worth or even possible to fence in all of his trees.</p><p>The plantation is square and $1000×1000$ $m^2$ large. In bird’s eye view, the lower left corner has coordinates $(0,0)$, the upper right $(1000,1000)$.<br></p><p><img alt="image.png" src="../upload/546340063a.png" width="219" height="222"><br></p><p>In this example there are four pre-drilled holes (circles) and three trees (squares). It is optimal to buy three fence posts and put them into selected holes (ﬁlled circles), to connect them by wire (lines), and to leave the upper left hole empty. The cost of erecting the fence is $3·20$€ + $1·111$€ = 171€since three posts were bought and one tree could not be fenced in (which means a loss of that tree’s harvest).</p><p>Write a program that reads the positions of the pre-drilled holes and the trees on Fred’s plantation and outputs the minimum cost of erecting a fence or erecting no fence at all. You can neglect the actual shape of the trees and calculate with their positions only.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line contains two integers $N$ and $M (3≤ N ≤100,1≤ M ≤100)$. $N$ is the number of pre-drilled holes, and $M$ is the number of trees. This line is followed by $N$ lines that describe the positions of the holes, and then by $M$ lines that describe the positions of the trees. All positions are given as pairs of integers $x$ $y4 on one line $(0 ≤ x,y ≤ 1000)$. You can expect that no two positions (of holes and trees) coincide and that no three positions are colinear.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Output a single line containing one integer: Fred’s minimum cost. In case Fred buys $P$ posts and fails to fence in $T$ trees, his cost are $20P +111T$.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 3
+800 300
+200 200
+200 700
+600 700
+400 300
+600 500
+800 900</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>171</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>This sample corresponds to the picture above.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

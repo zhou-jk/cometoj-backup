@@ -1,0 +1,136 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2019]多边形</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0805 [HNOI2019]多边形</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 R 与小 W 在玩游戏。</p><p>他们有一个边数为 $n$ 的凸多边形，其顶点沿逆时针方向标号依次为 $1,2,3, \ldots , n$。最开始凸多边形中有 $n$ 条线段，即多边形的 $n$ 条边。这里我们用一个有序数对 $(a, b)$（其中 $a &lt; b$）来表示一条端点分别为顶点 $a, b$ 的线段。</p><p>在游戏开始之前，小 W 会进行一些操作。每次操作时，他会选中多边形的两个互异顶点，给它们之间连一条线段，并且所连的线段不会与已存的线段重合、相交（<b>只拥有一个公共端点不算作相交</b>）。他会不断重复这个过程，直到<b>无法继续连线</b>，这样得到了状态 $S_0$。$S_0$ 包含的线段为凸多边形的边与小 W 连上的线段，容易发现这些线段将多边形划分为一个个三角形区域。对于其中任意一个三角形，其三个顶点为 $i,j,k(i &lt; j &lt; k)$，我们可以给这个三角形一个<b>标号</b>$j$，这样一来每个三角形都被标上了 $2,3, \ldots , n − 1$ 中的一个，且没有标号相同的两个三角形。</p><p>小 W 定义了一种「旋转」操作：对于当前状态，选定 $4$ 个顶点 $a,b,c,d$，使其满足 $1 ≤ a &lt; b &lt; c &lt;d ≤ n$ 且它们两两之间共有 $5$ 条线段——$(a,b), (b,c), (c,d), (a,d), (a,c)$，然后删去线段 $(a,c)$，并连上线段 $(b,d)$。那么用<b>有序数对</b>$(a, c)$即可唯一表示该次「旋转」。我们称这次旋转为 $(a,c)$<b>「旋转」</b>。显然每次进行完“旋转”操作后多边形中依然不存在相交的线段。</p><p>当小 W 将一个状态作为游戏初始状态展示给小 R 后，游戏开始。游戏过程中，小 R 每次可以对当前的状态进行「旋转」。在进行有限次「旋转」之后，小 R 一定会得到一个状态，此时无法继续进行「旋转」操作，游戏结束。那么将每一次「旋转」所对应的<b>有序数对</b>按<b>操作顺序</b>写下，得到的序列即为该轮游戏的<b>操作方案</b>。</p><p>为了加大难度，小 W 以 $S_0$ 为基础，产生了 $m$ 个新状态。其中第 $i$ 个状态 $S_i$ 为对 $S_0$ 进行一次「旋转」操作后得到的状态。你需要帮助小 R 求出分别以 $S_0, S_1, \ldots , S_m$ 作为游戏初始状态时，小 R 完成游戏所用的最少「旋转」次数，并根据小 W 的心情，有时还需求出<b>旋转次数最少</b>的<b>不同</b>操作方案数。由于方案数可能很大，输出时请对 $10^9+7$ 取模。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $W$，表示小 W 的心情。若 $W$ 为 $0$ 则只需求出最少的「旋转」次数，若 $W$ 为 $1$ 则还需求出「旋转」次数最少时的不同操作方案数。</p><p>第二行一个正整数 $n$，表示凸多边形的边数。</p><p>接下来 $n - 3$ 行，每行两个正整数 $x, y$，表示小 W 在 $S_0$ 中连的一条线段，端点分别为 $x, y$。保证该线段不与已存的线段重合或相交。</p><p>接下来一行一个整数 $m$，表示小 W 以 $S_0$ 为基础产生的新状态个数。</p><p>接下来 $m$ 行，每行两个整数。假设其中第 $i$ 行为 $a, b$，表示对 $S_0$ 进行 $(a, b)$「旋转」后得到 $S_i$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共 $m + 1$ 行。</p><p>若 $W$ 为 $0$ 则每一行输出一个整数，第 $i(i = 1,2, \ldots , m, m + 1)$ 行输出的整数表示 $S_{i−1}$ 作为初始局面的最少「旋转」次数。</p><p>若 $W$ 为 $1$ 则每一行输出两个整数，第 $i(i = 1,2, \ldots , m, m + 1)$ 行输出的两个整数依次表示 $S_{i−1}$ 作为初始局面的最少「旋转」次数、「旋转」次数最少的不同操作方案数对 $10^9+7$ 取模的结果。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+6
+1 3
+1 5
+3 5
+1
+1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2
+3 1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+12
+1 10
+1 6
+1 3
+3 6
+3 5
+6 10
+6 8
+8 10
+10 12
+4
+1 10
+1 3
+6 8
+1 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 210
+7 210
+8 70
+8 105
+8 140</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 1 说明】</p><p>以 $S_0$ 为初始状态，最少「旋转」次数为 $3$，有 $2$ 种方案，如下：</p><p><img width="869" height="279" alt="1.PNG" src="../upload/6746f6f14e.png"><br></p><p>以 $S_1$ 为初始状态，最少「旋转」次数为 $3$，有 $1$ 种方案，如下：</p><p><img width="1191" height="188" alt="0.PNG" src="../upload/85dcc61e8b.png"><br></p><p><br></p><p>【数据规模】</p><p><img width="879" height="464" alt="00.PNG" src="../upload/644202b2f9.png"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

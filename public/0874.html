@@ -1,0 +1,174 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2009]细胞探索</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0874 [SDOI2009]细胞探索</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>生物课上，老师开始为同学们介绍细胞。为了加深同学们的印象，老师在一张 $N×M$ 的矩阵中定义了一种细胞，矩阵中仅有井号“<code>#</code>”和点“<code>.</code>”： 细胞由细胞核、细胞质及细胞膜构成。细胞核是一个 $4$ 连通（上下左右相连）的全为“<code>#</code>”的连通块，它必须实心，即不能存在一个 $4$ 连通的“<code>.</code>”连通块被其完全包围（所谓完全包围指的是，这个“<code>.</code>”连通块不能位于矩阵边界相邻，且它的 $4$ 相邻格子均属于包含它的“<code>#</code>”连通块）。细胞膜是一个 $8$ 连通（上下左右，以及 $4$ 个对角方向）的全为“<code>#</code>”的非实心连通块。细胞膜仅包围一个 $4$ 连通的区域，且这个区域内有且仅有一个细胞核，这个区域剩下的位置全为“<code>.</code>”。</p><p>所有连通块必须极大化，即一个 $8$ 连通块周围不能找到一个“<code>#</code>”与这个连通块的任意一个“<code>#</code>”$8$ 连通；同样，对于一个 $4$ 连通块周围不能找到一个“<code>#</code>”与这个连通块的任意一个“<code>#</code>”$4$ 连通。 现在，老师画了一幅图画，并让小 E 回答图画中一共有几个细胞，并把图画中不属于任何一个细胞的“<code>#</code>”改成“<code>.</code>”。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个用空格分隔的正整数 $N$ 和 $M$，表示矩阵的高和长。 接下来一个 $N$ 行 $M$ 列的矩阵，矩阵中仅含井号“<code>#</code>”和点“<code>.</code>”，保证没有多余字符。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个整数，表示输入的矩阵中的细胞数。 接下来一个 $N$ 行 $M$ 列的矩阵，矩阵中仅含井号“<code>#</code>”和点“<code>.</code>”，表示更改后的图画。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12 13
+.###..#####..
+#...#.#....#.
+#.#.#.#..#.#.
+#...#..#...#.
+.###.#..###..
+....#..##...#
+..........###
+##########..#
+#...........#
+#.###...###.#
+#...........#
+#############</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+......#####..
+......#....#.
+......#..#.#.
+.......#...#.
+........###..
+.......##....
+.............
+.............
+.............
+.............
+.............
+.............</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9 14
+#########.....
+#.......#....#
+#.#####.#...#.
+#.#...#.#..#..
+#.#.#.#.#.#..#
+#.#...#.#..#..
+#.#####.#...#.
+#.......#....#
+#########.....</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+..............
+..............
+..#####.......
+..#...#.......
+..#.#.#.......
+..#...#.......
+..#####.......
+..............
+..............</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7 15
+#######.#######
+#.....#.#.....#
+#.###.#.#.###.#
+#.#.#.#.#.#...#
+#.###.#.#.###.#
+#.....#.#.....#
+#######.#######</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+........#######
+........#.....#
+........#.###.#
+........#.#...#
+........#.###.#
+........#.....#
+........#######</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模和约定】</p><p>对于 $20\%$ 的数据，满足 $1 ≤ N, M ≤ 20$。</p><p>另有 $20\%$ 的数据，满足所有“<code>#</code>”都属于某一个正确的细胞。</p><p>对于 $100\%$ 的数据，满足 $1 ≤ N, M ≤ 1,000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

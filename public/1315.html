@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI/JSOI2014]宅男计划</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1315 [AHOI/JSOI2014]宅男计划</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>自从迷上了拼图，JYY 就变成了个彻底的宅男。为了解决温饱问题，JYY 不得不依靠叫外卖来维持生计。</p><p>外卖店一共有 $N$ 种食物，分别由 $1$ 到 $N$ 编号。第 $i$ 种食物有固定的价钱 $P_i$ 和保质期 $S_i$。第 $i$ 种食物会在 $S_i$ 天后过期。JYY 是不会吃过期食物的。比如 JYY 如果今天点了一份保质期为 $1$ 天的食物，那么 JYY 必须在今天或者明天把这个食物吃掉，否则这个食物就再也不能吃了。保质期可以为 $0$ 天，这样这份食物就必须在购买当天吃掉。</p><p>JYY 现在有 $M$ 块钱，每一次叫外卖需要额外付给送外卖小哥外送费 $F$ 元。送外卖的小哥身强力壮，可以瞬间给 JYY 带来任意多份食物。</p><p>JYY 想知道，在满足每天都能吃到至少一顿没过期的外卖的情况下，他可以最多宅多少天呢？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含三个整数 $M$，$F$ 和 $N$。</p><p>接下来 $N$ 行，第 $i$ 行包含两个整数 $P_i$ 和 $S_i$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出仅包含一行一个整数表示 JYY 可以宅的最多的天数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>32 5 2
+5 0
+10 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>JYY的最佳策略是：</p><p>第一天买一份食物 $1$ 和一份食物 $2$ 并且吃一份食物 $1$；</p><p>第二天吃一份食物 $2$；</p><p>第三天买一份食物 $1$ 并且吃掉。</p><p>【数据规模】</p><p>对于 $100\%$ 的数据，$0 \leq S_i \leq 10^{18},\ 1 \leq F,P_i,M \leq 10^{18},\ 1 \leq N \leq 200$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

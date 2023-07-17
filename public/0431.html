@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2002Day2] A highway and the seven dwarfs</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0431 [CEOI2002Day2] A highway and the seven dwarfs</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Once upon a time, there was a land where several families of dwarfs were living. This land was called Dwarﬂand. Each family lived in one house. Dwarfs were often visiting their friends from the other families. Because the Dwarﬂand was free of evil, it happened that each dwarf visited each other during some short period of time.</p><p>Once, the humans living in countries around Dwarﬂand decided to build several straight highways. As the humans weren’t aware of the dwarfs, some of the planned highways passed through Dwarﬂand. The dwarfs discovered this and were quite unhappy about it. The dwarfs are very little, and also very slow, so they are unable to cross the highway safely.</p><p>The dwarfs managed to get the plans for the highways somehow, and now they need your help. They would like to keep on visiting each other, so they don’t like those highways which divide their houses into two non-empty parts. After they ﬁnd out which highways they don’t like, they will magically prevent the humans from building them.</p><p>The dwarfs are very little, and cannot reach the keyboard. So they asked for your help.</p><p><b>Task</b></p><p>Given is a number $N$ of points (houses) in the plane and several straight lines (highways). For each given line, your task is to determine whether all $N$ points lie on the same side of the line or not. Your program has to output the answer for the currently processed line<b>before</b>reading the description of the next one. You may assume that no highway passes through any of the houses.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Your program is supposed to read the input from the standard input (stdin in C/C++) and write its output to the standard output (stdout in C/C++). The ﬁrst line of the input contains one integer $N (0 ≤ N ≤ 100000)$. $N$ lines follow, the $i-th$ of them contains two real numbers $x_i, y_i (−10^9 ≤ x_i,y_i ≤ 10^9)$ separated by a single space – the coordinates of the $i-th$ house.</p><p>Each of the following lines contains four real numbers $X_1, Y_1, X_2, Y_2 (−10^9 ≤ X_1,Y_1,X_2,Y_2 ≤ 10^9)$ separated by a single space. These numbers are the coordinates of two diﬀerent points $[X_1,Y_1]$ and $[X_2,Y_2]$, lying on the highway.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>For each line of input, your program is supposed to output a line containing the string “GOOD” if all of the given points are on the same side of the given line, or “BAD” if the given line divides the points. After writing out each line of the output, your program should ﬂush the output buﬀer. In the following sections you may ﬁnd an example on how to do this.</p><p>We will terminate your program after it gives the answer for the last highway. Your program is not supposed to terminate by itself. You may assume that there will be no more than $100000$ highways.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+0.0 0
+6.00 -0.001
+3.125 4.747
+4.747 0.47
+5 3 7 0
+4 -4.7 7 4.7
+4 47 4 94</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>GOOD
+BAD
+BAD</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Input and output routines in C/C++</p><p>Reading one line (note that there is no space after the last<code>%lf</code>):</p><pre><code>double X_1, Y_1, X_2, Y_2;
+scanf(" %lf %lf %lf %lf",&amp;X_1,&amp;Y_1,&amp;X_2,&amp;Y_2);<br></code></pre><p>Writing the output for one line:</p><pre><code>printf("GOOD\n"); fflush(stdout);<br></code></pre><p><b>Warning</b></p><p>You are adviced to use the<b>double</b>data type to store real numbers. Note that when using real number arithmetics, rounding errors may occur. If you want to test, whether two real numbers $x, y$ are equal, don’t test whether $x = y$ but whether $|x−y| &lt; ε$ (where $ε$ is a small constant, $10^{−4}$ will suﬃce).<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

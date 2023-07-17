@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[FJOI2017]矩阵填数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0547 [FJOI2017]矩阵填数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给定一个 $h \times w$ 的矩阵，矩阵的行编号从上到下依次为 $1,\ldots,h$，列编号从左到右依次 $1,\ldots,w$。</p><p>在这个矩阵中你需要在每个格子中填入 $1,\ldots,m$ 中的某个数。给这个矩阵填数的时候有一些限制，给定 $n$ 个该矩阵的子矩阵，以及该子矩阵的最大值 $v$，要求你所填的方案满足该子矩阵的最大值为 $v$。</p><p>现在，你的任务是求出有多少种填数的方案满足这 $n$ 个限制。</p><p>两种方案是不一样的当且仅当两个方案至少存在一个格子上有不同的数。由于答案可能很大，你只需要输出答案 $\! {\bmod} 1000000007$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入数据的第一行为一个数 $T$，表示数据组数。</p><p>对于每组数据，第一行为四个数 $h,w,m,n$。</p><p>接下来 $n$ 行，每一行描述一个子矩阵的最大值 $v$。每行为五个整数 $x_1,y_1,x_2,y_2,v$，表示一个左上角为 $(x_1,y_1)$，右下角为 $(x_2,y_2)$ 的子矩阵的最大值为 $v$（$1\leq x_1\leq x_2\leq h,\ 1\leq y_1\leq y_2\leq w$）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据输出一行，表示填数方案 $\! \bmod 1000000007$ 后的值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+3 3 2 2
+1 1 2 2 2
+2 2 3 3 1
+4 4 4 4
+1 1 2 3 3
+2 3 4 4 2
+2 1 4 3 2
+1 2 3 4 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>28
+76475</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 20% 的数据：$n \leq 2$。</p><p>另有 20%&nbsp; 的数据：$1 \leq h, w\leq 50$。</p><p>对于 100% 的数据：$T \leq 5,1 \leq h, w, m \leq 10000,1 \leq v \leq m, 1 \leq n \leq 10$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

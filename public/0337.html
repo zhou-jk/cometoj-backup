@@ -1,0 +1,145 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]牛的旅行</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0337 [USACO]牛的旅行</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>农民 John 的农场里有很多牧区。有的路径连接一些特定的牧区。一片所有连通的牧区称为一个牧场。但是就目前而言，你能看到至少有两个牧区通过任何路径都不连通。这样，Farmer John 就有多个牧场了。</p><p>John 想在农场里添加一条路径（注意，恰好一条）。对这条路径有以下限制：</p><p>一个牧场的直径就是牧场中最远的两个牧区的距离（本题中所提到的所有距离指的都是最短的距离）。考虑如下的有 5 个牧区的牧场，牧区用 “*” 表示，路径用直线表示。每一个牧区都有自己的坐标：</p><pre><code>                (15,15) (20,15)
+                 D       E
+                 *-------*
+                 |     _/|
+                 |   _/  |
+                 | _/    |
+                 |/      |
+        *--------*-------*
+        A        B       C
+     (10,10)  (15,10) (20,10)
+</code></pre><p>这个牧场的直径大约是 $12.07106$，最远的两个牧区是 A 和 E，它们之间的最短路径是 A-B-E。</p><p>这里是另一个牧场：</p><pre><code>                         *F(30,15)
+                        / 
+                      _/  
+                    _/    
+                   /      
+                  *------* 
+                  G      H
+                  (25,10)   (30,10)
+</code></pre><p>在目前的情景中，他刚好有两个牧场。John 将会在两个牧场中各选一个牧区，然后用一条路径连起来，使得连通后这个新的更大的牧场有最小的直径。</p><p>注意，如果两条路径中途相交，我们不认为它们是连通的。只有两条路径在同一个牧区相交，我们才认为它们是连通的。</p><p>输入文件包括牧区、它们各自的坐标，还有一个如下的对称邻接矩阵：</p><pre><code>　 A  B  C  D  E  F  G  H 
+A  0  1  0  0  0  0  0  0
+B  1  0  1  1  1  0  0  0
+C  0  1  0  0  1  0  0  0
+D  0  1  0  0  1  0  0  0
+E  0  1  1  1  0  0  0  0
+F  0  0  0  0  0  0  1  0
+G  0  0  0  0  0  1  0  1
+H  0  0  0  0  0  0  1  0
+</code></pre><p>其他邻接表中可能直接使用行列而不使用字母来表示每一个牧区。输入数据中不包括牧区的名字。</p><p>输入文件至少包括两个不连通的牧区。</p><p>请编程找出一条连接两个不同牧场的路径，使得连上这条路径后，这个更大的新牧场有最小的直径。输出那个最小可能的直径。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行：一个整数 $N (1 \le N \le 150)$，表示牧区数</p><p>第 $2$ 到 $N+1$ 行：每行两个整数 $X,Y (0 \le X ,Y \le 100000)$，表示 $N$ 个牧区的坐标。注意每个牧区的坐标都是不一样的。</p><p>第 $N+2$ 行到第 $2*N+1$ 行：每行包括 $N$ 个数字（$0$ 或 $1$）表示如上文描述的对称邻接矩阵。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>只有一行，包括一个实数，表示所求直径。数字保留六位小数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8
+10 10
+15 10
+20 10
+15 15
+20 15
+30 15
+25 10
+30 10
+01000000
+10111000
+01001000
+01001000
+01110000
+00000010
+00000101
+00000010</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>22.071068</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

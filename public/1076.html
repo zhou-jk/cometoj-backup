@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #4]求和</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1076 [Contest #4]求和</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">对于一个正整数 $n$，考虑如下的操作，直到 $n$ 变成一个小于 $10$ 的数，记为 $f(n)$：假设 $n$ 的十进制表示为 $a_1a_2\dots a_m$，把相邻两位求和并对 $10$ 取模得到另一个数 $n^\prime$（也就是说，如果 $n^\prime$ 的十进制是 $b_1b_2\dots b_{m-1}$，那么 $b_i=(a_i+a_{i+1}) \bmod 10$），如果$n^\prime$ 有前导零，那么这些零要去掉。比如：$f(5516)=3$，因为 $5516 \to 67 \to 3$；$f(1234)=0$，因为 $1234 \to 357 \to 82 \to 0$；$f(10009)=0$，因为 $10009 \to 1009 \to 109 \to 19 \to 0$；$f(5555)=0$，因为 $5555 \to 0$。</p><p>现在给出两个数$l$和$r$，希望你求出$\sum\limits_{n=l}^{r} f(n)$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">输入有多组数据。第一行有一个整数 $T$ ($1 \le T \le 10^5$)，表示测试数据组数。然后对于每组数据：<br></p><p>第一行包含 $2$ 个正整数 $l$ 和 $r$ ($1 \le l \le r \le 10^{18}$)。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据，输出一个非负整数表示 $\sum\limits_{n=l}^{r} f(n)$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+2 3
+3 4
+10 100
+2 454
+3 444</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+7
+406
+2054
+1997</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

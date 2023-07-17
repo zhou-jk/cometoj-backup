@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #9]【XR-3】小道消息</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1360 [Contest #9]【XR-3】小道消息</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">小 X 想探究小道消息传播的速度有多快，于是他做了一个社会实验。</p><p>有 $n$ 个人，其中第 $i$ 个人的衣服上有一个数 $i+1$。小 X 发现了一个规律：当一个衣服上的数为 $i$ 的人在某一天知道了一条信息，他会在第二天把这条信息告诉衣服上的数为 $j$ 的人，其中 $\gcd(i,j)=1$（即 $i,j$ 的最大公约数为 $1$）。在第 $0$ 天，小 X 把一条小道消息告诉了第 $k$ 个人，小 X 想知道第几天时所有人都会知道这条小道消息。</p><p>可以证明，一定存在所有人都知道了这条小道消息的那一天。</p><p>提示：你可能需要用到的定理——<a href="https://baike.baidu.com/item/%E4%BC%AF%E7%89%B9%E5%85%B0-%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%AE%9A%E7%90%86/2053704" target="_blank">伯特兰-切比雪夫定理</a>。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">一行 $2$ 个正整数 $n,k$。</p><p>数据范围：</p><ul><li>$2 \le n \le 10^{14}$。</li><li>$1 \le k \le n$。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个正整数，表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 1
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 4
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">【样例 $1$ 说明】</p><p>$3$ 个人的衣服上的数分别为<code>2 3 4</code>。</p><p>在第 $0$ 天，小 X 把一条小道消息告诉了第 $1$ 个人，他的衣服上的数为<code>2</code>。</p><p>在第 $1$ 天，第 $1$ 个人会告诉第 $2$ 个人，因为 $\gcd(2,3) = 1$，但他不会告诉第 $3$ 个人，因为 $\gcd(2,4) = 2 \ne 1$。</p><p>在第 $2$ 天，第 $2$ 个人会告诉第 $3$ 个人，因为 $\gcd(3,4) = 1$，这时所有人都知道了这条小道消息，因此答案为 $2$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

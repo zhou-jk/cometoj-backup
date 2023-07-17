@@ -1,0 +1,141 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2014]抄卡组</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0772 [HNOI2014]抄卡组</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一天闲着无聊的小 L 找来了当前正火爆的游戏《炉石传说》来玩，但是怎么打怎么输，于是他大喊一声「我要抄卡组！」就找来了游戏传说组第一名的游戏高手小 H 的直播来看。</p><p>但是小 L 家的网络技术还停留在拨号，看着直播画面又是卡顿又是花屏，他不给力的网络让他完全无法记录小 H 展示的给力的卡组。小 L 周围都是学霸没有人玩游戏想去帮他这个忙，但是学霸们都热衷于讨论各种信息学问题。</p><p>于是他想到了一个方法：由于每次花屏的屏幕位置不一样，于是小 H 每次总能记录下卡组的一些部分，如果这样记录多次，不就有可能还原出小 L 想要的一个卡组么？但是存在的一个问题是，小 H 每次展示的卡组有可能不一样，所以他想知道他每次看直播抄下来几次的卡组碎片是否一致。</p><p>这样一来小 H 将他遇到的游戏问题抽象成这样一个学术问题让学霸（你）解决：若<code>*</code>可以匹配任意长度的字符串（包含 $0$ 个），问所有字符串是否两两匹配。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个正整数 $T$，表示了数据组数。</p><p>接下来包含 $T$ 组数据：</p><p>每组数据的第一行是一个正整数 $N$，表示该组数据的字符串个数。</p><p>接下来 $N$ 行，每行一个字符串，字符串仅包含小写字母、数字、通配符<code>*</code>。</p><p><b>注意</b>：数据为 UNIX 格式，中间包含空行，你可以采用逐字符读入的方式。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出包含 $T$ 行，每行一个字母<code>Y</code>或者<code>N</code>，<code>Y</code>表示这组数据中所有字符串两两匹配，<code>N</code>表示这组数据中至少有一对字符串不匹配。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+2
+1234567890*1234567890
+1234567890a1234567890
+2
+1234567890*1234567890
+1234567890*1234567890
+2
+1234*67890a1234567890
+1234567890*1234567890
+2
+1234567890*1234567890
+1234567890a12345*7890
+2
+1234567890*1234567890
+*12345
+2
+12345*67890
+1234567890*1234567890
+2
+1234567890*1234567890
+12345*
+2
+1234567890*1234567890
+*67890
+2
+67890*
+1234567890*1234567890
+2
+1234567890*a*1234567890
+1234567890*1234567890</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Y
+Y
+Y
+Y
+N
+Y
+Y
+Y
+N
+Y</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $100\%$ 的数据，满足 $N \leq 100000,\ T \leq 10$，输入不超过 $\texttt{10M}$，$N\times$ 最长字符串长度不超过 $2 \times 10^8$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

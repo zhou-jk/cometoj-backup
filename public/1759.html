@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CCPC2017秦皇岛站-M] Safest Buildings</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1759 [CCPC2017秦皇岛站-M] Safest Buildings</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：64 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>PUBG is a multiplayer online battle royale video game. In the game, up to one hundred players parachute onto an island and scavenge for weapons and equipment to kill others while avoiding getting killed themselves. BaoBao is a big fan of the game, but this time he is having some trouble selecting the safest building.</p><p>There are $n$ buildings scattering on the island in the game, and we consider these buildings as points on a two­dimensional plane. At the beginning of each round, a circular safe area whose center is located at (0, 0) with radius $R$ will be spawned on the island. After some time, the safe area will shrink down towards a random circle with radius $r(r \le R)$. The whole new safe area is entirely contained in the original safe area (may be tangent to the original safe area), and the center of the new safe area is uniformly chosen within the original safe area.</p><p>The buildings covered by the new safe area is called the safe buildings. Given the radius of the safe areas and the positions of the buildings, BaoBao wants to find all the buildings with the largest probability to become safe buildings.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>There are multiple test cases. The first line of input contains an integer $T$, indicating the number of test cases. For each test case:</p><p>The first line contains three integers $n(1 \le n \le 100)$, $R$ and $r(1 \le r \le R \le 10^4)$, indicating the number of buildings and the radius of two safe circles.</p><p>The following $n$ lines each contains 2 integers $x_i$ and $y_i(-10^4 \le x_i,y_i \le 10^4)$, indicating the coordinate of the buildings. Here we assume that the center of the original safe circle is located at $(0,0)$, and all the buildings are inside the original circle.</p><p>It's guaranteed that the sum of $n$ over all test cases will not exceed 5000.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>For each test case output two lines.</p><p>The first line contains an integer $m$, indicating the number of buildings with the highest probability to become safe buildings.</p><p>The second line contains $m$ integers separated by a space in ascending order, indicating the indices of safest buildings.</p><p>Please, DO NOT output extra spaces at the end of each line.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+3 10 5
+3 4
+3 5
+3 6
+3 10 4
+-7 -6
+4 5
+5 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+1
+2
+2 3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2010普及组-D]三国游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0198 [2010普及组-D]三国游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小涵很喜欢电脑游戏，这些天他正在玩一个叫做《三国》的游戏。</p><p>在游戏中，小涵和计算机各执一方，组建各自的军队进行对战。游戏中共有 $N$ 位武将（$N$ 为偶数且不小于 $4$），任意两个武将之间有一个“默契值”，表示若此两位武将作为一对组合作战时，该组合的威力有多大。游戏开始前，所有武将都是自由的（称为自由武将，一旦某个自由武将被选中作为某方军队的一员，那么他就不再是自由武将了），换句话说，所谓的自由武将不属于任何一方。游戏开始，小涵和计算机要从自由武将中挑选武将组成自己的军队，规则如下：小涵先从自由武将中选出一个加入自己的军队，然后计算机也从自由武将中选出一个加入计算机方的军队。接下来一直按照 “小涵→计算机→小涵→......” 的顺序选择武将，直到所有的武将被双方均分完。然后，程序自动从双方军队中各挑出一对默契值最高的武将组合代表自己的军队进行二对二比武，拥有更高默契值的一对武将组合获胜，表示两军交战，拥有获胜武将组合的一方获胜。</p><p>已知计算机一方选择武将的原则是尽量破坏对手下一步将形成的最强组合，它采取的具体策略如下：任何时刻，轮到计算机挑选时，它会尝试将对手军队中的每个武将与当前每个自由武将进行一一配对，找出所有配对中默契值最高的那对武将组合，并将该组合中的自由武将选入自己的军队。</p><p>下面举例说明计算机的选将策略，例如，游戏中一共有 $6$ 个武将，他们相互之间的默契值如下表所示</p><p><img alt="屏幕快照 2019-05-30 下午3.15.10.png" src="../upload/167e489a79.png" width="400" height="393.6"><br></p><p>双方选将过程如下所示：</p><p><img alt="屏幕快照 2019-05-30 下午3.15.18.png" src="../upload/df7a8cdf1f.png" width="700" height="260.75"><br></p><p>小涵想知道，如果计算机在一局游戏中始终坚持上面这个策略，那么自己有没有可能必胜？如果有，在所有可能的胜利结局中，自己那对用于比武的武将组合的默契值最大是多少？</p><p>假设整个游戏过程中，对战双方任何时候均能看到自由武将队中的武将和对方军队的武将。为了简化问题，保证对于不同的武将组合，其默契值均不相同。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行为一个偶数 $N$，表示武将的个数。</p><p>第 $2$ 行到第 $N$ 行里，第（$i+1$）行有（$N−i$）个非负整数，每两个数之间用一个空格隔开，表示 $i$ 号武将和 $i+1$，$i+2$，......，$N$ 号武将之间的默契值（$0≤$ 默契值 $≤1,000,000,000$）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>若对于给定的游戏输入，存在可以让小涵获胜的选将顺序，则输出 $1$，并另起一行输出所有获胜的情况中，小涵最终选出的武将组合的最大默契值。</p><p>如果不存在可以让小涵获胜的选将顺序，则输出 $0$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+5 28 16 29 27
+23 3 20 1
+8 32 26
+33 11
+12</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+32</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8
+42 24 10 29 27 12 58
+31 8 16 26 80 6
+25 3 36 11 5
+33 20 17 13
+15 77 9
+4 50
+19</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+77</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 $1$ 说明】<br>首先小涵拿走 $5$ 号武将；计算机发现 $5$ 号武将和剩下武将中的 $4$ 号默契值最高，于是拿走 $4$ 号；小涵接着拿走 $3$ 号；计算机发现 $3$、$5$ 号武将之一和剩下的武将配对的所有组合中，$5$ 号和 $1$ 号默契值最高，于是拿走 $1$ 号；小涵接着拿走 $2$ 号；计算机最后拿走 $6$ 号。在小涵手里的 $2$，$3$，$5$ 号武将中，$3$ 号和 $5$ 号配合最好，默契值为 $32$，而计算机能推出的最好组合为 $1$ 号和 $6$ 号，默契值为 $27$。结果为小涵胜，并且这个组合是小涵用尽所有方法能取到的最好组合。</p><p>【数据范围】<br>对于 40% 的数据有 $N≤10$。<br>对于 70% 的数据有 $N≤18$。<br>对于 100% 的数据有 $N≤500$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

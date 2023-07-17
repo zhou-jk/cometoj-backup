@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>【XR-2】永恒</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1574 【XR-2】永恒</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：6000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<blockquote><p>我一直认为这世界没有永恒，如果非要说永恒，宇宙间唯一的永恒就是——所有的一切都会随着时光消失。——梧桐《那片星空，那片海》</p></blockquote><p>有一颗 $n$ 个点的永恒的树，树中每个点 $x(1 \le x \le n)$ 上都有一个永恒的字符串 $S(x)$。</p><p>但这世界没有永恒，所有的一切都会随着时光消失。我们只能给每个所谓永恒的东西定义一个永恒值 $f$。这个值本身没有意义，只是一个象征罢了。</p><ul><li><p>一个字符串 $S$ 的永恒值 $f(S)$ 定义为它的长度 $\mathrm{Len}(S)$，即：$f(S) = \mathrm{Len}(S)$</p></li><li><p>树上的一条无向路径 $K =[u, v] (u &lt; v)$ 指的是 $u,v$ 之间的简单路径（包括 $u, v$），其永恒值 $f(K)$ 定义为路径上所有不同的无序点对 $(x, y)(x \in K, y \in K, x &lt; y)$ 上的字符串 $S(x), S(y)$ 的最长公共前缀 $\mathrm{LCP}(S(x), S(y))$ 的永恒值 $f(\mathrm{LCP}(S(x), S(y)))$ 之和，即：$f(K) = \sum_{x \in K, y \in K, x &lt; y} f(\mathrm{LCP}(S(x), S(y)))$</p></li><li><p>一颗树 $T$ 的永恒值 $f(T)$ 定义为树上所有的无向路径 $[u, v] (u \in T, v \in T, u &lt; v)$ 的永恒值之和，即：$f(T) = \sum_{u \in T, v \in T, u &lt; v} f([u,v])$</p></li></ul><p>特别的是，树中每个点上的字符串都来自一颗永恒的以点 $1$ 为根的 Trie 树，即每个树中的点都对应着一个 Trie 树中的点，点上的字符串就是 Trie 树中从根节点到其对应的点形成的字符串。</p><p>你需要求出这棵树的永恒值，答案对 $998244353$ 取模。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个正整数 $n,m$，分别表示树的节点数和 Trie 树的节点数。</p><p>第二行包含 $n$ 个非负整数，第 $i$ 个数为 $a_i$，表示点 $i$ 在树上的父亲节点为 $a_i$，对于树的根节点 $root$，保证 $a_{root} = 0$。</p><p>第三行包含 $m$ 个非负整数，第 $i$ 个数为 $b_i$，表示点 $i$ 在 Trie 树上的父亲节点为 $b_i$，保证 $b_i &lt; i$，$b_1=0$。</p><p>第四行为一个由 $m$ 个字符构成的字符串，第 $i$ 个字符 $c_i$ 表示 Trie 树上点 $i$ 与它的父亲节点 $b_i$ 之间的边所代表的字符，保证 $c_1=\texttt{0}$，$c_i(2 \le i \le m)\in[\texttt{a},\texttt{z}]$。</p><p>第五行包含 $n$ 个正整数 $d_i$，表示树上的点 $i$ 对应着 Trie 树上的点 $d_i$，保证 $2 \le d_i \le m$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数，表示答案对 $998244353$ 取模后的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 17
+2 0 2
+0 1 2 3 4 5 6 7 8 4 10 11 12 3 14 15 16
+0mayqueenkingrket
+9 13 17</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Subtask 1（3 points）：$n, m \le 10$，时限 1s。<br>Subtask 2（5 points）：$n, m \le 100$，时限 1s。<br>Subtask 3（9 points）：$n, m \le 1000$，时限 1s。<br>Subtask 4（7 points）：$n, m \le 5000$，时限 2s。<br>Subtask 5（9 points）：$n, m \le 20000$，时限 3s。<br>Subtask 6（11 points）：$n, m \le 10^5$，时限 4s。<br>Subtask 7（19 points）：$m=2$，时限 3s。<br>Subtask 8（37 points）：无特殊限制，时限 10s。</p><p>对于 $100\%$ 的数据，$2 \le n,m \le 3\times 10^5$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

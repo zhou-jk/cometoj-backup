@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #1]复读游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1182 [Contest #1]复读游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">AA 发明了一个和复读有关的双人游戏，游戏的内容如下：</p><blockquote><p>两人手上各有 $N$ 张牌，每张牌上面个写了一个整数数字，两人都知道对方的每张牌上写的数字是什么。</p><p>游戏开始后，两人轮流出一张手上的牌，出出去的牌不会再收回。若某个人出的牌和上一家最后一次出的牌牌上写的数字一样，就输了。(注：先手在游戏最开始出的第一张牌无论是什么都不算输。)</p><p>若两人都把牌出完了但没有发生上述情况，则是平手。<br></p></blockquote><p>AA 找了 dreamoon 一起玩这个游戏，并且由 AA 当先手。现在告诉你 AA 和 dreamoon 手上的牌上写的数字各是什么，请问谁有必胜策略呢？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行有一个正整数 $T$ ($T \le 10^5$)，代表有几组数据。</p><p>接着每组数据共有三行。第一行有一个正整数 $N$ ($1 \le N \le 8$) 代表每个人手上初始牌数，第二行有 $N$ 个数代表 AA 手上的 $N$ 张牌写的数字，第三行也有 $N$ 个数代表 dreamoon 手上 $N$ 张牌上写的数字。两人牌上所写的数字都是范围在 $[1, 20]$ 区间内的整数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据，若 AA 有必胜策略，请输出"AA wins"，若 dreamoon 有必胜策略，请输出 "dreamoon wins"，若都没有必胜策略，请输出 "Draw"。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+1
+20
+20
+2
+1 2
+2 1
+2
+1 2
+3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>AA wins
+dreamoon wins
+Draw</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

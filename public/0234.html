@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2017普及组-C]棋盘</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0234 [2017普及组-C]棋盘</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有一个m × m的棋盘，棋盘上每一个格子可能是红色、黄色或没有任何颜色的。你现在要从棋盘的最左上角走到棋盘的最右下角。</p><p>任何一个时刻，你所站在的位置必须是有颜色的（不能是无色的），你只能向上、下、左、右四个方向前进。当你从一个格子走向另一个格子时，如果两个格子的颜色相同，那你不需要花费金币;如果不同，则你需要花费1个金币。</p><p>另外，你可以花费2个金币施展魔法让下一个无色格子暂时变为你指定的颜色。但这个魔法不能连续使用，而且这个魔法的持续时间很短，也就是说，如果你使用了这个魔法，走到了这个暂时有颜色的格子上，你就不能继续使用魔法；只有当你离开这个位置，走到一个本来就有颜色的格子上的时候，你才能继续使用这个魔法，而当你离开了这个位置（施展魔法使得变为有颜色的格子）时，这个格子恢复为无色。</p><p>现在你要从棋盘的最左上角，走到棋盘的最右下角，求花费的最少金币是多少?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>数据的第一行包含两个正整数m，n，以一个空格分开，分别代表棋盘的大小，棋盘上有颜色的格子的数量。</p><p>接下来的n行，每行三个正整数x，y，c，分别表示坐标为(x，y)的格子有颜色c。其中c=1代表黄色，c=0代表红色。相邻两个数之间用一个空格隔开。棋盘左上角的坐标为(1, 1)，右下角的坐标为(m, m)。</p><p>棋盘上其余的格子都是无色。保证棋盘的左上角，也就是(1，1)一定是有颜色的。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行，一个整数，表示花费的金币的最小值，如果无法到达，输出-1。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 7
+1 1 0
+1 2 0
+2 2 1
+3 3 1
+3 4 0
+4 4 1
+5 5 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+1 1 0
+1 2 0
+2 2 1
+3 3 1
+5 5 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【输入输出样例1说明】<br></p><p><img alt="屏幕快照 2019-05-29 下午1.20.02.png" src="../upload/6098f7e480.png" width="300" height="276"><br></p><p>从(1，1)开始，走到(1，2)不花费金币<br>从(1，2)向下走到(2，2)花费1枚金币<br>从(2，2)施展魔法，将(2，3)变为黄色，花费2枚金币<br>从(2，2)走到(2，3)不花费金币<br>从(2，3)走到(3，3)不花费金币<br>从(3，3)走到(3，4)花费1枚金币<br>从(3，4)走到(4，4)花费1枚金币<br>从(4，4)施展魔法，将(4，5)变为黄色，花费2枚金币<br>从(4，4)走到(4，5)不花费金币<br>从(4，5)走到(5，5)花费1枚金币<br>共花费8枚金币。</p><p>【输入输出样例2说明】<br></p><p><img alt="屏幕快照 2019-05-29 下午1.22.33.png" src="../upload/2163fc8977.png" width="300" height="233.0097087378641"><br></p><p>从(1，1)走到(1，2)，不花费金币<br>从(1，2)走到(2，2)，花费1金币<br>施展魔法将(2，3)变为黄色，并从(2，2)走到(2，3)花费2金币<br>从(2，3)走到(3，3)不花费金币<br>从(3，3)只能施展魔法到达(3，2)，(2，3)，(3，4)，(4，3)<br>而从以上四点均无法到达(5，5)，故无法到达终点，输出-1<br></p><p>【数据规模与约定】<br>对于30%的数据，$1≤m≤5，1≤n≤10$。<br>对于60%的数据，$1≤m≤20，1≤n≤200$。<br>对于100%的数据，$1≤m≤100，1≤n≤1,000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

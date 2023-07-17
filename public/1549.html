@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Ynoi]由乃的玉米田</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1549 [Ynoi]由乃的玉米田</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>由乃在自己的农田边散步，她突然发现田里的一排玉米非常的不美。</p><p>这排玉米一共有 $N$ 株，它们的高度参差不齐。</p><p>由乃认为玉米田不美，所以她决定出个数据结构题。</p><p><img src="../upload/39f4cdfae9.png" alt="image.png"></p><p>这个题是这样的：</p><p>给你一个序列 $a$，长度为 $n$，有 $m$ 次操作，每次询问一个区间是否可以选出两个数它们的差为 $x$，或者询问一个区间是否可以选出两个数它们的和为 $x$，或者询问一个区间是否可以选出两个数它们的乘积为 $x$，或者询问一个区间是否可以选出两个数它们的商为 $x$（没有余数），这三个操作分别为操作 $1,2,3,4$。</p><p>选出的这两个数可以是同一个位置的数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个数 $n,m$</p><p>后面一行 $n$ 个数表示 $a_i$</p><p>后面 $m$ 行每行四个数<code>opt l r x</code></p><p>$opt$ 表示这个是第几种操作，$l,r$ 表示操作的区间，$x$ 表示这次操作的 $x$</p><p>对于 $100\%$ 的数据，所有输入的数在 $[1,100000]$ 内</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个询问，如果可以，输出<code>yuno</code>，否则输出<code>yumi</code></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+1 1 2 3 4
+4 1 1 1
+1 1 2 2
+3 1 1 1
+3 5 5 16
+1 2 3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>yuno
+yumi
+yuno
+yuno
+yumi</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #10]如鱼得水</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1481 [Contest #10]如鱼得水</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>胖头鱼对于当今OI题目的部分分设置极其不满意，许多题目的部分分都只是简单的缩小范围或者给几个特殊的性质。但是胖头鱼只会写有特殊性质的数据的暴力，于是他爆零了。他很生气，认为智障选手也应该拥有得分。于是他在他出的题里面实现了他的信仰。</p><p>胖头鱼的题目中，每个测试点有 $26$ 个参数，分别命名为小写字母<code>a</code>到<code>z</code>，题目满分为 $100$ 分。部分分的分布非常有规律，具体如下：</p><p>一个测试点可以用一个有序 $26$ 元组唯一表示，其中的元素为 $[0,99]$ 中的整数。任意合法的二十六元组存在且仅存在一个测试点与它唯一对应。每个测试点的分数是一样的，也就是说，总共有 $100^{26}$ 个测试点，每个测试点分值为 $100^{-25}$。</p><p>一份程序能通过的测试点可以用一个只包含字母，数字，小于号，小括号，且运算，或运算的合法表达式表示。当表达式的值为真时，表示可以通过这个测试点。为了形式统一，所有数字均为两位数，如<code>04</code>,<code>11</code>等。其中，符号<code>&amp;</code>表示且，符号<code>|</code>表示或，且的优先级比或高，括号能改变运算顺序。</p><p>给出表达式（保证合法），请你回答这份程序的得分。</p><p>合法的表达式的定义如下：</p><ol><li><p>表达式<code>字母&lt;两位数字</code>合法。其中字母是a到z的小写字母，两位数字是两个0到9的字符的拼接，两个数字不会同时为 $0$。</p></li><li><p>如果表达式<code>A</code>、<code>B</code>都合法，那么<code>A&amp;B</code>与<code>A|B</code>均合法。</p></li><li><p>如果表达式<code>A</code>合法，则<code>(A)</code>也合法。</p></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行给出一个整数 $m$ 表示有 $m$ 个询问。</p><p>接下来行，每行一个字符串表示一个程序能通过的数据范围，保证字符串只由小写字母,<code>&lt;</code>,<code>&amp;</code>,<code>|</code>,<code>(</code>,<code>)</code>及数字组成，并且变量只有一个字母，保证表达式合法。</p><p>$1 \le m, |S| \le 80$，其中 $|S|$ 是询问串的长度。</p><p>注意，<code>&lt;</code>后的数字是两位数，不会出现<code>a&lt;3</code>、<code>c&lt;9</code>这样的情况。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 ​$m$ 行。</p><p>对于每个询问，假设该程序的得分为 $\frac{a}{b}$，其中 $a$ 和 $b$ 互质 ，那么请输出 $a \times b^{-1}$ 对 $10^9+9$ 取模的值。($b^{-1}$ 是 $b$ 在模 $10^9+9$ 下的乘法逆元，可以证明在本题的数据范围下，乘法逆元存在，且输出的答案唯一。)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+b<03&c<07
+b<15|a<02
+a<50&c<20&d<50|a<30&b<20
+(a<50|b<20)&(a<30|d<60)
+a<30|(a<04|b<20)&(d<60&c<20)
+a<08|b<20|c<04|d<10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>310000003
+700000023
+400000014
+48
+480000036
+65600037</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一组询问只跟参数b,c有关，有3%的数据满足b&lt;3，其中有7%的数据满足c&lt;7所以符合条件的数据占比为0.03*0.07=0.0021，得分为0.21</p><p>第二组询问只跟参数a,b有关，有15%的数据满足b&lt;15，有2%的数据满足a&lt;2，其中有0.15*0.02=0.003的数据同时满足这两个限制。由容斥原理得，符合条件的数据比例为0.15+0.02-0.003=0.167，得分为16.7。</p><p>第三组询问，&amp;的优先级更高，考虑|两边的式子，左边有三个参数，同时满足的数据占比为0.5*0.2*0.5=0.05右边是0.3*0.2=0.06，同时满足左右两边的式子（a&lt;30&amp;b&lt;20&amp;c&lt;20&amp;d&lt;50）的数据占比为0.3*0.2*0.2*0.5=0.006所以满足该式子的数据占比为0.05+0.06-0.006=0.104,得分为10.4</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2017]字符串</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0944 [HAOI2017]字符串</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给出一个字符串 $s$ 和 $n$个字符串 $p_i$，求每个字符串 $p_i$ 在 $s$ 中出现的次数。注意这里两个字符串相等的定义稍作改变。</p><p>给定一个常数 $k$，对于两个字符串 $a, b$，如果 $a = b$，那么满足：</p><ol><li>$|a| = |b|$；</li><li>对于所有 $a_i \neq b_i$ 以及 $a_j \neq b_j$，满足 $|i-j| &lt; k$。</li></ol><p>如果 $|a| = |b| \le k$，那么认为 $a = b$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $k$。</p><p>第二行一个字符串 $s$。</p><p>第三行一个整数 $n$，接下来 $n$ 行每行一个字符串表示 $p_i$。</p><p>所有的字符 ASCII 码在 $33$ 至 $126$ 之间。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $n$ 行，表示每个 $p_i$ 在 $s$ 中出现的次数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+xyz
+3
+xz
+y
+xzy</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+3
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>对于 $p_1$，$xz = xy, xz = yz$，因为都只有一个位置差异。</p><p>对于 $p_2$，$y = x, y = y, y = z$，同理。</p><p>对于 $p_3$，$xzy \neq xyz$，最大差 $= 1$ 不满足 $&lt; k = 1$。</p><p>【数据范围】</p><p>对于 $20\%$ 的数据，$|s|, \sum |p_i| \le 10^3$；</p><p>对于另外 $20\%$ 的数据，$n \le 100$；</p><p>对于另外 $20\%$ 的数据，$|s|, \sum |p_i| \le 5 \cdot 10^4$；</p><p>对于 $100\%$ 的数据，$|s|, \sum |p_i| \le 2 \cdot 10^5$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

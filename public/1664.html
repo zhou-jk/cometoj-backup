@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day3]石头剪刀布</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1664 [Wannafly冬令营2018Day3]石头剪刀布</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>可怜去观看了石头剪刀布的世界最高赛事 WRSP。</p><p>今年的比赛一共有 $n$ 名选手参加，在比赛开始时，每名选手都会收到一张卡片，这张卡片上写着剪刀、石头、布中的一个。显然初始的卡牌分配情况有 $3^n$ 种。</p><p>比赛场地一共有 $n$ 个座位，最开始第 $i$ 个选手坐在第 $i$ 个座位上。</p><p>接下来发生了 $m$ 个事件，事件有两种：</p><ul><li>$1\ x\ y$，主办方撤去了第 $y$ 个座位，原来在第 $y$ 个座位上的选手 $b$ 需要和 $x$ 个座位上的选手 $a$ 利用他们的卡片进行一场石头剪刀布比赛，如果 $b$ 赢了 $a$，则选手 $a$ 被淘汰，选手 $b$ 坐到第 $x$ 个座位上；否则（打平或者 $b$ 输了），则选手 $b$ 被淘汰，选手 $a$ 的坐位不变。</li><li>$2\ x$，可怜提出了一个问题，她想要知道在进行了之前的所有第 $1$ 类事件后，有多少种卡牌分配情况可以让第 $x$ 个选手到现在还没有被淘汰。</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入两个整数 $n,m(1 \leq n,m \leq 2 \times 10^5)$，表示选手个数和事件个数。</p><p>接下来 $m$ 行，每行描述了一个事件。如果是第一类事件，则输入三个整数 $1\ x\ y(1 \leq x,y \leq n, x \neq y)$ 且这两个座位在之前没有被撤去；如果是第二类事件，则输入两个整数 $2\ x(1 \leq x \leq n)$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个第二类事件，输出一行一个整数，表示这个选手还没有被淘汰的分配情况个数对 $998244353$ 取模后的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5
+2 1
+1 2 1
+2 1
+1 2 3
+2 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>27
+9
+6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

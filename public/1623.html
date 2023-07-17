@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ICPC WF 2018-B]Comma Sprinkler</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1623 [ICPC WF 2018-B]Comma Sprinkler</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>As practice will tell you, the English rules for comma placement are complex, frustrating, and often ambiguous. Many people, even the English, will, in practice, ignore them, and, apply custom rules, or, no rules, at all. Doctor Comma Sprinkler solved this issue by developing a set of rules that sprinkles commas in a sentence with no ambiguity and little simplicity. In this problem you will help Dr. Sprinkler by producing an algorithm to automatically apply her rules.</p><p>Dr. Sprinkler’s rules for adding commas to an existing piece of text are as follows:</p><ol><li><p>If a word anywhere in the text is preceded by a comma, find all occurrences of that word in the text, and put a comma before each of those occurrences, except in the case where such an occurrence is the first word of a sentence or already preceded by a comma.</p></li><li><p>If a word anywhere in the text is succeeded by a comma, find all occurrences of that word in the text, and put a comma after each of those occurrences, except in the case where such an occurrence is the last word of a sentence or already succeeded by a comma.</p></li><li><p>Apply rules $1$ and $2$ repeatedly until no new commas can be added using either of them.</p></li></ol><p>As an example, consider the text:</p><p><code>please sit spot. sit spot, sit. spot here now here.</code></p><p>Because there is a comma after<code>spot</code>in the second sentence, a comma should be added after<code>spot</code>in the third sentence as well (but not the first sentence, since it is the last word of that sentence). Also, because there is a comma before the word<code>sit</code>in the second sentence, one should be added before that word in the first sentence (but no comma is added before the word<code>sit</code>beginning the second sentence because it is the first word of that sentence). Finally, notice that once a comma is added after<code>spot</code>in the third sentence, there exists a comma before the first occurrence of the word<code>here</code>. Therefore, a comma is also added before the other occurrence of the word<code>here</code>. There are no more commas to be added so the final result is:</p><p><code>please, sit spot. sit spot, sit. spot, here now, here.</code></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The input contains one line of text, containing at least $2$ characters and at most $1000000$ characters. Each character is either a lowercase letter, a comma, a period, or a space. We define awordto be a maximal sequence of letters within the text. The text adheres to the following constraints:</p><ul><li><p>The text begins with a word.</p></li><li><p>Between every two words in the text, there is either a single space, a comma followed by a space, or a period followed by a space (denoting the end of a sentence and the beginning of a new one).</p></li><li><p>The last word of the text is followed by a period with no trailing space.</p></li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Display the result after applying Dr. Sprinkler’s algorithm to the original text.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>please sit spot. sit spot, sit. spot here now here.</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>please, sit spot. sit spot, sit. spot, here now, here.</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>one, two. one tree. four tree. four four. five four. six five.</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>one, two. one, tree. four, tree. four, four. five, four. six five.</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

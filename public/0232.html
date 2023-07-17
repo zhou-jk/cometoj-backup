@@ -1,0 +1,127 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2016普及组-A]买铅笔</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0232 [2016普及组-A]买铅笔</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>P老师需要去商店买n支铅笔作为小朋友们参加NOIP的礼物。她发现商店一共有3种包装的铅笔，不同包装内的铅笔数量有可能不同，价格也有可能不同。为了公平起见，P老师决定只买同一种包装的铅笔。</p><p>商店不允许将铅笔的包装拆开，因此P老师可能需要购买超过n支铅笔才够给小朋友们发礼物。</p><p>现在P老师想知道，在商店每种包装的数量都足够的情况下，要买够至少n支铅笔<u>最少</u>需要花费多少钱。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个正整数n，表示需要的铅笔数量。</p><p>接下来三行，每行用2个正整数描述一种包装的铅笔：其中第1个整数表示这种 包装内铅笔的数量，第2个整数表示这种包装的价格。</p><p>保证所有的7个数都是不超过10000的正整数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>1个整数，表示P老师最少需要花费的钱。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>57
+2 2
+50 30
+30 27</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>54</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9998
+128 233
+128 2333
+128 666</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>18407</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9999
+101 1111
+1 9999
+1111 9999</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>89991</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例1说明】</p><p>铅笔的三种包装分别是：</p><ul><li>2支装，价格为2；</li><li>50支装，价格为30；</li><li>30支装，价格为27。</li></ul><p>P老师需要购买至少57支铅笔。</p><p>如果她选择购买第一种包装，那么她需要购买29份，共计2×29=58支，需要花费的钱为2×29=58。</p><p>实际上，P老师会选择购买第三种包装，这样需要买2份。虽然最后买到的铅笔数量更多了，为30×2=60支，但花费却减少为27×2=54，比第一种少。</p><p>对于第二种包装，虽然每支铅笔的价格是最低的，但要够发必须买2份，实际的花费达到了30×2=60，因此P老师也不会选择。</p><p>所以最后输出的答案是54。</p><p>【数据规模及约定】</p><p>每个测试点的数据规模及特点如下表：<br></p><p><img alt="屏幕快照 2019-05-29 下午2.20.43.png" src="../upload/6c81d57836.png" width="500" height="231.59784560143626"><br></p><p>上表中“整倍数”的意义为：若为对号，表示对应数据所需要的铅笔数量n—定是每种包装铅笔数量的整倍数（这意味着一定可以不用多买铅笔）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

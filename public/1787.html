@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #12]Binary Matrix Transform</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1787 [Contest #12]Binary Matrix Transform</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给出两个$n \times m$的$01$矩阵$A$和$B$，每行上往下依次编号为$1, 2, \dots, n$，每列从左往右依次标号为$1,2,\dots,m$。</p><p>你每次可以选$A$里面两个位置$(r_1,c_1)$和$(r_2,c_2)$ ($1 \le r_1, r_2 \le n, 1 \le c_1, c_2 \le m$)，满足$r_1=r_2,|c_1-c_2|=c$或者$c_1=c_2,|r_1-r_2|=r$，然后你可以这两个位置上的数字取反($1$变成$0$，$0$变成$1$)。</p><p>问能否从$A$变成$B$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入有多组数据。第一行有一个整数$T$，表示测试数据组数。然后对于每组数据：</p><p>第一行包含$4$个正整数$n$，$m$，$r$和$c$ ($1 \le nm \le 10^6, 1 \le r, c \le 2$)。</p><p>接下来$n$行，每行包含一个长度为$m$的$01$串，代表矩阵$A$。</p><p>再接下来$n$行，每行包含一个长度为$m$的$01$串，代表矩阵$B$。</p><p>保证所有数据中$nm$的和不超过$10^6$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据，输出<code>Yes</code>或者<code>No</code>，表示是否能够从$A$变成$B$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+2 3 1 1
+000
+000
+011
+110
+2 3 1 1
+000
+000
+111
+111
+2 3 2 1
+000
+000
+111
+111</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Yes
+Yes
+No</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

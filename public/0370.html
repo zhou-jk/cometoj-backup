@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2009Day1-C]二叉查找树</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0370 [NOI2009Day1-C]二叉查找树</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>已知一棵特殊的二叉查找树。根据定义，该二叉查找树中每个结点的<b>数据值</b>都比它左<b>子树</b>结点的<b>数据值</b>大，而比它右<b>子树</b>结点的<b>数据值</b>小。</p><p>另一方面，这棵查找树中每个结点都有一个<b>权值</b>，每个结点的<b>权值</b>都比它的儿子结点的<b>权值</b>要小。</p><p>已知树中所有结点的<b>数据值</b>各不相同；所有结点的<b>权值</b>也各不相同。这时可得出这样一个有趣的结论：如果能够确定树中每个结点的<b>数据值</b>和<b>权值</b>，那么树的形态便可以唯一确定。因为这样的一棵树可以看成是按照<b>权值</b>从小到大顺序插入结点所得到的、按照<b>数据值</b>排序的二叉查找树。</p><p>一个结点在树中的<b>深度</b>定义为它到树根的距离加1。因此树的根结点的深度为1。</p><p>每个结点除了<b>数据值</b>和<b>权值</b>以外，还有一个<b>访问频度</b>。我们定义一个结点<b>在树中的访问代价</b>为它的<b>访问频度</b>乘以它在树中的<b>深度</b>。<b>整棵树的访问代价</b>定义为所有结点<b>在树中的访问代价</b>之和。</p><p>现在给定每个结点的<b>数据值</b>、<b>权值</b>和<b>访问频度</b>，你可以根据需要修改某些结点的<b>权值</b>，但每次修改你会付出K的<b>额外修改代价</b>。你可以把结点的<b>权值</b>改为任何实数，但是修改后所有结点的<b>权值</b>必须仍保持互不相同。现在你要解决的问题是，<b>整棵树的访问代价</b>与<b>额外修改代价</b>的和最小是多少?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个正整数$N$和$K$。$N$为结点的个数，$K$为每次修改所需的额外修改代价。<br>接下来一行包含$N$个非负整数，是每个结点的<b>数据值</b>。<br>再接下来一行包含$N$个非负整数，是每个结点的<b>权值</b>。<br>再接下来一行包含$N$个非负整数，是每个结点的<b>访问频度</b>。</p><p>所有的数据值、权值、访问频度均不超过400000。每两个数之间都有一个空格分隔，且行尾没有空格。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>只有一个数字，即你所能得到的<b>整棵树的访问代价</b>与<b>额外修改代价</b>之和的最小值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 10
+1 2 3 4
+1 2 3 4
+1 2 3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>29</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>输入的原图是左图，它的访问代价是1×1+2×2+3×3+4×4=30。最佳的修改方案是把输入中的第3个结点的权值改成0，得到右图，<b>访问代价</b>是1×2+2×3+3×1+4×2=19，加上<b>额外修改代价</b>10，一共是29。<br></p><p><img alt="屏幕快照 2019-06-06 下午6.07.13.png" src="../upload/755676c94e.png" width="500" height="254.79233226837061"><br></p><p>【数据规模】</p><p>40%的数据满足$N≤ 30$;<br>70%的数据满足$N≤ 50$;<br>100%的数据满足$N≤ 70, 1 ≤K≤ 30000000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

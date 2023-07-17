@@ -1,0 +1,166 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>【XR-1】俄罗斯方块</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1565 【XR-1】俄罗斯方块</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小粉兔最近沉迷一个名叫“俄罗斯方块”的游戏。</p><p>然而本题除了都有格子和颜色之外和俄罗斯方块没什么关系。</p><p>有一个 $n \times m$ 的方格图，小粉兔打算在其中画线。</p><p>他可以画线若干次，也可以不画。每次画线必须从一个没有被画过的方格中心开始。</p><p>只能往上下左右四个方向画线，对应方向上的方格记作目标方格。</p><p>目标方格能被画，当且仅当下面三种情况：</p><ol><li>如果目标方格没有被画过，则可以经过两个方格公共边的中点，直接画到目标方格中心，此时可以选择结束本次画线；</li><li>如果目标方格已经被画过，且这条画过的线是贯穿整个方格的线，则可以再画一条与这条线垂直的贯穿整个方格的线。对贯穿整个方格的线的定义为：这条线在方格中没有改变方向，上下贯穿或左右贯穿；</li><li>如果目标方格是本次画线的起笔方格，则可以经过两个方格公共边的中点，直接画到目标方格中心，此时必须结束本次画线。</li></ol><p>当然，不能画到整个方格图外面去。</p><p>虽然小粉兔制定了如此严苛的规则，但是他仍然有很多种颜色的笔，每次画线他可以选择 $c$ 种颜色中的任意一种用来画线。</p><p>不幸的是，方格图中有一些位置坏掉了，不能被经过，即在任意一次画线中不能画到坏掉的位置上。</p><p>小粉兔想知道，在这些限制下，最终能画出多少种本质不同的图呢？</p><p>小粉兔不想要求太多，当 $\mathrm{op}=0$ 时，两张图本质相同当且仅当不考虑坏掉的方格，它们看起来相同（每个位置上的线条方向和颜色均相同）。</p><p>而当 $\mathrm{op}=1$ 时，两张图本质相同当且仅当不考虑坏掉的方格，它们看起来相同，或旋转 $180 ^ {\circ}$ 后看起来相同。</p><p>因为答案可能很多，所以小粉兔只想知道答案对 $998244353$ 取模的结果。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个正整数 $n,m,c$ 和一个非 $0$ 即 $1$ 的数 $\mathrm{op}$。</p><p>接下来 $n$ 行，每行一个长度为 $m$ 的字符串，只包含<code>.</code>和<code>#</code>两种字符，描述方格图的情况。如果第 $i$ 行的第 $j$ 个字符为<code>#</code>则表示方格图中第 $i$ 行第 $j$ 列的方格坏掉了，否则没有坏掉。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个数，表示答案对 $998244353$ 取模的结果。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 2 0
+...</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 2 1
+...</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2 1 0
+..
+..</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>16</span></div></code></pre>
+							</div>
+							<h4>样例输入 4</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2 1 1
+..
+..</span></div></code></pre>
+							</div>
+							<h4>样例输出 4</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10</span></div></code></pre>
+							</div>
+							<h4>样例输入 5</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2 1 0
+..
+#.</span></div></code></pre>
+							</div>
+							<h4>样例输出 5</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+							<h4>样例输入 6</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5 1 0
+.....
+.#.#.
+....#
+.#...</span></div></code></pre>
+							</div>
+							<h4>样例输出 6</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>65856</span></div></code></pre>
+							</div>
+							<h4>样例输入 7</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5 1 1
+.....
+.#.#.
+....#
+.#...</span></div></code></pre>
+							</div>
+							<h4>样例输出 7</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>65616</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Subtask 1（12 points）：$n=1$，$\mathrm{op}=0$，没有坏掉的格子。</p><p>Subtask 2（13 points）：$c=1$，$\mathrm{op}=0$。</p><p>Subtask 3（12 points）：$c=1$，$\mathrm{op}=1$。</p><p>Subtask 4（14 points）：$m\le 5$，$\mathrm{op}=0$。</p><p>Subtask 5（25 points）：$\mathrm{op}=0$。</p><p>Subtask 6（8 points）：$n\bmod 2=0$，$\mathrm{op}=1$。</p><p>Subtask 7（8 points）：$n\bmod 2=1$，$m\bmod 2=0$，$\mathrm{op}=1$。</p><p>Subtask 8（8 points）：$n\bmod 2=1$，$m\bmod 2=1$，$\mathrm{op}=1$。</p><p>对于 $100\%$ 的数据，$1\le n,m\le 9$，$1\le c\le 10^6$，$\mathrm{op}\in \{ 0,1\}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

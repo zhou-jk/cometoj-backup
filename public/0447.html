@@ -1,0 +1,171 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CTSC2004Day2-C]公式编辑器</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0447 [CTSC2004Day2-C]公式编辑器</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>编辑数学公式总是一件烦人的事情，为此HURRICANE小组准备出一个编辑数学公式的软件。除了基本功能外，软件还将实现分式和矩阵输入。按照设想，软件应该是符合人性化设计的，必须最大限度的方便用户输入，尽管代价是软件开发极其复杂。幸好输入的方式和格式都已定好，你只需要编个处理程序就行了，下面是相关的约定和格式：</p><p>【格式控制的概念】</p><p><img alt="屏幕快照 2019-06-26 下午11.17.58.png" src="../upload/3695ed0605.png" width="600" height="593.1428571428571"><br><img alt="屏幕快照 2019-06-26 下午11.18.45.png" src="../upload/0175968fc5.png" width="600" height="654.2420027816412"><br></p><p><br></p><p>【光标控制】</p><p>应该指出，编辑框是可以层层嵌套的，比如一个编辑框内有一个矩阵，矩阵内又有若干个编辑框。我们说该编辑框比矩阵的编辑框高一级，矩阵内的所有编辑框同级，分式的两个编辑框也是同级的。注意：同级只是对一个矩阵或一个分式内的编辑框而言。</p><p>光标可以跳到编辑框的开始和末尾，也可以向四个方向移动，设光标所处的最低一级的编辑框为A。</p><ul><li>如果光标跳到编辑框的开始（末尾），则把光标置于A的前端（末端）；</li><li>当光标上下移动时<ul><li>如果A上(下)方有与A同级的编辑框B，则把光标置于B的前端，<br><img alt="屏幕快照 2019-06-26 下午11.21.48.png" src="../upload/a003df1600.png" width="300" height="97.03504043126685"><br></li><li>否则对比A高一级的编辑框作同样判断，若A是最高级别的编辑框，则不作任何处理。如图，竖线代表光标：<br><img alt="屏幕快照 2019-06-26 下午11.22.33.png" src="../upload/03ebaac471.png" width="350" height="203"><br></li></ul></li><li>当光标左（右）移动时<ul><li>若光标位于A的前端(末端)，<ul><li>如果左(右)边没有同级的编辑框，则光标将返回到更高一级的编辑框（若无则不作处理），置于矩阵或分式的左(右)边；</li><li>如果左(右)边有同级的编辑框B，则置于B的末端（前端）；<br><img alt="屏幕快照 2019-06-26 下午11.24.03.png" src="../upload/9afa0c1eda.png" width="400" height="57.76805251641138"><br></li></ul></li><li>若光标左（右）边是一个矩阵或分式，<ul><li>如果是分式，则光标置于分子编辑框的末端(前端)，<br><img alt="屏幕快照 2019-06-26 下午11.25.34.png" src="../upload/92acef1084.png" width="300" height="96.56992084432717"><br></li><li>如果是矩阵，则置于第 $m$ 列 $[\frac{n}{2}]$行（第 1 列 $[\frac{n}{2}]$行）编辑框的末端(前端)；<br><img alt="屏幕快照 2019-06-26 下午11.28.58.png" src="../upload/be4bba5bb3.png" width="350" height="229.6127562642369"><br></li></ul></li><li>若光标左（右）边是其它元素，则光标左（右）移一格。</li></ul></li></ul><p>【输入控制】</p><p>程序通过一系列的事件来实现输入，每个事件已经被转化成一个字符串：</p><ul><li>若字符串只含一个字符，则必为运算符、括号、数字或字母。此时程序在光标处插入该字符，然后光标右移一次；</li><li>若字符串为 Matrix 或 Fraction，则在光标处插入一个 的矩阵或分式，光标右移一次；</li><li>若字符串为 AddRow 或 AddCol，则在矩阵内光标所处的编辑框前插入一行编辑行或一列编辑列，并把光标置于新插入的行（列）中，若光标不在任何矩阵内，则不作处理；</li><li>字符串 Home、End、Left、Right、Up、Down 则分别代表光标置于编辑框的开始、末尾，光标向左、右、上、下移动一次。</li></ul><p>注意：由于该软件只用于输入表达式，并不对表达式进行任何处理，所以所输入的表达式可能并不正确。</p><p>【任务描述】</p><p>你需要根据给定的输入，给出满足题意的输出：</p><ul><li>输入中包括用如上所述格式所描述的操作序列。序列中可能包括运算符、括号、数字、字母、矩阵或分数的插入及光标的移动控制；</li><li>你需要根据输入的操作序列，完成对表达式的输入；我们约定初始时的表达式为空；</li><li>然后你需要在输出文件中用我们约定的格式打印出这个表达式。注意表达式行末不要有空格。</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每行有一个代表事件的字符串，直到结束。我们约定矩阵的规模不超过 $10 \times 10$，总的元素个数不超过 $10,000$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>按规定的格式输出编辑框的结果，空白的地方用空格补上，每行行末不能有多余空格。最后一行行末保留一个回车。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-
+5
+Fraction
+1
+Down
+6
+Right
+*
+Matrix
+AddCol
+AddCol
+1
+Right
+2
+Right
+3
+Right
+*
+Matrix
+AddRow
+AddRow
+1
+Down
+2
+Down
+3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>                [1]
+     1
+ - 5---*[1 2 3]*[2]
+     6
+                [3]</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
++
+Fraction
+1
+Down
+1
++
+Fraction
+1
+Down
+1
++
+Fraction
+1
+Down
+x
+Up
+Up
+Right
+Right
+Home
+Up
+End
++
+2
+-
+2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>    1+2 – 2
+1+-----------
+        1
+   1+-------
+         1
+      1+---
+         x</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【评分方法】</p><p>本题目一共有十个测试点，每个测试点的分数为总分数的10%。对于每个测试点来说，如果你的答案完全符合标准答案（注意空格和回车），那么你将得到该测试点全部的分数，否则得0分。</p><p>提示：在所有的数据中，有三个数据不包括分式，有三个数据不包括矩阵。</p><p>【样例1说明】<br></p><p><img alt="屏幕快照 2019-06-26 下午11.48.39.png" src="../upload/29266cf480.png" width="600" height="382.5563909774436"><br><img alt="屏幕快照 2019-06-26 下午11.49.25.png" src="../upload/aeefc716aa.png" width="600" height="760.876897133221"><br></p><p>【样例2说明】<br></p><p><img alt="屏幕快照 2019-06-26 下午11.50.07.png" src="../upload/c78838d217.png" width="600" height="302.51256281407035"><br><img alt="屏幕快照 2019-06-26 下午11.51.00.png" src="../upload/c3e8cca13e.png" width="600" height="1053.7931034482758"><img alt="屏幕快照 2019-06-26 下午11.51.22.png" src="../upload/7961d41cbf.png" width="600" height="753.4562211981566"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

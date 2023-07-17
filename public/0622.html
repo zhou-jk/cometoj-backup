@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2015]排序</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0622 [SDOI2015]排序</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 A 有一个 $1 \sim 2 ^ n$ 的排列 $A[1 \ldots 2 ^ n]$，他希望将 $A$ 数组从小到大排序，小 A 可以执行的操作有 $n$ 种，每种操作最多可以执行一次，对于所有的 $i$（$1 \leq i \leq n$），第 $i$ 种操作为将序列从左到右划分为 $2 ^ {n - i + 1}$ 段，每段恰好包括 $2 ^ {i - 1}$ 个数，然后整体交换其中两段。小 A 想知道可以将数组 A 从小到大排序的不同的操作序列有多少个，小 A 认为两个操作序列不同，当且仅当操作个数不同，或者至少一个操作不同（种类不同或者操作位置不同）。</p><p>下面是一个操作示例：$n = 3, A[1 \ldots 8] = [3, 6, 1, 2, 7, 8, 5, 4]$。</p><p>第一次操作，执行第三种操作，交换 $A[1 \ldots 4]$ 和 $A[5 \ldots 8]$，交换后的 $A[1 \ldots 8]$ 为 $[7,8,5,4,3,6,1,2]$；</p><p>第二次操作，执行第一种操作，交换 $A[3]$ 和 $A[5]$，交换后的 $A[1 \ldots 8]$ 为 $[7,8,3,4,5,6,1,2]$；</p><p>第三次操作，执行第二种操作，交换 $A[1 \ldots 2]$ 和 $A[7 \ldots 8]$，交换后的 $A[1 \ldots 8]$ 为 $[1,2,3,4,5,6,7,8]$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行一个整数 $n$。</p><p>第二行 $2 ^ n$ 个整数，表示 $A[1 \ldots 2 ^ n]$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个整数表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+7 8 5 6 1 2 4 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$1 \leq N \leq 12$<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

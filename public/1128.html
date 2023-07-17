@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2011]括号修复</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1128 [HNOI2011]括号修复</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一个合法的括号序列是这样定义的：</p><ol><li>空串是合法的。</li><li>如果字符串<code>S</code>是合法的，则<code>(S)</code>也是合法的。</li><li>如果字符串<code>A</code>和<code>B</code>是合法的，则<code>AB</code>也是合法的。</li></ol><p>现在给你一个长度为 $N$ 的由<code>(</code>和<code>)</code>组成的字符串，位置标号从 $1$ 到 $N$。对这个字符串有下列四种操作：</p><ol><li><code>Replace a b c</code>：将 $[a,b]$ 之间的所有括号改成 $c$。例如：假设原来的字符串为：<code>))())())(</code>，那么执行操作<code>Replace 2 7</code>后原来的字符串变为：<code>)(((((()(</code>。</li><li><code>Swap a b</code>：将 $[a,b]$ 之间的字符串翻转。例如：假设原来的字符串为：<code>))())())(</code>，那么执行操作<code>Swap 3 5</code>后原来的字符串变为：<code>))))(())(</code>。</li><li><code>Invert a b</code>：将 $[a,b]$ 之间的<code>(</code>变成<code>)</code>,<code>)</code>变成<code>(</code>。例如：假设原来的字符串为：<code>))())())(</code>，那么执行操作<code>Invert 4 8</code>后原来的字符串变为：<code>))((()(((</code>。</li><li><code>Query a b</code>：询问 $[a,b]$ 之间的字符串至少要改变多少位才能变成合法的括号序列。改变某位是指将该位的<code>(</code>变成<code>)</code>或<code>)</code>变成<code>(</code>。注意执行操作<code>Query</code>并不改变当前的括号序列。例如：假设原来的字符串为：<code>))())())(</code>，那么执行操作<code>Query 3 6</code>的结果为 $2$，因为要将位置 $5$ 的<code>)</code>变成<code>(</code>并将位置 $6$ 的<code>(</code>变成<code>)</code>。</li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行是用空格隔开的两个正整数 $N$ 和 $M$，分别表示字符串的长度和将执行的操作个数。</p><p>第二行是长度为 $N$ 的初始字符串 $S$。接下来的 $M$ 行是将依次执行的 $M$ 个操作，其中操作名与操作数之间以及相邻操作数之间均用空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出文件包含 $T$ 行，其中 $T$ 是输入的将执行的 $M$ 个操作中<code>Query</code>操作出现的次数。<code>Query</code>操作的每次出现依次对应输出中的一行，该行只有一个非负整数，表示执行对应<code>Query</code>操作的结果，即：所指字符串至少要改变多少位才能变成合法的括号序列。输入数据保证问题有解。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5
+((((
+Replace 1 2 )
+Query 1 2
+Swap 2 3
+Invert 3 4
+Query 1 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>输入中有 $2$ 个<code>Query</code>操作，所以输出有 $2$ 行。执行第一个<code>Query</code>操作时的括号序列为<code>))((</code>，因改变第 $1$ 位可使 $[1,2]$ 之间的字符串变成合法的括号序列，故输出的第一行为<code>1</code>。执行第二个<code>Query</code>操作时的括号序列为<code>)(()</code>，因要改变第 $1$ 位和第 $2$ 位才能使 $[1,4]$ 之间的字符串变成合法的括号序列，故输出的第二行为<code>2</code>。</p><p>【数据规模】</p><p>$30\%$ 的数据满足 $N,M≤3000$。</p><p>$100\%$ 的数据满足 $N,M≤100000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CCPC2017秦皇岛站-B] Expected Waiting Time</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1748 [CCPC2017秦皇岛站-B] Expected Waiting Time</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：128 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>DreamGrid is a famous coach of competitive programming. He is so kind that many competitors are willing to ask him for advice.</p><p>DreamGrid meets exactly $n$ competitors every day in his office, and thus $n$ "arriving" events and $n$ "selecting" events will happen. An arriving event at time $t$ indicates that a competitor arrives at the waiting room of the office at time $t$, and a selecting event at time $t$ indicates that DreamGrid randomly selects (with equal probability) a competitor from the waiting room to talk with. Of course, if the selecting event happens, the waiting room must not be empty. After the talk, the competitor leaves the office and never comes back.</p><p>After several days, DreamGrid starts to be curious about the average of the total expected waiting time of every competitor in all valid cases. The waiting time of a competitor is the time he is selected by DreamGrid minus the time he arrives at the waiting room. A case is a sequence of length $2n$ consisting of $n$ arriving events and $n$ selecting events, where the $i$-­th event will happen at time $a_i$. For a valid case, it must be satisfied that when a selecting event happens, the waiting room must not be empty.</p><p>For example, let's denote an arriving event as 'A', and a selecting event as 'S'. If $n=2$, $a_1=1$, $a_2=2$, $a_3=3$ and $a_4=4$, then the sequence "AASS" is valid, but the sequence "ASSA" is not valid, as the "selecting" event happening at time $a_3=3$ is not valid.</p><p>As the answer may not be an integer, you are supposed to calculate $ab^{-1}$ mod $p$, where $\frac{a}{b}$ ($a$ and $b$ are coprime) is the answer, $p &gt; 2n$ and $p$ is prime, and $b^{-1}$ is the modular multiplicative inverse of $b$ with respect to the modulus $p$. It's easy to prove that the prime factors of $b$ will never be larger than $2n$.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>There are multiple test cases. The first line of input contains an integer $T$ $(1 \le T \le 10^4)$, indicating the number of test cases. For each test case:</p><p>The first line contains five integers $n$, $p$, $b_0$, $A$, $B$ $(1 \le n \le 10^6,2n &lt; p \le 2 \times 10^9,0 \le b_0,A,B&lt;p)$, where $p$ is a prime number. The meanings of $n$ and $p$ are described above. The rest of them is a generator of $a$, where $a_0=0$, $a_i=a_{i-1}+b_i+1$ and $b_i=(A\cdot b_{i-1}+B) \bmod p$ for all $1 \le i \le 2n$.</p><p>It is guaranteed that the sum of $n$ in all test cases does not exceed $10^7$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>For each test case, output one integer denoting the answer in a single line.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 1000000007 0 1 0
+2 1000000007 0 1 1
+2 7 5 2 3
+3 31 15 6 24
+20 1000000007 0 1 0
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+12
+1
+21
+879705565</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2016]大数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0759 [HNOI2016]大数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 B 有一个很大的数 $S$，长度达到了 $N$ 位；这个数可以看成是一个串，它可能有前导 $0$，例如<code>00009312345</code>。小 B 还有一个素数 $P$。</p><p>现在，小 B 提出了 $M$ 个询问，每个询问求 $S$ 的一个子串中有多少子串是 $P$ 的倍数（$0$ 也是 $P$ 的倍数）。例如 $S$ 为<code>0077</code>时，其子串<code>007</code>有六个子串：<code>0</code>,<code>0</code>,<code>7</code>,<code>00</code>,<code>07</code>,<code>007</code>；显然<code>0077</code>的子串<code>077</code>的六个子串都是素数 $7$ 的倍数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数：$P$。</p><p>第二行一个串：$S$。</p><p>第三行一个整数：$M$。</p><p>接下来 $M$ 行，每行两个整数 $\text{fr}, \text{to}$，表示对 $S$ 的子串 $S[\text{fr} \ldots \text {to}]$ 的一次询问。</p><p>注意：$S$ 的最左端的数字的位置序号为 $1$；例如 $S$ 为 $213567$，则 $S[1]$ 为 $2$，$S[1 \ldots 3]$ 为 $213$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $M$ 行，每行一个整数，第 $i$ 行是第 $i$ 个询问的答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>11
+121121
+3
+1 6
+1 5
+1 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+3
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>第一个询问问的是整个串，满足条件的子串分别有：<code>121121</code>、<code>2112</code>、<code>11</code>、<code>121</code>、<code>121</code>。</p><p>【数据范围】</p><p>对于所有的数据，$N,M \leq 100000$，$P$ 为素数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

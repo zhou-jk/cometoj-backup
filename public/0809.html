@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2019]白兔之舞</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0809 [HNOI2019]白兔之舞</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有一张顶点数为 $(L+1)\times n$ 的有向图。这张图的每个顶点由一个二元组 $(u,v)$ 表示 $(0\le u\le L,1\le v\le n)$。这张图不是简单图，对于任意两个顶点 $(u_1,v_1),(u_2,v_2)$，如果 $u_1&lt;u_2$，则从 $(u_1,v_1)$ 到 $(u_2,v_2)$ 一共有 $w(v_1,v_2)$ 条不同的边，如果 $u_1\ge u_2$ 则没有边。</p><p>白兔将在这张图上上演一支舞曲。白兔初始时位于该有向图的顶点 $(0,x)$。</p><p>白兔将会跳若干步。每一步，白兔会从当前顶点沿任意一条出边跳到下一个顶点。白兔可以在任意时候停止跳舞（也可以没有跳就直接结束）。当到达第一维为 $L$ 的顶点就不得不停止，因为该顶点没有出边。</p><p>假设白兔停止时，跳了 $m$ 步，白兔会把这只舞曲给记录下来成为一个序列。序列的第 $i$ 个元素为它第 $i$ 步经过的边。</p><p>问题来了：给定正整数 $k$ 和 $y\ (1\le y\le n)$，对于每个 $t\ (0\le t&lt;k)$，求有多少种舞曲（假设其长度为 $m$）满足 $m \bmod k=t$，且白兔最后停在了坐标第二维为 $y$ 的顶点？</p><p>两支舞曲不同定义为它们的长度（$m$）不同或者存在某一步它们所走的边不同。</p><p>输出的结果对 $p$ 取模。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行六个用空格隔开的整数 $n,k,L,x,y,p$。</p><p>接下来 $n$ 行，每行有 $n$ 个用空格隔开的整数，第 $i$ 行的第 $j$ 个数表示 $w(i,j)$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>依次输出 $k$ 行，每行一个数表示答案对 $p$ 取模的结果。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2 3 1 1 998244353
+2 1
+1 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>16
+18</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 4 100 1 3 998244353
+1 1 1
+1 1 1
+1 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>506551216
+528858062
+469849094
+818871911</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>$t=0$：</p><ul><li>路径长度为$0$，方案数为$1$。</li><li>路径长度为$2$，一共有六类路径：<ul><li>$(0,1)\to (1,1)\to (2,1)$ 该路径有 $w(1,1)\times w(1,1)=4$ 条；</li><li>$(0,1)\to (1,1)\to (3,1)$ 该路径有 $w(1,1)\times w(1,1)=4$ 条；</li><li>$(0,1)\to (2,1)\to (3,1)$ 该路径有 $w(1,1)\times w(1,1)=4$ 条；</li><li>$(0,1)\to (1,2)\to (2,1)$ 该路径有 $w(1,2)\times w(2,1)=1$ 条；</li><li>$(0,1)\to (1,2)\to (3,1)$ 该路径有 $w(1,2)\times w(2,1)=1$ 条；</li><li>$(0,1)\to (2,2)\to (3,1)$ 该路径有 $w(1,2)\times w(2,1)=1$ 条；</li></ul></li></ul><p>答案就为 $1+4+4+4+1+1+1=16$。</p><p>$t=1$：</p><ul><li>路径长度为$1$，一共有三类路径：<ul><li>$(0,1)\to (1,1)$ 该路径有 $w(1,1)=2$ 条；</li><li>$(0,1)\to (2,1)$ 该路径有 $w(1,1)=2$ 条；</li><li>$(0,1)\to (3,1)$ 该路径有 $w(1,1)=2$ 条；</li></ul></li><li>路径长度为 $3$，一共有三类路径：<ul><li>$(0,1)\to (1,1)\to (2,1)\to (3,1)$ 该路径有 $w(1,1)\times w(1,1)\times w(1,1)=8$ 条；</li><li>$(0,1)\to (1,1)\to (2,2)\to (3,1)$ 该路径有 $w(1,1)\times w(1,2)\times w(2,1)=2$ 条；</li><li>$(0,1)\to (1,2)\to(2,1)\to (3,1)$ 该路径有 $w(1,2)\times w(2,1)\times w(1,1)=2$ 条；</li></ul></li></ul><p>答案就为 $2+2+2+8+2+2=18$。</p><p>【数据规模】</p><p>对于全部数据，$p$ 为一个质数，$10^8&lt;p&lt;2^{30}$，$1\le n\le 3$，$1\le x\le n$，$1\le y\le n$，$0\le w(i,j)&lt;p$，$1\le k\le 65536$，$k$ 为 $p-1$ 的约数，$1\le L\le 10^8$。</p><p>对于每组测试点，特殊限制如下：</p><ul><li>测试点$1,2$：$L\le 10^5$；</li><li>测试点 $3$：$n=1,w(1,1)=1$，$k$ 的最大质因子为 $2$；</li><li>测试点 $4$：$n=1$，$k$ 的最大质因子为 $2$；</li><li>测试点 $5$：$n=1,w(1,1)=1$；</li><li>测试点 $6$：$n=1$；</li><li>测试点 $7,8$：$k$的最大质因子为 $2$。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

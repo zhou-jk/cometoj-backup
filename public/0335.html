@@ -1,0 +1,125 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]两只塔姆沃斯牛</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0335 [USACO]两只塔姆沃斯牛</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>两只牛逃跑到了森林里。农夫 John 开始用他的专家技术追捕这两头牛。你的任务是模拟他们的行为（牛和 John）。</p><p>追击在 $10 \times 10$ 的平面网格内进行。一个格子可以是：</p><p>一个障碍物，两头牛（它们总在一起），或者农民 John。两头牛和农民 John 可以在同一个格子内（当他们相遇时），但是他们都不能进入有障碍的格子。</p><p>一个格子可以是：</p><pre><code>. 空地 
+* 障碍物 
+C 两头牛 
+F 农民John 
+</code></pre><p>这里有一个地图的例子：</p><pre><code>*...*.....
+......*...
+...*...*..
+..........
+...*.F....
+*.....*...
+...*......
+..C......*
+...*.*....
+.*.*......
+</code></pre><p>牛在地图里以固定的方式游荡。每分钟，它们可以向前移动或是转弯。如果前方无障碍（地图边沿也是障碍），它们会按照原来的方向前进一步。否则它们会用这一分钟顺时针转 90 度。 同时，它们不会离开地图。</p><p>农民 John 深知牛的移动方法，他也这么移动。</p><p>每次（每分钟）农民 John 和两头牛的移动是同时的。如果他们在移动的时候穿过对方，但是没有在同一格相遇，我们不认为他们相遇了。当他们在某分钟末在某格子相遇，那么追捕结束。</p><p>读入十行表示农夫 John，两头牛和所有障碍的位置的地图。每行都只包含 10 个字符，表示的含义和上面所说的相同，你可以确定地图中只有一个 'F' 和一个 'C'。'F' 和 'C' 一开始不会处于同一个格子中。</p><p>计算农夫 John 需要多少分钟来抓住他的牛，假设牛和农夫 John 一开始的行动方向都是正北（即上）。 如果 John 和牛永远不会相遇，输出 $0$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1-10$ 行：每行 $10$ 个字符，表示如上文描述的地图。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个数字，表示 John 需要多少时间才能抓住牛们。如果 John 无法抓住牛，则输出 $0$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>*...*.....
+......*...
+...*...*..
+..........
+...*.F....
+*.....*...
+...*......
+..C......*
+...*.*....
+.*.*......</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>49</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

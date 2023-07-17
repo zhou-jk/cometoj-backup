@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[BJOI2013]压力</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0705 [BJOI2013]压力</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>如今，路由器和交换机构建起了互联网的骨架。处在互联网的骨干位置的核心路由器典型的要处理 100Gbit/s 的网络流量。他们每天都生活在巨大的压力之下。</p><p>小强建立了一个模型。这世界上有 $N$ 个网络设备，他们之间有 $M$ 个双向的链接。这个世界是连通的。在一段时间里，有 $Q$ 个数据包要从一个网络设备发送到另一个网络设备。</p><p>一个网络设备承受的压力有多大呢？很显然,这取决于 $Q$ 个数据包各自走的路径。不过，某些数据包无论走什么路径都不可避免的要通过某些网络设备。</p><p>你要计算：对每个网络设备，必须通过（包括起点、终点）他的数据包有多少个?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含 $3$ 个由空格隔开的正整数 $N,M,Q$。</p><p>接下来 $M$ 行，每行两个整数 $u,v$，表示第 $u$ 个网络设备（从 $1$ 开始编号）和第 $v$ 个网络设备之间有一个链接。$u$ 不会等于 $v$。两个网络设备之间可能有多个链接。</p><p>接下来 $Q$ 行，每行两个整数 $p,q$，表示第 $p$ 个网络设备向第 $q$ 个网络设备发送了一个数据包。$p$ 不会等于 $q$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $N$ 行，每行 $1$ 个整数，表示必须通过某个网络设备的数据包的数量。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 4 2
+1 2
+1 3
+2 3
+1 4
+4 2
+4 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+1
+1
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>设备 $1$、$2$、$3$ 之间两两有链接，$4$ 只和 $1$ 有链接。$4$ 想向 $2$ 和 $3$ 各发送一个数据包。显然，这两个数据包必须要经过它的起点、终点和 $1$。</p><p>【数据规模和约定】</p><p>对于 40% 的数据，$N,M,Q≤2000$</p><p>对于 60% 的数据，$N,M,Q≤40000$</p><p>对于 100% 的数据，$N≤100000$，$M,Q≤200000$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JLOI2011]小A的烦恼</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1374 [JLOI2011]小A的烦恼</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 A 是 B 公司的一名 PM(product market)。B 公司越来越注重产品使用情况分析，而小 A 的工作就是整天对着一堆数据分析来分析去，没完没了。其中有一个操作是小 A 很头疼的，就是要把多个 csv 文件的数据拷到同一个 excel 文件中去。</p><p>有一天小 A 满怀期待地找到了你，一个高级程序员，她想让你写程序帮她完成这个简单重复性工作。这不是坑爹吗，直接操作 excel 还要用到第三方的库，还不如直接写到 csv 文件中，让她再手动去转成 excel 文件。经过内部沟通协调，最终定下了这个方案。</p><p>csv 是一种 excel 可支持和格式，且存储方式非常简单。它实际上就是用“<code>,</code>”来分隔相邻的两个列。比如以下三行数据</p><pre><code>a,a,a
+b,,b
+,c,c
+</code></pre><p>表示的就是</p><p>$\begin{array}{|c|c|c|}  \hline a&amp;a&amp;a \\ \hline b&amp;&amp;b \\ \hline &amp;c&amp;c \\ \hline \end{array}$</p><p>现在小 A 想做的就是把各个文件按照从左往右的顺序拷到同一个文件当中。比如文件 $a$ 的数据是</p><pre><code>a1,b1,c1
+a2,b2
+</code></pre><p>文件 $b$ 的数据是</p><pre><code>a1,b1,c1,d1
+a2,b2
+a3,b3,c3
+a4
+</code></pre><p>那么她所希望的最终结果是</p><p><img src="../upload/63c64b389b.png" alt="000000.png"></p><p>这个结果在csv文件里就是</p><pre><code>a,,,b,,,
+a1,b1,c1,a1,b1,c1,d1
+a2,b2,,a2,b2,,
+,,,a3,b3,c3,
+,,,a4,,,
+</code></pre><p>以上结果的第一行是每一个文件的文件名，文件名与相应文件的第一列对齐。如果相应文件不止一列，那么其它列用空的单元格来补充。</p><p>输入的 csv 文件里保证了每一行的末尾都没有“<code>,</code>”，也就是说像 $a$ 文件的第 $2$ 行的第 $3$ 列一样，如那一格是空的，那么在 b2 后面是没有“<code>,</code>”的。</p><p>输出的 csv 文件里因为是程序的输出结果，为了简化程序，如果末尾是空的，那么还是会显式输出“<code>,</code>”，如以上的结果所示。</p><p>输入文件保证至少有一行一列非空。</p><p>输出的文件要保证下一个文件的第一列要紧邻着上一文件的最后一个非空列的右面。最后一个文件只输出到最后一个非空列。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有一个整数 $N (1≤N≤100)$，表示有 $N$ 个文件。</p><p>以下 $N$ 个数据块的第一行有一个整数 $M (1≤M≤100)$ 和一个字符串 $S (1≤length(S)≤100)$，$M$ 表示文件的行数，$S$ 表示文件名。</p><p>$N$ 个数据块的下面 $M$ 行中，每一行是一个字符串 $T(1≤length(T)≤100)$，$T$ 只包含小写字母和“<code>,</code>”。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出把 $N$ 个文件的数据合到一个文件的结果。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2 a
+a1,b1,c1
+a2,b2
+4 b
+a1,b1,c1,d1
+a2,b2
+a3,b3,c3
+a4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>a,,,b,,,
+a1,b1,c1,a1,b1,c1,d1
+a2,b2,,a2,b2,,
+,,,a3,b3,c3,
+,,,a4,,,</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

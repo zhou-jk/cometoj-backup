@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2011] Hotel</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0532 [CEOI2011] Hotel</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Your friend owns a hotel at the seaside in Gdynia. The summer season is just starting and he is overwhelmed by the number of oﬀers from potential customers. He asked you for help in preparing a reservation system for the hotel.</p><p>There are $n$ rooms for rent in the hotel, the $i$-th room costs your friend $c_i$ zlotys of upkeep (only if it is rented) and has a capacity of $p_i$ people. You may assume that the upkeep of a room is never cheaper than the upkeep of any smaller room, that is, of any room which can hold a smaller number of people.</p><p>The reservation system will be receiving multiple oﬀers, each of them specifying the amount of zlotys for rental of any room ($v_j$) for one particular day and the minimal capacity of the requested room ($d_j$). For each oﬀer, only a single room can be rented. And conversely: each room can accommodate only a single oﬀer. Your friend has decided not to accept more than $o$ oﬀers.</p><p>Knowing you are a skilled programmer, your friend asked you to implement the part of the system which ﬁnds the maximum proﬁt (total income from renting out rooms minus their upkeep) he can make by accepting some of the oﬀers.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line of the standard input contains three integers $n$, $m$, and $o$ ($1 \le n,m \le 500000, 1 \le o \le \min(m,n)$), denoting the number of rooms in the hotel, the number of oﬀers received and the maximum number of oﬀers your friend is willing to accept. The next $n$ lines describe the rooms, with the $i$-th of these lines containing two integers $c_i$, $p_i$ representing the upkeep of the room in zlotys and the capacity of the room ($1 \le c_i,p_i \le 10^9$). The next m lines describe the oﬀers, with the $j$-th of these lines containing two integers $v_j, d_j$ representing the oﬀered rental price in zlotys and the minimal capacity of the requested room ($1 \le v_j,d_j \le 10^9$).</p><p>You may assume that in test cases worth 40 points in total an additional inequality $n,m \le 100$ holds.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst and only line of the standard output should contain one integer equal to the maximum proﬁt your friend can achieve accepting at most $o$ of the oﬀers. Note that the proﬁt might get big.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2 2
+150 2
+400 3
+100 2
+200 1
+700 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>400</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Explanation of the example: Your friend can accept both oﬀers, renting out rooms number 2 and 3.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

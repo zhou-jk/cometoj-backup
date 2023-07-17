@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2013提高组Day2-B]花匠</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0089 [2013提高组Day2-B]花匠</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：128 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>花匠栋栋种了一排花，每株花都有自己的高度。花儿越长越大，也越来越挤。栋栋决定把这排中的一部分花移走，将剩下的留在原地，使得剩下的花能有空间长大，同时，栋栋希望剩下的花排列得比较别致。</p><p>具体而言，栋栋的花的高度可以看成一列整数 $h_1, h_2, ... , h_𝑛$。设当一部分花被移走后，剩下的花的高度依次为 $𝑔_1, 𝑔_2, ... , 𝑔_𝑚$，则栋栋希望下面两个条件中至少有一个满足：</p><p>条件 A：对于所有的 $𝑖，𝑔_{2𝑖}&gt; 𝑔_{2𝑖−1}$，且 $𝑔_{2𝑖}&gt; 𝑔_{2𝑖+1}$；<br>条件 B：对于所有的 $𝑖，𝑔_{2𝑖}&lt; 𝑔_{2𝑖−1}$，且 $𝑔_{2𝑖}&lt; 𝑔_{2𝑖+1}$。</p><p>注意上面两个条件在 $𝑚 = 1$ 时同时满足，当 $𝑚 &gt; 1$ 时最多有一个能满足。</p><p>请问，栋栋最多能将多少株花留在原地。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含一个整数 $𝑛$，表示开始时花的株数。</p><p>第二行包含 $𝑛$个整数，依次为 $h_1, h_2, ... , h_𝑛$，表示每株花的高度。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行，包含一个整数 $𝑚$，表示最多能留在原地的花的株数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+5 3 2 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】<br></p><p>有多种方法可以正好保留 3 株花，例如，留下第 1、4、5 株，高度分别为 5、1、2，满足条件 B。</p><p>【数据范围】<br></p><p>对于20%的数据，$𝑛 ≤ 10$；<br>对于30%的数据，$𝑛 ≤ 25$；<br>对于70%的数据，$𝑛 ≤ 1000，0 ≤ h_𝑖≤ 1000$；<br>对于100%的数据，$1 ≤ 𝑛 ≤ 100,000，0 ≤ h_𝑖≤ 1,000,000$，所有的 $h_𝑖$ 随机生成，所有随机数服从某区间内的均匀分布。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

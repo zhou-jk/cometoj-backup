@@ -1,0 +1,117 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2014]向量集</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0687 [SDOI2014]向量集</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>维护一个向量集合，在线支持以下操作：</p><ol><li><p><code>A x y</code>：加入向量 $(x, y)$；</p></li><li><p><code>Q x y l r</code>：询问第 $L$ 个到第 $R$ 个加入的向量与向量 $(x, y)$ 的点积的最大值。集合初始时为空。</p></li></ol><p>注：向量 $(x, y)$ 和 $(z, w)$ 的点积定义为 $xz+yw$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含整数 $N$ 和字符 $s$，分别表示操作数和数据类别；</p><p>接下来 $N$ 行，每行一个操作，格式如上所述。</p><p>请注意 $s \neq$<code>E</code>时，输入中的所有整数都经过了加密。你可以使用以下程序得到原始输入：</p><pre><code>inline int decode (int x long long lastans) {
+    return x ^ (lastans &amp; Ox7fffffff);
+}
+
+function decode
+begin
+
+</code></pre><p>其中<code>x</code>为程序读入的数，<code>lastans</code>为之前最后一次询问的答案。在第一次询问之前，<code>lastans</code>$=0$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对每个 $Q$ 操作，输出一个整数表示答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 A
+A 3 2
+Q 1 5 1 1
+A 15 14
+A 12 9
+Q 12 8 12 15
+Q 21 18 19 18</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>13
+17
+17</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于所有的数据，$1 \leq N \leq 4 \times 10^5$，操作中的向量坐标满足 $|x|,|y| \leq 10^8$，询问满足 $1 \leq L \leq R \leq T$，其中 $T$ 为已经加入的向量个数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

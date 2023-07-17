@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]二人的白皇</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1704 [Wannafly冬令营2018Day8]二人的白皇</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：10000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>从恩纳卡姆依出发反攻帝都的日子终于来临了。为了在行军的途中获得补给和避免遭到伏击，奥修特尔对与行军路径不超过一定距离的补给点/伏击点的数量很感兴趣。为了制定最优的行军计划，奥修特尔需要获得多条路径对应的答案。</p><p>大和的地图可以用一棵包含$n$个点的树表示。树是指无环的无向连通图。定义点$u,v$的距离为从$u$至$v$的简单路径上经过的边数，点$u$至路径$p$的距离为$u$与$p$上任意一点的距离的最小值。奥修特尔会做出$q$个询问，第$i$个询问是与路径$(u_i,v_i)$距离不超过$d_i$的点有多少个。</p><p>为了避免奥修特尔因为太累而索要加班费，你需要设计时间复杂度和空间复杂度尽量优秀的算法。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数$n(1 \le n \le 4 \times 10^5)$代表点数。</p><p>接下来$n-1$行，每行两个数字$x_i,y_i(1 \le x_i,y_i \le n)$，表示有一条连接$x_i,y_i$的边。保证输入数据为一棵树。</p><p>接下来一行一个整数$q(1 \le q \le 4 \times 10^5)$代表询问个数。</p><p>接下来$q$行每行三个整数$x_i,y_i,z_i$。令第$i$次询问的答案为$ans_i$，规定$ans_0=0$。询问的真实参数$u_i,v_i,d_i$需要按照以下方式计算：</p><p><img src="../upload/fd9c2e4cd8.png" alt="image"></p><p>其中$\bigoplus$代表二进制异或运算。</p><p>保证$1 \le u_i,v_i \le n, 0 \le d_i &lt; n$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共$q$行，每行一个整数。第$i$行输出与路径$(u_i,v_i)$距离不超过$d_i$的点的数量。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+1 2
+1 3
+2 4
+2 5
+2 6
+5
+4 4 0
+3 0 0
+0 5 6
+2 1 5
+6 6 7
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+6
+4
+5
+3
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

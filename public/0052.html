@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2005提高组-D]等价表达式</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0052 [2005提高组-D]等价表达式</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>明明进了中学之后，学到了代数表达式。有一天，他碰到一个很麻烦的选择题。这个题目的题干中首先给出了一个代数表达式，然后列出了若干选项，每个选项也是一个代数表达式，题目的要求是判断选项中哪些代数表达式是和题干中的表达式等价的。<br></p><p>这个题目手算很麻烦，因为明明对计算机编程很感兴趣，所以他想是不是可以用计算机来解决这个问题。假设你是明明，能完成这个任务吗？</p><p>这个选择题中的每个表达式都满足下面的性质：</p><ol><li>表达式只可能包含一个变量 ‘a’。</li><li>表达式中出现的数都是正整数，而且都小于 10000。</li><li>表达式中可以包括四种运算 ‘+’（加），‘-’（减），‘*’（乘），‘^’（乘幂），以及小括号 ‘(’，‘)’。小括号的优先级最高，其次是 ‘^’，然后是 ‘*’，最后是 ‘+’ 和 ‘-’。‘+’ 和 ‘-’ 的优先级是相同的。相同优先级的运算从左到右进行。（注意：运算符 ‘+’，‘-’，‘*’，‘^’ 以及小括号 ‘(’，‘)’ 都是英文字符）</li><li>幂指数只可能是 $1$ 到 $10$ 之间的正整数（包括 $1$ 和 $10$）。</li><li>表达式内部，头部或者尾部都可能有一些多余的空格。</li></ol><p>下面是一些合理的表达式的例子：</p><p>((a^1) ^ 2)^3，a*a+a-a，((a+a))，9999+(a-a)*a，1 + (a -1)^3，1^10^9……</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行给出的是题干中的表达式。第二行是一个整数 $n（2 \le n \le 26）$，表示选项的个数。后面 $n$ 行，每行包括一个选项中的表达式。这 $n$ 个选项的标号分别是 A，B，C，D……输入中的表达式的长度都不超过 50 个字符，而且保证选项中总有表达式和题干中的表达式是等价的。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包括一行，这一行包括一系列选项的标号，表示哪些选项是和题干中的表达式等价的。选项的标号按照字母顺序排列，而且之间没有空格。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>( a + 1) ^2
+3
+(a-1)^2+4*a
+a + 1+ a
+a^2 + 2 * a * 1 + 1^2 + 10 -10 +a -a</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>AC</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模】<br></p><p>对于 30% 的数据，表达式中只可能出现两种运算符 ‘+’ 和 ‘-’；</p><p>对于其它的数据，四种运算符 ‘+’，‘-’，‘*’，‘^’ 在表达式中都可能出现。</p><p>对于全部的数据，表达式中都可能出现小括号 ‘(’ 和 ‘)’。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

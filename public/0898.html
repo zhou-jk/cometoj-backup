@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JLOI/SHOI2016]成绩比较</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0898 [JLOI/SHOI2016]成绩比较</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>THU 的 G 系中有许许多多的大牛，比如小 R 的室友 B 神。B 神已经厌倦了与其他的同学比较 GPA（Grade Point Average，平均学分绩），他只在意 G 系中共有多少同学被他“碾压”。</p><p>B 神声称，在 G 系共有 $k$ 位同学被他碾压。同是 G 系大牛的 D 神则认为 B 神在吹牛，他查到了 B 神每门必修课在 G 系的排名。他用了 173 毫秒的时间就计算出了有多少种情况使得 B 神所说的话成立。现在他想考考聪明的你，看你是否也能求出这个情况数。</p><p>G 系共有 $n$ 位同学，$m$ 门必修课。这 $n$ 位同学的编号为 $0$ 到 $n - 1$ 的整数，其中 B 神的编号为 $0$ 号。这 $m$ 门必修课编号为 $0$ 到 $m - 1$ 的整数。如果在每门课上 A 获得的成绩均<b>小于等于</b>B 获得的成绩，则称 A 被 B 碾压。在 B 神的说法中，G 系共有 $k$ 位同学被碾压（不包括他自己），而其他 $n - k - 1$ 名同学则没有被他碾压。</p><p>D 神查到了 B 神每门必修课的排名。这里的排名是指，如果 B 神某门课的排名为 $r$，则表示有且仅有 $r - 1$ 位同学这门课的分数<b>大于</b>B 神的分数，有且仅有 $n - r$ 位同学这门课的分数<b>小于等于</b>B 神（不包括他自己）。</p><p>我们需要求出全系所有同学每门必修课得分的情况数，使其既能满足 B 神的说法，也能符合 D 神查到的排名。这里两种情况不同当且仅当有任意一位同学在任意一门课上获得的分数不同。你不需要像 D 神那么厉害，你只需要计算出情况数模 $10^9 + 7$ 的余数就可以了。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含三个正整数 $n, m, k$，分别表示 G 系的同学数量（包括 B 神）、必修课的数量和被 B 神碾压的同学数量。</p><p>第二行包含 $m$ 个正整数，依次表示每门课的最高分 $u_i$。</p><p>第三行包含 $m$ 个正整数，依次表示 B 神在每门课上的排名 $r_i$。保证 $1 \leq r_i \leq n$。</p><p>数据保证至少有 $1$ 种情况使得 B 神的描述成立。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个正整数，表示满足条件的情况数模 $10^9 + 7$ 的余数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2 1
+2 2
+1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3 2
+4 3 2
+2 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>54096</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 1 说明】</p><p>有且仅有以下 $10$ 种符合条件的情况：</p><p><img width="1007" height="445" alt="0.PNG" src="../upload/ef423f7b59.png"></p><p>【数据范围】</p><p><img alt="image.png" src="../upload/8d3a1450a7.png" width="702" height="306"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

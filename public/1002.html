@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2015]零件组装机</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1002 [SHOI2015]零件组装机</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>曾经发明了激光发生器的发明家 SHTSC 又公开了他的新发明：零件组装机——一种可以生产并组装零件的神秘装置。</p><p>一个零件是一张顶点由 $0$ 到 $n - 1$ 标号的无向图，零件组装机有以下两种功能：</p><ol><li>生产一个仅有一个顶点标号为 $0$ 而没有边的零件。</li><li>组合两个已有的零件 $G_1$、$G_2$，且 $G_2$ 的顶点数 $m$ 大于等于$G_1$ 的顶点数 $n$，得到新的零件 $G$。$G$ 的顶点集合是 $G_1$、$G_2$ 顶点集合的并集，并且 $G_2$ 的顶点 $i \ (0 \leq i &lt; m)$ 被重新标号为 $n + i$。$G$ 的边集是 $G_1$、$G_2$ 边集的并集再对所有标号为 $a \ (a \geq n)$ 的顶点添加一条连接 $(a, a \bmod n)$ 的无向边。</li></ol><p><img alt="image.png" src="../upload/55f0c16fc5.png" width="450" height="360.9"><br></p><p>现在 SHTSC 正在思考，对于一个给定的零件，能否由零件组装机生产组装得到。注意：零件是带标号的，这意味着两个零件即使仅有标号不同也被视为不同的零件。为了帮助你理解问题，SHTSC 特地给了你顶点数 $\leq 5$ 的所有零件的图例。</p><p><img alt="image.png" src="../upload/4c7c472239.png" width="600" height="533.1325301204819"><br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $t$，表示有 $t$ 组数据。</p><p>每组数据的第一行有两个整数 $n$，$m$，表示某个带标号的无向图有 $n$ 个从 $0$ 到 $n - 1$ 标号的顶点，以及 $m$ 条边。</p><p>接下来 $m$ 行，每行两个整数 $u, v$，表示一条从 $u$ 到 $v$ 的无向边。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据，输出一行。如果这个无向图可以被零件制造机制造，输出<code>YES</code>，否则输出<code>NO</code>。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+1 0
+2 0
+4 6
+0 1
+0 2
+1 2
+1 3
+2 3
+3 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>YES
+NO
+YES</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>第一组数据：生产出的零件直接满足条件。</p><p>第二组数据：为了产生两个点的零件，必然会发生一次组合操作，而组合操作必然会在两个点之间连边，故不能生产出给定的零件。</p><p>第三组数据：对应 $n = 4$ 的第二个图例。</p><p>【数据规模与约定】</p><p>对于 $5\%$ 的数据，图给定的图联通且 $m = n - 1$；</p><p>对于另 $15\%$ 的数据，$n \leq 5$；</p><p>对于 $50\%$ 的数据，$n \leq 1000$；</p><p>对于所有测试点，$t \leq 10$，$n, m \leq 100000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

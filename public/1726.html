@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2016Day2] Popeala</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1726 [CEOI2016Day2] Popeala</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<blockquote><p>The Romanian word "popeală" has its origins in a Romanian historical novella, "Alexandru Lăpușneanul", where the eponymous Prince of Moldavia uses a variation of the term to describe his upcoming revenge on his usurpers. The term was recently revived, somewhat surprisingly, in the Romanian programming contest scene. It's used to describe any situation in which the scientific committee makes life harder for the contestants in an unorthodox and (usually) involuntary way: very strict time limits, invalid test cases, wrong statements, stealing keyboards and other such mechanisms. This task is about such a "popeală".</p></blockquote><p>Consider a programming contest with $N$ contestants. The contest has only one task which has $T$ test cases. The scientific committee wants to group these test cases into at most $S$ subtasks.</p><p>How subtasks work: Each test case will belong to exactly one subtask. A subtask can contain any number of test cases, but it cannot be empty. If a contestant fails any test case of a certain subtask, his or her score for that subtask will be 0. Otherwise, the score for that subtask will be equal to the sum of score values of all of its test cases.</p><p>This is a common practice in programming contests, but the catch is that the scientific committee wants to do this after the contest is over. They know what test cases were solved correctly for each contestant and they want to group the tests into subtasks such as to minimize the total number of points scored in the contest.</p><p>Specifically, you are given an integer array<code>Points[]</code>of size<code>T.Points[i]</code>will contain the point value of the $i$-th test. You are also given a two-dimensional array<code>Results[][]</code>of size $N \times T$.<code>Results[i][j]</code>will be equal to $1$ if the $i$-th contestant has correctly solved the $j$-th test case. Otherwise, it will be equal to $0$. The committee has already decided that all subtasks will contain consecutive test cases. In other words, if test cases $X$ and $Y$ will end up in the same subtask, then every test case $Z$, with $X ≤ Z ≤ Y$ must also belong to this subtask.</p><p>You should help the committee. They want to know, for each value $1 ≤ K ≤ S$, what is the minimum total number of points that can be earned in the contest if they choose to group the test cases into exactly $K$ subtasks.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The input will contain three space-separated positive integers on its first line:  $N, T, S$. The second line will contain $T$ space-separated positive integers, representing the elements of the<code>Points[]</code>array. The following $N$ lines will each contain a binary string of length $T$, representing the elements of the<code>Results[][]</code>matrix.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The output should contain $S$ lines. The $i$-th line should contain a single integer: the minimum total number of points that can be earned in the contest if the test cases are grouped into $i$ subtasks.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 3 3
+4 3 5
+101
+110</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+8
+16</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><strong>Notes and constraints</strong></p><ul><li>$1 ≤ T ≤ 20 000$</li><li>$1 ≤ N ≤ 50$</li><li>$1 ≤ S ≤ \min(50, T)$</li><li>$1 ≤ Points[i] ≤ 10 000$, for all $1 ≤ i ≤ T$. It is also guaranteed that $(Points[1] + Points[2] + … + Points[T]) \times N ≤ 2 000 000 000$ for all test cases.</li><li>For test cases worth 8 points, $T ≤ 40$.</li><li>For test cases worth another 9 points, $40 &lt; T ≤ 500$.</li><li>For test cases worth another 9 points, $500 &lt; T ≤ 4 000$.</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

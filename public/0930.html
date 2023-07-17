@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2015]数组游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0930 [HAOI2015]数组游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有一个长度为 $N$ 的数组，甲乙两人在上面进行这样一个游戏：首先，数组上有一些格子是白的，有一些是黑的。然后两人轮流进行操作。每次操作选择一个白色的格子，假设它的下标为 $x$。接着，选择一个大小在 $1 \sim n/x$ 之间的整数 $k$，然后将下标为 $x$、$2x$、...、$kx$ 的格子都进行颜色翻转。不能操作的人输。</p><p>现在甲（先手）有一些询问。每次他会给你一个数组的初始状态，你要求出对于这种初始状态他是否有必胜策略。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $N$，表示数组的长度。</p><p>第二行一个整数 $K$，表示询问的个数。</p><p>接下来 $2K$ 行，每两行表示一次询问。</p><p>在这两行中，第一行一个正整数 $W$，表示数组中有多少个格子是白色的，第二行则有 $W$ 个 $1 \sim N$ 之间的正整数，表示白色格子的对应下标。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个询问，若先手必胜输出<code>Yes</code>，否则输出<code>No</code>。答案之间用换行隔开。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+2
+2
+1 2
+2
+2 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Yes
+No</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>在第一个询问中，甲选择点 $1$，然后将格子 $1 \times 1$ 和 $2 \times 1$ 翻过来即可。第二个询问中，无论甲选择哪个点，都只能翻掉一个格子。乙只需翻掉另一个格子就行了。</p><p>【数据规模与约定】</p><p>对于 $30 \%$ 的数据，$N \leq 20$；</p><p>对于 $50 \%$ 的数据，$N \leq 1000000$；</p><p>对于 $70 \%$ 的数据，$N \leq 10000000$；</p><p>对于 $100 \%$ 的数据，$N \leq 1000000000$，$K,W \leq 100$，不会有格子在同一次询问中多次出现。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

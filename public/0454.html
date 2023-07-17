@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CTSC2010Day1-C]性能优化</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0454 [CTSC2010Day1-C]性能优化</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：6000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>程序员小明正在开发一套大型软件，软件中有一段核心程序，用伪代码描述如下（假设所有变量初值均为 0，并且假定其中的数据类型均不会出现溢出）：<br></p><pre><code>Input a[0], a[1], ... , a[n - 1], b[0], b[1], ... , b[n - 1], C
+For i: 0 to n - 1
+    x[0, i] = a[i]
+For i: 0 to C - 1
+    For j: 0 to n - 1
+        For k: 0 to n - 1
+            x[i + 1, (j + k) mod n] = x[i + 1, (j + k) mod n] + b[k]x[i, j]
+Output x[C, 0] mod (n + 1), x[C, 1] mod (n + 1), ... , x[C, n - 1] mod (n + 1)<br></code></pre><p>但是，这段程序的效率非常低，它的时间复杂度高达 $Θ(n^2C)$。他想让你帮忙优化一下这个程序，当然要求输出相同的结果。为了使问题更简单，他保证输入的 $n$ 能表示成若干个不超过 $10$ 的正整数的乘积，并且 $n+1$ 是质数。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>规范起见，以下将下标统一写到数组名称的右下角。例如：$a_1$​ 对应伪代码中的<code>a[1]</code>，$x_{C,0}$​ 对应伪代码中的<code>x[C, 0]</code>。</p><p>输入的第一行包含两个非负整数 $n,C$。</p><p>接下来一行包含 $n$ 个非负整数 $a_0,a_1,⋯,a_{n−1}$​。</p><p>接下来一行包含 $n$ 个非负整数 $b_0,b_1,⋯,b_{n−1}$​。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出包含 $n$ 行，每行包含一个数。第 $i$ 行为 $x_{C,i}\mod(n+1)$ 的值。你需要保证输出的数在 $0∼n$ 之间。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 1
+1 2 3 4
+4 3 3 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+1
+0
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>总共10个测试点，数据范围满足：</p><p>测试点1：$n≤100,C≤100$<br>测试点2：$n≤100,C≤10^9$<br>测试点3：$n≤700,C≤10^9$<br>测试点4：$n≤700,C≤10^9$<br>测试点5：$n≤10^4,C=1$<br>测试点6：$n≤10^5,C=1$<br>测试点7：$n≤10^5,C=1$<br>测试点8：$n≤5 \times 10^5,C≤10^9$<br>测试点9：$n≤5 \times10^5,C≤10^9$<br>测试点10：$n≤5 \times10^5,C≤10^9$<br></p><p>在所有输入数据中，$a_i$​ 和 $b_i$​ 均不超过 $10^9$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2007] Ministry</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0506 [CEOI2007] Ministry</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Once upon a time in a country far, far away, the government established the Ministry of paperwork reduction. As you might have guessed, it was the largest ministry ever. The number of oﬃcials working there was truly enormous. However, the overall structure was very simple: The minister had at most three subordinate oﬃcials, each of them again had at most three subordinate oﬃcials and so on.</p><p>The recent elections have brought a new minister into this oﬃce. He is young, smart and full of unspoilt ideals. He decided to fulﬁll the name of his institution and start at his door-step. He observed that many parts of the hierarchical structure of the ministry are the same and therefore they must be doing the same job. And whenever two such units do the same, one of them is superﬂuous and it can be dissolved and all its oﬃcials laid oﬀ. Your job is to ﬁnd how many non-equivalent departments there are and to ﬁll in the necessary paperwork (i.e., write the result to the output in the correct format).</p><p><b>Task</b></p><p>You are given the organizational structure of the ministry. Each oﬃcial has exactly one superior oﬃcial and at most three subordinate oﬃcials (including, possibly, zero). The only exception is that the minister doesn’t have any superior (but he is still limited to three subordinates). There is no speciﬁc order of subordinates of any individual oﬃcial.</p><p>A department consists of an oﬃcial, all his subordinates, all their subordinates and so on. There are two special cases of departments: the full ministry (starting with the minister) and one-man departments consisting of a single oﬃcial who has no subordinates.</p><p>The depth of a department is the length of the longest chain $x_1,...,x_d$ of the oﬃcials in the department such that $x_i$ is the superior of $x_{i+1}$ for every $1 ≤ i&lt;d$. Observe that the depth of a one-man department is $1$.</p><p>Two departments $A$ and $B$ have the same structure if each oﬃcial $x$ from department $A$ corresponds to a unique oﬃcial $x'$ from department $B$ and vice versa each oﬃcial $x'$ of $B$ corresponds to an oﬃcial $x$ of $A$. In particular, the following must hold for all oﬃcials $x$ and $y$: $x$ is the superior of $y$ if and only if $x'$ (the oﬃcial corresponding to $x$) is the superior of $y'$ (the oﬃcial corresponding to $y$). Observe that if the departments $A$ and $B$ have the same structure, then the head of the department $A$ corresponds to the head of $B$ and both the departments have the same depth and the same number of oﬃcials.</p><p>In the following picture, the departments $A$ and $B$ have the same structure, while the structure of the department $C$ is diﬀerent from both $A$ and $B$:</p><p><img alt="image.png" src="../upload/28744996b0.png" width="533" height="302"><br></p><p>Your task is to determine the number of departments with diﬀerent structure for all depths. In other words, you have to produce a sequence $n_1,...,n_d$ such that $d$ is the depth of the whole ministry and for each $i$ the ministry contains exactly $n_i$ departments of depth $i$ with pairwise diﬀerent structures.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The input consists of a single line which describes the organizational structure of the ministry using the following notation. Each department is encoded as $(x_1 ...x_k)$ where $0 ≤ k ≤ 3$ is the number of the head’s subordinates and the xi’s are the codes of their departments. A one-man department is therefore encoded as (). The whole structure of the ministry is described as the code of the full ministry.</p><p>The ministry contains at most $1000000$ oﬃcials (including the minister).</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The output should consist of $d$ lines, where $d$ is the depth of the ministry, i.e., the depth of the department led by the minister. The $i$-th line contains the number of departments of depth $i$ with diﬀerent structure.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>(((())())((()())(()()()))(()(())))</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+3
+2
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><img alt="image.png" src="../upload/cf8b4135bb.png" width="500" height="251"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

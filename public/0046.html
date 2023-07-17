@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CTSC2015Day2-A]性别改造计划</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0046 [CTSC2015Day2-A]性别改造计划</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>21世纪是生命科学的世纪。人类投入了大量人力物力研究生命科学，旨在对各类生物的生存机理产生更加深入的理解，以更好地了解人类自身，提高生活质量。Q 国政府首先在绵羊中开展了性别改造研究，希望通过基因重组改变性别的方式增强整个绵羊种群的生存能力。若此计划能够顺利研究成功，人类将掌握随意改变动物性别的黑科技，这将是生命科学研究史上一个重要的里程碑。</p><p>Q 国政府从绵羊群中挑出 $M$ 只绵羊作为实验样本，这 $M$ 只绵羊中存在 $K$ 条长度为 $N$ 的单一性别的血缘链。所谓“血缘链”是指的一条由父（母）子（女）关系组成的链，比如爷爷-爸爸-儿子就是一条血缘链。“单一性别”的意思是每条血缘链中所有个体的性别均一致，同为雄性或同为雌性。血缘链长度指的是一条血缘链中个体的数量，比如爷爷-爸爸-儿子是一条长度为3的血缘链。这K条血缘链并不相交。</p><p>注意并不是每只绵羊都必须属于一条血缘链，有些绵羊可能不属于任何血缘链，因此 $N*K≤M$。除去血缘链外，同辈绵羊还会有“繁衍关系”的存在。两只异性绵羊如果曾经繁殖过后代，那么它们之间就会产生“繁衍关系”。注意繁衍关系只会出现在同辈异性绵羊个体之间，这里“同辈”表示两只绵羊的辈份相同，即绵羊只会与它的兄弟姐妹辈产生“繁衍关系”，而不会与父母或子女或其他更远的辈份之间产生“繁衍关系”。</p><p>对绵羊进行性别修改需要花费巨大的实验开销，修改绵羊 $i$ 的性别需要花费 $c_i$​ 的修改代价。除此以外，修改绵羊性别还会对繁衍关系的稳定度产生影响：每对繁衍关系 $j$ 有初始稳定度 $b_j$​ 和衰减系数 $d_j$​，当所有的性别修改操作完成后，若双方性别均未改变，则此关系稳定度 $s_j=b_j$​，若双方性别互换，则稳定度 $s_j=floor(b_jd_j)$，其他情况下稳定度 $s_j=0$。</p><p>给定每只绵羊的性别、性别修改代价、所有血缘链关系很繁衍关系，Q 国政府希望你来设计一套性别搞糟方案，使总收益最大。</p><p>收益计算方式如下：</p><p>$Profit=⌊10\ln(1+A)⌋×S−C$</p><p>其中 $A$ 为改造后血缘链相邻两者为异性的情况数量，$S$ 为改造后繁衍关系稳定度之和，即 $S=\sum_js_j$，$C$ 为修改绵羊性别带来的代价之和，即 $C=\sum_ic_i$​。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含四个非负整数 $N,K,M,P$，分别为血缘链的长度，血缘链的数量，实验样本中的总绵羊数和繁衍关系的数量。</p><p>第二行为一个 $M$ 个字符的字符串，每个字符为 'M' 或 'F'，描述了这 $M$ 只绵羊的初始性别。'M' 表示雄性，'F' 表示雌性。</p><p>第三行 $M$ 个正整数 $c_i$​，表示修改每只绵羊性别的代价。</p><p>下面 $K$ 行每行 $N$ 个整数，分别描述这 $K$ 个血缘链中绵羊编号（所有绵羊用 $1$ 到 $M$ 的整数编号），保证每条链中的绵羊均为同性，且链互补交叠。</p><p>下面 $P$ 行每行三个整数 $x,y,b$ 和一个实数 $d$，表示绵羊 $x$ 与绵羊 $y$ 存在繁衍关系，且初始关系稳定度为 $b$，衰减系数为 $d$。</p><p>保证 $x$ 与 $y$ 的初始性别不同，$x$ 和 $y$ 为同辈，同一条关系只会在数据中描述一次。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一行一个整数，表示改造计划的最大收益。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2 6 2
+MMMFFF
+10000 200 10 10000 200 10
+1 2 3 
+4 5 6 
+2 5 20 0.1
+3 6 20 0.9</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>360</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>改性别为MMFFFM。收益为 $⌊10\ln(1+2)⌋×(20+18)−(10+10)=360$。</p><p>$A=2$ 是因为血缘链 1-2-3 中 2 与 3 性别的不同，血缘链 4-5-6 中 5 与 6 的性别不同。</p><p>【数据范围】</p><p>对于10%的数据，满足 $M≤20$；</p><p>对于10%的数据，满足 $d_j=0$；</p><p>对于10%的数据，满足 $d_j=0.5$；</p><p>上述三类数据两两没有交集。</p><p>对于100%的数据，$N≤50,K≤4,M≤1000,P≤10000,0.0≤d_j≤1.0$，$b_j$ ​和 $c_i$ ​均不大于 10000，$d_j$​ 的小数位数不超过 6。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

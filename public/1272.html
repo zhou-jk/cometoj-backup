@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2015]套娃</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1272 [JSOI2015]套娃</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>【故事背景】</p><p>刚从俄罗斯旅游回来的 JYY 买了很多很多好看的套娃作为纪念品！JYY 由于太过激动，把所有的套娃全部都打开了。而由于很多套娃长得过于相像，JYY 现在不知道该如何把它们装回去了（他实在搞不清，应该把哪个套娃装到哪个里面去了）。</p><p>JYY 一共有 $N$ 个拆开的套娃，每个套娃从 $1$ 到 $N$ 编号。编号为 $i$ 的套娃有一个外径 $Out_i$ 和一个内径 $In_i（In_i&lt;Out_i）$。</p><p>对于套娃 $i$ 和套娃 $j$，如果满足 $Out_i&lt;In_j$，那么套娃 $i$ 就可以装到套娃 $j$ 里面去。注意，一个套娃内部，不允许并排的放入多个套娃。也就是说，如果我们将 $i$ 装到 $j$ 的内部之后，还存在另一个套娃 $k$，也满足 $Out_k&lt;In_j$，我们此时是不允许再将 $k$ 放到 $j$ 内部的（因为 $j$ 的内部已经放入了 $i$）。但是，如果 $k$ 还满足 $Out_k&lt;In_i$，那么我们允许先将 $k$ 放到 $i$ 的内部，然后再把 $k$ 和 $i$ 作为一个整体放入 $j$ 的内部。</p><p>JYY 认为一套好的套娃，内部的空隙一定是尽量少的。如果套娃 $j$ 内部装入了套娃 $i$，那么我们认为，套娃 $j$ 内部产生的空隙为 $In_j-Out_i$；如果套娃 $j$ 的内部什么也没有装，那么套娃 $j$ 的空隙则就是 $In_j$。</p><p>JYY 也希望，那些长得更加好看的套娃，里面可以填的尽量满一些；而相对那些不那么好看的套娃，JYY 也就相对不那么介意一些。为此 JYY 对于编号为 $i$ 的套娃设置了一个好看度 $B_i$，如果这个套娃内部还存在 $K$ 的空隙，那么 JYY 对于这个套娃就会产生 $K \times B_i$ 的不满意度。</p><p>JYY 对于一个套娃安装方案的不满意度，就是每个套娃产生的不满意度的总和。JYY 希望找出一个，不满意度最小的套娃安装方案。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个正整数 $N$。接下来 $N$ 行，每行包含三个正整数 $Out_i,In_i,B_i$，表示 $i$ 号套娃的外径，内径，以及好看度。</p><p>$N \le 2 \times 10^5,1 \le In_i&lt;Out_i \le 10^4,1 \le B_i \le 10^9$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出包含一行一个整数，表示不满意度的最小值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+5 4 1
+4 2 2
+3 2 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

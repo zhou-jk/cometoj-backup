@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]第008话 通向宝可梦擂台之路！</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1038 [欢乐赛]第008话 通向宝可梦擂台之路！</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">小智接连得到两颗徽章，他非常自豪。小霞建议接下来去枯叶市，在那可以看见豪华客轮圣安妮。这种建议吸引不了小智，但是小刚却提醒小智枯叶市也有道馆。小智听闻立刻决定向枯叶市出发，路上有人建议他去向小明挑战。小明是位非常厉害的训练家，从未输过比赛。信心爆棚的小智决定去会会这位小明…...</p><p>在小明的私人擂台上，放了一个记分板，上面记录着小明的辉煌战绩，他已经98连胜了，对于小智的挑战小明信心满满，只派了一只穿山鼠就轻轻松松把小智的两只飞行系宝可梦都给打败了。小智很好奇小明的穿山鼠为什么这么强，于是他们跟着小明进入了他的帐篷，这个帐篷原来是一个大训练场，里面的每一只宝可梦都在努力训练，亲眼看到宝可梦和小明的相处情况之后，他们最终从对小明的训练感到非常佩服。</p><p>在小明打败想来偷宝可梦的火箭队之后，终于满了 $100$ 次连胜，于是小明带着穿山鼠踏上了获得徽章的旅行，小智也继续去寻找道馆。</p><p>在穿山鼠的训练中，有一种训练是把自己变成弹力球，从高处落下，降落到地面后会再弹起来，更严格来说，就是：</p><p>假设达到最高点的时间是 $t_0, t_2, t_4, \ldots, t_{2*i}, t_{2*i+2}, \ldots$，落地的时间是 $t_1, t_3, t_5, \ldots, t_{2*i+1}, t_{2*i+3}, \ldots$，也就是说，$t_0$ 是训练开始的时间点，也当作是第一次在最高点的时刻，对于所有正奇数 $j$， $t_j$ 对应到所有的落地的时间点，对于所有的正偶数 $k$， $t_k$ 对应到所有的局部最高的时间点。并且对于所有非负整数 $i$ 都满足时间 [$t_{2*i}$, $t_{2*i+1}$] 内球的高度是严格递减，且时间 [$t_{2*i+1}$, $t_{2*i+2}$] 内球的高度是严格递增。</p><h4>现在按照时间顺序给你 $N$ 个训练过程中不同的时间点穿山鼠的高度，请问穿山鼠至少接触到地面几次(地面高度为 $0$, 给的高度都不为 $0$)</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">输入共两行。</p><p>第一行包含一个正整数 $N$&nbsp; ($1 \le N \le 2 \times 10^5$)。</p><p>第二行有 $N$ 个正整数 $h_1, h_2, \ldots, h_N$，代表按照时间顺序的穿山鼠的高度。($1 \le h_i \le 10^9$)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行包含一個整数数字代表答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7
+4 3 3 2 2 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+7</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">下图的横轴是时间，纵轴是穿山鼠的高度，图中曲线是样例一的一个可能的落地次数最少的穿山鼠高度与时间的关系图。</p><p><img alt="H_pic1.jpg" src="../upload/26cc2d3d77.jpg" width="731.5" height="371"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

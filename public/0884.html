@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2010]地精部落</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0884 [SDOI2010]地精部落</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>传说很久以前，大地上居住着一种神秘的生物：地精。地精喜欢住在连绵不绝的山脉中。</p><p>具体地说，一座长度为 $N$ 的山脉 $H$ 可分为从左到右的 $N$ 段，每段有一个独一无二的高度 $H_i$，其中 $H_i$ 是 $1$ 到 $N$ 之间的正整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是一个山谷。</p><p>地精们有一个共同的爱好——饮酒，酒馆可以设立在山谷之中。地精的酒馆不论白天黑夜总是人声鼎沸，地精美酒的香味可以飘到方圆数里的地方。地精还是一种非常警觉的生物，他们在每座山峰上都可以设立瞭望台，并轮流担当瞭望工作，以确保在第一时间得知外敌的入侵。</p><p>地精们希望这 $N$ 段山脉每段都可以修建瞭望台或酒馆的其中之一，只有满足这个条件的整座山脉才可能有地精居住。现在你希望知道，长度为 $N$ 的可能有地精居住的山脉有多少种。两座山脉 $A$ 和 $B$ 不同当且仅当存在一个 $i$，使得 $A_i≠B_i$。由于这个数目可能很大，你只对它除以 $P$ 的余数感兴趣。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅含一行，两个正整数 $N, P$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅含一行，一个非负整数，表示你所求的答案对 $P$ 取余之后的结果。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $20\%$ 的数据，满足 $N≤10$；</p><p>对于 $40\%$ 的数据，满足 $N≤18$；</p><p>对于 $70\%$ 的数据，满足 $N≤550$；</p><p>对于 $100\%$ 的数据，满足 $3≤N≤4200，P≤10^9$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

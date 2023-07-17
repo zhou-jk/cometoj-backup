@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2008Day2] Choosing Orders and Renting Machines </title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0515 [CEOI2008Day2] Choosing Orders and Renting Machines </h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Carpenter Sam receives $N$ orders. While reading the orders she realizes that she is missing $M$ machines necessary to complete the orders. Not all orders require all missing machines, but every order requires at least one of them.</p><p>To complete an order, Sam needs to either buy or rent each of the machines the order requires. Since diﬀerent orders need diﬀerent amounts of work (and thus time) on each machine, the rent for a machine may depend on the order that is completed on it. The purchase cost for a machine do not depend on the orders, though. A machine which is purchased once can be used to work on any number of orders at no extra cost.</p><p>If the cost caused by an order seem too high to Sam, she may choose to reject an order; this will lead to no cost (and no proﬁt). Help Sam decide which orders to reject, which machines to buy, and which machines to rent in order to maximize her proﬁt.<br></p><p><b>Example</b><br></p><p>$N = 2, M = 3$<br></p><p><img alt="image.png" src="../upload/f047484e72.png" width="588" height="272"><br></p><p>There are two solutions leading to the maximum proﬁt of 50:</p><ul><li>Reject $O_2$, complete $O_1$, rent both $M_1$ and $M_2$.</li><li>Complete both $O_1$ and $O_2$, buy $M_1$, rent $M_2$ and $M_3$.</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line of the input contains two integers, $N (1≤ N ≤1200)$ and $M (1≤ M ≤1200)$.</p><p>The following $N$ blocks of lines each describe an order; they are structured as follows: The ﬁrst line of block $i$ contains two integers, the income value $v_i (1 ≤ v_i ≤ 5000)$ for order $O_i$ and the number of machines $m_i (1 ≤ m_i ≤ M)$ needed for $O_i$. The following $m_i$ lines each specify a machine $j (1 ≤ j ≤ M)$ needed to complete $O_i$ and the rent $r_{ij} (1 ≤ r_{ij} ≤ 20000)$ needed to rent this machine for this order.<br></p><p>The $M$ lines after the last order block contain one integer each: the purchase price $s_i (1≤ s_i ≤ 20000)$ for each machine.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The output contains exactly one integer: the maximum achievable proﬁt.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 3
+100 2
+1 30
+2 20
+100 2
+1 40
+3 80
+50
+80
+110</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>50</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

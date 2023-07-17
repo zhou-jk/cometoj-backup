@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI/HNOI2018]转盘</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0792 [AHOI/HNOI2018]转盘</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一次小 G 和小 H 原本准备去聚餐，但由于太麻烦了于是题面简化如下：</p><p>一个转盘上有摆成一圈的 $n$ 个物品（编号 $1$ 至 $n$）其中第 $i$ 个物品会在 $T_i$ 时刻出现。</p><p>在 $0$ 时刻时，小 G 可以任选 $n$ 个物品中的一个，我们将其编号记为 $s_0$。并且如果$i$时刻选择了物品 $s_i$，那么 $i + 1$ 时刻可以继续选择当前物品或者选择下一个物品。当 $s_i$ 为 $n$ 时，下一个物品为物品 $1$，否则下一个物品为 $s_{i} + 1$。在每一时刻（包括 $0$ 时刻），如果小 G 所选择的物品已经出现了，那么小 G 将会标记它。小 H 想知道，在物品选择的最优策略下，小 G 什么时候能标记所有物品？</p><p>但麻烦的是，物品的出现时间会不时修改。我们将其描述为 $m$ 次修改，每次修改将改变其中一个物品的出现时间。每次修改之后，你也需要求出当前局面的答案。对于其中部分测试点，小 H 还追加了强制在线的要求。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个非负整数 $n,m,p$，代表一共有 $n$ 个物品，$m$ 次修改。$p$ 只有 $0$ 或 $1$ 两种取值，强制在线时 $p$ 为 $1$，否则为 $0$。本节后面将解释如何使用 $p$。</p><p>接下来一行，有 $n$ 个用空格隔开的非负整数，第 $i$ 个数 $T_i$ 代表物品 $i$ 的出现时间。</p><p>接下来 $m$ 行，每行两个非负整数 $x,y$，代表一次修改及询问。修改方式如下：</p><ul><li>如果$p = 0$，则表示物品 $x$ 的出现时间 $T_x$ 修改为 $y$。</li><li>如果 $p = 1$，则先将 $x$ 和 $y$ 分别异或 $LastAns$ 得到 $x'$ 和 $y'$：即 $x' = x \oplus LastAns, y' = y\oplus LastAns$。然后将物品 $x'$ 的出现时间 $T_{x'}$ 修改为 $y'$。其中的 $LastAns$ 是前一个询问的答案；特别的，第一次修改时的 $LastAns$ 为初始局面的答案。其中的 $\oplus$ 为按位异或运算，例如 $1 \oplus 2 = 3,4 \oplus 5 = 1,6 \oplus 11 = 13$。</li></ul><p>保证输入合法。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数代表初始局面的答案。</p><p>接下来 $m + 1$ 行每行一个整数分别代表每次修改后的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3 0
+1 2 3 4 5
+3 5
+5 0
+1 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+7
+6
+7</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><img width="781" height="420" alt="0000000.PNG" src="../upload/c23d843bdb.png"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

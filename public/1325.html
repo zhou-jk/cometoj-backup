@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2009]纪念币</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1325 [SHOI2009]纪念币</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Constantine 刚结束在 MySky Island 的度假，正准备离开的时候，他想送给她的好朋友 YY 一份特别的礼物—— MySky Island 上特别的手工艺品宝石纪念币。宝石纪念币的一面上刻着小岛的名字 MySky，或者收礼物的人，比如“to YY”。不过特别的是，每枚纪念币的反面，依次均匀的镶着一圈共 $n$ 颗彩色的宝石。例如，下面是一个 $n=7$ 时的简单例子：</p><p><img alt="image.png" src="../upload/b1fff21ff7.png" width="234"><br></p><p>因为纪念币是圆的，所以如果两种“宝石颜色的排布”如果经过旋转后对应位置的颜色相重合，就认为他们是相同的排布方式（请注意：纪念币只有一面镶宝石，所以两种排布若经过翻转以后是可以重合的，但只经过旋转无法使两者重合，则认为他们是不同的排布）。例如下面的两种排布方式就是相同的：</p><p><img alt="image.png" src="../upload/c869b065f2.png" width="481"><br></p><p>另外，由于 MySky Island 当地的习俗，每枚钱币上的宝石都只能嵌奇数颗宝石，不然就认为是不吉利的。宝石纪念币是现场制作的，游客可以选择自己喜欢的颜色的宝石。所以 Constantine 选出了他最喜欢的 $17$ 种颜色（你如果要问为什么选这么多的话，只能告诉你因为 $17$ 是他的幸运数字）。他想知道，如果他要求纪念币把这 $17$ 种颜色的宝石都用上的话，可以制作出多少枚不同的纪念币。由于答案可能很大，你只需要计算答案的最后 $120$ 位就可以了。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入只有一行，包含一个正奇数$n$</p><p>$1 \le N \le 10^9$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出包含 $1$ 行，表示不同纪念币的枚数的最后 $120$ 位。这 $120$ 位从高位到低位依次输出，位数不足的用 $0$ 在高位补足。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>17</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020922789888000</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

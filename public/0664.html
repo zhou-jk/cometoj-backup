@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[BJWC2010]纸箱堆叠</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0664 [BJWC2010]纸箱堆叠</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>P 工厂是一个生产纸箱的工厂。纸箱生产线在人工输入三个参数 $n, p, a$ 之后，即可自动化生产三边边长为</p><p>$(a \bmod p,a^2 \bmod p,a^3 \bmod p)$<br>$(a^4 \bmod p,a^5 \bmod p,a^6 \bmod p)$<br>...<br>$(a^{3n-2} \bmod p,a^{3n-1} \bmod p,a^{3n} \bmod p)$</p><p>的 $n$ 个纸箱。在运输这些纸箱时，为了节约空间，必须将它们嵌套堆叠起来。</p><p>一个纸箱可以嵌套堆叠进另一个纸箱当且仅当它的最短边、次短边和最长边长度分别严格小于另一个纸箱的最短边、次短边和最长边长度。这里不考虑任何旋转后在对角线方向的嵌套堆叠。<br>你的任务是找出这 $n$ 个纸箱中数量最多的一个子集，使得它们两两之间都可嵌套堆叠起来。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行三个整数，分别代表 $a,p,n$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出仅包含一个整数，代表数量最多的可嵌套堆叠起来的纸箱的个数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 17 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>生产出的纸箱的三边长为 $(10, 15, 14), (4, 6, 9) , (5, 16, 7), (2, 3, 13)$。其中只有 $(4, 6, 9)$ 可堆叠进 $(5, 16, 7)$，故答案为 $2$。</p><p>【数据范围】</p><p>$2 \le p \le 2000000000$，$1 \le a \le p-1$，$a^k \bmod p \ne 0$，$ap \le 2000000000$，$1 \le N \le 50000$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]第006话 皮皮和月亮石！</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1035 [欢乐赛]第006话 皮皮和月亮石！</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">在上一话中，小智最终挑战成功，他得到了参加宝可梦联盟大赛的资格之一：灰色徽章，加上立志成为世界第一宝可梦饲育家的小刚，一行人继续着旅行。</p><p>然后，他们旅行到了月见山，要到达他们下一个目的地——华篮市，这条路是最快的捷径。他们来到一个山洞，在洞口遇到了一位名叫尼可的博士，他正在研究月亮石和宝可梦的来历，他相信宝可梦和月亮石都来自宇宙，他想探索宝可梦的奥秘。他们在另一个山洞里发现了很多皮皮，皮皮是一种妖精宝可梦，爱好和平，心地善良，她们守护着山洞里的月亮石，搬运宝石来为月亮石提供能量，然后等待月亮石发光，来提升自己的能力。</p><p>火箭队两人和他们的宝可梦猫猫也出现在了山洞里，他们为了抢走月亮石而不择手段，小智和小刚纷纷派出自己的宝可梦和他们战斗，并且在最后帮皮皮们夺回了月亮石。</p><p>尼可博士经历了这一次月亮石被抢的事情，决定要和皮皮们生活在一起，她们的幸福就是他的幸福。而小智一行人则继续旅行…...</p><p>而尼可博士则开始在山洞附近的土地种树，他想让这里变成一片森林，保护更多的宝可梦。这里的土地由于经常会有宝可梦行走，会发生一些变化...</p><p>现在假设有 $n \times m$ 格土地，请想像土地有虚拟的格子线，一若有某个大小为 $2 \times 2$ 格子都还能用，那么就可以在这$2 \times 2$ 的格子上种一棵树。刚开始时每个格子都可以种树，接着有 $q$ 次变化，每次变化会多出一格土地不能用，请问在每次变化后都还剩多少种不同的位置可以种树。对于两种种树方式，只要左上角的格子座标不同就算不同。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">输入第一行有三個正整数 $n, m, q$。($2\le n,m \le 10^3 , 1\le q \le 10^5$)</p><p>我们把格子上面数来第 $x$ 行，左边数来第 $y$ 列的格子座标定为 $(x,y)$。</p><p>接着有 $q$ 行，每行代表一次变化，包含兩個正整数 $x, y$，代表该次变化是格子 $(x,y)$ 不能使用。($1\le x \le n,1 \le y \le m$，每次变化的格子 $(x,y)$ 都不一样)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每次变化都输出 $1$ 行包含一个整数，该数字代表现在还有多少种位置可以种树。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 4 4
+2 4
+3 3
+1 1
+2 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+3
+2
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">样例解释：</p><p>对于第一次变化格子 $(2,4)$ 不能用后，能种树的位置的左上角可能座标为：$(1,1),(1,2),(2,1),(2,2)$。</p><p>对于第二次变化格子 $(3,3)$ 不能用后，能种树的位置的左上角可能座标为：$(1,1),(1,2),(2,1)$。</p><p>对于第一次变化格子 $(1,1)$ 不能用后，能种树的位置的左上角可能座标为：$(1,2),(2,1)$。</p><p>对于第一次变化格子 $(2,4)$ 不能用后，已没有能种树的位置了。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

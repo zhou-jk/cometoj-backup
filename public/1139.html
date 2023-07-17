@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2012]永无乡</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1139 [HNOI2012]永无乡</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>永无乡包含 $n$ 座岛，编号从 $1$ 到 $n$，每座岛都有自己的独一无二的重要度，按照重要度可以将这 $n$ 座岛排名，名次用 $1$ 到 $n$ 来表示。某些岛之间由巨大的桥连接，通过桥可以从一个岛到达另一个岛。如果从岛 $a$ 出发经过若干座（含 $0$ 座）桥可以到达岛 $b$，则称岛 $a$ 和岛 $b$ 是连通的。现在有两种操作：<code>B x y</code>表示在岛 $x$ 与岛 $y$ 之间修建一座新桥。<code>Q x k</code>表示询问当前与岛 $x$ 连通的所有岛中第&nbsp; $k$ 重要的是哪座岛，即所有与岛 $x$ 连通的岛中重要度排名第 $k$ 小的岛是哪座，请你输出那个岛的编号。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行是用空格隔开的两个正整数 $n$ 和 $m$，分别表示岛的个数以及一开始存在的桥数。接下来的一行是用空格隔开的 $n$ 个数，依次描述从岛 $1$ 到岛 $n$ 的重要度排名。随后的 $m$ 行每行是用空格隔开的两个正整数 $a_i$ 和 $b_i$，表示一开始就存在一座连接岛 $a_i$ 和岛 $b_i$ 的桥。后面剩下的部分描述操作，该部分的第一行是一个正整数 $q$，表示一共有 $q$ 个操作，接下来的 $q$ 行依次描述每个操作，操作的格式如上所述，以大写字母 $Q$ 或 $B$ 开始，后面跟两个不超过 $n$ 的正整数，字母与数字以及两个数字之间用空格隔开。</p><p>对于 $20\%$ 的数据 $n≤1000,q≤1000$<br></p><p>对于 $100\%$ 的数据 $n≤100000,m≤n，q≤300000$<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个<code>Q x k</code>操作都要依次输出一行，其中包含一个整数，表示所询问岛屿的编号。如果该岛屿不存在，则输出 $-1$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 1
+4 3 2 5 1
+1 2
+7
+Q 3 2
+Q 2 1
+B 2 3
+B 1 5
+Q 2 1
+Q 2 4
+Q 2 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-1
+2
+5
+1
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

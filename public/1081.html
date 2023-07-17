@@ -1,0 +1,127 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #5]迫真小游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1081 [Contest #5]迫真小游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">H君喜欢在阳台晒太阳，闲暇之余他会玩一些塔防小游戏。</p><p>H君玩的小游戏可以抽象成一棵 $n$ 个节点的有根树，树以 $1$ 为根，每个点的深度定义为其到根的简单路径上的点数（根的深度为 $1$）。</p><p>H君有 $n$ 个干员，H君会按照某种顺序把她们部署到树的每一个节点上，使得每个节点上恰好有一个干员。由于游戏的机制，他们对每个节点 $i$ 都给出了个限制参数 $a_i$ ，要求H君在第 $i$ 个节点部署干员之前，所有深度 $&gt; a_i$ 的节点上不能有干员。同时游戏为了让玩家过关，保证了 $a_i$ 大于等于点 $i$ 的深度。</p><p>H君将每一次部署干员的节点按顺序写在纸上，形成了一个 $1 \dots n$ 的排列，H君为了获得更多的奖励，想要最小化这个排列的字典序。</p><p>我们认为排列 $c_1,c_2..c_n$ 的字典序比排列 $d_1,d_2..d_n$ 的字典序小，当且仅当 $c, d$ 不完全相同且存在一个下标 $i$，满足 $c_i &lt; d_i$ 且对于所有 $1 \le j &lt; i$ 的 $j$ 都有 $c_j = d_j$ 。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行一个数 $n$ 。</p><p>接下来 $n - 1$ 行，每行两个数 $x, y$ 表示树上的一条边 。</p><p>最后一行 $n$ 个数，表示 $a_i$ 。</p><p>数据范围：</p><p>$1\le n \le 5 \times 10^5, 1 \le a_i \le n$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行 $n$ 个数，表示字典序最小的排列。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 5
+5 3
+1 4
+4 2
+1 3 3 3 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 4 5 2 3
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+1 7
+7 8
+7 2
+8 9
+7 6
+2 4
+9 5
+8 10
+6 3
+5 3 4 4 5 3 5 3 5 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2 6 7 8 3 4 9 10 5
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

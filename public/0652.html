@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[TJOI2018]party</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0652 [TJOI2018]party</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：6000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小豆参加了 NOI 的游园会，会场上每完成一个项目就会获得一个奖章，奖章只会是 N, O, I 的字样。</p><p>在会场上他收集到了 $K$ 个奖章组成的串。兑奖规则是奖章串和兑奖串的最长公共子序列长度为小豆最后奖励的等级。</p><p>现在已知兑奖串长度为 $N$，并且在兑奖串上不会出现连续三个奖章为<code>NOI</code>，即奖章中不会出现子串<code>NOI</code>。</p><p>现在小豆想知道各个奖励等级会对应多少个不同的合法兑奖串。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个数 $N$，$K$ 分别代表兑奖串的长度，小豆收集的奖章串的长度。</p><p>第二行一共 $K$ 个字符，表示小豆得到奖章串。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一共 $K+1$ 行，第 $i$ 行表示小豆最后奖励等级为 $i-1$ 的不同的合法兑奖串的个数，可能这个数会很大，结果对 $10^9 + 7$ 取模。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2
+NO</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+19
+6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>最长公共子序列长度 $0$ 的串有：<code>III</code>;</p><p>最长公共子序列长度 $2$ 的串有：<code>NON</code>,<code>NNO</code>,<code>NOO</code>,<code>ONO</code>,<code>INO</code>,<code>NIO</code>;</p><p>除去`NOI`，余下的 $19(26-6-1)$ 种为最长公共子序列长度为 $1$。</p><p>【数据规模】</p><p>对于 $10\%$ 的数据，$N \leq 10 , K \leq 10$。</p><p>对于 $30\%$ 的数据，$N \leq 100 , K \leq 4$。</p><p>对于 $100\%$ 的数据，$N \leq 1000 , K \leq 15$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

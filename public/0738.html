@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI/HNOI2017]抛硬币</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0738 [AHOI/HNOI2017]抛硬币</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 A 和小 B 是一对好朋友，他们经常一起愉快的玩耍。最近小 B 沉迷于**师手游，天天刷本，根本无心搞学习。但是已经入坑了几个月，却一次都没有抽到 SSR，让他非常怀疑人生。</p><p>勤勉的小 A 为了劝说小 B 早日脱坑，认真学习，决定以抛硬币的形式让小 B 明白他是一个彻彻底底的非洲人，从而对这个游戏绝望。两个人同时抛$b$次硬币，如果小 A 的正面朝上的次数大于小 B 正面朝上的次数，则小 A 获胜。</p><p>但事实上，小 A 也曾经沉迷过拉拉游戏，而且他一次 UR 也没有抽到过，所以他对于自己的运气也没有太大把握。所以他决定在小 B 没注意的时候作弊，悄悄地多抛几次硬币，当然，为了不让小 B 怀疑，他不会抛太多次。现在小 A 想问你，在多少种可能的情况下，他能够胜过小 B 呢？由于答案可能太大，所以你只需要输出答案在十进制表示下的最后 $k$ 位即可。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>有多组数据，对于每组数据输入三个数 $a, b, k$，分别代表小 A 抛硬币的次数，小 B 抛硬币的次数，以及最终答案保留多少位整数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据，输出一个数，表示最终答案的最后 $k$ 位为多少，若不足 $k$ 位以 $0$ 补全。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 1 9
+3 2 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>000000004
+6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>对于第一组数据，当小 A 抛 $2$ 次硬币，小 B 抛 $1$ 次硬币时，共有 $4$ 种方案使得小 A 正面朝上的次数比小 B 多。</p><p>$(01,0), (10,0), (11,0), (11,1)$</p><p>对于第二组数据，当小 A 抛 $3$ 次硬币，小 B 抛 $2$ 次硬币时，共有 $16$ 种方案使得小 A 正面朝上的次数比小B多。</p><p>$\begin{aligned}(001,00), (010,00), (100,00), (011,00), (101,00), (110,00), (111,00), (011,01)\\(101,01), (110,01),(111,01), (011,10), (101,10), (110,10), (111,10), (111,11)\end{aligned}$</p><p>【数据规模】</p><p>对于 $10\%$ 的数据，$a,b\le 20$；</p><p>对于 $30\%$ 的数据，$a,b\le 100$；</p><p>对于 $70\%$ 的数据，$a,b\le 100000$，其中有 $20\%$ 的数据满足 $a=b$；</p><p>对于 $100\%$ 的数据，$1\le a,b\le {10}^{15}, b\le a\le b+10000, 1\le k\le 9$，数据组数小于等于 $10$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

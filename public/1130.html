@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2011]XOR和路径</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1130 [HNOI2011]XOR和路径</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给定一个无向连通图，其节点编号为 $1$ 到 $N$，其边的权值为非负整数。试求出一条从 $1$ 号节点到 $N$ 号节点的路径，使得该路径上经过的边的权值的 “XOR 和” 最大。该路径可以重复经过某些节点或边，当一条边在路径中出现多次时，其权值在计算 “XOR 和” 时也要被重复计算相应多的次数。</p><p>直接求解上述问题比较困难，于是你决定使用非完美算法。具体来说，从 $1$ 号节点开始，以相等的概率，随机选择与当前节点相关联的某条边，并沿这条边走到下一个节点，重复这个过程，直到走到 $N$ 号节点为止，便得到一条从 $1$ 号节点到 $N$ 号节点的路径。显然得到每条这样的路径的概率是不同的并且每条这样的路径的 “XOR 和” 也不一样。现在请你求出该算法得到的路径的 “XOR 和” 的期望值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行是用空格隔开的两个正整数 $N$ 和 $M$，分别表示该图的节点数和边数。紧接着的 $M$ 行，每行是用空格隔开的三个非负整数 $u$，$v$ 和 $w(1≤u,v≤N，0≤w≤10^9)$，表示该图的一条边 $(u,v)$，其权值为 $w$。输入的数据保证图连通。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个实数，表示上述算法得到的路径的 “XOR 和” 的期望值，要求保留三位小数。（建议使用精度较高的数据类型进行计算）<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2
+1 1 2
+1 2 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2.333</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>有 $1/2$ 的概率直接从 $1$ 号节点走到 $2$ 号节点，该路径的 “XOR和” 为 $3$；有 $1/4$ 的概率从 $1$ 号节点走一次 $1$ 号节点的自环后走到 $2$ 号节点，该路径的 “XOR和” 为 $1$；有 $1/8$ 的概率从 $1$ 号节点走两次 $1$ 号节点的自环后走到 $2$ 号节点，该路径的 “XOR和” 为 $3$…依此类推，可知 “XOR和” 的期望值为：$3/2+1/4+3/8+1/16+3/32+…=7/3$，约等于 $2.333$。</p><p>【数据规模与约定】</p><p>$30\%$ 的数据满足 $N≤30$<br>$100\%$ 的数据满足 $2≤N≤100，M≤10000$，但是图中可能有重边或自环。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

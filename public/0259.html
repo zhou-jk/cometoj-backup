@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]混合牛奶</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0259 [USACO]混合牛奶</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>牛奶包装是一个如此低利润的生意，以至于尽可能低地控制初级产品（牛奶）的价格变得十分重要。请帮助Merry的牛奶制造公司（Merry Milk Makers'）以尽可能最廉价的方式取得他们所需的牛奶。Merry的牛奶制造公司从一些农民那购买牛奶，每个农民卖给牛奶制造公司的价格不一定相同。而且，如一只母牛一天只能生产一定量的牛奶，农民每一天只有一定量的牛奶可以卖。每天，Merry 的牛奶制造公司从每个农民那购买一定量的牛奶，少于或等于农民所能提供的最大值。给出 Merry 牛奶制造公司的每日的牛奶需求，连同每个农民的可提供的牛奶量和每加仑的价格，请计算 Merry 的牛奶制造公司所要付出钱的最小值。</p><p>注意：每天农民生产的牛奶的总数对 Merry 的牛奶制造公司来说是足够的。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行共二个数值：$N,(0 \le N \le 2,000,000)$ 是需要牛奶的总数；$M,(0 \le M \le 5,000)$ 是提供牛奶的农民个数。</p><p>第 $2$ 到 $M+1$ 行：每行二个整数：$P_i$ 和 $A_i$。</p><p>$P_i(0 \le P_i \le1,000)$ 是农民 $i$ 的牛奶的价格。</p><p>$A_i(0 \le A_i \le2,000,000)$ 是农民 $i$ 一天能卖给 Marry 的牛奶制造公司的牛奶数量。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>单独的一行包含单独的一个整数，表示 Marry 的牛奶制造公司拿到所需的牛奶所要的最小费用。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>100 5
+5 20
+9 40
+3 10
+8 80
+6 30</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>630</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

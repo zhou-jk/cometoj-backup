@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]邮票</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0345 [USACO]邮票</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>已知一个 $N$ 枚邮票的面值集合（如，{1 分，3 分}）和一个上限 $K$ —— 表示信封上能够贴 $K$ 张邮票。计算从 $1$ 到 $M$ 的最大连续可贴出的邮资。</p><p>例如，假设有 1 分和 3 分的邮票；你最多可以贴 5 张邮票。很容易贴出 1 到 5 分的邮资（用 1 分邮票贴就行了），接下来的邮资也不难：</p><pre><code>6 = 3 + 3 
+7 = 3 + 3 + 1 
+8 = 3 + 3 + 1 + 1 
+9 = 3 + 3 + 3 
+10 = 3 + 3 + 3 + 1 
+11 = 3 + 3 + 3 + 1 + 1 
+12 = 3 + 3 + 3 + 3 
+13 = 3 + 3 + 3 + 3 + 1
+</code></pre><p>然而，使用 5 枚 1 分或者 3 分的邮票根本不可能贴出 14 分的邮资。因此，对于这两种邮票的集合和上限 $K=5$，答案是 $M=13$。</p><p>[规模最大的一个点的时限是3s]</p><p>小提示：因为 14 贴不出来，所以最高上限是 13 而不是 15。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行： 两个整数，$K$ 和 $N$。$K$（$1 \le K \le 200$）是可用的邮票总数。$N$（$1 \le N \le 50$）是邮票面值的数量。</p><p>第 $2$ 行 ... 文件末： $N$ 个整数，每行 $15$ 个，列出所有的 $N$ 个邮票的面值，每张邮票的面值不超过 $10000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 1 行：一个整数，从 1 分开始连续的可用集合中不多于 $K$ 张邮票贴出的邮资数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 2
+1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>13</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

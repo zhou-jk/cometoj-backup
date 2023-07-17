@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]第004话 武士少年的挑战！</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1028 [欢乐赛]第004话 武士少年的挑战！</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">收服绿毛虫后，小智一行继续在常磐森林里往尼比市的方向前进，小霞一路上都在大惊小怪。这时，小智发现了独角虫，他打算靠皮卡丘来收服独角虫，可是皮卡丘却懒得搭理。小霞非常讨厌虫子，远远的逃开，却碰见一个身着武士铠甲的少年。这位武士少年似乎在寻找真新镇的训练师，他的目的是什么呢？与此同时，小智还在设法收服独角虫，丝毫不知道自己被人盯上了……</p><p>武士少年将他的剑指向小智，扬言说要跟小智用宝可梦进行决斗，此时独角虫偷偷溜走了，小智很生气，决定接受武士少年的挑战。</p><p>两轮比赛下来…..仍未分出胜负，而此时双方派上场的宝可梦都是铁甲蛹 (铁甲蛹是由绿毛虫进化而来的)，不会跑，只会变硬，于是一直在僵持着。旁边的小霞已经无聊至极，她拿出一副扑克牌，"喂，那边那两个，来陪我打牌！" 小智和武士少年也觉得有点无聊了，于是走到小霞身边坐了下来。</p><p>小霞清了清嗓子，说：" 我们来玩一个扑克牌游戏，一副牌有 $54$ 张，$1 \sim 13$ 每种数字 $4$ 张，鬼牌是数字 $0$，有两张，我们三个人玩，所以每人初始拿到的牌 $18$ 张，如果拿到的牌里有相同的数字，就要丢掉两张，但是鬼牌不能丢，最后谁剩的牌最少谁就赢。"</p><p>小智举起了手:"请问，如果拿到的相同牌大于两张可以全部扔掉吗？"</p><p>小霞:"相同的牌数只有 $2$ 张，$3$ 张，$4$ 张三种可能，$2$ 张和 $4$ 张的时候可以全部扔掉，$3$ 张的时候只能扔掉$2$ 张"。</p><p>武士少年也举起了手 : "请问，如果拿到两张鬼牌可以扔掉吗？"</p><p>小霞 : "不行，鬼牌是特殊的，多少张都不能扔掉！"</p><p>大家貌似都弄懂了规则，于是小霞开始发牌….</p><p>聪明的你理解规则了吗？现在假设你是三个人打牌中的一个，给你初始的牌，请算出你最后剩下几张牌。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入一行 $18$ 个数字，$0$ 代表鬼牌，$1 \sim 13$ 是正常的扑克牌的数字。 $0$ 最多只会出现两个，$1 \sim 13$ 中每个数字至多只会出现四个。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行表示最后剩几张牌。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 1 4 5 1 4 5 6 8 9 0 0 12 13 13 13 11 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>样例可以丢出的牌有两张 $1$、两张 $4$、两张 $5$、两张 $13$，共丢出了 $8$ 张，所以共剩下 $18 - 8 = 10$ 张牌。 鬼牌(数字 $0$) 虽然有 $2$ 张，但不能丢弃。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

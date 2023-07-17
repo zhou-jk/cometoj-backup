@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2017Day1-A]整数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0406 [NOI2017Day1-A]整数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>在人类智慧的山巅，有着一台字长为1048576位的超级计算机，著名理论计算机科学家P博士正用它进行各种研究。不幸的是，这天台风切断了电力系统，超级计算机无法工作，而P博士明天就要交实验结果了，只好求助于学过OI的你……<br></p><p>P博士将他的计算任务抽象为对一个整数的操作。<br>具体来说，有一个整数x，一开始为0。<br>接下来有n个操作，每个操作都是以下两种类型中的一种：</p><ol><li>a b：将x加上整数$a \cdot 2^b$，其中a为一个整数，b为一个非负整数</li><li>k：询问x在用二进制表示时，位权为$2^k$的位的值（即这一位上的1代表$2^k$）</li></ol><p>保证在任何时候，$x≥0$。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含四个正整数$n,t_1,t_2,t_3$，$n$的含义见题目描述，$t_1,t_2,t_3$的具体含义见子任务。</p><p>接下来$n$行，每行给出一个操作，具体格式和含义见题目描述。</p><p>同一行输入的相邻两个元素之间，用恰好一个空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个询问操作，输出一行，表示该询问的答案（0或1）。对于加法操作，没有任何输出。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 3 1 2
+1 100 0
+1 2333 0
+1 -233 0
+2 5
+2 7
+2 15
+1 5 15
+2 15
+1 -1 12
+2 15</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+1
+0
+1
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例1解释】</p><p></p><p>样例中有10个操作：第1个为将x加上$100×2^0$，操作后，x=100；<br>第2个为将x加上$2333×2^0$，操作后，x=2433；<br>第3个为将x加上$−233×2^0$，操作后，x=2200；<br>第4个为询问x位权为$2^5$的位上的值，x在二进制下为100010011000，答案为0；<br>第5个为询问x位权为$2^7$的位上的值，x在二进制下为100010011000，答案为1；<br>第6个为询问x位权为$2^{15}$的位上的值，x在二进制下为100010011000，答案为0；<br>第7个为将x加上$5×2^{15}=163840$，操作后，x=166040；<br>第8个为询问x位权为$2^{15}$的位上的值，x在二进制下为101000100010011000，答案为1；<br>第9个为将x加上$−1×2^{12}=−4096$，操作后，x=161944；<br>第10个为询问x位权为$2^{15}$的位上的值，x在二进制下为100111100010011000，答案为0。</p><p>【子任务】<br></p><p>在所有测试点中，$1≤t_1≤3,1≤t_2≤4,1≤t_3≤2$。不同的$t_1,t_2,t_3$对应的特殊限制如下:</p><ul><li>对于$t_1= 1$的测试点，满足$a= 1$</li><li>对于$t_1= 2$的测试点，满足$|a|= 1$</li><li>对于$t_1= 3$的测试点，满足$|a| ≤10^9$</li><li>对于$t_2= 1$的测试点，满足$0≤b,k≤30$</li><li>对于$t_2= 2$的测试点，满足$0≤b,k≤100$</li><li>对于$t_2= 3$的测试点，满足$0≤b,k≤n$</li><li>对于$t_2= 4$的测试点，满足$0≤b,k≤30n$</li><li>对于$t_3= 1$的测试点，保证所有询问操作都在所有修改操作之后</li><li>对于$t_3= 2$的测试点，不保证询问操作和修改操作的先后顺序</li></ul><p>各个测试点的数据范围如下：<br></p><p><img alt="屏幕快照 2019-06-03 下午5.49.48.png" src="../upload/af452bdd8f.png" width="600" height="646.2249614791988"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[国庆欢乐赛]入学考试 (困难版)</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1764 [国庆欢乐赛]入学考试 (困难版)</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><strong>※ 简单版与困难版的唯一区别是 $n$ 和 $Q$ 的数据范围</strong></p><p>又是一年开学季！新入学JWJU的同学们都在群名片上挂了[JWJU]的前缀。$sys.$羡慕不已——他也想进入JWJU。</p><p>于是鸡尾酒丢给了他一套试卷作为入学考试。他必须要在规定的时间内达到足够的分数才能进入JWJU。</p><p>一套试卷总共有 $n$ 张的卷子，每张卷子都有 $m$ 道题。完成任意一张卷子的第 $i$ 道题所需的时间是 $t_i$，每做完任意卷子上的任意一道题都可以获得 $1$ 分 (做完就一定能得分，$sys.$是不可能答错的)，而完成某一张卷子上的所有题目可以额外获得 $k$ 分。现在告诉你考试的总时间 $D$，请你帮$sys.$算算，他最多能得到多少分。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $Q$ 代表测试组数。</p><p>每组测试数据有两行。第一行包含四个正整数 $n, m, k, D$，分别表示卷子数量、每张卷子的题数、完成任意卷子的所有题可得到的额外分数以及考试总时间， 第二行包含 $m$ 个正整数，其中第 $i$ 个数字为 $t_i$，代表任一试卷要完成第 $i$ 题所需要的时间。</p><ul><li>$1 \le Q \le 5 \times 10 ^ 4$</li><li>$1 \le n \le 10^9$</li><li>$1 \le m \le 10^5$</li><li>$1 \le k \le 10^9$</li><li>$1 \le D \le 10^{18}$</li><li>$1 \le t_i \le 10^9$</li><li>$\sum\limits_{i=1}^m t_i \le 10^9$</li><li>所有测试数据的 $m$ 的总和不超过 $5 \times 10^5$</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每笔测试数据输出一个整数于一行代表最大得分。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+5 3 2 7
+1 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>11</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

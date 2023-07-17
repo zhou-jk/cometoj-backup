@@ -1,0 +1,149 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[APIO2019-A]桥梁</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0214 [APIO2019-A]桥梁</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>圣彼得堡市内所有水路长度总和约 282 千米，市内水域面积占城市面积的 7%。——来自维基百科</p><p>圣彼得堡位于由座桥梁连接而成的 $n$ 个岛屿上。岛屿用 $1$ 到 $n$ 的整数编号，桥梁用 $1$ 到 $m$ 的整数编号。每座桥连接两个不同的岛屿。有些桥梁是在彼得大帝时代建造的，其中一些是近期建造的。这导致了不同的桥梁可能有不同的重量限制。更具体地，只有重量不超过 $d_i$ 的汽车才能通过第 $i$ 座桥梁。有时圣彼得堡的一些桥梁会进行翻新，但这并不一定会使桥梁承重变得更好，也就是说，进行翻新的桥梁的 $d_i$ 可能会增加或减少。你准备开发一个产品，用于帮助公民和城市客人。目前，你开发的模块要能执行两种类型的操作：</p><ol><li>将桥梁 $b_j$ 的重量限制改为 $r_j$。</li><li>统计一辆重为 $w_j$ 的汽车从岛屿 $s_j$ 出发能够到达多少个不同的岛屿。</li></ol><p>请你回答所有第二种操作的答案。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个整数 $n$ 和 $m$ ——表示圣彼得堡的岛屿数量与桥梁数量。</p><p>接下来 $m$ 行，每行三个整数 $u_i,v_i,d_i$。第 $i$ 行的整数描述了一座连接岛屿 $u_i$ 和 $v_i$，初始时重量限制为 $d_i$ 的桥梁。</p><p>接下来一行一个整数 $q$——表示操作的数量。</p><p>接下来 $q$ 行按顺序每行描述一个操作。</p><p>每行第一个整数 $t_j$ 表示操作类型：</p><ul><li>若 $t_j=1$，则该操作是第一种类型，该行接下来给定两个整数 $b_j$ 和 $r_j$，表示桥梁 $b_j$ 的重量限制将变为 $r_j$。</li><li>若 $t_j=2$，则该操作是第二种类型，该行接下来给定两个整数 $s_j$ 和 $w_j$，表示一辆重为 $w_j$ 的汽车将要从第 $s_j$ 个岛屿出发。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个第二种类型的询问，输出一行一个整数表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 4
+1 2 5
+2 3 2
+3 1 4
+2 3 8
+5
+2 1 5
+1 4 1
+2 2 5
+1 1 1
+2 3 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+2
+3</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7 8
+1 2 5
+1 6 5
+2 3 5
+2 7 5
+3 4 5
+4 5 5
+5 6 5
+6 7 5
+12
+2 1 6
+1 1 1
+2 1 2
+1 2 3
+2 2 2
+1 5 2
+1 3 1
+2 2 4
+2 4 2
+1 8 1
+2 1 1
+2 1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+7
+7
+5
+7
+7
+4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 1 说明】</p><p>绿线表示当前询问的汽车可以通过的桥梁。绿色顶点代表这辆车可以到达的岛屿。箭头指向汽车最初所在的岛屿。<br></p><p><img alt="屏幕快照 2019-07-10 下午1.46.53.png" src="../upload/fae640846c.png" width="600" height="184.32601880877743"><br></p><p>【样例2说明】<br></p><p><img alt="屏幕快照 2019-07-10 下午1.47.32.png" src="../upload/b8c45a13f9.png" width="600" height="499.16805324459233"><br></p><p>【数据范围与提示】</p><p>对于全部数据，$1 \le n \le 5 \times 10^4,0 \le m \le 10^5,1 \le q \le 10^5$。保证 $1 \le u_i,v_i,s_j\le n,1 \le d_i, r_j, w_j \le 10^9,1 \le b_j \le m,t_j \in \{1,2\}$。</p><p>详细子任务附加限制与分值如下表。（comet 不支持APIO评分）</p><p><img alt="屏幕快照 2019-07-10 下午2.01.40.png" src="../upload/e28523e3e8.png" width="700" height="337.1666666666667"><br></p><p>子任务 1：测试点 3-19<br>子任务 2：测试点 20-32<br>子任务 3：测试点 33-44<br>子任务 4：测试点 45-67<br>子任务 5：测试点 68-86<br>子任务 6：测试点 87-111<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

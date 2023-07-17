@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI2008]配对</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1450 [AHOI2008]配对</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>暑假到了，小可可和伙伴们米到海边度假，距离海滩不远的地方有个小岛，叫做欢乐岛， 整个岛是一个大游乐园，里面有很多很好玩的益智游戏。碰巧岛上正在举行“解谜题赢取免费门票”的活动，只要猜出来谜题，那么小可可和他的朋友就能在欢乐岛上免费游玩两天。 谜题是这样的：给出一串全部是正整数的数字，这些正整数都在一个范围内选取，谁能最快求出这串数字中“逆序对”的个数，那么大奖就是他的啦！当然，主办方不可能就这么简单的让谜题被解开，数字串都是被处理过的，一部分数字被故意隐藏起米，这些数字均用-1来代替，想耍获得大奖就必须求出被处理的数字串中最少能有多少个逆序对。小可可很想获得免费游玩游乐园的机会，你能帮助他吗？</p><p>注：“逆序对”就是如果有两个数 $A$ 和 $B$。 $A$ 在 $B$ 左边且 $A$ 大于 $B$，我们就称这两个数为一个 “逆序对”，例如：4 2 1 3 3 里面包含了 $5$ 个逆序对：（4, 2)、（4, 1)、（4, 3)、（4, 3)、（2, 1)。假设这串数字由 $5$ 个正整数组成，其中任一数字 $N$ 均在 $1 \sim 4$ 之间，数字串中一部分数字被“$-1$” 替代后，如：4 2 -1 -1 3，那么这串数字，可能是 4 2 1 3 3，也可能是 4 2 4 4 3，也可能是别的样子。你要做的就是根据己知的数字，推断出这串数字里最少能有多少个逆序对。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个正整数 $N$ 和 $K$；</p><p>第二行 $N$ 个整数，每个都是 $-1$ 或是一个在 $1 \sim K$ 之间的数。</p><p>$(N \le 10000, K \le 100)$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个正整数，即这些数字里最少的逆序对个数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 4
+4 2 -1 -1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

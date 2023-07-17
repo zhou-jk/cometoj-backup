@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2017普及组-D]跳房子</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0233 [2017普及组-D]跳房子</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>跳房子，也叫跳飞机，是一种世界性的儿童游戏，也是中国民间传统的体育游戏之一。跳房子的游戏规则如下：</p><p>在地面上确定一个起点，然后在起点右侧画n个格子，这些格子都在同一条直线上。每个格子内有一个数字（整数），表示到达这个格子能得到的分数。玩家第一次从起点开始向右跳，跳到起点右侧的一个格子内。第二次再从当前位置继续向右跳，依此类推。规则规定：<u>玩家每次都必须跳到当前位置右侧的一个格子内</u>。玩家可以在任意时刻结束游戏，获得的分数为曾经到达过的格子中的数字之和。</p><p>现在小R研发了一款弹跳机器人来参加这个游戏。但是这个机器人有一个非常严重的缺陷，它每次向右弹跳的距离只能为固定的d。小R希望改进他的机器人，如果他花g个金币改进他的机器人，那么他的机器人灵活性就能增加g，但是需要注意的是，每次弹跳的距离至少为1。具体而言，当$g &lt; d$时，他的机器人每次可以选择向右弹跳的距离为$d-g, d-g+1,d-g+2，...，d+g-2，d+g-1，d+g$；否则（当$g ≥ d$时），他的机器人每次可以选择向右弹跳的距离为$1，2，3，...，d+g-2，d+g-1，d+g$。</p><p>现在小R希望获得至少k分，请问他至少要花多少金币来改造他的机器人。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个正整数n，d，k，分别表示格子的数目，改进前机器人弹跳的固定距离，以及希望至少获得的分数。相邻两个数之间用一个空格隔开。</p><p>接下来n行，每行两个正整数$𝑥_𝑖, 𝑠_𝑖$，分别表示起点到第$i$个格子的距离以及第$i$个格子的分数。两个数之间用一个空格隔开。保证$𝑥_𝑖$按递增顺序输入。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共一行，一个整数，表示至少要花多少金币来改造他的机器人。若无论如何他都无法获得至少k分，输出-1。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7 4 10
+2 6
+5 -3
+10 3
+11 -3
+13 1
+17 6
+20 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7 4 20
+2 6
+5 -3
+10 3
+11 -3
+13 1
+17 6
+20 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【输入输出样例1说明】</p><p>花费2个金币改进后，小R的机器人依次选择的向右弹跳的距离分别为2，3，5，3，4，3，先后到达的位置分别为2，5，10，13，17，20，对应1, 2, 3, 5, 6, 7这6个格子。这些格子中的数字之和15即为小R获得的分数。</p><p>【输入输出样例2说明】</p><p>由于样例中7个格子组合的最大可能数字之和只有18，无论如何都无法获得20分。</p><p>【数据规模与约定】<br>本题共10组测试数据，每组数据10分。<br>对于全部的数据满足$1 ≤ n ≤ 500000, 1 ≤ d ≤2000,1 ≤ 𝑥_𝑖, 𝑘 ≤ 10^9, |s_i| &lt; 10^5$。<br>对于第1，2组测试数据，$n ≤ 10$<br>对于第3，4，5组测试数据，$n ≤ 500$<br>对于第6，7，8组测试数据，$𝑑 = 1$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

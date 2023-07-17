@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2017提高组Day1-C]逛公园</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0141 [2017提高组Day1-C]逛公园</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>策策同学特别喜欢逛公园。公园可以看成一张 $𝑁$ 个点 $𝑀$ 条边构成的有向图，且没有自环和重边。其中 $1$ 号点是公园的入口，$𝑁$ 号点是公园的出口，每条边有一个非负权值，代表策策经过这条边所要花的时间。</p><p>策策每天都会去逛公园，他总是从 $1$ 号点进去，从 $𝑁$ 号点出来。</p><p>策策喜欢新鲜的事物，他不希望有两天逛公园的路线完全一样，同时策策还是一个特别热爱学习的好孩子，他不希望每天在逛公园这件事上花费太多的时间。如果 $1$ 号点到 $𝑁$ 号点的最短路长为 $𝑑$，那么策策只会喜欢长度不超过 $𝑑 + 𝐾$ 的路线。</p><p>策策同学想知道总共有多少条满足条件的路线，你能帮帮他吗？</p><p>为避免输出过大，答案对 $𝑃$ 取模。</p><p>如果有无穷多条合法的路线，请输出 $−1$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个整数 $𝑇$，代表数据组数。</p><p>接下来 $𝑇$ 组数据，对于每组数据：</p><p>第一行包含四个整数 $𝑁, 𝑀, 𝐾, 𝑃$，每两个整数之间用一个空格隔开。</p><p>接下来 $𝑀$ 行，每行三个整数 $𝑎_𝑖, 𝑏_𝑖, 𝑐_𝑖$，代表编号为 $𝑎_𝑖, 𝑏_𝑖$ 的点之间有一条权值为 $𝑐_𝑖$ 的有向边，每两个整数之间用一个空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出文件包含 $𝑇$ 行，每行一个整数代表答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+5 7 2 10
+1 2 1
+2 4 0
+4 5 2
+2 3 2
+3 4 1
+3 5 2
+1 5 3
+2 2 0 10
+1 2 0
+2 1 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+-1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>对于第一组数据，最短路为 $3$。<br>1 – 5，1 – 2 – 4 – 5，1 – 2 – 3 – 5为3条合法路径。<br></p><p>【数据规模与约定】<br></p><p>对于不同的测试点，我们约定各种参数的规模不会超过如下：<br></p><p><img alt="屏幕快照 2019-05-22 上午10.35.08.png" src="../upload/6ec7c11717.png" width="500" height="275"><br></p><p>对于100%的数据，$1≤𝑃≤10^9,1≤𝑎_𝑖,𝑏_𝑖≤𝑁,0≤𝑐_𝑖≤ 1000$。</p><p>数据保证：至少存在一条合法的路线。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Ynoi]2018-F</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1559 [Ynoi]2018-F</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>菜菜子给了你一棵 $n$ 个节点的树，结点标号从 $1$ 到 $n$ 。</p><p>定义树上两点 $a,b$ 的距离 $d(a,b)$ 是最小的非负整数 $k$ ，满足存在结点序列 $v_0,v_1,...,v_k$ ，满足 $v_0=a,v_k=b$ ，且对于 $0\leq i\leq k-1$ 有 $v_i$ 和 $v_{i+1}$ 之间在树上有一条边相连。</p><p>有 $m$ 个询问，每个询问包含参数 $p_0,d_0,p_1,d_1$ ，求：</p><p>$\sum\limits_{d(p_0,a)\leq d_0}\sum\limits_{d(p_1,b)\leq d_1}d(a,b)$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $n$ ，表示树的节点数目。</p><p>接下来一行 $n-1$ 个整数 $f_2,f_3,...,f_n$ ，依次表示 $i$ 和 $f_i$ （ $1\leq f_i\leq i-1$ ）之间有一条边。</p><p>接下来一行一个整数 $m$ ，表示询问数目。</p><p>接下来 $m$ 行依次描述所有询问：每行四个整数 $p_0,d_0,p_1,d_1$ （ $1\leq p_0,p_1\leq n,0\leq d_0,d_1\leq n-1$ ）描述一组询问。</p><p>保证 $1\leq n\leq 10^5,1\leq m\leq 10^5$ 。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共 $m$ 行，依次回答各组询问：每行输出一行一个整数表示这组询问的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7
+1 1 2 3 5 2
+5
+5 1 5 0
+2 0 5 0
+2 2 4 5
+7 2 2 4
+3 2 5 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+3
+69
+57
+70</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

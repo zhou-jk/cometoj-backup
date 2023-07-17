@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2006]花仙子的魔法</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0990 [HNOI2006]花仙子的魔法</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>相传，在天地初成的远古时代，世界上只有一种叫做 “元” 的花。接下来，出 现了一位拥有魔法的花仙子，她能给花附加属性，从此，“元”便不断变异，产生了大千世界千奇百怪的各种各样的花。据说，花仙子既可存在于二维空间（平面），又可存在于三维空间（立体），还可存在于 $n$ 维空间（想象）。二维空间的点可用向量（$x_1,x_2$）表示，三维空间的点可用向量（$x_1,x_2,x_3$）表 示，一般来说，$n$ 维空间的点可用向量（$x_1,x_2,…,x_n$）表示。而 $n$ 维空间中两点（$x_1,x_2,…,x_n$）与（$w_1,w_2,…,w_n$）之间的距离定义为 $\sqrt{\sum_{i=1}^n(X_i-W_i)^2}$。</p><p>在 $n$ 维空间中，花仙子每实施魔法就要选择一个参考点（$w_1,w_2,…,w_n$）和一个作用半径 $r$，并且参考点的位置和作用半径的大小可以任意选择。这时，$n$ 维空间中所有与参考点（$w_1,w_2,…,w_n$）之间的距离小于作用半径r的花都会受到这次魔法的影响。每次魔法都会给受到影响的花带来不同的属性，且的效果可以叠加。一般来说，若花仙子总共实施了 $m$ 次魔法，则 $n$ 维空间中处于某点的花所具有的属性可用长度为 $m$ 的二进制串 $a_1a_2…a_m$ 来描述，其中对 $1≤i≤m$，若该花受到第 $i$ 次魔法的影响，则 $a_i$ 的值为 $1$，否则为 $0$。显然，不同的属性对应不同的花。 现在的问题是：花仙子在 $n$ 维空间中实施了 $m$ 次魔法后，最多能得到多少种不同的花？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包含两个整数，并用一个空格隔开，第一个整数表示实施魔法的次数 $m$，第二个整数表示空间的维数 $n$。</p><p>其中，$1≤m≤100,1≤n≤15$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个整数，表示花仙子在 $n$ 维空间中实施了 $m$ 次魔法后，最多能得到多少种不同的花。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

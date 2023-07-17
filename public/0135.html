@@ -1,0 +1,127 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2016提高组Day1-B]天天爱跑步</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0135 [2016提高组Day1-B]天天爱跑步</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 C 同学认为跑步非常有趣，于是决定制作一款叫做《天天爱跑步》的游戏。《天天爱跑步》是一个养成类游戏，需要玩家每天按时上线，完成打卡任务。<br></p><p>这个游戏的地图可以看作一棵包含 $n$ 个结点和 $n-1$ 条边的树，每条边连接两个结点，且任意两个结点存在一条路径互相可达。树上结点编号为从1到n的连续正整数。<br></p><p>现在有 $m$ 个玩家，第 $i$ 个玩家的起点为 $S_i$，终点为 $T_i$。每天打卡任务开始时，所有玩家<u>在第 0 秒</u>同时从<u>自己的起点</u>出发，以<u>每秒跑一条边</u>的速度，不间断地沿着最短路径向着<u>自己的终点</u>跑去，跑到终点后该玩家就算完成了打卡任务。（由于地图是一棵树，所以每个人的路径是唯一的）<br></p><p>小 C 想知道游戏的活跃度，所以在每个结点上都放置了一个观察员。在结点 $j$ 的观察员会选择在第 $W_j$ 秒观察玩家，一个玩家能被这个观察员观察到当且仅当该玩家在第 $W_j$ 秒也<u>正好</u>到达了结点 $j$。小 C 想知道每个观察员会观察到多少人？<br></p><p><u>注意：</u>我们认为一个玩家到达自己的终点后该玩家就会结束游戏，他不能等待一段时间后再被观察员观察到。即对于把结点 $j$ 作为终点的玩家：若他在第&nbsp;$W_j$ 秒<u>前</u>到达终点，则在结点&nbsp;$j$ 的观察员<u>不能观察到</u>该玩家；若他<u>正好</u>在第&nbsp;$W_j$ 秒到达终点，则在结点 $j$ 的观察员<u>可以观察到</u>这个玩家。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有两个整数 $n$ 和 $m$。其中&nbsp;$n$ 代表树的结点数量，同时也是观察员的数量，&nbsp;$m$ 代表玩家的数量。</p><p>接下来&nbsp;$n-1$ 行每行两个整数 $u$&nbsp;和&nbsp;$v$ ，表示结点&nbsp;$u$ 到结点&nbsp;$v$ 有一条边。</p><p>接下来一行&nbsp;$n$ 个整数，其中第&nbsp;$j$ 个整数为 $W_j$，表示结点&nbsp;$j$ 出现观察员的时间。</p><p>接下来&nbsp;$m$ 行，每行两个整数&nbsp;$S_i$ 和$T_i$，表示一个玩家的起点和终点。</p><p>对于所有的数据，保证 $1 \le S_i, T_i \le n, 0 \le W_j \le n$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $1$ 行 $n$ 个整数，第 $j$ 个整数表示结点 $j$ 的观察员可以观察到多少人。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 3
+2 3
+1 2
+1 4
+4 5
+4 6
+0 2 5 1 2 3
+1 5
+1 3
+2 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 0 0 1 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3
+1 2
+2 3
+2 4
+1 5
+0 1 0 3 0
+3 1
+1 4
+5 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2 1 0 1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例1说明】</p><p>对于 1 号点，$W_1=0$，故只有起点为 1 号点的玩家才会被观察到，所以玩家 1 和玩家 2 被观察到，共 2 人被观察到。<br>对于 2 号点，没有玩家在第 2 秒时在此结点，共 0 人被观察到。<br>对于 3 号点，没有玩家在第 5 秒时在此结点，共 0 人被观察到。<br>对于 4 号点，玩家 1 被观察到，共 1 人被观察到。<br>对于 5 号点，玩家 2 被观察到，共 1 人被观察到。<br>对于 6 号点，玩家 3 被观察到，共 1 人被观察到。</p><p>【数据规模与特点】</p><p>测试点 1-2：$n=m=991$，所有人的起点等于自己的终点，即 $S_i=T_i$；<br>测试点 3-4：$n=m=992$，$W_j=0$；<br>测试点 5：$n=m=993$；<br>测试点 6-8：$n=m=99994$，树退化成一条链，对于 $1 \le i &lt; n$，$i$ 与 $i+1$ 有边；<br>测试点 9-12：$n=m=9995$，$S_i=1$；<br>测试点 13-16：$n=m=99996$，$T_i=1$；<br>测试点 17-19：$n=m=99997$；<br>测试点 20：$n=m=299998$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

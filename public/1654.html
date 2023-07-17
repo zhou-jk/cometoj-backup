@@ -1,0 +1,121 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day2]Sticks</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1654 [Wannafly冬令营2018Day2]Sticks</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 Q 手上有 $12$ 根木棒，它们的长度依次为 $l_1, l_2, \cdots, l_{12}$。他想用一些木棒来拼出三角形,这里每个三角形要用三根合适的木棒 $l_a, l_b, l_c$ 组成，它们满足 $l_a + l_b &gt; l_c$ 和 $l_a + l_c &gt; l_b$ ，以及 $l_b + l_c &gt; l_a$。此外，每根木棒只能用在至多一个三角形中。你能帮他尽可能多的拼出三角形吗？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含多组测试数据。第一行包含一个整数 $T$，表示测试数据的组数。随后的内容是各组测试数据。对于每组测试数据：</p><p>仅一行，包含十二个整数 $l_1, l_2, \cdots, l_{12}$。</p><ul><li>$1 \leq T \leq 6000$</li><li>$1 \leq l_i \leq 10^9$</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组测试数据，首先输出一行<code>Case #x: m</code>，其中<code>x</code>是测试数据的编号（从 $1$ 开始编号），<code>m</code>是三角形数量的最大值。</p><p>接下来输出<code>m</code>行，每行包含三个整数，表示三角形三条边的长度。</p><p>如果有多种最优解，请输出任意一种。注意，每根木棒只能使用至多一次，而且对于输出中位于同一行的相邻整数，你需要输出一个空格将它们隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 2 1 3 1 4 1 5 1 6 1 7
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3 5 8 13 21 34 55 89 144 233
+2 3 6 15 27 59 72 83 121 159 201 234
+2 2 4 8 16 32 64 128 256 512 1024 1281</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Case #1: 4
+1 1 1
+4 3 2
+1 1 1
+6 7 5
+Case #2: 3
+6 5 4
+10 12 11
+9 8 7
+Case #3: 0
+Case #4: 2
+83 121 72
+234 159 201
+Case #5: 1
+1024 1281 512</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

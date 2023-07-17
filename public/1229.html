@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2010]下棋问题</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1229 [JSOI2010]下棋问题</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>JYY 发明了一个新的益智游戏，该游戏由 $A$ 和 $B$ 两人轮流在一个 $1,000,000 \times 1,000,000$ 的方格棋盘上的网格线交点下棋，网格线交点的坐标以 $(x, y)$ 表示之 $( 0 \le x , y \le 1,000,000)$，$(0, 0)$ 代表棋盘最左下角的点。每一个棋子放置的位置不可以与任何其它棋子在同一 $X$ 坐标或 $Y$ 坐标上，棋盘上新增加一个棋子时，棋盘上的计数器会自动算出以目前棋盘上棋子所能够围成的「无障碍四方形」个数。</p><p>「无障碍四方形」是指以任意两个棋子所定义出的四方形内部不含其它棋子，每下一个棋子后所算出的「无障碍四方形」个数即为下该棋子的得分數。每位下棋者的总分即是该下棋者每个所下棋子的得分数总和。请写一个程序计算 $A$ 和 $B$ 两位下棋者的累计总分。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入只有一个整数 $n$，代表此盘棋共下了 $n (1 \le n \le 5,000)$ 个棋子。接下来的 $n$ 行，每一行有两个整数，依序代表这 $n$ 个棋子所放置的位置。</p><p>请注意，由于测试资料中有可能包含 $n=1000$ 的输入，你的程序必须非常的有效率才会通过所有的测试资料。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>请输出两个整数，分别代表该盘棋两位下棋者的累计得分数。先下棋者（A）的分数在前，后下棋者（B）的分数在后，中间用一个空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+2 3
+3 4
+1 2
+4 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

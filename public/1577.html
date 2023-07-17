@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #11]B-usiness</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1577 [Contest #11]B-usiness</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><strong>※ 简洁题意在分隔线下方</strong></p><p>一张笑盈盈的脸挡住了替罪羊树的去路，那不怀好意的笑容使困倦的银发少女皱了皱眉。「 sgt ，你有多长时间没打理过那些可怜的节点了？恕我直言，你的本体看上去可不是一般的斜。」</p><p>「只是我今天的 $\alpha$ 设得比较大…」替罪羊树辩解的同时，心虚地偏了下身子试图遮住背后长歪二叉树的虚影。</p><p>「要不要尝试一下我新开展的『 splay 节点银行』服务？专为安于现状的拖延症患者设计…」伸展树伸手拉住了抬脚要走的替罪羊树，「这里支持<strong>$m$ 种代存节点的方式，第 $i$ 种每次可以存 $a_i$ 个节点，并在 $n$ 天后取出 $b_i$ 个节点</strong>。 kdt 生日前的这 $n$ 天我会一直停留在这里，<strong>每天你都可以进行任意种，每种任意次</strong>的节点存储。」她在自己的右臂上打了个标记，「绝对可靠。」</p><p>见替罪羊树一副迷惑不解的样子，伸展树挥手施放了法术，影影绰绰的画面在触手可及之处凝滞。这是一种去除强制在线的算法，因违逆了时间的自然流逝，其使用也有严格的限制。</p><p>替罪羊树看到了一帧自己囿于贫穷省吃俭用的样子，和一帧自己瘫在床上颓废的样子，发现<strong>每天结束时自己若有 $i$ 个节点，就能赚到 $f(i)$ 个节点，而 $f(i)$ 单调不增</strong>，不得不承认伸展树的正确性。但看到再之后一帧的瞬间，她面色一黑：「那么，为什么利息是负的？你能解释一下你<strong>所有的 $b_i$ 都小于或等于 $a_i$</strong>的原因吗？」</p><p>「当然是因为——我帮你承担了 MLE 的风险。」伸展树煞有介事地说道。</p><p>在未引起她们注意的，更远的未来帧里，不祥的黑暗攀附在画面的一角。</p><p>你对这个种族的未来毫无兴趣，只想知道替罪羊树的最优决策，也就是说——</p><p><br></p><hr><p><strong><br></strong></p><p><strong>简洁题意：</strong></p><p>你要计算如下模型能得到的最大钱数：</p><p>有 $n$ 天，初始时你的钱数为 $0$，有 $m$ 种可能操作，第 $i$ 种会使你当前失去 $a_i$ 的钱数并在 $n$ 天结束后返还 $b_i$ 的钱数。每一天可以执行任意多种操作，每种任意次（但每次操作后你的钱数不能为负）。每天结束时你会获得一个与当前持有钱数 $x$ 相关的收入 $f(x)$ ，而 $f(x)$ 单调不增。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个整数 $n$ ($1 \le n \le 100$), $m$ ($1 \le m \le 100$), $k$ ($0 \le k \le 1000$) ，分别表示总天数，存储种类数和阈值。</p><p>第二行 $k+1$ 个整数，第 $i$ 个数 $w_i(0 \le w_i \le 1000)$ 表示 $f(i-1)$ 的值。并且我们认为当 $i&gt;k$ 时，$f(i) = 0$ ，保证 $f(x)$ 单调不增。</p><p>接下来的 $m$ 行，每行两个数 $a_i, b_i(1 \le b_i \le a_i \le 1000)$ ，分别表示第 $i$ 种存储方式每次存入的节点数和最后一天<strong>返还的</strong>节点数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个整数，表示最优策略下 $n$ 天后持有的最多节点数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 1 2
+2 1 0
+1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5 10
+30 29 29 28 28 27 26 26 25 24 24
+22 22
+26 15
+1 1
+22 14
+30 27</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>150
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

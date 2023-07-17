@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day3]小游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1658 [Wannafly冬令营2018Day3]小游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：4500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>本题来源于《中国式家长》中的一个小游戏。</p><p>游戏开始时会生成一个长度为 $n$ 的宝石序列，每个宝石按照从左到右的顺序被标号成 $1$ 到 $n$。每个宝石有类型和能量两种属性，宝石的类型有四种，分别用字母ABCD表示，在初始时每个宝石的能量都是 $1$。同时保证初始时不存在连续的三个相同类型的宝石。</p><p>可怜可以进行若干轮操作，每轮操作的流程如下：</p><ul><li>选择结束游戏，当只剩下一个宝石的时候，可怜必须结束游戏。</li><li>选择并删除某一个当前还存在的宝石，删除后右侧的宝石会自动向左补齐。</li><li>令 $i$ 为当前最小的下标满足从左到右第 $i,i+1,i+2$ 个宝石的类型和能量都相同。如果这样的 $i$ 不存在，则这一轮结束，开始下一轮。否则这三个宝石会被移出游戏，同时在原来第 $i$ 个宝石的位置会出现一个类型和原来相同，能量比原来大 $1$ 的宝石。接着右侧的宝石会向左补齐，游戏回到这一步的开始，并继续从左到右寻找连续三个相同的宝石。</li></ul><p>我们用 $A(x)$ 表示类型为 $A$ 能量为 $x$ 的宝石，下面是两个例子：</p><ul><li>如果宝石序列是 A(1)A(1)B(1)A(1)A(1)，那么在删除 B(1) 之后，结果序列为A(2)A(1)。</li><li>如果宝石序列是 A(3)A(3)A(2)A(2)A(1)A(1)B(1)A(1)，那么在删除 B(1) 之后，结果序列为 A(4)。</li></ul><p>可怜是一个全收集爱好者。她发现每一次开始这个小游戏，初始的宝石的数量、顺序和颜色都是完全相同的。而游戏中有一个传说级成就：合成出所有可能的结束状态。</p><p>在开始刷成就之前，可怜 想让你帮她计算一下，一共有多少种不同的结束状态。</p><p>两个结束状态是不同的当且仅当剩下宝石的数量不同，或者存在一个下标 $i$ 满足两个状态中从左到右第 $i$ 个小球的类型或者能量不同。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $n(1 \leq n \leq 10^6)$ 表示宝石序列的长度。</p><p>第二行一个长度为 $n$ 的由 ABCD 组成的字符串，表示初始的宝石序列。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数，表示可能的结束状态个数。答案可能很大，对 $998244353$ 取模后输出。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+ABA</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+AABAA</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>13</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

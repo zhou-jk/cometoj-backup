@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]飞行棋</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1015 [欢乐赛]飞行棋</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">JWJU的桌游协会经常在课余时间组织大家玩飞行棋游戏，来促进同学们之间的友♂谊。</p><p>飞行棋的规则如下：</p><p>1、每名玩家有一个棋子，每个回合可以掷一次骰子。</p><p>2、如果使用的骰子为 $k$ 面，则这 $k$ 面上的点数分别为 $1,2,3, \ldots, k$，且掷得每种点数的概率均为 $\frac{1}{k}$。</p><p>3、如果当前回合掷得的点数为 $Q$，则玩家控制的棋子前进 $Q$ 步。</p><p>4、若当前棋子的位置到终点的距离 $d &lt; Q$，则棋子先行动 $d$ 步到终点，再倒退 $Q-d$ 步。（即到终点的距离变为 $Q-d$）</p><p>5、某一回合结束后，若该玩家的棋子恰好到达终点，则宣布胜利。</p><p>璇璇姐姐参与了这个游戏，已知现在她的棋子到终点的距离为 $d$，游戏使用的骰子有 $k$ 面，求璇璇获得胜利需要的回合数期望。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">输入包含两个正整数 $d$ 和 $k$，分别代表璇璇的棋子到终点的距离 $d$ 以及骰子的面数 。</p><p>保证 $1 \le k \le d \le 10^{18}, 1 \le k \le 20$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>可以证明此题答案可以表示为有理数 $\frac{x}{y}$，且 $x,y$ 互质，此时需要输出 $x \times y^{-1} \bmod 1000000007$ ($1000000007 = 10^9+7$)，其中 $y^{-1}$ 表示 $y$ 在模 $1000000007$ 意义下的乘法逆元，且保证在本题数据范围内，$y$ 的乘法逆元一定存在。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

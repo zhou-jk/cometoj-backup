@@ -1,0 +1,135 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]时钟</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0270 [USACO]时钟</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>考虑将如此安排在一个 $3 \times 3$ 行列中的九个时钟：<br></p><pre><code> |-------|    |-------|    |-------|
+ |       |    |       |    |   |   |
+ |---O   |    |---O   |    |   O   |
+ |       |    |       |    |       |
+ |-------|    |-------|    |-------|
+     A            B            C
+
+ |-------|    |-------|    |-------|
+ |       |    |       |    |       |
+ |   O   |    |   O   |    |   O   |
+ |   |   |    |   |   |    |   |   |
+ |-------|    |-------|    |-------|
+     D            E            F
+ |-------|    |-------|    |-------|
+ |       |    |       |    |       |
+ |   O   |    |   O---|    |   O   |
+ |   |   |    |       |    |   |   |
+ |-------|    |-------|    |-------|
+     G            H            I<br></code></pre><p>目标要找一个最小的移动顺序将所有的指针指向 12 点。下面原表格列出了 9 种不同的旋转指针的方法，每一种方法都叫一次移动。选择 1 到 9 号移动方法，将会使在表格中对应的时钟的指针顺时针旋转 90 度。<br></p><pre><code>移动方法  受影响的时钟 
+1        ABDE
+2        ABC
+3        BCEF
+4        ADG
+5        BDEFH
+6        CFI
+7        DEGH
+8        GHI
+9        EFHI<br></code></pre><p>例如</p><pre><code>9 9 12          9 12 12       9 12 12        12 12 12         12 12 12
+6 6 6   5 -&gt;    9  9  9   8-&gt; 9  9  9   4 -&gt; 12  9  9   9 -&gt;  12 12 12
+6 3 6           6  6  6       9  9  9        12  9  9         12 12 12
+
+[但这可能不是正确的方法，请看下面]</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1-3$ 行：三个空格分开的数字，每个数字表示一个时钟的初始时间，3,6,9,12。数字的含意和上面第一个例子一样。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>单独的一行包括一个用空格分开的将所有指针指向 12:00 的最短移动顺序的列表。</p><p>如果有多种方案，输出那种使其连接起来数字最小的方案。(举例来说 5 2 4 6 &lt; 9 3 1 1)。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9 9 12
+6 6 6
+6 3 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5 8 9</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

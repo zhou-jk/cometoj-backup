@@ -1,0 +1,136 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2018]荣誉称号</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0701 [SDOI2018]荣誉称号</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：10000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>休闲游戏玩家小 Q 不仅在算法竞赛方面取得了优异的成绩，还在一款收集钻石的游戏中排名很高。</p><p>这款游戏一共有 $n$ 种不同类别的钻石，编号依次为 $1$ 到 $n$。小 Q 已经玩了这款游戏很久了，对于第 $i$ 种钻石，他已经收集到了 $a_i$ 个。这款游戏最大的亮点就是，钻石只有一种获得途径，那就是从商城中购买。具体来说，第 $i$ 种钻石的单价为 $b_i$ 点券。为了鼓励玩家充值，每种钻石都没有数量上限，只要肯充钱，就可以拥有任意多的钻石。但是这款游戏并没有开发"丢弃道具"功能，因此小 Q 不能通过丢弃钻石去完成任务。</p><p>最近这款游戏推出了一个限时成就任务，完成任务的玩家可以获得荣誉称号，而完成任务条件则是：给定正整数 $k$ 和 $m$，对于任意一个整数 $x(2^k\leq x\leq n)$，</p><p>$\large a_x+a_{\left\lfloor\frac{x}{2}\right\rfloor}+a_{\left\lfloor\frac{x}{4}\right\rfloor}+a_{\left\lfloor\frac{x}{8}\right\rfloor}+...+a_{\left\lfloor\frac{x}{2^k}\right\rfloor}$</p><p>都要是 $m$ 的倍数。</p><p>高玩小 Q 当然想完成这个限时成就任务，但是在充钱之前他想知道他究竟需要多少点券才能完成这个任务。请写一个程序帮助小 Q 计算最少需要的点券数量。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个正整数 $T$，表示测试数据的组数。</p><p>每组数据第一行包含 $9$ 个正整数 $n,k,m,p,SA,SB,SC,A,B$，其中 $n$ 表示钻石种类数，$k,m$ 表示任务条件。</p><p>为了在某种程度上减少输入量，<code>a[]</code>和<code>b[]</code>由以下代码生成：</p><pre><code class="lang-c">unsigned int SA, SB, SC;
+int p, A, B;
+unsigned int rng61(){
+    SA^=SA&lt;&lt;16;
+    SA^=SA&gt;&gt;5;
+    SA^=SA&lt;&lt;1;
+    unsigned int t=SA;
+    SA=SB;
+    SB=SC;
+    SC^=t^SA;
+    return SC;
+}
+
+void gen(){
+    scanf("%d%d%d%d%u%u%u%d%d",&amp;n,&amp;k,&amp;m,&amp;p,&amp;SA,&amp;SB,&amp;SC,&amp;A,&amp;B);
+    for (int i=1; i&lt;=p; i++) scanf("%d%d",&amp;a[i],&amp;b[i]);
+    for (int i=p+1; i&lt;=n; i++){
+        a[i]=rng61()%A+1;
+        b[i]=rng61()%B+1;
+    }
+}
+</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据，输出一行一个整数，即最少需要的点券数量。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+3 1 2 3 11111 22222 33333 1 1
+1 5
+2 3
+3 6
+7 2 3 7 11111 22222 33333 1 1
+6 9
+4 5
+3 7
+5 2
+2 4
+1 7
+9 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+14</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$1\le T\le 10$，$1\le k\le 10$ 且 $2^k\le n$，$1\le p\le \min(n,10^5)$，$10^4\le SA,SB,SC\le 10^6$，$1\le A,B,a_i,b_i\le 10^7$。</p><p><strong>子任务1（30分）</strong>：满足 $1\le n\le 1000$ 且 $m=2$。</p><p><strong>子任务2（40分）</strong>：满足 $1\le n\le 10^5$ 且 $m\le 200$。</p><p><strong>子任务3（30分）</strong>：满足 $1\le n\le 10^7$ 且 $m\le 200$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

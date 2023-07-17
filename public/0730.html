@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI/HNOI2017]影魔</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0730 [AHOI/HNOI2017]影魔</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>影魔，奈文摩尔，据说有着一个诗人的灵魂。事实上，他吞噬的诗人灵魂早已成千上万。千百年来，他收集了各式各样的灵魂，包括诗人、牧师、帝王、乞丐、奴隶、罪人，当然，还有英雄。</p><p>每一个灵魂，都有着自己的战斗力，而影魔，靠这些战斗力提升自己的攻击。</p><p>奈文摩尔有 $n$ 个灵魂，他们在影魔宽广的体内可以排成一排，从左至右标号 $1$ 到 $n$。第 $i$ 个灵魂的战斗力为 $k_i$，灵魂们以点对的形式为影魔提供攻击力，对于灵魂对 $i, j(i&lt;j)$ 来说，若不存在 $k_s(i&lt;s&lt;j)$ 大于 $k_i$ 或者 $k_j$，则会为影魔提供 $p_1$ 的攻击力（可理解为：当 $j = i + 1$ 时，因为不存在满足 $i &lt; s &lt; j$ 的 $s$，从而 $k_s$ 不存在，这时提供 $p_1$ 的攻击力；当 $j &gt; i + 1$ 时，若 $\max\{k_s | i &lt; s &lt; j\}\le \min(k_i, k_j)$，则提供 $p_1$ 的攻击力）；另一种情况，令 $c$ 为 $k_{i + 1}, k_{i + 2}, \cdots, k_{j -1}$ 的最大值，若 $c$ 满足：$k_i &lt; c &lt; k_j$，或者 $k_j &lt; c &lt; k_i$，则会为影魔提供 $p_2$ 的攻击力，当这样的 $c$ 不存在时，自然不会提供这 $p_2$ 的攻击力；其他情况的点对，均不会为影魔提供攻击力。</p><p>影魔的挚友噬魂鬼在一天造访影魔体内时被这些灵魂吸引住了，他想知道，对于任意一段区间 $[a,b]$，位于这些区间中的灵魂对会为影魔提供多少攻击力，即考虑所有满足 $a\le i&lt;j\le b$ 的灵魂对 $i, j$ 提供的攻击力之和。</p><p>顺带一提，灵魂的战斗力组成一个 $1$ 到 $n$ 的排列：$k_1, k_1, \cdots, k_n$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行四个整数 $n,m,p_1,p_2$；</p><p>第二行 $n$ 个整数数：$k_1, k_2,\cdots, k_n$；</p><p>接下来 $m$ 行，每行两个数 $a,b$，表示询问区间 $[a,b]$ 中的灵魂对会为影魔提供多少攻击力。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共输出 $m$ 行，每行一个答案，依次对应 $m$ 个询问。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 5 2 3
+7 9 5 1 3 10 6 8 2 4
+1 7
+1 9
+1 3
+5 9
+1 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>30
+39
+4
+13
+16</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $30\%$ 的数据，$1\le n, m\le 500$；</p><p>另有 $30\%$ 的数据，$p_1 = 2p_2$；</p><p>对于 $100\%$ 的数据，$1\le n,m\le 200000, 1\le p_1, p_2\le 1000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

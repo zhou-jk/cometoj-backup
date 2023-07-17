@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day3]涂鸦(困难版)</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1663 [Wannafly冬令营2018Day3]涂鸦(困难版)</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>九条可怜收到了一块神奇的画板。</p><p>画板被划分成了 $n$ 行 $m$ 列一共 $n \times m$ 个格子，记第 $i$ 行第 $j$ 列的格子的坐标为 $(i,j)$。画板的每一行有属性 $l_i,r_i(1 \leq l_i \leq r_i \leq m)$，代表了 $[1,m]$ 的一个子区间。</p><p>画板有一个开始按钮，在按下开始按钮之后，画板会自动初始化颜色：对于第 $i$ 行，画板会从 $[l_i,r_i]$ 的 $\frac{(r_i-l_i+1)(r_i-l_i+2)}{2}$ 个子区间中，独立地等概率地选择一个涂黑。举例来说，如果 $i=1,[l_i,r_i]=[1,2]$，那么它一共有 $3$ 个子区间 $[1,2],[1,1]$ 和 $[2,2]$，他们各有 $\frac{1}{3}$ 的概率被选中，因此格子 $(1,1),(1,2)$ 都有 $\frac{1}{2}$的概率被染黑。</p><p>在画板初始化结束后，可怜选择了 $q$ 个矩形，第 $i$ 个矩形包含了所有满足 $a \in [lx_i,rx_i], b \in [ly_i,ry_i]$ 的格子 $(a,b)$。接着可怜会把至少被一个矩形包含的格子给涂白（如果原来就是白色则颜色不变）。</p><p>可怜重复上述过程若干次，渐渐地感到了无聊。为了让事情更有趣一些，她想要计算，在给出这 $q$ 个矩形的情况下，绘画结束后画板上黑色格子数量的期望是多少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个整数 $n,m,q(1 \leq n,q \leq 2\times 10^5,1 \leq m \leq 10^9)$。</p><p>接下来 $n$ 行每行两个整数 $l_i,r_i(1 \leq l_i \leq r_i \leq m)$，表示第 $i$ 行的属性。</p><p>接下来 $q$ 行每行四个整数 $lx_i,ly_i,rx_i,ry_i(1 \leq lx_i \leq rx_i \leq n, 1 \leq ly_i \leq ry_i \leq m)$，表示一个矩形。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数表示答案，棋盘上黑色格子数量的期望对 $998244353$ 取模后的结果。即，如果答案的最简分数表示为 $\frac{x}{y}$，输出 $x \times y^{-1} \mod 998244353$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 4 1
+1 3
+2 4
+3 4
+1 4
+2 2 3 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>831870299</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

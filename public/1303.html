@@ -1,0 +1,118 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CQOI2018]解锁屏幕</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1303 [CQOI2018]解锁屏幕</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>使用过 Android 手机的同学一定对手势解锁屏幕不陌生。 Android 的解锁屏幕由 $3 \times 3$ 个点组成，手指在屏幕上画一条线，将其中一些点连接起来，即可构成一个解锁图案。如下面三个例子所示：</p><p><img src="../upload/c502a1c2cb.png" alt="00000.png"></p><p>画线时还需要遵循一些规则：</p><ol><li><p>连接的点数不能少于 $4$ 个。也就是说只连接两个点或者三个点会提示错误。</p></li><li><p>两个点之间的联线不能弯曲。</p></li><li><p>每个点只能“使用”一次，不可重复。这里的“使用”是指手指划过一个点，该点变绿。</p></li><li><p>两个点之间的连线不能“跨过”另一个点，除非那个点之前已经被“使用”过。</p></li></ol><p>对于最后一条规则，参见下图的解释。左边两幅图违反了该规则；而右边两幅图（分别为 $2 \rightarrow 4 \rightarrow 1 \rightarrow 3 \rightarrow 6$ 和 $6 \rightarrow 5 \rightarrow 4 \rightarrow 1 \rightarrow 9 \rightarrow 2$）则没有违反规则，因为在“跨过”点时，点已经被使用过了。</p><p><img src="../upload/303804a1f0.png" alt="000000.png"></p><p>现在工程师希望改进解锁屏幕，增减点的数目，并移动点的位置，不再是一个九宫格形状，但保持上述画线规则不变。</p><p>请计算新的解锁屏幕上，一共有多少满足规则的画线方案。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行为一个整数 $n$，表示点的数目。</p><p>接下来 $n$ 行，每行两个空格分开的整数 $x_i$ 和 $y_i$，表示每个点的坐标。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共一行，为题目所求方案数除以 $100000007$ 的余数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+0 0
+1 1
+2 2
+3 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+0 0
+0 1
+0 2
+1 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>18</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $30\%$ 的数据，$1 \le n \le 10$。</p><p>对于 $100\%$ 的数据，$-1000 \le x_i ,y_i \le 1000$，$1 \le n &lt; 20$。各点坐标不相同。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

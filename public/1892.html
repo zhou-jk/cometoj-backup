@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2019nwu校赛]三生三世</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1892 [2019nwu校赛]三生三世</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><strong>“秦皇岛的海风轻轻地唱着歌，</strong></p><p><strong>唤醒了水上的涟漪，</strong></p><p><strong>冬日的阳光把沙滩洒满了金黄。”</strong></p><p>BD 哥在沙滩上留下了一串串脚印，突然他发现了一个石碑，上面刻着“HQDB”，下面还写着一个古老的年份——“1926”。</p><hr><p>BD 哥不由得想起了自己的 ID：QBDH。“如果一个ID是另一个ID的全排列的一种，那么说明这个ID可能是上一个ID的前世啊。”</p><p>BD 哥脑洞大开。“把我的 ID 的 24 种全排列写出来并按字典序排序，这个 ID 刚好是我的 ID 的前一个啊！这个年份也基本符合一代人的寿命，他就是我的上一代啊！”</p><p>BD 哥认为，在所有本质不同的全排列按字典序排序后，排列 A 的位置减排列 B 的位置即为世代之差(当 A 的字典序比 B 小时，世代之差为负数，但请在输出答案时加上 $10^9+7$ 使其变成正数)。</p><p>给你 BD 哥的 ID 和另一个 ID，请你算出这个 ID 和 BD 哥差了几个世代。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含一个整数 $n$，代表字符串 ID 的长度。$(n≤2*10^5)$</p><p>接下来两行分别给出一个长度为 $n$ 的字符串，仅包含大写字母，先给出 BD 哥的 ID，下一行给出需要判断的 ID。</p><p>保证两个 ID 都是同一个字符串的全排列。答案对 $10^9+7$ 取模。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个整数，代表这个 ID 和 BD 哥 ID 的字典序之差对 $10^9+7$ 取模后的结果。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+QBDH
+HQDB</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

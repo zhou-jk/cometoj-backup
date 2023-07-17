@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2016]炸弹攻击 2</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0847 [JSOI2016]炸弹攻击 2</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>还记得那款题为「炸弹攻击」的塔防游戏吗？这款游戏出了续作，炸弹的威力大大加强了。</p><p>游戏的地图是一个二维平面。JYY 的阵地位于 $x$ 轴下方，而所有的敌人目前都位于 $x$ 轴上方。</p><p>在 JYY 的阵地中有建有 $T$ 个激光塔和 $S$ 个发射源。其中第 $i$ 个防御塔 $T_i$ 的坐标为 $(tx_i,ty_i)$，第 $i$ 个发射源 $S_i$ 的坐标为 $(sx_i,sy_i)$。</p><p>地图上有 $D$ 个敌人，第 $i$ 个敌人 $D_i$ 的坐标为 $(dx_i,dy_i)$。</p><p>两座激光塔可以相互连接形成能量墙。发射源朝向敌人发出的能量如果穿过了能量墙，可以得到巨大的加强而变为「超级射线」并瞬间消灭敌人。</p><p>JYY 想知道他有多少种可以可以发出超级射线的攻击方案。</p><p>具体来说，一个可以发出超级射线的攻击方案为一个由四个点组成的集合：${T_i,T_j,S_k,D_l}$，满足 $1\le i\lt j\le T,1\le k\le S,1\le l\le D$，并且线段 $T_iT_j$ 和线段 $S_kD_l$ 相交。</p><p>游戏设定保证在这 $T+D+S$ 个点中，不存在重点也不存在三点共线。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个正整数 $D$；</p><p>接下来 $D$ 行，每行包含两个整数 $dx_i,dy_i$，表示一个敌人的坐标；</p><p>第 $D+1$ 行包含一个整数 $S$；</p><p>接下来 $S$ 行，每行包含两个整数 $sx_i,sy_i$，表示一个发射源的坐标；</p><p>第 $D+S+2$ 行包含一个整数 $T$；</p><p>接下来 $T$ 行，每行包含两个整数 $tx_i,ty_i$，表示一个激光塔的坐标。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数，可以发出超级射线的攻击方案个数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+1 12
+10 30
+30 10
+1
+10 -10
+4
+2 -11
+9 -1
+11 -1
+15 -14</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $20\%$ 的数据，满足 $D,S,T\le 30$；</p><p>对于 $50\%$ 的数据，满足 $D,S,T\le 150$；</p><p>对于 $100\%$ 的数据，满足 $1\le D,S,T\le 800,dy_i\gt 0,sy_i,ty_i\lt 0$，所有坐标绝对值不超过 $10^9$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

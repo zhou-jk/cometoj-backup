@@ -1,0 +1,131 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JLOI/SHOI2016]方</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0870 [JLOI/SHOI2016]方</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>上帝说，不要圆，要方，于是便有了这道题。</p><p>由于我们应该方，而且最好能够尽量方，所以上帝派我们来找正方形。上帝把我们派到了一个有 $N$ 行 $M$ 列的方格图上，图上一共有 $(N + 1) \times (M + 1)$ 个格点，我们需要做的就是找出这些格点形成了多少个正方形（换句话说，正方形的四个顶点都是格点）。</p><p>但是这个问题对于我们来说太难了，因为点数太多了，所以上帝删掉了这 $(N + 1) \times (M + 1)$ 中的 $K$ 个点。既然点变少了，问题也就变简单了，那么这个时候这些格点组成了多少个正方形呢？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含三个整数 $N$，$M$，$K$，代表棋盘的行数、列数和不能选取的顶点个数。 保证 $N, M \geq 1$，$K \leq (N + 1) \times (M + 1)$。</p><p>接下来 $K$ 行，每行包含两个正整数 $X$，$Y$，代表第 $X$ 行第 $Y$ 列的格点被删掉了。保证 $0 \leq X \leq N, 0 \leq Y \leq M$，且不会出现重复的格点。约定每行的格点从上到下依次用整数 $0$ 到 $N$ 编号，每列的格点依次用 $0$ 到 $M$ 编号。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个正整数，代表正方形个数对 $100\,000\,007$（$10^8 + 7$）取模之后的数值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2 4
+1 0
+1 2
+0 1
+2 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7 10 5
+2 3
+1 5
+6 2
+3 5
+2 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>429</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2 4
+0 0
+2 2
+0 2
+2 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 1 解释】</p><p>如图所示，我们删掉了其中的四个格点，那么剩下的唯一的正方形便是最大的 $2 \times 2$ 的正方形了。</p><p><img width="210" height="198" alt="0.PNG" src="../upload/7a8828cfbb.png"><br></p><p>【样例 3 解释】</p><p>还剩下一个边长为 $\sqrt 2$ 的正方形。</p><p>【数据规模】</p><p><img alt="image.png" src="../upload/0323b09bab.png" width="703" height="353"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

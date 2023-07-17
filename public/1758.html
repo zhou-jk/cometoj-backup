@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CCPC2017秦皇岛站-L] One­Dimensional Maze</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1758 [CCPC2017秦皇岛站-L] One­Dimensional Maze</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：64 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>BaoBao is trapped in a one­dimensional maze consisting of $n$ grids arranged in a row! The grids are numbered from 1 to $n$ from left to right, and the $i$-­th grid is marked with a character $s_i$, where $s_i$ is either 'L' or 'R'.</p><p>Starting from the $m$-­th grid, BaoBao will repeatedly take the following steps until he escapes the maze:</p><ul><li>If BaoBao is in the 1st grid or the $n$-­th grid, then BaoBao is considered to arrive at the exit and thus can escape successfully.</li><li>Otherwise, let BaoBao be in the $t$-­th grid. If $s_t=$ 'L', BaoBao will move to the $(t-1)$-th grid; If $s_t=$ 'R' , Baobao will move to the $t+1$-­th grid.</li></ul><p>Before taking the above steps, BaoBao can change the characters in some grids to help himself escape. Concretely speaking, for the $i$-­th grid, BaoBao can change $s_i$ from 'L' to 'R', or from 'R' to 'L'.</p><p>But changing characters in grids is a tiring job. Your task is to help BaoBao calculate the minimum number of grids he has to change to escape the maze.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>There are multiple test cases. The first line of the input contains an integer $T$, indicating the number of test cases. For each test case:</p><p>The first line contains two integers $n$ and $m(3 \le n \le 10^5, 1&lt;m &lt;n)$, indicating the number of grids in the maze, and the index of the starting grid.</p><p>The second line contains a string $s(|s|=n)$ consisting of characters 'L' and 'R'. The $i$-­th character of $s$ indicates the character in the ­$i$-th grid.</p><p>It is guaranteed that the sum of $n$ over all test cases will not exceed $10^6$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>For each test case output one line containing one integer, indicating the minimum number of grids BaoBao has to change to escape the maze.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+3 2
+LRL
+10 4
+RRRRRRRLLR
+7 4
+RLLRLLR</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+2
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

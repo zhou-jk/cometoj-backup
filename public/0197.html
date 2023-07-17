@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2009普及组-A]多项式输出</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0197 [2009普及组-A]多项式输出</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一元 $n$ 次多项式可用如下的表达式表示：<br></p><p>$f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0，a_n \ne 0$</p><p>其中，$a_ix^{i}$ 称为 $i$ 次项，$a_i$ 称为 $i$ 次项的系数。给出一个一元多项式各项的次数和系数，请按照如下规定的格式要求输出该多项式：</p><ol><li><p>多项式中自变量为 $x$，从左到右按照次数递减顺序给出多项式。</p></li><li><p>多项式中只包含系数不为 $0$ 的项。</p></li><li><p>如果多项式 $n$ 次项系数为正，则多项式开头不出现“+”号，如果多项式 $n$ 次项系数为负，则多项式以“-”号开头。</p></li><li><p>对于不是最高次的项，以“+”号或者“-”号连接此项与前一项，分别表示此项系数为正或者系数为负。紧跟一个正整数，表示此项系数的绝对值（如果一个高于 $0$ 次的项，其系数的绝对值为 $1$，则无需输出 $1$）。如果 $x$ 的指数大于 $1$，则接下来紧跟的指数部分的形式为“x^b”，其中 $b$ 为 $x$ 的指数；如果 $x$ 的指数为 $1$，则接下来紧跟的指数部分形式为“x”；如果 $x$ 的指数为 $0$，则仅需输出系数即可。</p></li><li><p>多项式中，多项式的开头、结尾不含多余的空格。</p></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行 $1$ 个整数，$n$，表示一元多项式的次数。</p><p>第二行有 $n+1$ 个整数，其中第i个整数表示第 $n-i+1$ 次项的系数，每两个整数之间用空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共 $1$ 行，按题目所述格式输出多项式。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+100 -1 1 -3 0 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>100x^5-x^4+x^3-3x^2+10</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+-50 0 0 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-50x^3+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据范围】<br>$1≤n≤100$，多项式各次项系数的绝对值均不超过 $100$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

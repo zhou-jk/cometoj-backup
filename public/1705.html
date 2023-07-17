@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]岸边露伴的人生经验</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1705 [Wannafly冬令营2018Day8]岸边露伴的人生经验</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>岸边露伴是一个天才漫画家，他经常用自己的替身天堂之门来查看别人的人生经历，为自己的漫画积累素材。最近他学会了将一个人的人生经历编码成一个$10$维的向量，每一维取值为${0,1,2}$中的一个元素。定义向量$\overrightarrow{V}=(x_1,x_2,\cdots,x_{10})$的模长$|\overrightarrow{V}|$为$\sqrt{x_1^2+x_2^2+\cdots+x_{10}^2}$。令第$i$个人的人生经历对应的向量为$\overrightarrow{V_i}$，则第$i$个人和第$j$个人的人生轨迹的差别可以用$|\overrightarrow{V_i}-\overrightarrow{V_j}|$衡量。岸边露伴收集了n个人的向量，他想要知道这些人里，人生轨迹差别相同的二元组有多少对，即有多少个四元组$(i,j,k,l)(1 \le i,j,k,l \le n)$满足$|\overrightarrow{V_i}-\overrightarrow{V_j}|=|\overrightarrow{V_k}-\overrightarrow{V_l}|$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数$n(1 \le n \le 10^5)$代表露伴老师收集的向量数量。</p><p>接下来$n$行，每行$10$个整数$x_i(0 \le x_i \le 2)$代表向量每一维上的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数代表满足条件的四元组个数模$998244353$的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+0 1 1 1 2 0 1 2 0 2
+0 1 1 0 2 0 1 2 0 2
+0 1 1 1 2 0 1 1 0 2
+0 1 1 1 1 0 1 2 0 2
+0 1 1 1 2 0 1 2 0 2
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>229
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

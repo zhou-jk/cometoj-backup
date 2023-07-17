@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2011Day2-B]NOI嘉年华</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0377 [NOI2011Day2-B]NOI嘉年华</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>NOI2011在吉林大学开始啦!为了迎接来自全国各地最优秀的信息学选手，吉林大学决定举办两场盛大的NOI嘉年华活动，分在两个不同的地点举办。每个嘉年华可能包含很多个活动，而每个活动只能在一个嘉年华中举办。</p><p>现在嘉年华活动的组织者小安一共收到了$n$个活动的举办申请，其中第$i$个活动的<b>起始时间</b>为$S_i$，活动的<b>持续时间</b>为$T_i$。这些活动都可以安排到任意一个嘉年华的会场，也可以不安排。</p><p>小安通过广泛的调查发现，如果某个时刻，两个嘉年华会场同时有活动在进行（不包括活动的开始瞬间和结束瞬间），那么有的选手就会纠结于到底去哪个会场，从而变得不开心。所以，为了避免这样不开心的事情发生，小安要求不能有两个活动在两个会场同时进行（同一会场内的活动可以任意进行）。</p><p>另外，可以想象，如果某一个嘉年华会场的活动太少，那么这个嘉年华的吸引力就会不足，容易导致场面冷清。所以小安希望通过合理的安排，使得活动相对较少的嘉年华的活动数量最大。</p><p>此外，有一些活动非常有意义，小安希望能举办，他希望知道，如果第$i$个活动必须举办（可以安排在两场嘉年华中的任何一个），活动相对较少的嘉年华的活动数量的最大值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行包含一个整数$n$，表示申请的活动个数。</p><p>接下来$n$行描述所有活动，其中第$i$行包含两个整数$S_i、T_i$，表示第$i$个活动从时刻$S_i$开始，持续$T_i$的时间。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出的第一行包含一个整数，表示在没有任何限制的情况下，活动较少的嘉年华的活动数的最大值。</p><p>接下来$n$行每行一个整数，其中第i行的整数表示在必须选择第i个活动的前提下，活动较少的嘉年华的活动数的最大值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+8 2
+1 5
+5 3
+3 2
+5 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2
+1
+2
+2
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>在没有任何限制的情况下，最优安排可以在一个嘉年华安排活动1, 4，而在另一个嘉年华安排活动3, 5，活动2不安排。</p><p>【数据规模与约定】</p><p>所有测试数据的范围和特点如下表所示<br></p><p><img alt="屏幕快照 2019-06-06 上午11.20.03.png" src="../upload/0416566b5e.png" width="300" height="292.0353982300885"><br></p><p>【评分标准】（comet 暂不支持部分分）</p><p>对于一个测试点：</p><ul><li>如果输出格式不正确（比如输出不足$n+1$行），得0分；</li><li>如果输出文件第一行不正确，而且后$n$行至少有一行不正确，得0分；</li><li>如果输出文件第一行正确，但后$n$行至少有一行不正确，得4分；</li><li>如果输出文件第一行不正确，但后$n$行均正确，得6分；</li><li>如果输出文件中的$n+1$行均正确，得10分。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

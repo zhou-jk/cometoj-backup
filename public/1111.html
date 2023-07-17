@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SCOI2016]萌萌哒</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1111 [SCOI2016]萌萌哒</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一个长度为 $n$ 的大数，用 $S_1S_2S_3 \ldots S_n$ 表示，其中 $S_i$ 表示数的第 $i$ 位，$S_1$ 是数的最高位，告诉你一些限制条件，每个条件表示为四个数 $(l_1, r_1, l_2, r_2)$，即两个长度相同的区间，表示子串 $S_{l_1}S_{l_1 + 1}S_{l_1 + 2} \ldots S_{r_1}$ 与 $S_{l_2}S_{l_2 + 1}S_{l_2 + 2} \ldots S_{r_2}$ 完全相同。</p><p>比如 $n = 6$ 时，某限制条件 $(l_1 = 1, r_1 = 3, l_2 = 4, r_2 = 6)$，那么 $123123$、$351351$ 均满足条件，但是 $12012$、$131141$ 不满足条件，前者数的长度不为 $6$，后者第二位与第五位不同。问满足以上所有条件的数有多少个。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个数 $n$ 和 $m$，分别表示大数的长度，以及限制条件的个数。</p><p>接下来 $m$ 行，对于第 $i$ 行，有 $4$ 个数 ${l_i}_1$、${r_i}_1$、${l_i}_2$、${r_i}_2$，分别表示该限制条件对应的两个区间。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个数，表示满足所有条件且长度为 $n$ 的大数的个数，答案可能很大，因此输出答案模 $10 ^ 9 + 7$ 的结果即可。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 2
+1 2 3 4
+3 3 3 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>90</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$1 \leq n \leq 10 ^ 5, 1 \leq m \leq 10 ^ 5, 1 \leq {l_i}_1, {r_i}_1, {l_i}_2, {r_i}_2 \leq n$ 并且保证 ${r_i}_1 - {l_i}_1 = {r_i}_2 - {l_i}_2$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2007]有序的计数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1304 [SHOI2007]有序的计数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>矩阵博士近来从事研究排列的工作。他发现，给定一个大小为n的排列，比如我们把它记成 $P=(a_0,a_1,...,a_{n-1})$（其中对每个 $i$，规定 $0 \le a_i \le n-1$）。我们马上就可以统计出 $P$ 的“有序数” $o(P)$。“有序数”是矩阵博士哪些无聊发现中的又一个新名词，博士把它定义成 $o(P):=$ $\sum_{i=0}^{n-1} \delta_i$，$\delta=\begin{cases} 1 &amp; if \ a_i=i \\ 0 &amp; if \ a_i \ne i\end{cases}$。</p><p>为了把有序数研究到底，矩阵博士挑出了所有 $n$ 长的排列中和 $P$ 有相同有序数的排列，构成一个“有序同类集”，并且仔细地把它们以字典序排成 $\{P_0,P_1,...,P_m\}$。这样，一个排列就可以根据他的有序数和所在的有序同类集中的位置来描述了。注意：由于博士的奇怪天性，有序同类集中的位置总是从 $0$ 开始算起的。</p><p>有一天，博士家失火了（这其实是常有的事）。博士的研究手稿里有一些纸张被烧糊了，之后，他急需知道某些排列的有序数和所在的有序同类集中的位置，作为博士的唯一一名助手，你义不容辞地接受了任务。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>文件的第一行只有一个整数 $n$（$1≤n≤64$），代表给定排列的长度。文件的第二行开始有 $n$ 个整数，顺次代表一个排列，注意是排列中的元素是从 $0$ 开始到 $n-1$ 的。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>只有一行，输出两个整数，第一个整数代表给定排列的有序数，第二个整数代表它所在的有序同类集中的位置。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+2 0 3 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0 3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $40\%$ 的数据，$n ≤ 10$。</p><p>对于 $100\%$ 的数据，$n ≤ 64$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

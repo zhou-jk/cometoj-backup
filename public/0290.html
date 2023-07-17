@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2000Day2-B]青蛙过河</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0290 [NOI2000Day2-B]青蛙过河</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><b>大小各不相同</b>的一队青蛙站在河左岸的石墩（记为A）上，要过到对岸的石墩（记为D）上去。河心有几片菏叶（分别记为$Y_1…Y_m$）和几个石墩（分别记为$S_1…S_n$）。图示如下：<br></p><p><img alt="屏幕快照 2019-06-12 下午9.28.54.png" src="../upload/f350266187.png" width="400" height="203.80549682875264"><br></p><p>青蛙的站队和移动方法规则如下：</p><ol><li>每只青蛙只能站在荷叶、石墩，或者仅比它大一号的青蛙背上（统称为合法的落脚点）；</li><li>一只青蛙只有背上没有其它青蛙的时候才能够从一个落脚点跳到另一个落脚点；</li><li>青蛙允许从左岸A直接跳到河心的石墩、荷叶和右岸的石墩D上，允许从河心的石墩和荷叶跳到右岸的石墩D上；</li><li>青蛙在河心的石墩之间、荷叶之间以及石墩和荷叶之间可以来回跳动；</li><li>青蛙在离开左岸石墩后，不能再返回左岸；到达右岸后，不能再跳回；</li><li>假定石墩承重能力很大，允许无论多少只青蛙都可呆在上面。但是，由于石墩的面积不大，至多只能有一只青蛙直接站在上面，而其他的青蛙只能依规则1落在比它大一号的青蛙的背上。</li><li>荷叶不仅面积不大，而且负重能力也有限，至多只能有一只青蛙站在上面。</li><li>每一步只能移动一只青蛙，并且移动后需要满足站队规则；</li><li>在一开始的时候，青蛙均站在A上，最大的一只青蛙直接站在石墩上，而其它的青蛙依规则6站在比其大一号的青蛙的背上。</li></ol><p>青蛙希望最终能够全部移动到D上，并完成站队。</p><p>设河心有$m$片荷叶和$n$个石墩，请求出这队青蛙至多有多少只，在满足站队和移动规则的前提下，能从A过到D。</p><p>例如，在m=1且 n=1时，河心有一片荷叶（$Y_1$）和一个石墩（$S_1$），此时至多有4只青蛙能够过河（由小到大称为1、2、3、4），过河的一种方法为：</p><p><img alt="屏幕快照 2019-06-12 下午9.30.36.png" src="../upload/dedd1d62b6.png" width="300" height="655.2"><br></p><p>此例中，当河心有一片荷叶和一个石墩时，4只青蛙能够跳动9步过河。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅有两行，每一行仅包含一个整数和一个换行/回车符。第一行的数字为河心的石墩数$n（0 \le n \le 25）$，第二行为荷叶数$m（0 \le m \le 25）$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个数字和一个换行/回车符。该数字为在河心有$n$个石墩和$m$片荷叶时，最多能够过河的青蛙的只数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2000提高组-A]进制转换</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0029 [2000提高组-A]进制转换</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>我们可以用这样的方式来表示一个十进制数：将每个阿拉伯数字乘以一个以该数字所处位置的值减 1 为指数，以 $10$ 为底数的幂之和的形式。例如：$123$ 可表示为 $1 \times 10^2＋2 \times 10^1＋3 \times 10^0$ 这样的形式。<br></p><p>与之相似的，对二进制数来说，也可表示成每个二进制数码乘以一个以该数字所处位置的值 $-1$ 为指数，以 $2$ 为底数的幂之和的形式。一般说来，任何一个正整数 $R$ 或一个负整数 $-R$ 都可以被选来，作为一个数制系统的基数。如果是以 $R$ 或 $-R$ 为基数，则需要用到的数码为 $0，1，...R-1$。例如，当 $R＝7$ 时，所需用到的数码是 $0，1，2，3，4，5$ 和 $6$，这与其是 $R$ 或 $-R$ 无关。如果作为基数的数绝对值超过 $10$，则为了表示这些数码，通常使用英文字母来表示那些大于 $9$ 的数码。例如对 $16$ 进制数来说，用 $A$ 表示 $10$，用 $B$ 表示 $11$，用 $C$ 表示 $12$，用 $D$ 表示 $13$，用 $E$ 表示 $14$，用 $F$ 表示 $15$。</p><p>在负进制数中是用 $-R$ 作为基数，例如 $-15$ （十进制）相当于 $110001$（$-2$进制），并且它可以被表示为 $2$ 的幂级数的和数：</p><p>$110001＝1 \times (-2)^5＋1 \times (-2)^4＋0 \times (-2)^3＋0 \times (-2)^2＋0 \times (-2)^1＋1\times (-2)^0$</p><p><b>问题求解</b></p><p>设计一个程序，读入一个十进制数和一个负进制数的基数,并将此十进制数转换为此负进制下的数：$-R \in \{-2，-3，-4，...，-20\}$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的每行有两个输入数据。<br></p><p>第一个是十进制数 $N(-32768 \le N \le 32767)$；第二个是负进制数的基数 $-R$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>相对于输入，应输出此负进制数及其基数，若此基数超过 $10$，则参照 $16$ 进制的方式处理。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>30000 -2
+-20000 -2
+28800 -16
+-25000 -16</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>30000=11011010101110000(base-2)
+-20000=1111011000100000(base-2)
+28000=19180(base-16)
+-25000=7FB8(base-16)</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

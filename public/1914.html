@@ -1,0 +1,117 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[模拟赛 #1-D1]修行</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1914 [模拟赛 #1-D1]修行</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><strong>※ <a href="https://share.weiyun.com/5zq2BHI">下发文件链接</a> （有更新）密码：wzayqj ，本题英文名为 $\texttt{begin}$ ，不需要 freopen 。</strong></p><p><strong>※ <a href="http://static.eduzhixin.com/cometoj/download/contest_74/Day1.zip">备用文件链接</a> 无需密码点击即可下载，本题英文名为 $\texttt{begin}$</strong> 。</p><p><strong>※ 跳过剧情的同学请从分割线开始看哦~</strong></p><p>「你想成为魔法少女吗？」深沉的声音萦绕在空荡的房间中，愈发响亮。</p><p>ω 怎么也没想到，一个只是热衷于魔法的小女孩，如今竟在入学测验中拔得头筹，并拥有成为魔法少女的资格。</p><p>更令她难以忘怀的是，那位梦寐只求一见的上一代魔法少女最强者 Ω ，此时正坐在自己面前！</p><p>「很好，不愧是我的种子学生。」Ω 说道，「从今天开始我将是你的导师，希望在种种严峻的挑战前你能毫不畏缩。」</p><hr><p>作为最简单易学的魔法之一，「磁力术」一直是魔法少女的必修课。</p><p>这也是 ω 的第一个试炼。导师 Ω 给了她 $T$ 个任务，每个任务中 ω 会收到 $n$ 堆并排的铁珠，第 $i$ 堆有 $a_i$ 个，$a_i$ 可以为 $0$ 。</p><p>ω 发动一次「磁力术」能将一段区间内的铁珠吸到该区间内的某个位置上。也就是说，指定三个参数 $l,\,r,\,u\ (1 \le l \le u \le r \le n)$ ，将 $a_u$ 赋值为 $a_l \dots a_r$ 这段的和，然后清零 $a_l \dots a_{u-1}$ 和 $a_{u+1} \dots a_r$ 。</p><p>仅当对于所有 $1 \le i \le n$ 满足 $a_i = b_i$ ，ω 方可完成任务。有时 Ω 会刁难 ω ，使得任务不可能被完成。</p><p>任务是<strong>互相独立</strong>的，不同任务的 $n,\,a_i,\,b_i$ 可能不同。作为一个爱思考的魔法少女，ω 想知道她最少发动多少次「磁力术」才能完成任务。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入文件的第一行，包含一个整数 $T$ ，表示任务的个数。</p><p>接下来每个任务分别占用三行，其中：</p><p>第一行，包含一个正整数 $n$ 。</p><p>第二行，包含 $n$ 个非负整数 $a_1,\,\cdots,\,a_n$ ，为初始状态各位置铁珠的数量。</p><p>第三行，包含 $n$ 个非负整数 $b_1,\,\cdots,\,b_n$ ，为完成任务各位置铁珠的数量。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个任务输出一行一个整数，共 $T$ 行。如果该任务不可能被完成，输出 $-1$ ，否则输出最少发动多少次「磁力术」才能完成任务。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+5
+1 2 3 4 5
+0 3 3 9 0
+5
+1 2 3 4 5
+0 3 3 8 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+-1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>见下发文件中 begin2.in</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>见下发文件中 begin2.ans</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><img src="../upload/a0645e38c8.png" alt="9aa4dfb21d.png" width="550" height="304.3594306049822"></p><p>对于所有的数据，保证 $1\le n\le{10}^5 ,\ 0\le a_i\le{10}^4 ,\ 0 \le b_i \le{10}^9,\ 1\le T\le10$ 。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

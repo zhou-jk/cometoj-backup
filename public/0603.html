@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ZJOI2019]浙江省选</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0603 [ZJOI2019]浙江省选</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>九条可怜是一个喜欢出题的女孩子，这道题是一道有关浙江省选的硬核模拟题。</p><p>在 9102 年，有 $n$ 名选手参加了浙江省选，其中第 $i$ 个选手的智力是 $a_i$，训练量是 $b_i$。作为出题人，可怜可以自由选择这套题的风格是比较偏套路还是比较偏智力。举例来说，ZJOI2018 的题就比较偏智力，今年的题就比较偏套路。</p><p>为了定量衡量一套题的风格，可怜定义了反向选拔指数 $x$，$x$ 是一个<b>非负整数</b>。第 $i$ 个选手在反向选拔指数为 $x$ 的题目上的表现为 $a_ix + b_i$。在 $x$ 给定的情况下，第 $i$ 个人的排名为表现严格大于 $a_ix + b_i$ 的人数再加一。</p><p>在 9102 年浙江省队的人数为 $m$，因此只有排名小于等于 $m$ 的人才能够进入浙江省队。注意当有并列的情况时，进入浙江省队的人数可能多于 $m$。</p><p>不难发现，选手的排名和 $x$ 的关系非常大。现在，可怜想让你计算，第 $i$ 个选手有没有可能进入浙江省队，如果有可能，他最好的排名是多少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入两个整数 $n, m$，表示选手总数以及浙江省队的人数。</p><p>接下来 $n$ 行每行两个整数 $a_i, b_i$，表示每个选手的属性值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行 $n$ 个整数，如果第 $i$ 个选手进不了浙江省队，就输出 $−1$，否则输出他可能的最好排名。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 1
+1 5
+5 1
+2 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 1 -1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>当 $x = 1$ 时，三个人的表现分别为 $6, 6, 4$，这时前两个人并列第一名，都能进入省队，而第三个人排名第三，没法进入省队。</p><p>当 $x &gt; 1$ 时，第二个人的表现严格好于第三个人，而当 $x = 0$ 时，第一个人的表现严格好于第三个人，因此第三个人无论 $x$ 怎么取，他都没有办法进入省队。</p><p>【数据范围与提示】</p><p><img alt="image.png" src="../upload/58380869e2.png" width="690" height="254"><br></p><p>对于 $100\%$ 的数据，$1 \le a_i \le 10^9, 1 \le b_i \le 10^{18}$，$1 \le m \le n$。</p><p>对于 $100\%$ 的数据，保证选手的属性两两不同，即 $\forall 1 \le i &lt; j \le n$，有 $a_i\neq a_j$ 或 $b_i\neq b_j$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

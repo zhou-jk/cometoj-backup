@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2017]遗忘的集合</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0693 [SDOI2017]遗忘的集合</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 Q 在他的个人主页上放出了一个悬赏：征集只含正整数的<strong>非空</strong>集合 $S$，其中的每个元素都不超过 $n$，并且满足一些附加条件。</p><p>众所周知，我们可以很轻松地对于任意不超过 $n$ 的正整数 $x$，计算出把 $x$ 表示成 $S$ 中元素之和的方案数 $f(x)$，在这里我们约定，在任意方案中每个数字可以出现多次，但是不考虑数字出现的顺序。</p><p>例如，当 $S = {1,2,3,4,5}$ 时，我们可以计算出 $f(2) = 2$，$f(3) = 3$，$f(4) = 5$，$f(5) = 7$。</p><p>再例如，当 $S = {1,2,5}$ 时，我们可以计算出 $f(4) = 3$，$f(5) = 4$，$f(6) = 5$，$f(7) = 6$。</p><p>麻烦地是现在小 Q 忘记了 $S$ 里有哪些元素，幸运地是他用存储设备记录下了所有 $f(i) \bmod p$ 的值，小 Q 希望你能利用这些信息帮他恢复出 $S$ 原来的样子。</p><p>具体来说，他希望你找到这样一个正整数的<strong>非空</strong>集合 $S$，其中的每个元素都不超过 $n$，并且对于任意的 $i = 1,2,··· ,n$，满足把 $i$ 表示成 $S$ 中元素之和的方案数在模 $p$ 意义下等于 $f(i)$，其中 $p$ 是记录在存储设备中的一个质数。他向你保证：<strong>一定存在</strong>这样的集合 $S$。</p><p>然而，小 Q 觉得他存储的信息并不足以恢复出唯一的 $S$，也就是说，可能会存在多个这样的集合 $S$，所以小 Q 希望你能给出所有解中<strong>字典序</strong>最小的解。</p><p>对于满足条件的两个不同的集合 $S_1$ 和 $S_2$，我们认为 $S_1$ 的字典序比 $S_2$ 的字典序小，当且仅当存在非负整数 $k$，使得 $S_1$ 的前 $k$ 小元素与 $S_2$ 的前 $k$ 小元素完全相等，并且，要么 $S_1$ 的元素个数为 $k$，且 $S_2$ 的元素个数至少为 $(k+1)$，要么 $S_1$ 和 $S_2$ 都有至少 $(k+1)$ 个元素，且 $S_1$ 的第 $(k+1)$ 小元素比 $S_2$ 的第 $(k+1)$ 小元素小。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个整数 $n$ 和 $p$，满足 $p$ 是质数。</p><p>第二行包含 $n$ 个整数 $f(1), f(2), \dots , f(n)$，含义见题目描述。</p><p>保证每一行中相邻的整数由恰好一个空格隔开，并且末尾没有多余的空格。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>你需要输出两行信息来描述字典序最小的解，其中第一行包含一个整数 $m (m &gt; 0)$，表示 $S$ 的元素个数，第二行包含 $m$ 个正整数 $s_1, s_2, \dots, s_m$，表示将 $S$ 的所有元素按升序排序后得到的序列。</p><p>你需要保证输出的每一行中相邻的整数由恰好一个空格隔开，并且每一行的末尾没有多余的空格。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 1000003
+1 2 3 5 7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 2 3 4 5</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9 1000003
+1 2 2 3 4 5 6 7 8</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+1 2 5</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $100\%$ 的数据，有 $1 \leq n &lt; 2^{18}$，$10^6 \leq p &lt; 2^{30}$，$0 \leq f(i)&lt;p(i=1,2,...,n)$。</p><p><img alt="image.png" src="../upload/8db0ece7b8.png" width="695"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

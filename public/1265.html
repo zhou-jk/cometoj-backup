@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2015]送礼物</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1265 [JSOI2015]送礼物</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>JYY 和 CX 的结婚纪念日即将到来，JYY 来到萌萌开的礼品店选购纪念礼物。</p><p>萌萌的礼品店很神奇，所有出售的礼物都按照特定的顺序都排成一列，而且相邻的礼物之间有一种神秘的美感。于是，JYY 决定从中挑选连续的一些礼物，但究竟选哪些呢？</p><p>【问题描述】</p><p>假设礼品店一共有 $N$ 件礼物排成一列，每件礼物都有它的美观度。排在第 $i(1\le i\le N)$ 个位置的礼物美观度为正整数 $A_i$。JYY 决定选出其中连续的一段，即编号为礼物 $i,i+1,…,j-1,j$ 的礼物。选出这些礼物的美观程度定义为 $(M（i,j)-m(i,j))/(j-i+k)$</p><p>其中 $M(i,j)$ 表示 $\max\{A_i,A_{i+1}...A_j\}$，$m(i,j)$表示$\min\{A_i,A_{i+1}...A_j\}$，$K$ 为给定的正整数。</p><p>由于不能显得太小气，所以 JYY 所选礼物的件数最少为 $L$ 件；同时，选得太多也不好拿，因此礼物最多选 $R$ 件。JYY 应该如何选择，才能得到最大的美观程度？由于礼物实在太多挑花眼，JYY 打算把这个问题交给会编程的你。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>本题每个测试点有多组数据。输入第一行包含一个正整数 $T(T \le 10)$，表示有 $T$ 组数据。</p><p>每组数据包含两行，第一行四个非负整数 $N,K,L,R(2 \le L \le R \le N$。第二行包含 $N$ 个正整数，依次表示 $A_1,A_2...A_n,(A_i \le 10^8),N,K\le 50,000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $T$ 行，每行一个非负实数，依次对应每组数据的答案，数据保证答案不会超过 $10^3$。输出四舍五入保留 $4$ 位小数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+5 1 2 4
+1 2 3 4 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0.7500</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

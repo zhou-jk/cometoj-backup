@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2009Day1] harbinger</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0518 [CEOI2009Day1] harbinger</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Once upon a time, there were $N$ medieval towns in the beautiful Moldavian territory, uniquely numbered from $1$ through $N$. The town numbered with $1$ was the capital city. The towns were connected by $N-1$ bidirectional roads, each road having a length expressed in kilometers. There was a unique way to travel between any pair of towns without going through a town twice (i.e. the graph of roads was a tree).</p><p>When a town was attacked, the situation had to be reported as soon as possible to the capital. The message was carried by harbingers, one of which resided in each town. Each harbinger was characterized by the amount of time required to start the journey and by his constant speed (expressed in minutes per kilometer) after departure.</p><p>The message from a town was always carried on the unique shortest path to the capital. Initially, the harbinger from the attacked town carried the message. In each town that he traversed, a harbinger had two options: either go to the next town towards the capital, or leave the message to the harbinger from this town. The new harbinger applied the same algorithm as above. Overall, a message could be carried by any number of harbingers before arriving in the capital.</p><p>Your task is to find, for each town, the minimum time required to send a message from that town to the capital.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The first line of the input&nbsp; contains one integer N, the number of towns in Moldavia. Each of the following&nbsp; $N-1$ lines contains three integers $u$ $v$ $d$, separated by one space, describing a road of length $d$ kilometers between towns numbered with $u$ and $v$. Subsequently, $N-1$ pairs of integers follow, one per line. The $i$th pair, $S_i$ $V_i$, describes the characteristics of the harbinger in the $(i+1)$th town: $S_i$ is the number of minutes to prepare for the journey, and $V_i$ is the number of minutes needed to travel one kilometer. There is no harbinger in the capital.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The output should consist of exactly one line containing $N-1$ integers. The $i$th number represents the minimum time, in minutes, required to send a message from the $(i+1)$th town to the capital.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 2 20
+2 3 12
+2 4 1
+4 5 3
+26 9
+1 10
+500 2
+2 30</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>206 321 542 328</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Explanation<br></p><p>The roads and their lengths are shown in the image on the left. The start-up time and speed of the harbingers are written between brackets.</p><p>The minimum time to send a message from town 5 to the capital is achieved as follows. The harbinger from town 5 takes the message and leaves the town after 2 minutes. He walks 4 kilometers in 120 minutes before arriving in town 2. There he leaves the message to the harbinger from that town. The second harbinger requires 26 minutes to start the journey and walks for 180 minutes before arriving to the capital.</p><p>The total time is therefore 2 + 120 + 26 + 180 = 328.<br></p><p><img alt="image.png" src="../upload/5ce4e554ec.png" width="218" height="248"><br></p><p><b>Constraints</b></p><ul><li>$3 ≤N ≤ 100 000$</li><li>$0 ≤ S_i ≤ 10^9$</li><li>$1 ≤ V_i ≤ 10^9$</li><li>The length of each road will not exceed $10 000$</li><li>For 20% of the tests, $N ≤ 2 500$</li><li>For 50% of thetests, each town will have at most 2 adjacent roads (i.e., the graph of roads will be a line)</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #14]夕日的光辉</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1909 [Contest #14]夕日的光辉</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Wishes granted, and dreams fulfilled.<br>众喣均求天遂，蓦然回首，尽如人意。</p><p>A festival spans the day and reaches into the night: a celebration of sound.<br>绮怀萦绕苍穹，灯火辉煌，昼夜不息。这场喧闹的庆典，将于此刻拉开帷幕。</p><p>Join Kanae as you walk from song to song.<br>在 Kanae 的陪伴下，漫步于韵律与乐章的繁华街市。</p><hr><p>Kanae 发现了一条写了 $n$ 个小写英文字母所组成的字符串 $str$ 的纸条，她想要在纸条上找到自己最喜欢的单词 "pink" 并裁剪下来。在裁剪之前，Kanae 要先找到 "pink" 这个子序列。</p><p>形式化地，我们定义一个字符串 $str$ 的子序列为在 $str$ 中选取一部分组成的字符串。例如当 $str =$<code>abc</code>时，$str$ 共有六个非空的子序列，分别是<code>a</code>、<code>b</code>、<code>c</code>、<code>ab</code>、<code>bc</code>、<code>ac</code>、<code>abc</code>。</p><p>现在将 $pos(i)$ 定义为 子序列 "pink" 的第 $i$ 个字符在原串 $str$ 中的位置，Kanae 剪下单词 "pink" 的花费定义为：</p><p>$\max\limits_{i \in {1,2,3}} {(pos(i+1)-pos(i)-1)}$</p><p>请你求出 Kanae 剪下单词 "pink" 的可能最大的花费。如果无法找到任何子序列 "pink" ，请你输出<code>-1</code>。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有一个正整数 $T$ 代表一个文件有几组数据。</p><p>每个数据占 $2$ 行。</p><p>第 $1$ 行有 $1$ 个整数 $n$，表示字符串的长度。</p><p>第 $2$ 行有 $1$ 个长度为 $n$ 的字符串 $str$。</p><ul><li><p>$1 \le T \le 10^5$</p></li><li><p>$4 \le n \le 10^6$</p></li><li><p>所有数据的 $n$ 总和不超过 $10^6$</p></li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共 $T$ 行。</p><p>第 $i$ 行代表第 $i$ 个数据的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+13
+pahgiiadnqwnk
+5
+ipnki</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+-1
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2013]城市规划</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0956 [SDOI2013]城市规划</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>A 市的市长打算在海边开发一段地带。这个地带看成是一个 $N \times M$ 的方格阵。每个格子可以是建筑、道路或者草地。这片地带是要出租给某些公司，但是这些公司的要求很奇怪。他们要求租给他们的建筑要通过道路形成一个连通块。同一个连通块只能租给一家公司。这个 $N\times M$ 的方格阵是用字符组成的：<code>O</code>，<code>.</code>，<code>+</code>，<code>|</code>，<code>-</code>，其z中<code>O</code>表示建筑，'.' 表示草地。<code>|</code>，<code>-</code>，<code>+</code>表示道路，分别表示把上下，左右、上下左右的格子连起来。相邻的<code>O</code>表示这是一个建筑物。</p><p>由于规划可能不太好，可能某些连通块里面只有道路，这里道路是不能出租的！由于最后这块地的选取可能有部分会与其他市共同开发，所以最后会在这个 $N \times M$ 中选取一段出来，最后选取出来的是一个 $N_i\times M (0&lt;N_1\le N)$ 的地段。A 市的市长想弄要一个规划软件，支持以下功能：</p><ol><li>改变一个格</li><li>询问某块地带有多少个带建筑的连通块。</li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个整数 $N, M$，如题意所示。</p><p>接下来的 $N$ 行，每行 $M$ 个字符表示这片地带的初始情况。</p><p>接下来的一行一个整数 $Q$，表示操作次数</p><p>就下来的 $Q$ 行，每行有两种格式：</p><p><code>C i j k</code>：把第 $i$ 行第 $j$ 个格子修改成 $k$</p><p><code>Q l r</code>：询问 $(l, 1) (r, M)$ 这块地带连通块个数</p><p>$N \le 100000, M \le 6, Q \le 10000$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个询问中的 $Q$，输出一行，一个数字，表示当前的连通块个数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 4
+.O..
+O+O|
+.O..
+..OO
+4 
+Q 1 4 
+C 2 4 +
+C 3 4 |
+Q 1 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

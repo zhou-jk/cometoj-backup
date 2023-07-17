@@ -1,0 +1,134 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #13]龙颈之玉-五色的弹丸</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1848 [Contest #13]龙颈之玉-五色的弹丸</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Gromah 最近沉迷于一款叫做 “贪吃蛇大作战” 的游戏。</p><p>给定一个 $n\times m$ 的地图，其中有些格子是空的，有些格子上有食物。初始时贪吃蛇的头在地图中的某个格子上，且贪吃蛇初始只有一个头，每次 Gromah 会控制贪吃蛇的头朝着上下左右四个方向中的一个方向移动一个单位，如果贪吃蛇的头撞到了墙（即坐标不在 $(1,1) - (n,m)$ 范围内），则其立即死亡，否则如果贪吃蛇的头所到达的格子上有一个食物，则贪吃蛇会吃掉这个食物，然后身体立即增加 $1$ 的长度，<strong>当然一个食物被吃掉之后就会消失</strong>。</p><p>具体地，每当进行一次移动，如果没有吃掉一个食物，则贪吃蛇在头部按照给定方向进行移动的同时，身体的每一段也朝着前一段身体的方向进行移动；如果吃掉了一个食物，则只有头部进行移动，原来身体不进行移动，原来的头部位置长出一个单位的身体，即贪吃蛇的身体增加 1 的长度。</p><p>特别地，贪吃蛇的头可以和自己的身体重合（起码游戏里是这样子的），保证贪吃蛇的初始位置上不存在食物。</p><p>现给定地图，贪吃蛇的头的初始位置，移动序列。如果贪吃蛇中途撞到了墙，则输出<code>GG</code>，否则如果贪吃蛇最后还活着，输出地图的最后状态，具体请见输出格式及样例输出。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个整数 $n,m~(1\le n,m \le 400)$，表示地图大小。</p><p>接下来 $n$ 行，每行一个长为 $m$ 的只包含<code>'.</code>',<code>'o'</code>和<code>'@'</code>的字符串 $s$，表示地图。其中<code>'.'</code>表示没有食物，<code>'o'</code>表示有一个食物，<code>'@'</code>表示贪吃蛇的头的初始位置。</p><p>接下来一行一个只包含<code>'W'</code>,<code>'A'</code>,<code>'S'</code>,<code>'D'</code>的字符串 $t~(1 \le |t| \le 10^5)$，表示操作序列，其中<code>'W'</code>表示向上，<code>'A'</code>表示向左，<code>'S'</code>表示向下，<code>'D'</code>表示向右。</p><p>保证地图中有且仅有一个<code>'@'</code>。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>如果贪吃蛇中道崩殂，输出<code>GG</code>，否则输出 $n$ 行，每行一个长为 $m$ 的字符串，表示地图的最后状态。其中用<code>'.'</code>表示空地，<code>'o'</code>表示有一个食物，<code>'@'</code>表示贪吃蛇的头，<code>'X'</code>表示贪吃蛇的身体。</p><p>特别地，如果贪吃蛇的头与身体重合，在相应格子输出<code>'@'</code>，见样例 $1$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5
+.oo..
+.o@.o
+..o..
+.oo..
+WASDSSAD</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>.X...
+.XX.o
+..X..
+.X@..</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5
+.oo..
+.o@.o
+..o..
+.oo..
+WASDSSADDDWWWDA</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>GG</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2
+@.
+D
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>.@</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

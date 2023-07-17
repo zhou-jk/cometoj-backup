@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[模拟赛 #测试-D2]天天背单词 prefix</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1799 [模拟赛 #测试-D2]天天背单词 prefix</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 $L$ 在假期里需要每天背单词为出国留学做准备。他特地报了一个培训班，和小伙伴们在玩游戏的过程中背单词，寓学于乐。</p><p>这一天，老师提出了一个新的背单词的游戏。游戏开始前，老师先给出 $n$ 个新单词，然后让同学们努力记下来。一段时间过后，再让同学们快速地默写印象最深的 $k$ 个单词。由于短暂记忆记得不牢固，同学们默写的单词总是乱序的。</p><p>为了更好地激励同学们记单词，老师会给同学们分发糖果，糖果的颗数取决于同学写下的 $k$ 个单词连成的字符串在所有可能的字符串中从小到大排序后的排名（显然最多能组成 $n! / (n-k)!$ 个不同的字符串）。</p><p>小 $L$ 看了看老师给出的 $n$ 个单词，再看了看自己写下的 $k$ 个单词，想知道自己的能拿到多少糖果。</p><p><strong>注明：提交语言有 C 和 C++ 两种，默认为 C，如果要使用 C++ 提交，请手动切换。</strong></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入数据第一行包含两个整数，$n$ 和 $k（1 \le k \le n）$。</p><p>接下来 $n$ 行，每行包含一个字符串。表示老师从课本上选定的 $n$ 个单词。</p><p>最后一行包含一个长字符串，表示小 $L$ 默写的 $k$ 个单词拼接后形成的字符串。</p><p>数据保证单词全部由小写字母组成，且不存在某个单词是另一个单词的前缀。</p><p>所有单词的总长度不超过 $10^6$，单词个数 $n$ 的大小由单词总长度所限制。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出仅一行包含一个整数，表示小 $L$ 得到的糖果数对 $10^9+7$ 取余后的结果。</p><p>对于 $20\% $ 的数据，输入文件大小小于 $1KB$</p><p>对于 $60\%$ 的数据，输入文件大小小于 $256KB$</p><p>对于 $100\%$ 的数据，输入文件大小小于 $2MB$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3
+a
+b
+c
+d
+e
+cad</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>26</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

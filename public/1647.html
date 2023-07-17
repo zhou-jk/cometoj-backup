@@ -1,0 +1,127 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day2]Honeycomb</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1647 [Wannafly冬令营2018Day2]Honeycomb</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>蜂窝是由一系列六边形棱柱格子组成，其中每个格子有六个相邻的格子，而每两个相邻的格子共享一条边界。 这里有些边界是可穿行的，但有些则不是。</p><p>小汉是一个勤劳的工蜂，他每天都在为打通边界或是切断两个相邻格子的联系辛苦工作着。几天后，他将有机会任意改动一片蜂窝的格局。这片蜂窝与外界不连通，包含如下图所示的 $n$ 行 $m$ 列格子。</p><p><img src="../upload/4885e8b236.png" alt="honeycomb.png"></p><p>为了切断两个格子的联系，他可能需要将某些边界设为不可穿行。他很好奇这至少要改动多少条边才能实现，你能帮他计算出，对于任意两个特别的格子，他最少需要改动的边数吗？为了避免输出过大，你只需要给出这些最小边数的之和即可。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含多组测试数据。第一行包含一个整数 $T$，表示测试数据的组数。随后的内容是各组测试数据。对于每组测试数据：</p><p>第一行包含两个整数 $n$ 和 $m$。</p><p>接下来 $(4 n + 3)$ 行描述了这片蜂窝，其中每一行至多有 $(6 m + 3)$ 个字符。奇数行包含用加号（<code>+</code>）表示的顶点和水平方向的边界，而偶数行包含对角线方向的边界。</p><p>具体来说，每个格子由 $6$ 个顶点和 $6$ 条边界组成，每条边所示的字符会恰好位于对应端点之间，其中可穿行的边用空格（）表示，不可穿行的边遵循如下规则：</p><ul><li>每个格子的上边界或下边界由三个连续的减号（<code>-</code>）或三个连续的空格表示，取决于它是否可以被穿行；</li><li>每个格子的每条不可穿行的对角线边界由一个正斜线（<code>/</code>）或一个反斜线（<code>\</code>）字符表示，取决于它的方向。</li></ul><p>此外，在每个特别的格子中心处有一个星号（<code>*</code>）字符。其他字符将会是空白符，且输入每一行不会包含行末空格。</p><ul><li>$1 \leq T \leq 100$</li><li>$2 \leq n, m \leq 100$</li><li>所有测试数据的特别格子的数量之和不超过 $3000$。</li><li>保证每个不特别的格子没有可以穿行的边界。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组测试数据，输出一行<code>Case #x: y</code>，其中<code>x</code>是测试数据的编号（从 $1$ 开始编号），<code>y</code>是这组数据的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2 2
+  +---+
+ /     \
++   *   +---+
+ \     /     \
+  +---+   *   +
+ /           /
++   *   +   +
+ \           \
+  +---+   *   +
+       \     /
+        +---+
+2 3
+  +---+       +---+
+ /     \     /     \
++   *   +---+       +
+ \           \     /
+  +---+   *   +---+
+ /                 \
++   *   +---+   *   +
+ \                 /
+  +---+   *   +---+
+       \     /
+        +---+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Case #1: 6
+Case #2: 16</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

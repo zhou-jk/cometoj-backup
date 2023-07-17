@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ZJOI2013]话旧</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0842 [ZJOI2013]话旧</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小林跟着银河队选手去了一趟宇宙比赛，耳濡目染，变得学术起来。回来后，他发现世界大变样了。比丘兽究级进化，成了凤凰兽；金先生因为发了一篇 paper，一跃成为教授，也成为了银河队选拔委员会成员。一日，小林与金教授聊天。金教授回忆起过去的岁月，那些年他学过的电路 原理。他曾经对一种三角波很感兴趣，并且进行了一些探究。小林感到很好奇， 于是金教授就将课题形式化地说了一遍。有一定义在 $[0,N]$ 的连续函数 $f(x)$，其中 $N$ 是整数，满足 $f(0)=f(N)=0$，它的所有极值点在整数处取到，且 $f(x)$ 的最小值均是 $0$。对于任意的 $0$ 到 $N-1$ 间的整数 $I$，$f(x)$ 在 $(I, I+1)$ 上是斜率为 $1$ 或 $-1$ 的一次函数。金先生研究的是，若他知道其中 $K$ 个整点的函数值，那么：</p><ol><li>有多少个函数满足条件？</li><li>满足条件的函数中，$\max f(x)$最大能是多少？</li></ol><p>小林思考了一下，便想出了很好的算法。那么作为经过多年训练的你呢？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含 $2$ 个用空格隔开的整数 $N,K$ 。接下来 $K$ 行，每行 $2$ 个整数，表示 $x[i]$ 和 $f(x[i])$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行两个整数，分别对应两个问题的答案。考虑到第一问答案可能很大，你只要输出它除以 $19940417$ 的余数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 9
+4 2
+4 2
+2 0
+4 2
+6 0
+5 1
+2 0
+0 0
+0 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据范围与约定】</p><p>对于 10% 的数据，$N≤10$。</p><p>对于 20% 的数据，$N≤50$。</p><p>对于 30% 的数据，$N≤100, K≤100$。</p><p>对于 50% 的数据，$N≤1000, K≤1000$。</p><p>对于 70% 的数据，$N≤100000$。</p><p>另有 10% 的数据，$K=0$。</p><p>对于 100% 的数据，$0≤N≤1000000000，0≤K≤1000000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

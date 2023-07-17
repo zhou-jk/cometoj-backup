@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2010普及组-B]接水问题</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0201 [2010普及组-B]接水问题</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>学校里有一个水房，水房里一共装有 $m$ 个龙头可供同学们打开水，每个龙头每秒钟的供水量相等，均为 $1$。</p><p>现在有 $n$ 名同学准备接水，他们的初始接水顺序已经确定。将这些同学按接水顺序从 $1$ 到 $n$&nbsp; 编号，$i$ 号同学的接水量为 $w_i$。接水开始时，$1$ 到 $m$ 号同学各占一个水龙头，并同时打开水龙头接水。当其中某名同学 $j$ 完成其接水量要求 $w_j$ 后，下一名排队等候接水的同学 $k$ 马上接替 $j$ 同学的位置开始接水。这个换人的过程是瞬间完成的，且没有任何水的浪费。即 $j$ 同学第 $x$ 秒结束时完成接水，则 $k$ 同学第 $x+1$ 秒立刻开始接水。若当前接水人数 $n'$ 不足 $m$，则只有 $n'$ 个龙头供水，其它 $m−n'$ 个龙头关闭。</p><p>现在给出 $n$ 名同学的接水量，按照上述接水规则，问所有同学都接完水需要多少秒。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行 $2$ 个整数 $n$ 和 $m$，用一个空格隔开，分别表示接水人数和龙头个数。</p><p>第 $2$ 行 $n$ 个整数 $w_1、w_2、......、w_n$，每两个整数之间用一个空格隔开，$w_i$ 表示 $i$ 号同学的接水量。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出只有一行，$1$ 个整数，表示接水所需的总时间。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3
+4 4 1 2 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 4
+23 71 87 32 70 93 80 76</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>163</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 $1$说明】</p><p>第 $1$ 秒，$3$ 人接水。第 $1$ 秒结束时，$1$、$2$、$3$ 号同学每人的已接水量为 $1$，$3$ 号同学接完水，$4$ 号同学接替 $3$ 号同学开始接水。</p><p>第 $2$ 秒，$3$ 人接水。第 $2$ 秒结束时，$1$、$2$ 号同学每人的已接水量为 $2$，$4$ 号同学的已接水量为 $1$。</p><p>第 $3$ 秒，$3$ 人接水。第 $3$ 秒结束时，$1$、$2$ 号同学每人的已接水量为 $3$，$4$ 号同学的已接水量为 $2$。$4$ 号同学接完水，$5$ 号同学接替 $4$ 号同学开始接水。</p><p>第 $4$ 秒，$3$ 人接水。第 $4$ 秒结束时，$1$、$2$ 号同学每人的已接水量为 $4$，$5$ 号同学的已接水量为 $1$。$1$、$2$、$5$ 号同学接完水，即所有人完成接水。</p><p>总接水时间为 $4$ 秒。</p><p>【数据范围】</p><p>$1≤n≤10000，1≤m≤100$且$m≤n$;</p><p>$1≤w_i≤100$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

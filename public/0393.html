@@ -1,0 +1,134 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2015Day2-B]品酒大会</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0393 [NOI2015Day2-B]品酒大会</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一年一度的“幻影阁夏日品酒大会”隆重开幕了。大会包含品尝和趣味挑战两个环节，分别向优胜者颁发“首席品酒家”和“首席猎手”两个奖项，吸引了众多品酒师参加。</p><p>在大会的晚餐上，调酒师Rainbow调制了$𝑛$杯鸡尾酒。这$n$杯鸡尾酒排成一行，其中第$𝑖$杯酒$(1 ≤ 𝑖 ≤ 𝑛)$被贴上了一个标签$𝑠_𝑖$，每个标签都是26个小写英文字母之一。设$𝑆𝑡𝑟(𝑙, 𝑟)$表示第$𝑙$杯酒到第$𝑟$杯酒的$𝑟 − 𝑙 + 1$个标签顺次连接构成的字符串。若$𝑆𝑡𝑟(𝑝,𝑝𝑜) = 𝑆𝑡𝑟(𝑞,𝑞𝑜)$，其中$1 ≤ 𝑝 ≤ 𝑝𝑜 ≤ 𝑛,1 ≤ 𝑞 ≤ 𝑞𝑜 ≤𝑛, 𝑝 \ne 𝑞, 𝑝𝑜 − 𝑝 + 1 = 𝑞𝑜 − 𝑞 + 1 = 𝑟$，则称第$𝑝$杯酒与第$𝑞$杯酒是“𝑟相似”的。当然两杯“$𝑟$相似”$(𝑟 &gt; 1)$的酒同时也是“1相似”、“2相似”、......、“$(𝑟 − 1)$相似”的。特别地，<b>对于任意的$1 ≤ 𝑝, 𝑞 ≤ 𝑛，𝑝 \ne 𝑞$，第$𝑝$杯酒和第$𝑞$杯酒都是“0相似”的</b>。</p><p>在品尝环节上，品酒师Freda轻松地评定了每一杯酒的美味度，凭借其专业的水准和经验成功夺取了“首席品酒家”的称号，其中第$𝑖$杯酒$(1 ≤ 𝑖 ≤ 𝑛)$的美味度为$𝑎_𝑖$。现在Rainbow公布了挑战环节的问题：本次大会调制的鸡尾酒有一个特点，如果把第$𝑝$杯酒与第$𝑞$杯酒调兑在一起，将得到一杯美味度为$𝑎_𝑝𝑎_𝑞$的酒。现在请各位品酒师分别对于$𝑟 = 0,1,2, ⋯ , 𝑛 − 1$，统计出有多少种方法可以选出2杯“$𝑟$相似”的酒，并回答选择2杯“$𝑟$相似”的酒调兑可以得到的美味度的最大值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第1行包含1个正整数$𝑛$，表示鸡尾酒的杯数。</p><p>第2行包含一个长度为$𝑛$的字符串𝑆，其中第$𝑖$个字符表示第$𝑖$杯酒的标签。</p><p>第3行包含$𝑛$个整数，相邻整数之间用单个空格隔开，其中第$𝑖$个整数表示第$𝑖$杯酒的美味度$𝑎_𝑖$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包括$𝑛$行。第$𝑖$行输出2个整数，中间用单个空格隔开。第1个整数表示选出两杯“$(𝑖 − 1)$相似”的酒的方案数，第2个整数表示选出两杯“$(𝑖 − 1)$相似”的酒调兑可以得到的最大美味度。若不存在两杯“$(𝑖 − 1)$相似”的酒，这两个数均为0。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+ponoiiipoi
+2 1 4 7 4 8 3 6 4 7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>45 56
+10 56
+3 32
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12
+abaabaabaaba
+1 -2 3 -4 5 -6 7 -8 9 -10 11 -12</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>66 120
+34 120
+15 55
+12 40
+9 27
+7 16
+5 7
+3 -4
+2 -4
+1 -4
+0 0
+0 0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明1】</p><p>用二元组$(𝑝, 𝑞)$表示第$𝑝$杯酒与第$𝑞$杯酒。</p><p>0相似：所有45对二元组都是0相似的，美味度最大的是8 × 7 = 56。<br></p><p>1相似：(1,8) (2,4) (2,9) (4,9) (5,6) (5,7) (5,10) (6,7) (6,10) (7,10)，最大的8 × 7 = 56。</p><p>2相似：(1,8) (4,9) (5,6)，最大的4 × 8 = 32。没有3,4,5, ⋯ ,9相似的两杯酒，故均输出0。</p><p>【数据规模与约定】</p><p>所有测试数据的范围和特点如下表所示<br></p><p><img alt="屏幕快照 2019-06-04 下午8.43.15.png" src="../upload/65eb397e2f.png" width="500" height="394.85981308411215"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

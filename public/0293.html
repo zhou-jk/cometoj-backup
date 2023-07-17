@@ -1,0 +1,115 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2000Day1-C]古城之谜</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0293 [NOI2000Day1-C]古城之谜</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>著名的考古学家石教授在云梦高原上发现了一处古代城市遗址。让教授欣喜的是在这个他称为冰峰城(Ice-Peak City)的城市中有12块巨大石碑，上面刻着用某种文字书写的资料，他称这种文字为冰峰文。然而当教授试图再次找到冰峰城时，却屡屡无功而返。</p><p>幸好当时教授把石碑上的文字都拍摄了下来，为了解开冰峰城的秘密，教授和他的助手牛博士开始研究冰峰文，发现冰峰文<b>只有陈述句这一种句型和名词(n)、动词(v)、辅词(a)这三类单词</b>，且其文法很简单：</p><p>&lt;文章&gt;::= &lt;句子&gt; { &lt;句子&gt; }</p><p>&lt;句子&gt;::= &lt;陈述句&gt;</p><p>&lt;陈述句&gt;&nbsp; &nbsp; ::=&lt;名词短语&gt; { &lt;动词短语&gt; &lt;名词短语&gt; } [ &lt;动词短语&gt; ]</p><p>&lt;名词短语&gt;::=&lt;名词&gt; | [ &lt;辅词&gt; ] &lt;名词短语&gt;</p><p>&lt;动词短语&gt;::=&lt;动词&gt; | [ &lt;辅词&gt; ] &lt;动词短语&gt;</p><p>&lt;单词&gt;::=&lt;名词&gt; | &lt;动词&gt; | &lt;辅词&gt;</p><p>注：其中&lt;名词&gt;、&lt;动词&gt;和&lt;辅词&gt;由词典给出，“::=”表示定义为，“|”表示或，{}内的项可以重复任意多次或不出现，[]内的项可以出现一次或不出现。</p><p>在研究了大量资料后，他们总结了一部冰峰文词典，由于冰峰文恰好有26个字母，为了研究方便，用字母a到z表示它们。</p><p>冰峰文在句子和句子之间以及单词和单词之间没有任何分隔符，因此划分单词和句子令石教授和牛博士感到非常麻烦，于是他们想到了使用计算机来帮助解决这个问题。假设你接受了这份工作，你的第一个任务是写一个程序，将一篇冰峰文文章划分为最少的句子，在这个前提下，将文章划分为最少的单词。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第1行为词典中的单词数n（n&lt;=1000）。</p><p>输入第2行至第(n+1)行每行表示一个单词，形为“α.mot”， α表示词性，可能是n（名词）,v（动词）,a（辅词）中的一个，mot为单词，单词的长度不超过20。拼写相同而词性不同的单词视为不同的单词，如输入示例中的n.kick与v.kick是两个不同的单词。</p><p>输入第(n+2)行为需要划分的文章，以“.”结束。</p><p>输入中的文章确保为冰峰文。文章是由有限个句子组成的，每个句子只包含有限个单词。文章长度不超过5KB。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出为两行，每行一个整数。</p><p>输出第1行为划分出来的句子数。</p><p>输出第2行为划分出来的单词数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>11
+n.table
+n.baleine
+a.silly
+n.snoopy
+n.sillysnoopy
+v.is
+v.isnot
+n.kick
+v.kick
+a.big
+v.cry
+sillysnoopyisnotbigtablebaleinekicksnoopysillycry.</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+9</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>[样例说明]</p><p>（为了阅读方便，划分的单词用空格分隔，在单词的右上角标出它的词性，每行写一个句子，用句号表示句子结束。）</p><p>输出对应的划分：</p><p>sillysnoopy$^n$ isnot$^v$ big$^a$ table$^n$.</p><p>baleine$^n$ kick$^v$ snoopy$^n$ silly$^a$ cry$^v$.</p><p>如果用下面的划分：</p><p>silly$^a$ snoopy$^n$ isnot$^v$ big$^a$ table$^n$.</p><p>baleine$^n$ kick$^v$ snoopy$^n$ silly$^a$ cry$^v$.</p><p>则划分的句子数仍为2个，但单词数却多了1个，为10个，显然应该按前者而不是后者划分。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

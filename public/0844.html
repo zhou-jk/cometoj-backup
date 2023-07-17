@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2016]病毒感染</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0844 [JSOI2016]病毒感染</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>JSOI 的边陲小镇爆发了严重的 Jebola 病毒疫情，大批群众感染生命垂危。计算机科学家 JYY 采用最新的算法紧急研制出了 Jebola 疫苗，并火速前往灾区救治患者。</p><p>一共有 $N$ 个小镇爆发了 Jebola 疫情。这些小镇由于地处边陲，仅仅通过一条长直公路连接。方便起见我们将这些小镇按照公路连接顺序由 $1$ 编号到 $N$。JYY 会在第一天一早抵达 $1$ 号小镇。</p><p>一开始在 $i$ 号小镇，有 $a_i$ 名患者感染了 Jebola 病毒。</p><p>每一天 JYY 可以选择：</p><ol><li>花费一天时间彻底治愈 JYY 目前所在的村庄的所有 Jebola 患者。这一天不会有任何患者死去</li><li>花费一天的时间前往一个相邻的村庄。</li></ol><p>当一天开始时，如果一个村庄里有 $k$ 个 Jebola 患者，那么这一天结束时，这 $k$ 个患者会感染另外 $k$ 个这个村子里的健康村民并死去。所以对于 $i$ 号村庄，只要这个村庄没有被 JYY 彻底消灭疫情，那么每一天都会有 $a_i$ 个村民死去。</p><p>JYY 希望采用措施使得疫情被整体消灭时，总共死去的村名数量尽量少。</p><p>为了达成这一目标，JYY 有时会选择抵达一个村庄但是并不对村民进行施救。这样的行为如果不加限制，往往会造成更加严重的后果。</p><p>试想这样的情形：假设当 JYY 第一次抵达村庄 $i$，未作救治并直接前往了另一个村庄。那么由于 $i$ 村庄的人们求生心切，一旦当 JYY 朝向靠近 $i$ 村庄的方向前行时，$i$ 村庄的村民就会以为 JYY 是来救他们了，而产生巨大的期望。之后倘若 JYY 再次掉头朝着远离 $i$ 村庄的方向行进，那么 $i$ 村庄的村民就会因为巨大的失落而产生绝望的情绪。</p><p>为了避免这种情况，JYY 对他的行程做了如下规定：</p><p>假设 JYY 进入 $i$ 村庄并在第二天立即离开（村庄 $i$ 的疫情并未治愈）。如果在之后的某一天，JYY 从村庄 $j$ 前往村庄 $k$，并满足 $|k-i|\lt |k-j|$。那么在之后的日子里 JYY 只能朝着 $i$ 村庄前进直到抵达 $i$ 村庄并立即治愈该村的患者。在前往 $i$ 村庄的过程中，JYY 可以选择将途经村庄的疫情治愈。</p><p>比如，如果 JYY 有如下行程：</p><p>第一天：从村庄 $1$ 前往村庄 $2$；</p><p>第二天：从村庄 $2$ 前往村庄 $3$；</p><p>第三天：治愈村庄 $3$；</p><p>第四天：前往村庄 $2$。</p><p>此时 JYY 对于之后三天的行程只有唯一一种选择：</p><p>第五天：治愈村庄 $2$；</p><p>第六天：前往村庄 $1$；</p><p>第七天：治愈村庄 $1$。</p><p>JYY 想知道在治愈所有村庄之前，至少会有多少村民因 Jebola 死去。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行包含一个正整数 $N$；</p><p>接下来一行包含 $N$ 个整数，分别为 $a_1,a_2,\cdots ,a_N$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数，表示最优行程安排下会死去的村民数量。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+40 200 1 300 2 106
+40 200 1 300 2 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1950</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $10\%$ 的数据，满足 $N\le 10$；</p><p>对于 $30\%$ 的数据，满足 $N\le 20$；</p><p>对于 $50\%$ 的数据，满足 $N\le 60$；</p><p>对于 $100\%$ 的数据，满足 $1\le N\le 3000,1\le a_i\le 10^9$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

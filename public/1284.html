@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2010]旅行</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1284 [JSOI2010]旅行</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>WJJ 喜欢旅游，这次她打算去一个据说有很多漂亮瀑布的山谷玩。</p><p>WJJ 事先得到了一张地图，上面标注了 $N(1 \le N \le 50)$ 个小动物的聚居地，也就是一个个的小村落。其中第 $1$ 个村庄是 WJJ 现在住的地方，第 $N$ 个村庄是 WJJ 打算去的地方。这些村庄之间有 $M(1 \le M \le 150)$ 条双向道路连接着，第 $j$ 条双向道路恰好直接连接两个小村庄 $A$，$B$，长度为 $C(1 \le A，B \le N，A_i \ne B, 1 \le C \le 1000)$。道路有的是隧道，有的是栈桥，地图上那些看起来在村庄之外交叉的路实际上并不相交——也就是说，如果把这些小村落和双向道路构成的道路网看作图论意义上的图，我们不保证它是平面图，也不保证它没有重边。不过，有一点还是可以保证的：WJJ 细心地验证过，从它居住的村落一定能走到她想去的那个山谷。</p><p>在 WJJ 所在的神奇世界中，每只小动物都可以借助仙人掌来施放魔法，其中之一是，交换世界中任意两条双向道路的长度，同时保持其他道路的长度不变。按 WJJ 目前的魔法水平，她最多能使用 $K(1 \le K \le 20)$ 次这种道路长度交换魔法。可惜的是，由于仙人掌刺比较多，WJJ 并不打算带着它旅行，于是她会在家里完成想要的道路交换后再出门。假设 WJJ 的旅行途中不会有其他小动物进行道路交换来破坏她设计好的路线。为了尽快达到目的地，WJJ 希望她需要走的总距离越短越好。也就是说，使用最多 $K$ 次魔法后，从村落 $1$ 到村落 $N$ 的最短距离是多少？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行：$3$ 个用空格隔开的整数 $N$，$M$，$K$。</p><p>第 $2...M+1$ 行：每行是 $3$ 个整数，用空格隔开，分别表示 $A,B, C$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$1$ 个整数，表示使用最多 $K$ 次魔法后，村落 $1$ 和村落 $N$ 之间的最短距离。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5 2
+1 2 10
+2 5 10
+1 3 4
+3 4 2
+4 5 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

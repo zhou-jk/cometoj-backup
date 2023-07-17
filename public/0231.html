@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2016普及组-B]回文日期</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0231 [2016普及组-B]回文日期</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。</p><p>牛牛习惯用8位数字表示一个日期，其中，前4位代表年份，接下来2位代表月份，最后2位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。</p><p>牛牛认为，一个日期是回文的，当且仅当表示这个日期的8位数字是回文的。现 在，牛牛想知道：在他指定的两个日期之间（包含这两个日期本身），有多少个真实存在的日期是回文的。</p><p>一个8位数字是回文的，当且仅当对于所有的$i(1≤i≤8)$从左向右数的第$i$个数字和第$9−i$个数字（即从右向左数的第$i$个数字）是相同的。</p><p>例如：</p><ul><li>对于2016年11月19日，用8位数字20161119表示，它不是回文的。</li><li>对于2010年1月2日，用8位数字20100102表示，它是回文的。</li><li>对于2010年10月2日，用8位数字20101002表示，它不是回文的。</li></ul><p>每一年中都有12个月份：</p><p>其中，1,3,5,7,8,10,12月每个月有31天；4,6,9,11月每个月有30天；而对于2月，闰年时有29天，平年时有28天。</p><p>一个年份是闰年当且仅当它满足下列两种情况<u>其中的一种</u>：</p><ol><li>这个年份是4的整数倍，但<u>不是</u>100的整数倍；</li><li>这个年份是400的整数倍。</li></ol><p>例如：</p><ul><li>以下几个年份都是闰年：2000,2012,2016。</li><li>以下几个年份是平年：1900,2011,2014。</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>两行，每行包括一个8位数字。</p><p>第一行表示牛牛指定的起始日期$date_1$。</p><p>第二行表示牛牛指定的终止日期$date_2$。</p><p>保证$date_1$和$date_2$都是真实存在的日期，且年份部分一定为4位数字，且首位数字不为0。</p><p>保证$date_1$—定不晚于$date_2$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个整数，表示在$date_1$和$date_2$之间，有多少个日期是回文的。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>20110101
+20111231</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>20000101
+20101231</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于样例1，符合条件的日期是20111102。</p><p>对于样例2，符合条件的日期是20011002和20100102。</p><p>对于60%的数据，满足$date_1=date_2$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

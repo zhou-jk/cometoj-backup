@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]吉良吉影的奇妙计划(困难版)</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1700 [Wannafly冬令营2018Day8]吉良吉影的奇妙计划(困难版)</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：8000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>吉良吉影是一个平凡的上班族，他决定在休假的闲暇时光里制定接下来$2n$天的指甲修剪计划。</p><p>首先，吉良吉影会在纸上写下$2n$个字（<code>左</code>、<code>右</code>各$n$个），表示他每天是修剪左手的指甲还是右手的指甲。但是吉良吉影是一个称职的上班族，不会浪费这么多时间在修剪指甲上，于是他决定将一些位置改成空（即那天不剪指甲）。吉良吉影从头扫视整个计划，如果出现连续两天，剪的是不同的手，那么他就会将这两天改成空，并从头开始重复这个过程。直到不存在连续两天剪不同手的指甲为止。比如初始的计划为<code>左左右左左右右右</code>，那么在第一次修改后变成<code>左空空左左右右右</code>，在第二次修改后变成<code>左空空左空空右右</code>。由于吉良吉影的指甲生长的非常快，所以他不能容忍出现连续4天或以上的<code>空</code>，如果在最终的计划中出现了连续4个的<code>空</code>，那么他认为这样的计划不合法并炸掉计划。</p><p>现在吉良吉影想知道，他可能造出多少种合法的计划？两个计划被认为不同，当且仅当存在任意一天的选择不同。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个整数$n(1 \le n \le 10^5)$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出仅一行，表示合法计划的数量，对$998244353$取模。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>在样例中，可能的最终计划分别为：</p><p>空空左空空右</p><p>空空右空空左</p><p>左空空右空空</p><p>左左空空右右</p><p>右空空左空空</p><p>右右空空左左</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

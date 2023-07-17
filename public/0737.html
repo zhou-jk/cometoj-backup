@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[FJOI2015]带子串包含约束LCS问题</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0737 [FJOI2015]带子串包含约束LCS问题</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>带有子串包含约束的最长公共子序列问题可以具体表述如下。</p><p>给定 $2$ 个长度分别为 $n$ 和 $m$ 的序列 $X$ 和 $Y$，以及一个子串包含约束集 $S$。</p><p>$S$ 中共有 $k$ 个字符串 $S=\{S_1,S_2,…,S_k\}$，其中字符串 $S_i$ 的长度为 $l_i$，$1≤i≤k$。带有子串包含约束的最长公共子序列问题就是要找出 $X$ 和 $Y$ 的包含约束集 $S$ 中所有字符串为其子串的最长公共子序列。</p><p>例如，如果给定的序列 $X$ 和 $Y$ 分别为 $X=$ actaagacc， $Y=$ gacctacctc，子串包含约束集 $S=\{$ ata，tact $\}$，则子序列 actacct 是 $X$ 和 $Y$ 的一个无约束的最长公共子序列，而包含约束集 $S$ 中所有字符串为其子串的一个最长公共子序列是 atact。</p><p>在本题中请特别关注子串与子序列的区别。字符串 $T=t_1…t_n$ 的子串是一个形如 $T'=t_{1+i}…t_{m+i}$ 的字符串，其中，$0≤i$，$m+i≤n$。例如，$T=$ abcdefg，则 bcd 是 $T$ 的一个子串，而 bce 是 $T$ 的一个子序列，但不是 $T$ 的子串。</p><p>设计一个算法，找出给定序列 $X$ 和 $Y$ 带有子串包含约束 $S$ 的最长公共子序列。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行中给出正整数 $n,m,k，m＜300, n＜300, k＜6$。$n$ 和 $m$ 分别表示给定序列 $X$ 和 $Y$ 的长度。$k$ 表示子串包含约束集 $S$ 中共有 $k$ 个字符串。</p><p>第 $2$ 行中有 $k$ 个整数 $l_i$，$0≤l_i≤300,1≤i≤k$，分别表示子串包含约束集 $S$ 中 $k$ 个字符串的长度度。</p><p>第 $3$ 行和第 $4$ 行分别给出序列 $X$ 和 $Y$。</p><p>接下来 $k$ 行每行一个字符串 $S_i$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>将计算出的 $X$ 和 $Y$ 带子串包含约束 $S$ 的最长公共子序列的长度输出。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 10 2
+3 4
+actaagacct
+gacctacctc
+ata
+tact</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>字符串仅包含大小写字母。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2010]物品调度</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1119 [HNOI2010]物品调度</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>现在找工作不容易，Lostmonkey 费了好大劲才得到 fsk 公司基层流水线操作员的职位。流水线上有 $n$ 个位置，从 $0$ 到 $n-1$ 依次编号，一开始 $0$ 号位置空，其它的位置 $i$ 上有编号为 $i$ 的盒子。Lostmonkey 要按照以下规则重新排列这些盒子。 规则由 $5$ 个数描述，$q$，$p$，$m$，$d$，$s$，$s$ 表示空位的最终位置。首先生成一个序列 $c$，$c_0=0$，$c_{i+1}=(c_i \times q+p) \bmod m$。接下来从第一个盒子开始依次生成每个盒子的最终位置 $pos_i$，$pos_i=(c_i+d \times x_i+y_i) \bmod n$，$x_i,y_i$ 是为了让第 $i$ 个盒子不与之前的盒子位置相同的由你设定的非负整数，且 $pos_i$ 还不能为 $s$。如果有多个 $x_i$，$y_i$ 满足要求，你需要选择 $y_i$ 最小的，当 $y_i$ 相同时选择 $x_i$ 最小的。 这样你得到了所有盒子的最终位置，现在你每次可以把某个盒子移动到空位上，移动后原盒子所在的位置成为空位。请问把所有的盒子移动到目的位置所需的最少步数。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个整数 $t$，表示数据组数。接下来 $t$ 行，每行 $6$ 个数，$n$，$s$，$q$，$p$，$m$，$d$ 意义如上所述。</p><p>对于 $30\%$ 的数据 $n \le 100$，对于 $100\%$ 的数据 $t \le 20,n \le 100000$，$s&lt;n$。其余所有数字均为不超过 $100000$ 的正整数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组数据输出一个数占一行，表示最少移动步数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+8 3 5 2 7 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>第1个到第7个盒子的最终位置依次是：2 5 6 4 1 0 7。</p><p>【提示】</p><p>计算过程可能超过整型范围。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

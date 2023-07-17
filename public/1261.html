@@ -1,0 +1,159 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CQOI2016]路由表</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1261 [CQOI2016]路由表</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>路由表查找是路由器在转发 IP 报文时的重要环节。通常路由表中的表项由目的地址、掩码、下一跳（Next Hop）地址和其他辅助信息组成。例如：</p><p><img src="../upload/be48b930ca.png" alt="image.png"></p><p>当路由器收到一个 IP 报文时，会将报文中的目的 IP 地址与路由表中的表项逐条进行比较，选择匹配且<strong>最明确</strong>的表项，将报文转发给该表项中指定的下一跳。</p><p>匹配的过程是将报文中的目的地址和表项中的目的地址分别转为二进制串，再查看表项中的掩码长度，若掩码长度为 $x$，则将两个二进制串的前 $x$ 位进行比较，如果相同则认为匹配。</p><p>所谓<strong>最明确</strong>是指在有多个表项匹配时，掩码长度最大的表项。也可以理解为匹配的二进制位最多的项。</p><p>IP 地址转为二进制串的操作是把地址中 $4$ 个整数（一定在 $0$ 到 $255$ 的范围内）分别转为$8$位二进制数，再顺序拼接起来，得到一个 $32$ 位的二进制串。例如，<strong>192.168.1.253</strong>转为二进制串后为<strong>11000000 10101000 00000001 11111101</strong>。</p><p>我们以报文的目的地址为<strong>8.8.8.8</strong>为例，说明其在上述路由表的匹配过程。</p><p><img src="../upload/69ef6ae068.png" alt="00000.png"></p><p>上表将地址均转为二进制串，并用红色标记出待比较的位（由掩码长度决定）。将红色部分与报文中的目的地址比较，可知<strong>0.0.0.0/1</strong>、<strong>8.8.8.0/24</strong>、<strong>8.8.8.8/32</strong>均能够匹配。路由器从中选取掩码长度最长（/32）的表项<strong>8.8.8.8/32</strong>，将报文转发给其对应的下一跳地址<strong>192.168.1.253</strong>。</p><p>在实际的核心路由器中，路由表通常较大（现在互联网的全局路由表已经接近 $60$ 万条记录），并且会随着新接入设备不断扩张。为了分析路由表变化对转发产生的影响，网络工程师想要知道一段时间内某个 IP 地址的路由表项选择发生了多少次变化（变化是指由于最明确匹配等因素选择了不同的表项，不考虑下一跳地址）。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行为整数 $M$，表示共有 $M$ 次操作。接下来 $M$ 行，每行描述一次操作。操作有两种：</p><p><code>A &lt;D&gt;/&lt;L&gt;</code></p><p>其中 $D $为一个 IP 地址，$L$ 为整数 $(1 \leq L \leq 32)$。添加一条表项至路由表，其目的地址为 $D$，掩码长度为 $L$。下一跳地址由于没有用到，故省略。</p><p><code>Q &lt;D&gt; &lt;a&gt; &lt;b&gt;</code></p><p>其中 $D$ 为一个 IP 地址，$a, b$ 为正整数 $(a \leq b)$。查询从第 $a$ 次至第 $b$ 次添加表项期间（含 $a, b$），目的地址 $D$ 的路由表项选择发生了多少次变化。保证查询时表中至少有 $b$ 个表项。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包含若干行，每行仅有一个整数，依次对应每个查询操作。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>47
+A 128.0.0.0/1
+A 128.0.0.0/4
+A 100.200.20.0/23
+A 241.170.96.0/20
+A 74.128.0.0/17
+A 193.24.0.0/14
+A 128.0.0.0/19
+A 128.0.0.0/13
+A 128.0.0.0/5
+A 128.0.0.0/11
+A 128.0.0.0/12
+A 192.0.0.0/7
+Q 192.0.0.13 1 8
+A 128.0.0.0/8
+Q 128.0.0.15 1 8
+A 74.0.0.0/8
+A 96.0.0.0/4
+A 193.24.0.0/23
+A 100.192.0.0/11
+A 128.0.0.0/18
+A 128.0.0.0/20
+Q 128.0.0.4 1 13
+A 192.0.0.0/8
+A 192.0.0.0/22
+Q 128.0.0.7 1 14
+A 128.0.0.0/23
+A 74.128.0.0/14
+A 128.0.0.0/14
+A 128.0.0.0/25
+A 74.128.0.0/12
+Q 128.0.0.9 2 17
+A 96.0.0.0/11
+A 64.0.0.0/2
+A 74.0.0.0/26
+A 100.192.0.0/18
+A 128.0.0.0/27
+A 193.24.0.0/18
+Q 128.0.0.3 4 21
+Q 74.128.0.12 3 24
+A 128.0.0.0/9
+A 193.24.0.0/22
+Q 128.0.0.7 4 24
+A 192.0.0.0/10
+Q 128.0.0.3 2 23
+A 100.192.0.0/10
+Q 241.170.96.2 1 26
+Q 100.192.0.4 4 24</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+3
+3
+3
+2
+2
+1
+3
+4
+2
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于一次查询的一种理解方式是：无视其它所有查询操作，只看添加操作。先清空路由表，然后执行第 $1$ 到 $a - 1$ 次添加操作。之后再统计第 $a$ 到 $b$ 次添加操作过程中匹配改变的次数。</p><p>对于 $30\%$ 的数据，$M \leq 10^3$；</p><p>对于 $100\%$ 的数据，$M \leq 10^6$。</p><p>设一条表项的掩码长度为 $L$，数据保证将目的地址转为二进制串后，末尾的 $32 - L$ 位均为 $0$。另外，保证不会重复添加目的地址和掩码长度都相同的表项。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

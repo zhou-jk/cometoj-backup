@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2016Day1] Kangaroo</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1724 [CEOI2016Day1] Kangaroo</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>A garden is composed of a row of $N$ cells numbered from $1$ to $N$. Initially, all cells contain plants. A kangaroo arrived in the garden in cell numbered<code>cs</code>. Then he jumps from cell to cell, eating the plants as he goes. He will always finish in cell numbered<code>cf</code>, after visiting each of the $N$ cells exactly once, including<code>cs</code>and<code>cf</code>. Obviously, the kangaroo will make $N-1$ jumps.</p><p>The kangaroo doesn't want to be caught, so after each jump he changes the direction in which he jumps next: if he is currently in cell numbered<code>current</code>after he jumped there from a cell numbered<code>prev</code>, and will jump from<code>current</code>to cell numbered<code>next</code>, then:</p><ul><li>if<code>prev &lt; current</code>, then<code>next &lt; current;</code>else,</li><li>if<code>current &lt; prev</code>, then<code>current &lt; next</code>.</li></ul><p>Knowing the number $N$ of cells in the garden, the starting cell<code>cs</code>from where the kangaroo starts to eat plants and the final cell<code>cf</code>where the kangaroo finishes, you should calculate the number of distinct routes the kangaroo can take while jumping through the garden.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The input will contain three space separated positive integers $N$, $cs$, $cf$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>In the output you should write a single integer, the number of distinct routes the kangaroo can take modulo $1000000007 (10^9 + 7)$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 2 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Notes and constraints</p><ul><li>$2 ≤ N ≤ 2000$</li><li>$1 ≤ cs ≤ N$</li><li>$1 ≤ cf ≤ N$</li><li>$cs ≠ cf$</li><li>For tests worth 6 points, $N ≤ 8$.</li><li>For tests worth 36 points, $N ≤ 40$.</li><li>For tests worth 51 points, $N ≤ 200$.</li><li>Any route is uniquely determined by the order in which cells are visited.</li><li>We guarantee that for each test there is at least one route which follow the rules.</li><li>The kangaroo can start jumping in any direction from cs.</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

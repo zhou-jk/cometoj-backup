@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]三元组</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1020 [欢乐赛]三元组</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">鸡尾酒喜欢三元组，</p><p>她手里有 $n$ 个三元组 $P=(a_{i}, b_{i}, c_{i})$，她对这些三元组了如指掌，比如，她很清楚有多少个三元组对 $(P_{i}, P_{j})$ 满足 $2*min(a_{i}+ a_{j},b_{i}+b_{j}) \le max(a_{i}+ a_{j},b_{i}+b_{j})$。</p><p>而NE爸爸觉得鸡尾酒忽视了三元组中 $c_{i}$ 的存在，觉得她对三元组的价值一无所知！于是NE爸爸向鸡尾酒提出了一个“NE难题”：</p><p>对于每一对三元组 $(P_{i}, P_{j})$，其中 $i \le j$，若满足 $2*min(a_{i}+ a_{j},b_{i}+b_{j}) \le max(a_{i}+ a_{j},b_{i}+b_{j})$，她便能得到 $c_{i} *c_{j}$ 的小钱钱，那么鸡尾酒一共能获得多少小钱钱？</p><p>“那我岂不是要成为富鸡尾酒了嘛！”鸡尾酒感叹道，她没想到三元组居然这么有价值。不过她并不知道自己具体能获得多少钱，你能帮她解决“NE难题”吗？</p><p>由于鸡尾酒能得到的钱过多，你只需要输出对 $10^{9}+7$ 取模后的结果即可。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行一个正整数输入 $n$，表示三元组的数量</p><p>接下来n行,每行给三个正整数，依次表示 $a_{i}, b_{i}, c_{i}$</p><p>($2 \le n \le 10^{5} ,1 \le a_{i},b_{i},c_{i} \le 10^{9}$)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个正整数表示答案 (对 $10^{9}+7$ 取模)。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2 2 2
+6 2 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>48</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">满足要求的三元组对有：$(P_{2}, P_{2}),(P_{1}, P_{2})$<br></p><p>所以答案为$ 2 * 6 + 6 * 6 = 48 $</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

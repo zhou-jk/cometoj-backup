@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CTSC2010Day2-B]珠宝商</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0453 [CTSC2010Day2-B]珠宝商</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：18000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Louis.PS 是一名精明的珠宝商，他出售的项链构造独特，很大程度上是因为他的制作方法与众不同。每次 Louis.PS 到达某个国家后，他会选择一条路径去遍历该国的城市。在到达一个城市后，他会使用在这个城市流行的材料制作一颗珠子，并按照城市被访问的顺序将珠子串联做成项链，为了使制作出来的项链不会因为城市之间的竞争而影响销量，路径中同一个城市不会重复出现（因为如果项链中 A 城市的材料比 B 城市的材料使用的多，则项链在 B 城市的宣传可能会受到影响）。经过多年对消费者的调查， Louis.PS 已经掌握了判断一条项链吸引消费者程度的方法，具体来说， Louis.PS 经过调查得出了受消费者欢迎的项链的特征，并基于此制作了一个长项链（Louis.PS 称之为特征项链）。对于一条待售的项链，这条项链在特征项链里出现的次数越多，这条项链就越受消费者欢迎。</p><p>考虑到现实情况的复杂性，我们对条件做出适当的简化。<b>对于每个国家，在某些城市间存在道路直接相连，对于两个不同的城市，有且仅有一条路径连接这两个城市</b>（即国家是连通的，且不存在一个环）。对于每个城市，我们<b>用一个小写字母来表示在这个城市流行的材料类型</b>。这样，我们就可以用一个仅包含小写字母的字符串来表示一条项链， 我们将特征项链所对应的字符串称作特征字符串，设为<code>EigenString[1...M]，</code>$M$ 为特征项链的长度。对于一条项链，假设其对应字符串为<code>P[1...L]，</code>$L$ 为这条项链的长度。<b>如果存在一个正整数 $K$, 使<code>EigenString[K...K+L−1]=P[1..L]</code>，称这条项链在特征项链中出现了一次。 满足上述条件的正整数 $K$ 的个数即为这条项链在特征项链的出现次数，记为 $Popularity(P)$</b>。</p><p>Louis.PS 使用数学中的期望概念来评价一个国家是否适合珠宝的采集,对于一个包含 $N$ 个城市的国家，令$Str_{u,v}$<b>表示沿着从 $u$ 开始，至 $v$ 结束的路径所得到的项链的对应字符串</b>。 ($Str_{u,v}$ 与 $Str_{v,u}$ ​表示的串一般不相同），则 $Expectation=\sum_{u,v}Popularity(Str_{u,v})/N^2$</p><p>对于如下的例子（图中实线表示两端点的国家有直接道路相连）：</p><p>$N=3$，所流行的材料类型分别为 $a,a,b$。</p><p><img alt="屏幕快照 2019-07-01 下午6.13.38.png" src="../upload/dcc6ef7d5e.png" width="500" height="223.75"><br></p><p>$Expectation=\frac{3+1+2+1+3+1+1+1+2}{9}=\frac{5}{3}​$<br></p><p>对于一个国家， Louis.PS 想知道其 $Expectation$ 的值，但苦于计算期望的工作量太大。作为珠宝店的学徒， 你当然不愿放过难得在老板面前展示自己的机会。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个整数 $N,M$，表示城市个数及特征项链长度。</p><p>接下来的 $N−1$ 行， 每行两个整数 $x,y$， 表示城市 $x$ 与城市 $y$ 有直接道路相连。城市由 $1$ ~ $N$ 进行编号。</p><p>接下来的一行，包含一个长度为 $N$，仅包含小写字母的字符串，第 $i$ 位的字符表示在城市 $i$ 流行的原料类型。</p><p>最后一行， 包含一个长度为 $M$， 仅包含小写字母的字符串， 表示特征字符串。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个整数，为 $N^2∗Expectation$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5
+1 2
+1 3
+aab
+abaab</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>15</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>有20%的数据，满足 $M≤1000$；</p><p>有40%的数据，满足 $N \le 8000, M≤50000$；<br></p><p>对于100%的数据，$N,M≤50000$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

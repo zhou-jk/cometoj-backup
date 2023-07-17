@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[AHOI2006]基因匹配</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1445 [AHOI2006]基因匹配</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>基因匹配（match）卡卡昨天晚上做梦梦见他和可可来到了另外一个星球，这个星球上生物的 DNA 序列由无数种碱基排列而成（地球上只有 $4$ 种），而更奇怪的是，组成 DNA 序列的每一种碱基在该序列中正好出现 $5$ 次！这样如果一个 DNA 序列有 $N$ 种不同的碱基构成，那么它的长度一定是 $5N$。</p><p>卡卡醒来后向可可叙述了这个奇怪的梦，而可可这些日子正在研究生物信息学中的基因匹配问题，于是他决定为这个奇怪星球上的生物写一个简单的 DNA 匹配程序。</p><p>为了描述基因匹配的原理，我们需要先定义子序列的概念：若从一个 DNA 序列（字符串）$s$ 中任意抽取一些碱基（字符），将它们仍按在 $s$ 中的顺序排列成一个新串 $u$，则称 $u$ 是 $s$ 的一个子序列。对于两个 DNA 序列 $s_1$ 和 $s_2$，如果存在一个序列 $u$ 同时成为 $s_1$ 和 $s_2$ 的子序列，则称 $u$ 是 $s_1$ 和 $s_2$ 的公共子序列。</p><p>卡卡已知两个 DNA 序列 $s_1$ 和 $s_2$，求 $s_1$ 和 $s_2$ 的最大匹配就是指 $s_1$ 和 $s_2$ 最长公共子序列的长度。</p><p>[任务] 编写一个程序：</p><ul><li>从输入中读入两个等长的 DNA 序列；</li><li>计算它们的最大匹配；</li><li>打印你得到的结果。</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入中第一行有一个整数 $N$，表示这个星球上某种生物使用了 $N$ 种不同的碱基，以后将它们编号为 $1…N$ 的整数。</p><p>以下还有两行，每行描述一个 DNA 序列：包含 $5N$ 个 $1…N$ 的整数，且每一个整数在对应的序列中正好出现 $5$ 次。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出中只有一个整数，即两个 DNA 序列的最大匹配数目。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+1 1 2 2 1 1 2 1 2 2
+1 2 2 2 1 1 2 2 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$60\%$ 的测试数据中：$1 \le N \le 1 000$ </p><p>$100\%$ 的测试数据中：$1 \le N  \le  20 000$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

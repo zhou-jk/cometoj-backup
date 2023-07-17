@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2017Day1] Mousetrap</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1731 [CEOI2017Day1] Mousetrap</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Dumbo the elephant has a huge labyrinth with $n$ rooms numbered $1...n$ and $n−1$ passages in such way that it is possible to reach any room from any other room. Unfortunately, a mouse sneaked into the labyrinth. Dumbo is terribly afraid of mice, so he sets a mousetrap  in room $t$. Obviously, the mouse avoids the room with the trap, so Dumbo has to think of a better strategy to bait the mouse into the trap. The mouse constantly runs around and never stops, unless it has nowhere to move. He also knows that the mouse leaves a dirty trail of droppings and footprints in every passage it uses. The mouse then refuses to use a dirty passage again. Dumbo can clean a dirty passage, or block a passage with stones. By blocking passages or cleaning them, he wants to force the mouse to run into the trap. He would like to do this in a minimal number of moves, as he feels highly uncomfortable in the presence of a mouse.</p><p>We can describe this as a game for two players. The mouse tries to maximize the number of Dumbo’s moves. The Dumbo tries to win in minimal number of moves. The ﬁrst player is Dumbo. On his turn, he may clean one dirty passage of the labyrinth or block one passage. It doesn’t matter if the blocked passage is clean or not. He cannot unblock a passage. He may, however, choose to do nothing. Turns in which Dumbo decides to do nothing do not count as moves. When it is the mouse’s turn, the mouse will choose a clean unblocked passage and run to the adjacent room down that passage. If there is no such passage leading from mouse’s current room, the mouse won’t move.</p><p>Initially, all the passages are clean, the mouse is in room $m$, the trap is in room $t$, and it is Dumbo’s turn. What is the minimum number of moves (passages cleaned and blocked) Dumbo needs if both players play optimally (mouse’s goal is to maximize the number of Dumbo’s moves)?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Integers $n, t$ and $m$ will be given in the ﬁrst line, separated by spaces. $n−1$ lines follow. In each line, $a_i$ and $b_i$ are given, separated by a space, which indicates a passage between rooms $a_i$ and $b_i$.</p><p>Note that the input size is large.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Your program should print the number of Dumbo’s moves.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 1 4
+1 2
+2 3
+2 4
+3 9
+3 5
+4 7
+4 6
+6 8
+7 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Constraints</p><ul><li>$1≤ n,t,m ≤10^6$</li></ul><p>Subtask 1 (20 points)</p><ul><li>$n ≤10$</li></ul><p>Subtask 2 (25 points)</p><ul><li>It is guaranteed that a passage between rooms $m$ and $t$ exists.</li></ul><p>Subtask 3 (20 points)</p><ul><li>$n ≤1000$</li></ul><p>Subtask 4 (35 points)</p><ul><li>no additional constraints</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

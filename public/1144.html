@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2008]火星人</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1144 [JSOI2008]火星人</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>火星人最近研究了一种操作：求一个字串两个后缀的公共前缀。比方说，有这样一个字符串：<code>madamimadam</code>，我们将这个字符串的各个字符予以标号：序号：<code>1 2 3 4 5 6 7 8 9 10 11</code>字符<code>m a d a m i m a d a m</code>。</p><p>现在，火星人定义了一个函数 $LCQ(x, y)$，表示：该字符串中第 $x$ 个字符开始的字串，与该字符串中第 $y$ 个字符开始的字串，两个字串的公共前缀的长度。比方说，$LCQ(1, 7) = 5, LCQ(2, 10) = 1, LCQ(4, 7) = 0$</p><p>在研究 $LCQ$ 函数的过程中，火星人发现了这样的一个关联：如果把该字符串的所有后缀排好序，就可以很快地求出 $LCQ$ 函数的值；同样，如果求出了 $LCQ$ 函数的值，也可以很快地将该字符串的后缀排好序。尽管火星人聪明地找到了求取 $LCQ$ 函数的快速算法，但不甘心认输的地球人又给火星人出了个难题：在求取 $LCQ$ 函数的同时，还可以改变字符串本身。具体地说，可以更改字符串中某一个字符的值，也可以在字符串中的某一个位置插入一个字符。地球人想考验一下，在如此复杂的问题中，火星人是否还能够做到很快地求取 $LCQ$ 函数的值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行给出初始的字符串。第二行是一个非负整数 $M$，表示操作的个数。接下来的 $M$ 行，每行描述一个操作。操作有 $3$ 种，如下所示：</p><ol><li>询问。<br>语法：<code>Q x y</code>，$x,y$ 均为正整数。<br>功能：计算 $LCQ(x,y)$。<br>限制：$1 \le x,y \le $当前字符串长度。</li><li>修改。<br>语法：<code>R x d</code>，$x$ 是正整数，$d$ 是字符。<br>功能：将字符串中第 $x$ 个数修改为字符 $d$。<br>限制：$x$ 不超过当前字符串长度。</li><li>插入。<br>语法：<code>I x d</code>，$x$ 是非负整数，$d$ 是字符。<br>功能：在字符串第 $x$ 个字符之后插入字符 $d$，如果 $x=0$，则在字符串开头插入。<br>限制：$x$ 不超过当前字符串长度。</li></ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于输入中每一个询问操作，你都应该输出对应的答案。一个答案一行。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>madamimadam
+7
+Q 1 7
+Q 4 8
+Q 10 11
+R 3 a
+Q 1 7
+I 10 a
+Q 2 11</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1
+0
+2
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<ol><li><p>所有字符串自始至终都只有小写字母构成。</p></li><li><p>$M \le 150,000$</p></li><li><p>字符串长度 $L$ 自始至终都满足 $L \le 100,000$</p></li><li><p>询问操作的个数不超过 $10,000$ 个。</p></li></ol><p>对于第1，2个数据，字符串长度自始至终都不超过 $1,000$。</p><p>对于第3，4，5个数据，没有插入操作。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2015Day2-A]荷马史诗</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0394 [NOI2015Day2-A]荷马史诗</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>追逐影子的人，自己就是影子 ——荷马</p><p>Allison最近迷上了文学。她喜欢在一个慵懒的午后，细细地品上一杯卡布奇诺，静静地阅读她爱不释手的《荷马史诗》。但是由《奥德赛》和《伊利亚特》组成的鸿篇巨制《荷马史诗》实在是太长了，Allison想通过一种编码方式使得它变得短一些。</p><p>一部《荷马史诗》中有$𝑛$种不同的单词，从1到𝑛进行编号。其中第$𝑖$种单词出现的总次数为$𝑤_𝑖$。Allison想要用$𝑘$进制串$𝑠_𝑖$来替换第$𝑖$种单词，使得其满足如下要求：</p><p>对于任意的$1≤𝑖,𝑗≤𝑛，𝑖 \ne 𝑗$，都有：$𝑠_𝑖$不是$𝑠_𝑗$的前缀。</p><p>现在Allison想要知道，如何选择$𝑠_𝑖$，才能使替换以后得到的新的《荷马史诗》长度最小。在确保总长度最小的情况下，Allison还想知道最长的$𝑠_𝑖$的最短长度是多少?</p><p>一个字符串被称为$𝑘$进制字符串，当且仅当它的每个字符是0到$𝑘$ − 1之间(包括0和$𝑘$ − 1)的整数。</p><p>字符串$𝑆𝑡𝑟_1$被称为字符串$𝑆𝑡𝑟_2$的前缀，当且仅当：存在$1 ≤ 𝑡 ≤ 𝑚$，使得$𝑆𝑡𝑟_1 = 𝑆𝑡𝑟_2[1..𝑡]$。其中，$𝑚$是字符串$𝑆𝑡𝑟_2$的长度，$𝑆𝑡𝑟_2[1..𝑡]$表示$𝑆𝑡𝑟_2$的前$𝑡$个字符组成的字符串。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第1行包含2个正整数$𝑛, 𝑘$，中间用单个空格隔开，表示共有$𝑛$种单词，需要使用$𝑘$进制字符串进行替换。接下来$𝑛$行，第$𝑖+1$行包含1个非负整数$𝑤_𝑖$，表示第$𝑖$种单词的出现次数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第1行输出1个整数，为《荷马史诗》经过重新编码以后的最短长度。</p><p>第2行输出1个整数，为保证最短总长度的情况下，最长字符串$𝑠_𝑖$的最短长度。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 2
+1
+1
+2
+2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12
+2</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 3
+1
+1
+3
+3
+9
+9</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>36
+3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明1】</p><p>用$𝑋(𝑘)$表示$𝑋$是以$𝑘$进制表示的字符串。</p><p><b>一种最优方案</b>：令$00_{(2)}$替换第1种单词，<span></span>$01_{(2)}$<span></span>替换第2种单词，<span></span>$10_{(2)}$<span></span>替换第3种单词，<span></span>$11_{(2)}$<span></span>替换第4种单词。在这种方案下，编码以后的最短长度为：1 × 2 + 1 × 2 + 2 × 2 + 2 × 2 = 12</p><p>最长字符串$𝑠_𝑖$的长度为2。</p><p><b>一种非最优方案</b>：令$000_{(2)}$替换第1种单词，$001_{(2)}$替换第2种单词，$01_{(2)}$替换第3种单词，$1_{(2)}$替换第4种单词。在这种方案下，编码以后的最短长度为：1×3+1×3+2×2+2×1 = 12</p><p>最长字符串$𝑠_𝑖$的长度为3。与最优方案相比，文章的长度相同，但是最长字符串的长度更长一些。</p><p>【样例说明2】</p><p><b>一种最优方案</b>：令$000_{(3)}$替换第1种单词，$001_{(3)}$替换第2种单词，$01{(3)}$替换第3种单词，$02_{(3)}$替换第4种单词，$1_{(3)}$替换第5种单词，$2_{(3)}$替换第6种单词。</p><p>【数据规模与约定】</p><p>所有测试数据的范围和特点如下表所示<br></p><p><img alt="屏幕快照 2019-06-04 下午8.30.36.png" src="../upload/1ebce25fe8.png" width="500" height="452.78137128072444"><br></p><p>【提示】</p><p>选手请注意使用64位整数进行输入输出、存储和计算。</p><p>【评分方式】（comet 暂不支持部分分）</p><p>对于每个测试点：<br>若输出文件的第1行正确，得到该测试点40%的分数；<br>若输出文件完全正确，得到该测试点100%的分数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

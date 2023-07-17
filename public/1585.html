@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ICPC WF 2019-D]Circular DNA</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1585 [ICPC WF 2019-D]Circular DNA</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>You have an internship with a bioinformatics research group studying DNA. A single strand of DNA consists of many genes, which fall into different categories called $gene$ $types$. Gene types are delimited by specific nucleotide sequences known as $gene$ $markers$. Each gene type $i$ has a unique start marker $\texttt{s}_i$ and a unique end marker $\texttt{e}_i$. After many dirty jobs (growing bacteria, cell extraction, protein engineering, and so on), your research group can convert DNA into a form consisting of only the gene markers, removing all the genetic material lying between the markers.</p><p>Your research group came up with the interesting hypothesis that gene interpretation depends on whether the markers of some gene types form properly nested structures. To decide whether markers of gene type $i$ form a proper nesting in a given sequence of markers $w$, one needs to consider the subsequence of $w$ containing only the markers of gene type $i$ $(\texttt{s}_i$ and $\texttt{e}_i$), leaving none of them out. The following (and only the following) are considered to be properly nested structures:</p><ul><li><p>$\texttt{s}_i$$\texttt{e}_i$</p></li><li><p>$\texttt{s}_iN\texttt{e}_i$, where $N$ is a properly nested structure</p></li><li>$AB$, where $A$ and $B$ are properly nested structures</li></ul><p>Given your computing background, you were assigned to investigate this property, but there is one further complication. Your group is studying a specific type of DNA called circular DNA, which is DNA that forms a closed loop. To study nesting in circular DNA, it is necessary to cut the loop at some location, which results in a unique sequence of markers (the direction of reading is fixed by molecular properties). Whether a gene type $i$forms a proper nesting now also depends on where the circular DNA is cut. Your task is to find the cutting location that maximizes the number of gene types that form a properly nested structure. Figure 1 shows an example corresponding to Sample Input 1. The indicated cut results in the markers for gene type $1$ being properly nested.</p><p><img src="../upload/7d06d82545.png" alt="屏幕快照 2019-05-20 下午2.32.26.png"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The first line of input contains an integer $n(1 \le {n} \le 10^6)$, the length of the DNA. The next line contains the DNA sequence, that is, $n$ markers. Each marker is a character $c$ followed by an integer $i$, where $c\in\{\texttt{𝚜,𝚎}\}$ specifies whether it is a start or an end marker and&nbsp;$i(1 \le {i} \le10^6)$ is the gene type of the marker. The given DNA sequence has been obtained from the circular DNA by cutting at an arbitrary location.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Output one line with two integers $p$ and $m$, where $p$ is the cutting position that maximizes the number of different gene types that form a proper nesting, and $m$ is this maximum number of gene types. The DNA is cut just before the $p^\texttt{th}$ input marker (for instance, the cut shown in Figure&nbsp;1 has $p=3$). If more than one cutting position yields the same maximum value of $m$, output the smallest $p$ that does so.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9
+e1 e1 s1 e2 s1 s2 e42 e1 s1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8
+s1 s1 e3 e1 s3 e1 e3 s3</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

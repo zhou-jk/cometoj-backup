@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #6]字符串</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1090 [Contest #6]字符串</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 40px;">Illyasviel："你喜欢字符串吗？"</p><p style="margin-left: 40px;">Star-dust："喜欢！"</p><p style="margin-left: 40px;">Illyasviel："那来求每个子串两两之间的最长公共前缀的长度之和吧！"</p><p style="margin-left: 40px;">Star-dust："好啊，但求一个不够过瘾，对所有后缀都求一遍吧。"</p><p>定义一个函数 $f(S)$ 如下：</p><p style="margin-left: 40px;">$S$ 是一个字符串，令 $n$ 为此字符串的长度，于是 $S$ 会有 $\frac{n \times (n+1)}{2}$ 个非空子串，那么选 $S$ 的两个有序的非空子串对，就会有&nbsp;$(\frac{n \times (n+1)}{2})^2$ 种组合，$f(S)$ 的值就是这&nbsp;$(\frac{n \times (n+1)}{2})^2$ 个组合的两个字串间最长公共前缀的和。</p><p>例如 $f($"ab"$)$ 的计算方法如下：</p><p style="margin-left: 40px;">"ab" 的子串总共有 "b","ba","a" 三个。</p><p style="margin-left: 40px;">"b" 和 "b" 的最长公共前缀是 $1$。</p><p style="margin-left: 40px;">"b" 和 "ba" 的最长公共前缀是 $1$。</p><p style="margin-left: 40px;">"b" 和 "a" 的最长公共前缀是 $0$。</p><p style="margin-left: 40px;">"ba" 和 "b" 的最长公共前缀是 $1$。</p><p style="margin-left: 40px;">"ba" 和 "ba" 的最长公共前缀是 $2$。</p><p style="margin-left: 40px;">"ba" 和 "a" 的最长公共前缀是 $0$。</p><p style="margin-left: 40px;">"a" 和 "b" 的最长公共前缀是 $0$。</p><p style="margin-left: 40px;">"a" 和 "ba" 的最长公共前缀是 $0$。</p><p style="margin-left: 40px;">"a" 和 "a" 的最长公共前缀是 $1$。</p><p style="margin-left: 40px;">所以 $f($"ab"$) = 1+1+0+1+2+0+0+0+1=6$ 。</p><p>现在给定你一个字符串 $T$，其长度为 $m$，对于每个 $i$ 从 $1$ 至 $m$，都计算出 $f(T_{i..m})$ ($T_{i..m}$ 就是 $T$ 由第 $i$ 个字母算起的后缀)。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">共一行，一个字符串 $T$。<br></p><p>数据范围：</p><ul><li>$T$ 的所有字符都是小写字母。<br></li><li>$|T| \leq 2 \times 10^5$</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">令 $m$ 为 $T$ 的长度。</p><p>输出一行 $m$ 个数，第 $i$ 个数代表对 $T_{i..m}$ 这个后缀的所有子串的两两之间的最长公共前缀求和，也就是 $f(T_{i..m})$ 的值。<br></p><p>输出对998244353取模</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>abba</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>70 32 6 1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>abaaababa</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1993 1160 804 394 195 78 26 6 1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一个样例的输出第三个数字 $f(T_{3..4})$ 的解释正好就是叙述里的范例。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

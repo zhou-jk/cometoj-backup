@@ -1,0 +1,120 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2005Day1-C]智慧珠游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0317 [NOI2005Day1-C]智慧珠游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>智慧珠游戏拼盘由一个三角形盘件和12个形态各异的零件组成。拼盘的盘件如图所示<br></p><p><img alt="屏幕快照 2019-06-10 下午9.00.06.png" src="../upload/6ac301a124.png" width="400" height="346.4503042596349"><br></p><p>12个零件按珠子数分3大类：</p><p>第1大类，有三个珠子，只有一种形状。</p><ul><li>符号为A，形状为<img alt="屏幕快照 2019-06-10 下午9.05.28.png" src="../upload/dc7dc0d701.png" width="50" height="45.108695652173914"></li></ul><p>第2大类，有4个珠子，有3种形状。<br></p><ul><li>符号为B，形状为<img alt="屏幕快照 2019-06-10 下午9.05.53.png" src="../upload/ee0855e6dc.png" width="100" height="25.683060109289617"><br></li><li>符号为C，形状为<img alt="屏幕快照 2019-06-10 下午9.06.03.png" src="../upload/dee026f892.png" width="75" height="44.24460431654676"></li><li>符号为D，形状为<img alt="屏幕快照 2019-06-10 下午9.06.10.png" src="../upload/5dfc5ec361.png" width="50" height="45.69892473118279"><br></li></ul><p>第3大类，有5个珠子，有8种形状。<br></p><ul><li>符号为E，形状为<img alt="屏幕快照 2019-06-10 下午9.07.19.png" src="../upload/3d9f699083.png" width="75" height="68.5251798561151"></li><li>符号为F，形状为<img alt="屏幕快照 2019-06-10 下午9.07.26.png" src="../upload/3c8222ea56.png" width="100" height="46.774193548387096"></li><li>符号为G，形状为<img alt="屏幕快照 2019-06-10 下午9.07.33.png" src="../upload/b53666263f.png" width="75" height="44.464285714285715"></li><li>符号为H，形状为<img alt="屏幕快照 2019-06-10 下午9.07.41.png" src="../upload/fa80a4150f.png" width="75" height="43.70503597122302"></li><li>符号为I，形状为<img alt="屏幕快照 2019-06-10 下午9.07.49.png" src="../upload/0fbf568e31.png" width="100" height="44.680851063829785"></li><li>符号为J，形状为<img alt="屏幕快照 2019-06-10 下午9.26.14.png" src="../upload/1a5aae9343.png" width="75" height="64.21232876712328"></li><li>符号为K，形状为<img alt="屏幕快照 2019-06-10 下午9.26.23.png" src="../upload/aba1352159.png" width="75" height="67.93478260869566"></li><li>符号为L，形状为<img alt="屏幕快照 2019-06-10 下午9.26.32.png" src="../upload/ac64f9ee02.png" width="100" height="44.973544973544975"></li></ul><p>下图示出了一种拼盘方案。为便于描述可进行抽象，就可以用一个数据为字符的二维数组来表示了。<br></p><p><img alt="屏幕快照 2019-06-10 下午9.28.20.png" src="../upload/2546a1f583.png" width="400" height="355.74112734864303"><br></p><p><img alt="屏幕快照 2019-06-10 下午9.28.28.png" src="../upload/76a91d386d.png" width="300" height="246.58753709198814"><br></p><p>对于由珠子构成的零件，可以放到盘件的任一位置，条件是能有地方放，且尺寸合适，所有的零件都允许旋转($0^{\circ}$、$90^{\circ}$、$180^{\circ}$、$270^{\circ}$)和翻转（水平、竖直）。</p><p>现给出一个盘件的初始布局，求一种可行的智慧珠摆放方案，使所有的零件都能放进盘件中。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一共有10行，第$i$行有$i$个字符。如果第$i$行的第$j$个字符是字母“A”至“L”中的一个，则表示第$i$行第$j$列的格子上已经放了零件，零件的编号为对应的字母。如果第$i$行的第$j$个字符是“.”，则表示第$i$行第$j$列的格子上没有放零件。<br></p><p>输入保证预放的零件已摆放在盘件中。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>如果能找到解，打印10行，为放完全部12个零件后的布局。其中，第$i$行应包含$i$个字符，第$i$行的第$j$个字符表示第$i$行第$j$列的格子上放的是哪个零件。</p><p>如果无解，输出单独的一个字符串‘No solution’（不要引号，请注意大小写）。所有的数据保证最多只有一组解。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>.
+..
+...
+....
+.....
+.....C
+...CCC.
+EEEHH...
+E.HHH....
+E.........</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>B
+BK
+BKK
+BJKK
+JJJDD
+GJGDDC
+GGGCCCI
+EEEHHIIA
+ELHHHIAAF
+ELLLLIFFFF</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

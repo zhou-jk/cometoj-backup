@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2018Day1] Global warming</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1738 [CEOI2018Day1] Global warming</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Global warming is an important issue and Johnny knows about it. He decided to make an analysis of historical temperatures and ﬁnd a subsequence of days (not necessarily consecutive) where the temperature was strictly increasing. It will convince the non-believers!</p><p>Johnny has found historical data from $n$ consecutive days. The temperature on the $i$-th day was $t_i$.</p><p>Formally, we are interested in ﬁnding the length of the longest increasing subsequence (LIS) of $(t_1,t_2,...,t_n)$, that is, the largest possible $k$ for which it is possible to choose an increasing sequence of indices $1 ≤ a_1 &lt; a_2 &lt; ... &lt; a_k ≤ n$ such that $t_{a_1} &lt; t_{a_2} &lt; ... &lt; t_{a_k}$.</p><p>Johnny wants to ﬁnd a really long subsequence and that is why he decided to cheat a bit. He will ﬁrst choose a non-empty interval of days and an integer $d (−x ≤ d ≤ x)$ and he will increase the temperature in each of those days by $d$. A small change like that probably will not be noticed by the community, while at the same time it should make the LIS longer. It is allowed to choose $d = 0$.</p><p>What is the largest possible length of the LIS after a change?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line of the standard input contains two space-separated integers $n$ and $x (1 ≤ n ≤ 200000, 0 ≤ x ≤ 10^9)$, the number of days and the limit for the absolute value of $d$.</p><p>The second line contains $n$ integers $t_1,t_2,...,t_n (1 ≤ t_i ≤ 10^9)$ separated by spaces, the sequence of historical temperatures.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Print one integer, the largest possible length of the LIS after a single change.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 10
+7 3 5 12 2 7 3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Grading</p><p>The test set is divided into the following subtasks with additional constraints. Tests in each of the subtasks consist of one or more separate test groups. Each test group may contain one or more test cases.</p><p><img alt="image.png" src="../upload/ce1b7d7fee.png" width="452"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2014Day2-B]随机数生成器</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0388 [NOI2014Day2-B]随机数生成器</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小H最近在研究随机算法。随机算法往往需要通过调用随机数生成函数（例如Pascal中的random和C/C++中的rand）来获得随机性。事实上，随机数生成函数也并不是真正的“随机”，其一般都是利用某个算法计算得来的。</p><p>比如，下面这个二次多项式递推算法就是一个常用算法：<br></p><p>算法选定非负整数$𝑥_0, 𝑎, 𝑏, 𝑐, 𝑑$作为随机种子，并采用如下递推公式进行计算。</p><p>对于任意$𝑖≥1, 𝑥_i =(𝑎 \cdot 𝑥_{i-1}^2+𝑏\cdot 𝑥_{i-1} +𝑐)\bmod𝑑$<br></p><p>这样可以得到一个任意长度的非负整数<b>数列</b>$\{𝑥_𝑖\}_{𝑖≥1}$，一般来说，我们认为这个<b>数列</b>是随机的。<br></p><p>利用随机序列$\{𝑥_𝑖\}_{𝑖≥1}$，我们还可以采用如下算法来产生一个1到K的<b>随机排列</b>$\{𝑇_i\}^𝐾_{i=1}$：<br></p><ol><li>初始设T为1到K的递增序列;</li><li>对T进行K次交换，第$𝑖$次交换，交换$𝑇_𝑖$和$𝑇_{(𝑥_𝑖\bmod 𝑖)+1}$的值。</li></ol><p>此外，小H在这𝐾次交换的基础上，又<b>额外</b>进行了𝑄次交换操作，对于第$𝑖$次额外交换，小H会选定两个下标$𝑢_𝑖$和$𝑣_𝑖$，并交换$𝑇_{𝑢_𝑖}$和$𝑇_{𝑣_𝑖}$的值。</p><p>为了检验这个随机排列生成算法的实用性，小H设计了如下问题：小H有一个𝑁行𝑀列的棋盘，她首先按照上述过程，通过𝑁 × 𝑀 + 𝑄次交换操作，生成了一个1~𝑁 × 𝑀的随机排列$\{𝑇_i\}^{𝑁×𝑀}_{i=1}$，然后将这𝑁 × 𝑀个数逐行逐列依次填入这个棋盘：也就是第$𝑖$行第$𝑗$列的格子上所填入的数应为$𝑇_{(𝑖−1)\cdot 𝑀+𝑗}$。</p><p>接着小H希望从棋盘的左上角，也就是第一行第一列的格子出发，<b>每次向右走或者向下走</b>，在不走出棋盘的前提下，走到棋盘的右下角，也就是第𝑁行第𝑀列的格子。</p><p>小H把所经过格子上的数字都记录了下来，<b>并从小到大排序</b>，这样，对于任何一条合法的移动路径，小H都可以得到一个长度为𝑁 + 𝑀 − 1的升序序列，我们称之为<b>路径序列</b>。</p><p>小H想知道，她可能得到的<b>字典序最小</b>的<b>路径序列</b>应该是怎样的呢?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第1行包含5个整数，依次为$𝑥_0, 𝑎, 𝑏, 𝑐, 𝑑$，描述小H采用的随机数生成算法所需的随机种子。</p><p>第2行包含三个整数𝑁, 𝑀, 𝑄，表示小H希望生成一个1到𝑁 × 𝑀的排列来填入她𝑁行𝑀列的棋盘，并且小H在初始的𝑁 × 𝑀次交换操作后，又进行了𝑄次额外的交换操作。</p><p>接下来𝑄行，第$𝑖$行包含两个整数$𝑢_𝑖, 𝑣_𝑖$，表示第𝑖次额外交换操作将交换$𝑇_{𝑢_𝑖}$和$𝑇_{𝑣_𝑖}$的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行，包含𝑁 + 𝑀 − 1个由空格隔开的正整数，表示可以得到的字典序最小的路径序列。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 5 1 71
+3 4 3
+1 7
+9 9
+4 9</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2 6 8 9 12</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>654321 209 111 23 70000001
+10 10 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 7 10 14 15 16 21 23 30 44 52 55 70 72 88 94 95 97</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>123456 137 701 101 10000007
+20 20 0</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 10 12 14 16 26 32 38 44 46 61 81 84 101 126 128 135 140 152 156 201 206 237 242 243 253 259 269 278 279 291 298 338 345 347 352 354 383 395</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>对于样例1，根据输入的随机种子，小H所得到的前12个随机数$𝑥_𝑖$为：<br>9 5 30 11 64 42 36 22 1 9 5 30<br>根据这12个随机数，小H在进行初始的12次交换操作后得到的排列为：<br>6 9 1 4 5 11 12 2 7 10 3 8<br>在进行额外的3次交换操作之后，小H得到的最终的随机排列为：<br>12 9 1 7 5 11 6 2 4 10 3 8</p><p>这个随机排列可以得到如下方的棋盘：<br></p><p>最优路径依次经过的数字为：$12 \to9 \to1 \to6 \to2 \to8$。</p><p><img alt="屏幕快照 2019-06-05 下午1.13.30.png" src="../upload/74fc8ffc1b.png" width="200" height="144.48979591836735"><br></p><p>对于样例3，由于卷面宽度不够，在样例输出中出现了换行。请注意，这里的换行仅作展示用途，事实上，<b>样例输出有且仅有一行，所有的数字都应该出现在同一行中</b>。<br></p><p>【数据规模与约定】<br></p><p>所有测试数据的范围和特点如下表所示<br></p><p><img alt="屏幕快照 2019-06-05 下午1.15.10.png" src="../upload/4f0302ece5.png" width="500" height="251.25"><br></p><p>【特别提示】<br></p><p>本题的空间限制是256 MB，请务必保证提交的代码运行时所使用的总内存空间不超过此限制。</p><p>一个32位整数（例如C/C++中的int和Pascal中的Longint）为4字节，因而如果在程序中声明一个长度为1024 × 1024的32位整型变量的数组，将会占用4 MB的内存空间。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

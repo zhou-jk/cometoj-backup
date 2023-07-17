@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2019nwu校赛]NE的挑战II</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1890 [2019nwu校赛]NE的挑战II</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>NE 给你了一个挑战，来测试你的实力:</p><p>他查阅了历史上势力之间的关系变动，并想推演整个英仙座的势力情况，你能帮他完成这个任务吗?</p><p>NE 会不断进行如下五种操作，格式如下:</p><p>1 A B    势力 A 和势力 B 进行结盟，注意：当 A 和 B 成为盟友时，A、B 以及 A、B 的所有盟友之间都会成为盟军</p><p>2 A B    势力 A 和当前所有的盟军势力取消盟军关系,并和势力 B 成为盟军</p><p>3 A     查询势力 A 的盟军的数量</p><p>4 A B   查询势力 A 和势力 B 是否为盟军</p><p>5 A B   势力 A 和势力 B 出现了隐藏的仇恨,势力间的仇恨并不影响势力的行为,但是会一直存在。</p><p>在进行完所有的推演之后，最后 NE 想选择一个联盟加入，同时这个联盟的内部势力之间不存在隐藏的仇恨。</p><p>NE 并不在乎他到底加入了具体哪个联盟，他只想知道他加入的联盟最大能有多大。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行包含两个数字 $n,m$ 分别代表势力数和操作数$1≤n,m≤10^6$</p><p>接下来 $m$ 行，每行代表一次操作，$5$ 种操作的格式如上所述。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于操作 $3、4$，每次输出一行，即为所求的答案。</p><p>特别地，对于操作 $4$，若 $A,B$ 为盟军，输出$"Yes"$，否则输出$"No"$。(没有引号)</p><p>结束所有操作之后，输出一行，包含一个整数，即为最大的联盟大小，如果不存在这样的联盟，则输出$-1$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5 
+1 2 3 
+2 3 4 
+3 2
+4 4 2
+5 3 4 </span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+No
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

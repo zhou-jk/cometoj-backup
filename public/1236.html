@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2011]括号序列</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1236 [JSOI2011]括号序列</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>JSOI 教练组按如下规则定义配对的括号序列：</p><ol><li>（）是配对的括号序列。</li><li>若 A 是配对的括号序列，则（A）也是配对的括号序列。</li><li>若 A、B 是配对的括号序列，则 AB 也是配对的括号序列。</li></ol><p>例如，以下是配对的括号序列：</p><p><code>(())()()((()()))</code>、<code>((((()))))</code>、<code>()()()()(())</code></p><p>以下则是不配对的括号序列：</p><p><code>)()()()()()(</code>、<code>(())(()</code>、<code>(())(()))()(()</code></p><p>繁多的括号总是让 JSOI 教练组看花眼，难以分辨一个很长的括号序列究竟是不是配对的，所以他请你编写一个程序，输入一个括号序列，并能够完成以下三种操作：</p><p>询问将 $A[x]，A[x+1]…A[y]$ 形成的括号序列修改为配对的括号序列，至少需要修改多少个括号。</p><p>将 $A[x]，A[x+1]，…A[y]$ 的子序列执行反转，所有的 “（” 修改为 “）”、所有的 “）” 修改为 “（”。</p><p>将 $A[x]，A[x+1]，…A[y]$ 的子序列执行翻转，原子序列被 $A[y]，A[y-1]，…A[x]$ 替代。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入数据的第一行包含两个整数 $N$ 和 $Q$，分别表示括号序列的长度，以及操作的个数。</p><p>第二行包含一个长度为 $N$ 的括号序列。</p><p>接下来 $Q$ 行，每行三个整数 $t$、$x$ 和 $y$，分别表示操作的类型、操作的开始位置和操作的结束位置，输入数据保证 $x$ 不小于 $y$。其中 $t=0$ 表示询问操作、$t=1$ 表示反转操作、$t=2$ 表示翻转操作。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每一个询问操作，输出一行，表示将括号序列的该子序列修改为配对，所需的最少改动个数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 3
+)(())(
+0 1 6
+0 1 4
+0 3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$100\%$ 的数据满足 $N,Q$ 不超过 $10^5$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2007]梦幻岛宝珠</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0983 [HNOI2007]梦幻岛宝珠</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给你 $N$ 颗宝石，每颗宝石都有重量和价值。要你从这些宝石中选取一些宝石，保证总重量不超过 $W$，且总价值最大为，并输出最大的总价值。</p><p>数据范围：$N \le 100，W \le 2^{30}$，并且保证每颗宝石的重量符合 $a \times 2^b（a \le 10，b \le 30）$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入中包含多组数据。每组数据的格式如下：</p><p>第一行是两个正整数 $n$ 和 $W$，$1≤n≤100,1≤W≤2^{30}$，分别表示宝石的数目和最多能带走的宝石重量。</p><p>接下来的 $n$ 行，每行有两个正整数 $weight_i$ 和 $value_i$，$1≤weight_i≤2^{30}, 0≤value_i≤2^{30}$，分别表示第i颗宝石的重量和价值，且保证 $weight_i$ 能写成 $a \times 2^b(1≤a≤10,0≤b≤30)$ 的形式。</p><p>同一行的两个正整数之间用空格隔开。</p><p>最后一组数据的后面有两个 $-1$，表示输入的结束。这两个 $-1$ 并不代表一组数据，你不需对这组数据输出结果。并且输入中数据的组数不超过20。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于输入的每组数据，输出一个整数 $C$，表示最多能带走的宝石的总价值。</p><p>每个结果整数 $C$ 单独占一行，且保证 $C$ 不会超过 $2^{30}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 10
+8 9
+5 8
+4 6
+2 5
+4 13
+8 9
+5 8
+4 6
+2 5
+16 75594681
+393216 5533
+2 77
+32768 467
+29360128 407840
+112 68
+24576 372
+768 60
+33554432 466099
+16384 318
+33554432 466090
+2048 111
+24576 350
+9216 216
+12582912 174768
+16384 295
+1024 76
+-1 -1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>14
+19
+1050650</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

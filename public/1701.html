@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]Souls-like Game</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1701 [Wannafly冬令营2018Day8]Souls-like Game</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>《血源》因为玩家很容易死亡而常被称作<code>一款充满制作人恶意的游戏</code>。一款游戏在开发过程中通常会进行许多修改，《血源》自然也不例外，但是制作人时常会担心修改之后的游戏不够<code>恶意</code>。他希望在每次对游戏进行修改之后，计算玩家有多少种可能的死亡路线。因为游戏的开发进度不能太慢，所以计算的过程需要尽可能的快。</p><p>为了简化问题，我们可以把《血源》的地图看作$n$个大区域，从第$i$个大区域可以直接走到第$i+1$个大区域。每个大区域内有$3$个小区域。我们用$p_i[j][k](1 \le i &lt; n,1 \le j,k \le 3)$表示玩家从第$i$个大区域的第$j$个小区域走到第$i+1$个大区域的第$k$个小区域时的不同的死亡方式的数量。我们假设玩家行进时不会在同一个大区域的不同小区域之间移动。</p><p>你需要支持以下两种操作：</p><ul><li><p>$1 \; l \; r \; p$：将$p_l,p_{l+1},\cdots,p_r$全部修改为$p$。</p></li><li><p>$2 \; l \; r$：查询若玩家从第$l$个大区域出发走到第$r$个大区域，一共有多少种不同的死亡路线。在这里，我们假设从第$l,l+1,\cdots,r-1$个大区域移动到下一个大区域时会恰好死亡一次。两个死亡路线不同当且仅当两个路线中，玩家经过的小区域不完全相同或某次移动时的死亡方式不同。</p></li></ul><p>请参考样例解释来获得更详细的死亡路线的计算方式。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有两个整数$n,m(2 \le n,m \le 10^5)$分别代表地图中大区域的数量与操作数量。</p><p>接下来有$3(n-1)$行，每行$3$个整数。$p_i[j][k](1 \le i &lt;n, 1\le j,k \le 3, 1 \le p_i[j][k] \le 10^8)$由其中的第$3(i-1)+j$行的第$k$个整数表示。</p><p>接下来有$m$个操作需要描述。每个操作的第一行第一个整数$op(1 \le op \le 2)$代表操作类型。</p><p>如果操作类型为$1$，接下来两个整数$l,r(1 \le l \le r &lt; n)$表示修改的范围。接下来$3$行每行包含$3$个整数，第$i$行的第$j$个整数代表$p[i]<a href="http://1 \le p[i][j] \le 10^8" target="_blank">j</a>$。</p><p>如果操作类型为$2$，接下来两个整数$l,r(1 \le l &lt; r \le n)$表示查询的范围。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个类型为$2$的操作，输出玩家的不同死亡路线的个数模$998244353$的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 4
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+2 1 2
+2 1 3
+1 1 1
+1 2 1
+1 1 1
+1 1 1
+2 1 3
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9
+27
+30
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><strong>初始时</strong>从任何大区域的任何小区域前往下一个大区域的任何小区域的路上的死亡方式都恰好有$1$种。</p><p><strong>第一个操作</strong>查询从大区域$1$到大区域$2$的死亡路线数量。以经过的区域划分，有</p><ul><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$1$</p></li><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$2$</p></li><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$2$</p></li><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$3$</p></li><li><p>大区域$1$中的小区域$2$ $\rightarrow$ 大区域$2$中的小区域$1$</p></li><li><p>$\cdots$</p></li><li><p>大区域$1$中的小区域$3$ $\rightarrow$ 大区域$2$中的小区域$3$ 共$9$种可能，每种可能中仅有$1$种死亡方式的组合，故有$9$种死亡路线。</p></li></ul><p><strong>第二个操作</strong>查询从大区域$1$到大区域$3$的死亡路线数量。以经过的区域划分，有</p><ul><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$1$ $\rightarrow$ 大区域$3$中的小区域$1$</p></li><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$1$ $\rightarrow$ 大区域$3$中的小区域$2$</p></li><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$1$ $\rightarrow$ 大区域$3$中的小区域$3$</p></li><li><p>大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$2$ $\rightarrow$ 大区域$3$中的小区域$1$</p></li><li><p>$\cdots$</p></li><li><p>大区域$1$中的小区域$2$ $\rightarrow$ 大区域$2$中的小区域$1$ $\rightarrow$ 大区域$3$中的小区域$1$</p></li><li><p>$\cdots$</p></li><li><p>大区域$1$中的小区域$3$ $\rightarrow$ 大区域$2$中的小区域$3$ $\rightarrow$ 大区域$3$中的小区域$3$</p></li></ul><p>共$27$种可能，每种可能中仅有$1$种死亡方式的组合，故有$27$种死亡路线。</p><p><strong>第三个操作</strong>将大区域$1$前往下一个区域（即大区域$2$）的死亡方式个数改为</p><p><img src="../upload/035fe8d400.png" alt="matrix"></p><p><strong>第四个操作</strong>查询从大区域$1$到大区域$3$的死亡路线数量。以经过的区域划分，和第二个操作的划分方式相同，其中 大区域$1$中的小区域$1$ $\rightarrow$ 大区域$2$中的小区域$2$ $\rightarrow$ 大区域$3$ 的$3$种可能，对应$2$种死亡方式的组合，其它可能都对应$1$种死亡方式，故有$30$种死亡路线。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CTSC2017]吉夫特</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0109 [CTSC2017]吉夫特</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>简单的题目，既是礼物，也是毒药。</p><p>B 君设计了一道简单的题目，准备作为 gift 送给大家。</p><p>输入一个长度为 $n$ 的数列 $a_1,a_2,⋯,a_n$​ 问有多少个长度大于等于 2 的不上升的子序列满足：</p><p>$\prod_{i=2}^k&nbsp;\begin{pmatrix} a_{b_{i-1}} \\ a_{b_i} \end{pmatrix} \mod 2= \begin{pmatrix} a_{b_1} \\ a_{b_2} \end{pmatrix} \times \begin{pmatrix} a_{b_2} \\ a_{b_3} \end{pmatrix} \times \cdots \times \begin{pmatrix} a_{b_{k-1}} \\ a_{b_k} \end{pmatrix} \mod 2 &gt; 0$</p><p>输出这个数对 $1000000007$ 取模的结果。</p><p>G 君看到题目后，为大家解释了一些基本概念。</p><p>我们选择任意多个整数 $b_i$​ 满足<br></p><p>$1≤b_1&lt;b_2&lt;⋯&lt;b_{k−1}&lt;b_k≤n$<br></p><p>我们称 $a_{b_1},a_{b_2},⋯,a_{b_k}$ 是 $a$ 的一个子序列。<br></p><p>如果这个子序列同时还满足<br></p><p>$a_{b_1}​≥a_{b_2}≥⋯≥a_{b_{k−1}}≥a_{b_k}​$</p><p>我们称这个子序列是不上升的。<br></p><p>组合数 $\begin{pmatrix} n \\ m \end{pmatrix}$ 是从 $n$ 个互不相同的元素中取 $m$ 个元素的方案数，具体计算方案如下：<br></p><p>$\begin{pmatrix} n \\ m \end{pmatrix}=\frac{n!}{m!(n-m)!}=\frac{n \times (n-1) \times \cdots \times 2 \times 1}{(m \times(m-1)\times \cdots \times 2 \times 1)((n-m) \times (n-m-1) \times \cdots \times 2 \times 1)}$<br></p><p>这里要特别注意，因为我们只考虑不上升子序列，所以在求组合数的过程中，一定满足 $n≥m$，也就是 $\begin{pmatrix} a_{b_{i-1}} \\ a_{b_i} \end{pmatrix}$ 中一定有 $a_{b_{i-1}}≥a_{b_i}$。<br></p><p>我们在这里强调取模 $x \mod y $ 的定义：<br></p><p>$x \mod y=x- \lfloor \frac{x}{y} \rfloor \times y$</p><p>其中 $⌊n⌋$ 表示小于等于 $n$ 的最大整数。<br></p><p>$x \mod2&gt;0$，就是在说 $x$ 是奇数。</p><p>与此同时，经验告诉我们一个长度为 $n$ 的序列，子序列个数有 $O(2^n)$ 个，所以我们通过对答案取模来避免输出过大。</p><p>B 君觉得 G 君说的十分有道理，于是再次强调了这些基本概念。</p><p>最后，G 君听说这个题是作为 gift 送给大家，她有一句忠告。</p><p>“Vorsicht, Gift!”</p><p>“小心……剧毒！ ”</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $n$。</p><p>接下来 $n$ 行，每行一个整数，这 $n$ 行中的第 $i$ 行，表示 $a_i$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+15
+7
+3
+1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>11</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于前 10% 的测试点， $n ≤ 9, 1 ≤ a_i ≤ 13$；</p><p>对于前 20% 的测试点， $n ≤ 17, 1 ≤ a_i ≤ 20$；</p><p>对于前 40% 的测试点， $n ≤ 1911, 1 ≤ a_i ≤ 4000$；</p><p>对于前 70% 的测试点， $n ≤ 2017$；</p><p>对于前 85% 的测试点， $n ≤ 100084$；</p><p>对于 100% 的测试点， $1 ≤ n ≤ 211985, 1 ≤ a_i ≤ 233333$。</p><p>所有的 $a_i$ 互不相同，也就是说不存在 $i, j$ 同时满足 $1 ≤ i &lt; j ≤ n$ 和 $a_i = a_j$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

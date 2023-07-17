@@ -1,0 +1,127 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ICPC WF 2017-B]Get a Clue!</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1612 [ICPC WF 2017-B]Get a Clue!</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Developed in the 1940s in the United Kingdom, the game of Cluedo is one of the most popular board games in the world. The object of the game is to determine who murdered Mr. Body, which weapon was used to murder him, and where the murder took place. The game uses a set of cards representing six persons (labeled A, B, …, F), six weapons (labeled G, H, …, L) and nine rooms (labeled M, N, …, U). At the start of the game, one person card, one weapon card, and one room card are selected at random and removed from the deck so no one can see them – they represent the murderer, the murder weapon, and the murder location. The remaining $18$ cards are shuffled and dealt to the players, starting with player $1$, then to her right player $2$, and so on. Some players may end up with one more card than others. For the purposes of this problem there are four players, so the person to the right of player $4$ is player $1$.</p><p>The rest of the game is spent searching for clues. Players take turns, starting with player $1$ and moving to the right. A turn consists of making asuggestion(consisting of a murder suspect, a weapon, and a room) and asking other players if they have any evidence that refutes the suggestion. For example, you might say to another player “I believe the murderer was person A, using weapon L, in room T.” If the other player is holding exactly one of these cards, that player must show you (and only you) that card. If they have more than one such card, they can show you any one of them.</p><p>When making a suggestion, you must first ask the person to your right for any evidence. If they have none, you continue with the person on their right, and so on, until someone has evidence, or no one has any of the cards in your suggestion.</p><p>Many times you can gain information even if you are not the person making the suggestion. Suppose, in the above example, you are the third player and have cards A and T. If someone else shows evidence to the suggester, you know that it must be weapon card L. Keeping track of suggestions and who gave evidence at each turn is an important strategy when playing the game.</p><p>To win the game, you must make anaccusation, where you state your final guess of the murderer, weapon, and room. After stating your accusation, you check the three cards that were set aside at the start of the game – if they match your accusation, you win! Needless to say, you want to be absolutely sure of your accusation before you make it.</p><p>Here is your problem. You are player $1$. Given a set of cards dealt to you and a history of suggestions and evidence, you need to decide how close you are to being able to make an accusation.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The input starts with an integer $n(1≤n≤50)$, the number of suggestions made during the game. Following this is a line containing the five cards you are dealt, all uppercase letters in the range ‘A’…‘U’. The remaining $n$ lines contain one suggestion per line. Each of these lines starts with three characters representing the suggestion (in the order person, weapon, room), followed by the responses of up to three players, beginning with the player to the right of the player making the suggestion. If a player presents no evidence, a ‘<code>-</code>’ (dash) is listed; otherwise an “evidence character” is listed. If the specific evidence card is seen by you (either because you provided it or you were the person receiving the evidence) then the evidence character identifies that card; otherwise the evidence character is ‘<code>*</code>’. Note that only the last response can be an evidence character. All characters are separated by single spaces. Only valid suggestion/response sequences appear in the input.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Display a three character string identifying the murderer, the murder weapon, and the room. If the murderer can be identified, use the appropriate letter for that person; otherwise use ‘<code>?</code>’. Do the same for the murder weapon and the room.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+B I P C F
+A G M - - -</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>AGM</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+A B C D H
+F G M M
+F H M - *</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>E??</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+A C M S D
+B G S - G
+A H S - - S
+C J S *</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>???</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

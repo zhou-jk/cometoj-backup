@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2014Day2-A]动物园</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0389 [NOI2014Day2-A]动物园</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>近日，园长发现动物园中好吃懒做的动物越来越多了。例如企鹅，只会卖萌向游客要吃的。为了整治动物园的不良风气，让动物们凭自己的真才实学向游客要吃的，园长决定开设算法班，让动物们学习算法。</p><p>某天，园长给动物们讲解KMP算法。</p><p>园长：“对于一个字符串S，它的长度为L。我们可以在O(L)的时间内，求出一个名为next的数组。有谁预习了next数组的含义吗？”熊猫：“对于字符串S的前$i$个字符构成的子串，既是它的后缀又是它的前缀的字符串中（它本身除外），最长的长度记作$next[i]$。”</p><p>园长：“非常好！那你能举个例子吗？”</p><p>熊猫：“例S为abcababc，则next[5]=2。因为S的前5个字符为abcab，ab既是它的后缀又是它的前缀，并且找不到一个更长的字符串满足这个性质。同理，还可得出next[1] = next[2] = next[3] = 0，next[4] = next[6] = 1，next[7] = 2，next[8]= 3。”</p><p>园长表扬了认真预习的熊猫同学。随后，他详细讲解了如何在O(L)的时间内求出next数组。</p><p>下课前，园长提出了一个问题：“KMP算法只能求出𝑛𝑒𝑥𝑡数组。我现在希望求出一个更强大num数组——对于字符串𝑆的前$𝑖$个字符构成的子串，既是它的后缀同时又是它的前缀，并且该后缀与该前缀不重叠，将这种字符串的数量记作$num[i]$。例如S为aaaaa，则num[4] = 2。这是因为S的前4个字符为aaaa，其中a和aa都满足性质‘既是后缀又是前缀’，同时保证这个后缀与这个前缀不重叠。而aaa虽然满足性质‘既是后缀又是前缀’，但遗憾的是这个后缀与这个前缀重叠了，所以不能计算在内。同理，num[1] = 0,num[2] = num[3] = 1,num[5] = 2。”</p><p>最后，园长给出了奖励条件，第一个做对的同学奖励巧克力一盒。听了这句话，睡了一节课的企鹅立刻就醒过来了！但企鹅并不会做这道题，于是向参观动物园的你寻求帮助。你能否帮助企鹅写一个程序求出num数组呢?</p><p>特别地，为了避免大量的输出，你不需要输出$num[i]$分别是多少，你只需要输出$\prod_{𝑖=1}^{L}(𝑛𝑢𝑚[𝑖] + 1)$对1,000,000,007取模的结果即可。</p><p>其中$\prod^𝐿_{𝑖=1}(𝑛𝑢𝑚[𝑖] + 1) = (𝑛𝑢𝑚[1] + 1) × (𝑛𝑢𝑚[2] + 1) × ⋯ × (𝑛𝑢𝑚[𝐿] + 1)$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第1行仅包含一个正整数n，表示测试数据的组数。</p><p>随后n行，每行描述一组测试数据。每组测试数据仅含有一个字符串S，S的定义详见题目描述。数据保证S中仅含小写字母。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包含𝑛行，每行描述一组测试数据的答案，答案的顺序应与输入数据的顺序保持一致。对于每组测试数据，仅需要输出一个整数，表示这组测试数据的答案对1,000,000,007取模的结果。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+aaaaa
+ab
+abcababc</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>36
+1
+32</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模与约定】</p><p>所有测试点的范围和特点如下表所示<br></p><p><img alt="屏幕快照 2019-06-05 下午12.15.27.png" src="../upload/26225835eb.png" width="400" height="304"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

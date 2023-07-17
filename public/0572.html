@@ -1,0 +1,133 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[BJWC2018]Kreuzsummen</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0572 [BJWC2018]Kreuzsummen</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">首先介绍一下 Kakuro(カックロ) 这个游戏。</p><p>游戏规则为：</p><ul><li>方形空格中填入 $1\sim 9$ 的整数。</li><li>被斜线分开的方格中，右上角的数字等于其右侧邻接之连续方格中数字之和，左下角的数字等于其下方邻接之连续方格中数字之和。</li><li>无论是横向还是纵向，连续方格中的数字不能重复。</li></ul><p><img alt="image.png" src="../upload/828ceedbf2.png" width="405" height="404"><img alt="image.png" src="../upload/6220ddcd16.png" width="406" height="405"><br></p><p>上方为一个 Kakuro 游戏，下方为这个游戏的唯一解。</p><p>我们称一开始给出的数字为线索，称需要填入数字的地方为空格。如果一个格子包含线索那么就不需要填入数字。我们约定所有的谜题都非空，即至少有一个空格需要被填入。</p><p><b>注意：在以下题目中的游戏规则可能会有所不同，请认真阅读在每个题目下的规则。</b></p><p>【题目详情】</p><p>游戏规则：</p><ul><li>方形空格中填入 $\mathbf{1\sim k}$ 的<b>整数</b>。</li><li>被斜线分开的方格中，右上角的数字等于其右侧邻接之连续方格中数字之和，左下角的数字等于其下方邻接之连续方格中数字之和。</li><li>无论是横向还是纵向，连续方格中的数字不能重复。</li></ul><p>Apia 给了 Rimbaud 一个 Kakuro 谜题。心不灵手不巧的 Rimbaud 发现自己总是做不出 Kakuro。她怀疑原因是 Apia 给的题目难度太高而不是自己太菜。所以她想评价一下这个题目的难度。</p><p>Rimbaud 认为一个 Kakuro 谜题的难度为每个空格的候选数个数的和。我们来定义一下对于每个空格的候选数，这里的候选数为只考虑这个格子在初始谜题下对应的行和列线索和数字不能重复的条件下可以填的数字集合。</p><p>如果某连续 $4$ 个空格对应的线索为 $10$，那么这四个数只可能是 $1 + 2 + 3 + 4$，也就是这几个空格在这个线索的限制下候选数集合为 $\{1,2,3,4\}$。</p><p>更一般的，如果某连续 $c$ 个空格对应的线索为 $s$，那么考虑所有数值 $1\sim k$ 之间，不重复并且和为 $s$ 的 $c$ 元组，这几个空格在这个线索限制下的候选数集合为出现在这些 $c$ 元组中的所有数字。对于每个空格，它的候选数集合为行限制下的候选数和列限制下的候选数的交。</p><p>在题目背景的图片所示这个谜题中，我们考虑第 $2$ 行第 $2$ 列的空格。这个空格的行线索为 $16$，对应的候选数集合为 $\{7,9\}$。这个空格的列线索为 $23$，对应的候选数 $\{6,8,9\}$，所以这个空格的候选数集合为 $\{9\}$。第 $2$ 行第 $3$ 列的空格的行线索对应的候选数集合为 $\{7, 9\}$，列线索对应的候选数集合为 $\{6,7,8,9\}$，所以这个空格的候选数集合为 $\{7, 9\}$。注意虽然我们可以通过先确定第 $2$ 行第 $2$ 列的数字，然后根据行线索推算出第 $2$ 行第 $3$ 列的数字，但是 Rimbaud<b>只会考虑初始的线索</b>。</p><p>请帮助 Rimbaud 求出这个谜题的难度即所有的空格的候选数个数的和。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行，四个正整数表示 $n,m,k,T$ 表示这个游戏的行，列，数值范围和总线索个数。</p><p>接下来 $T$ 行，每行五个正整数，$t,x,y_1,y_2,s(t\in \{0,1\}, y_1\le y_2)$。其中 $t$ 表示这个线索的种类，如果 $t = 0$，那么表示这个线索为行线索，第 $x$ 行第 $y_1$ 列到 $y_2$ 列之间的数字和为 $s$。如果 $t = 1$，那么表示这个线索为列线索，第 $x$ 列第 $y_1$ 行到 $y_2$ 行之间的数字和为 $s$。数据中的行和列都从 $1$ 开始标号。</p><p>这个谜题的空格为所有线索对应的空格的并集。输入保证这个从格式上来说一定是个合法的 Kakuro 谜题，即每一段连续的空格的左边或者上面的格子包含线索，并且每个空格出现了恰好两次。</p><p><b>数据中可能出现某些位置的候选数集合为空或者无解的情况</b>。对于这种情况还是只需要按定义求出这个谜题的难度即可。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个整数表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 8 9 24
+0 2 2 3 16
+0 2 6 8 24
+0 3 2 3 17
+0 3 5 8 29
+0 4 2 6 35
+0 5 3 4 7
+0 5 6 7 8
+0 6 4 8 16
+0 7 2 5 21
+0 7 7 8 5
+0 8 2 4 6
+0 8 7 8 3
+1 2 2 4 23
+1 2 7 8 11
+1 3 2 5 30
+1 3 7 8 10
+1 4 4 8 15
+1 5 3 4 17
+1 5 6 7 7
+1 6 2 6 27
+1 7 2 3 12
+1 7 5 8 12
+1 8 2 3 16
+1 8 6 8 7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>127</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>这是该迷题对应的每个位置的候选数个数。</p><pre><code>-1 -1 -1 -1 -1 -1 -1 -1
+-1 1 2 -1 -1 3 3 2
+-1 2 2 -1 2 4 4 2
+-1 3 4 1 2 5 -1 -1
+-1 -1 1 5 -1 6 5 -1
+-1 -1 -1 4 5 5 5 3
+-1 8 8 5 6 -1 4 3
+-1 2 3 3 -1 -1 2 2<br></code></pre><p>【数据范围与提示】<br></p><p>对于 $10\%$ 的数据，保证 $n, m\le 3$。</p><p>对于 $30\%$ 的数据，保证 $n, m\le 50$。</p><p>对于 $50\%$ 的数据，保证 $n, m\le 500$。</p><p>对于另外 $20\%$ 的数据，保证只有第一行第一列包含线索，剩下的地方全都是空格。</p><p>对于 $100\%$ 的数据，保证 $3\le n, m, T\le 10^5, 1\le k \le 10^5, s\le 10^{18}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

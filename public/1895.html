@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2019nwu校赛]NE的挑战Ⅲ</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1895 [2019nwu校赛]NE的挑战Ⅲ</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>神经末梢(Nerve Ending)，为神经纤维的末端部分，分布在各种器官和组织内。</p><p>任何神经网络都可以被表示为一张图，神经元之间通过神经纤维连接彼此。</p><p>现在,科学家要挑战神经末梢的信息模拟！</p><hr><p>作为神经网络的末尾，神经末梢是包含 $n$ 个神经元，$n-1$ 条神经纤维的连通图，每个神经元有上一个整数 $a_i$ 表示该神经元上的信息。</p><p>科学家会对模拟系统进行一系列操作,格式如下:</p><p>1 p         神经元 $p$ 和其直接相连的神经元上的信息被环境干扰,变为$a_i$&amp;$(a_i   -1)$,其中 &amp; 为二进制按位 &amp;。</p><p>2 p x      修改神经元 $p$ 和其直接相连神经元上的信息为 $x$。</p><p>3 p          查询神经元 $p$ 和其直接相连神经元的信息之和。</p><p>你能帮科学家完成这个挑战吗？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行包含两个数字 $n,m$，分别代表神经元数和操作数$1≤n,m≤2*10^5$。</p><p>接下来一行包含 $n$ 个数字，代表每个神经元的信息 $a_p ,1≤a_p≤10^6$；</p><p>接下来 $n-1$ 行,每行两个数字 $u_i,v_i$，分别代表一条神经纤维的两个端点，保证端点不相同，且无重复输入。</p><p>接下来 $m$ 行，每行代表一次操作，3 种操作的格式如上所述，其中$1≤x≤10^6$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每次操作 3，输出一行，包含一个整数，即为所求答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 3
+1 2 3 4
+1 2 
+2 3 
+3 4 
+1 2
+2 1 3
+3 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

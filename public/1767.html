@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[国庆欢乐赛]字符串</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1767 [国庆欢乐赛]字符串</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>先来一些符号解释：</p><blockquote><ul><li>对于任意字符串 $t$，我们把 $t$ 的长度记做 $|t|$。如： $t = $<code>abc</code>时， $|t| = 3$。</li><li>$t$ 是一个字符串，$t_{[a,b]}$ 表示 $t$ 由第 $a$ 个位置开始到第 $b$ 个位置的子串，且位置从 $0$ 开始编号。如：$t =$<code>abcd</code>时，$t_{[0,2]}$ =<code>abc</code>、$t_{[2,3]} = $<code>cd</code>。</li></ul></blockquote><p>给定一个字符串 $s$，有 $q$ 次询问，第 $i$ 次询问给定一个字符串 $t_i$，求最小的整数 $k$，满足以下两个条件：</p><p>1. $0 \le k \le |s| - |t_i|$ 。</p><p>2. $s_{[k,\ k\ +\ |t_i|\ -\ 1]}$ 的<a href="https://baike.baidu.com/item/字典序/7786229?fr=aladdin">字典序</a>大于 $t_i$。</p><p>对于每个询问请输出 $k$ 值，若不存在这样的 $k$，该询问请输出 $-1$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有一个正整数 $q$ 代表询问的次数。</p><p>第二行有一个字符串 $s$。</p><p>接下来还有 $q$ 行，当中的第 $i$ 行包含一个字符串 $t_i$.</p><ul><li>所有字符串都有小写英文字母组成</li><li>$1 \le |s| \leq 2 \times 10^5$</li><li>$1 \le q \le 5000$</li><li>$\sum\limits_{i=1}^{q} |t_i| \leq 2 \times 10^5$</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $q$ 行，每行一个整数，第 $i$ 行的整数代表第 $i$ 个询问的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+abcde
+abc
+cde
+bde</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+-1
+2
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

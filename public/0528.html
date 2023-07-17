@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2010] A Huge Tower</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0528 [CEOI2010] A Huge Tower</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>The ancient Babylonians decided to build a huge tower. The tower consists of $N$ cubic building blocks that are stacked one onto another. The Babylonians gathered many building blocks of various sizes from all over the country. From their last unsuccessful attempt they have learned that if they put a large block directly onto a much smaller block, the tower will fall.</p><p><b>Task specification</b></p><p>Each two building blocks are different, even if they have the same size. For each building block you are given its side length. You are also given an integer $D$ with the following meaning: you are not allowed to put block $A$ directly onto block $B$ if the side length of $A$ is strictly larger than $D$ plus the side length of $B$.</p><p>Compute the number of different ways in which it is possible to build the tower using all the building blocks. Since this number can be very large, output the result modulo $10^9 + 9$.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The first line of the input contains two positive integers N and D: the number of building blocks and the tolerance respectively.</p><p>The second line contains $N$ space-separated integers; each represents the size of one building block.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Output a single line containing a single integer: the number of towers that can be built, modulo $1000000009$.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 1
+1 2 3 100</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 9
+10 20 20 10 10 20</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>36</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><b>Explanation of examples</b></p><p>Sample 1:</p><p>We can arrange the first three blocks in any order, except for 2,1,3 or 1,3,2. The last block has to be at the bottom.<br></p><p>Sample 2:<br></p><p>We are not allowed to put a cube of size 20 onto a cube of size 10. There are six ways to order the cubes of size 10, and six ways to order the cubes of size 20.<br></p><p><b>Constraints</b></p><p>All numbers in the input files are positive integers not exceeding $10^9$.</p><p>$N$ is always at least $2$.</p><p>In test cases worth 70 points $N$ will be at most 70.</p><p>Out of those, in test cases worth 45 points, $N$ will be at most 20.</p><p>Out of those, in test cases worth 10 points, $N$ will be at most 10.</p><p>For some of the test cases the total number of valid towers will not exceed $1000000$. These test cases are worth 30 points in total.</p><p>For the last six test cases (worth 30 points) the value of $N$ is larger than 70. No upper bound on $N$ is given for these test cases.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

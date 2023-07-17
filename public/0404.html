@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2017Day1-C]泳池</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0404 [NOI2017Day1-C]泳池</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>久莲是个爱玩的女孩子。<br></p><p>暑假终于到了，久莲决定请她的朋友们来游泳，她打算先在她家的私人海滩外圈一块长方形的海域作为游泳场。然而大海里有着各种各样的危险，有些地方水太深，有些地方有带毒的水母出没。她想让圈出来的这一块海域都是安全的。</p><p>经过初步的分析，她把这块海域抽象成了一个底边长为N米，高为1001米的长方形网格。其中网格的底边对应着她家的私人海滩，每一个1×1的小正方形都代表着一个单位海域。她拜托了她爸爸明天去测量每一个小正方形是否安全。在得知了信息之后，她要做的就是圈出她想要的游泳场啦。</p><p>她心目中理想的游泳场满足如下三个条件：</p><ul><li>必须保证安全性。即游泳场中的每一个单位海域都是安全的。</li><li>必须是矩形。即游泳场必须是整个网格中的一个a×b的子网格。</li><li>必须和海滩相邻。即游泳场的下边界必须紧贴网格的下边界。<br></li></ul><p>例如：当N= 5时，若测量的结果如下（因为1001太大，这儿只画出网格最下面三行的信息，其他部分都是危险的）。</p><p><img alt="屏幕快照 2019-06-03 下午6.28.43.png" src="../upload/eac2aa2cc4.png" width="300" height="199.69325153374234"><br></p><p>那么她可以选取最下面一行的1×4的子海域，也可以选择第三列的3×1的子海域。注意她不能选取最上面一行的1×5的子海域，因为它没有与海滩相邻。</p><p>为了让朋友们玩的开心，她想让游泳场的面积尽可能的大。因此她会选取最下面那一行的1×4的子海域作为最终方案。</p><p>虽然她要明天才能知道每一个单位海域是否安全，但是她现在就想行动起来估计一下她的游泳场面积有多大。经过简单的估计，她假设每一个单位海域都有独立的$q$的概率是安全的，$1−q$的概率是不安全的。她想要知道她能选择的最大的游泳场的面积<b>恰好</b>为K的概率是多少。</p><p>然而久莲对数学并不感兴趣，因此她想让你来帮她计算一下这个数值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入一行四个正整数$N,K,x,y$，其中$1≤x&lt;y&lt;998244353$。$q$的取值为$\frac{x}{y}$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数表示答案在模998244353意义下的取值。<br></p><p>即设答案化为最简分式后的形式为$\frac{a}{b}$，其中$a$和$b$的互质。输出整数$x$使得$bx≡a\mod998244353$且$0≤x&lt;998244353$。可以证明这样的整数$x$是唯一的。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 5 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>342025319</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【提示】<br></p><p>$x^p−1≡1\mod p$，其中$p$为质数，$x∈[1,p)$。<br></p><p>【子任务】<br></p><p><img alt="屏幕快照 2019-06-03 下午6.42.32.png" src="../upload/e1faea1928.png" width="600" height="335.9253499222395"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

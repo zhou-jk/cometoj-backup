@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2014]信号增幅仪 </title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1012 [SHOI2014]信号增幅仪 </h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>无线网络基站在理想状况下有效信号覆盖范围是个圆形。而无线基站的功耗与圆的半径的平方成正比。</p><p>现给出平面上若干网络用户的位置，请你选择一个合适的位置建设无线基站……就在你拿起键盘准备开始敲代码的时候，你的好朋友发明家 SHTSC 突然出现了。SHTSC 刚刚完成了他的新发明——无线信号增幅仪。</p><p>增幅仪能够在不增加无线基站功耗的前提下，使得有效信号的覆盖范围在某一特定方向上伸长若干倍。即：使用了增幅仪的无线基站覆盖范围是个椭圆，其功耗正比于半短轴长的平方。</p><p>现给出平面上若干网络用户的位置，请你选择一个合适的位置建设无线基站，并在增幅仪的帮助下使所有的用户都能接收到信号，且无线基站的功耗最小。</p><p><strong>注意</strong>：由于 SHTSC 增幅仪的工作原理依赖地磁场，增幅的方向是恒定的。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $n$，平面内的用户个数。</p><p>之后的 $n$ 行每行两个整数 $x, y$，表示一个用户的位置。</p><p>第 $n+2$ 行一个整数 $a$，表示增幅仪的增幅方向，单位是度，表示增幅仪的方向是从$x$正方向逆时针转 $a$ 度。</p><p>第 $n+3$ 行一个整数 $p$，表示增幅仪的放大倍数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个实数，为能够覆盖所有用户的最小椭圆的半短轴长，四舍五入到三位小数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+1 0
+-1 0
+0
+2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0.500</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $100\%$ 的数据，$n \leq 50000,\ 0 \leq a&lt;180,\ 1\leq p \leq 100,\ |x|,|y|\leq 2 \times 10^8$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

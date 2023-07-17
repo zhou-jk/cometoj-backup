@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2015提高组Day1-A]神奇的幻方</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0129 [2015提高组Day1-A]神奇的幻方</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：128 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>幻方是一种很神奇的 $𝑁 ∗ 𝑁$ 矩阵：它由数字 $1,2,3, ... ... , 𝑁 ∗ 𝑁$ 构成，且每行、每列及两条对角线上的数字之和都相同。</p><p>当 $𝑁$ 为奇数时，我们可以通过以下方法构建一个幻方：</p><p>首先将 $1$ 写在第一行的中间。</p><p>之后，按如下方式从小到大依次填写每个数 $𝐾(𝐾 = 2,3, ... , 𝑁 ∗ 𝑁)$：</p><ol><li><p>若 $(𝐾 − 1)$ 在第一行但不在最后一列，则将 $𝐾$ 填在最后一行，$(𝐾 − 1)$ 所在列的右一列；</p></li><li><p>若 $(𝐾 − 1)$ 在最后一列但不在第一行，则将 $𝐾$ 填在第一列，$(𝐾 − 1)$ 所在行的上一行；</p></li><li><p>若 $(𝐾−1)$ 在第一行最后一列，则将 $𝐾$ 填在 $(𝐾−1)$ 的正下方；</p></li><li><p>若 $(𝐾 − 1)$ 既不在第一行，也不在最后一列，如果 $(𝐾 − 1)$ 的右上方还未填数，则将 $K$ 填在 $(𝐾 − 1)$ 的右上方，否则将 $𝐾$ 填在 $(𝐾 − 1)$ 的正下方。</p></li></ol><p>现给定 $𝑁$，请按上述方法构造 $𝑁 ∗ 𝑁$ 的幻方。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入只有一行，包含一个整数 $𝑁$，即幻方的大小。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出包含 $𝑁$ 行，每行 $𝑁$ 个整数，即按上述方法构造出的 $𝑁∗𝑁$ 的幻方。相邻两个整数之间用单个空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>8 1 6
+3 5 7
+4 9 2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模与约定】<br></p><p>对于100%的数据，$1 ≤ 𝑁 ≤ 39$ 且 $𝑁$ 为奇数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

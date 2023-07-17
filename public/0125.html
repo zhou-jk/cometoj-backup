@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2015提高组Day2-B]子串</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0125 [2015提高组Day2-B]子串</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：128 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有两个仅包含小写英文字母的字符串 A 和 B。现在要从字符串 A 中取出 $k$ 个<b>互不重</b><b>叠</b>的非空子串，然后把这 $k$ 个子串按照其在字符串 A 中出现的顺序依次连接起来得到一个新的字符串，请问有多少种方案可以使得这个新串与字符串 B 相等？注意：子串取出的位置不同也认为是不同的方案。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行是三个正整数 $n$，$m$，$k$，分别表示字符串 A 的长度，字符串 B 的长度，以及问题描述中所提到的 $k$，每两个整数之间用一个空格隔开。</p><p>第二行包含一个长度为 $n$ 的字符串，表示字符串 A。</p><p>第三行包含一个长度为 $m$ 的字符串，表示字符串 B。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共一行，包含一个整数，表示所求方案数。<b>由于答案可能很大，所以这里要求输出答案对 $1,000,000,007$</b><b>取模的结果</b>。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 3 1
+aabaab
+aab</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 3 2
+aabaab
+aab</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 3 3
+aabaab
+aab</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【输入输出样例说明】<br></p><p>所有合法方案如下：（加下划线的部分表示取出的子串）</p><p>样例 1：<u>aab</u>aab / aab<u>aab</u><br>样例 2：<u>a</u><u>ab</u>aab /<u>a</u>aba<u>ab</u>/ a<u>a</u>ba<u>ab</u>/ aab<u>a</u><u>ab</u>/<u>aa</u><u>b</u>aab /<u>aa</u>baa<u>b</u>/ aab<u>aa</u><u>b<br></u>样例 3：<u>a</u><u>a</u><u>b</u>aab /<u>a</u><u>a</u>baa<u>b</u>/<u>a</u>ab<u>a</u>a<u>b</u>/<u>a</u>aba<u>a</u><u>b</u>/a<u>a</u>b<u>a</u>a<u>b</u>/ a<u>a</u>ba<u>a</u><u>b</u>/&nbsp; aab<u>a</u><u>a</u><u>b</u></p><p>【数据规模与约定】<br>对于第 1 组数据：$1≤n≤500，1≤m≤50，k=1$；<br>对于第 2 组至第 3 组数据：$1≤n≤500，1≤m≤50，k=2$；<br>对于第 4 组至第 5 组数据：$1≤n≤500，1≤m≤50，k=m$；<br>对于第 1 组至第 7 组数据：$1≤n≤500，1≤m≤50，1≤k≤m$；<br>对于第 1 组至第 9 组数据：$1≤n≤1000，1≤m≤100，1≤k≤m$；<br>对于所有 10 组数据：$1≤n≤1000，1≤m≤200，1≤k≤m$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

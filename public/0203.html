@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2011普及组-D]表达式的值</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0203 [2011普及组-D]表达式的值</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>对于 $1$ 位二进制变量定义两种运算：<br></p><p><img alt="屏幕快照 2019-05-30 下午2.11.28.png" src="../upload/6708165b08.png" width="500" height="230.83333333333334"><br></p><p>运算的优先级是：<br></p><ol><li><p>先计算括号内的，再计算括号外的。</p></li><li><p><b>“×”运算优先于“⊕”运算</b>，即计算表达式时，<b>先计算×运算，再计算⊕运算</b>。例如：计算表达式 $A⊕B×C$ 时，先计算 $B × C$，其结果再与 $A$ 做 $⊕$ 运算。</p></li></ol><p>现给定一个未完成的表达式，例如 _+(_*_)，请你在横线处填入数字 $0$ 或者 $1$，请问有多少种填法可以使得表达式的值为 $0$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行为一个整数 $L$，表示给定的表达式中<b>除去横线外</b>的运算符和括号的个数。</p><p>第 $2$ 行为一个字符串包含 $L$ 个字符，其中只包含 '('、')'、'+'、'*' 这 $4$ 种字符，其中 '('、')' 是左右括号，'+'、'*'分别表示前面定义的运算符 “$⊕$” 和 “$×$” 。这行字符按顺序给出了给定表达式中除去变量外的运算符和括号。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包含一个整数，即所有的方案数。<b>注意：这个数可能会很大，请输出方案数对10007取模后的结果</b>。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
++(*)</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>给定的表达式包括横线字符之后为：_+(_*_)</p><p>在横线位置填入 (0 、0 、0) 、(0 、1 、0) 、(0 、0 、1) 时，表达式的值均为 $0$ ，所以共有 $3$ 种填法。</p><p>【数据范围】</p><p>对于 20% 的数据有 $0≤L≤10$。</p><p>对于 50% 的数据有 $0≤L≤1,000$。</p><p>对于 70% 的数据有 $0≤L≤10,000$。</p><p>对于 100% 的数据有 $0≤L≤100,000$。</p><p>对于 50% 的数据输入表达式中不含括号。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

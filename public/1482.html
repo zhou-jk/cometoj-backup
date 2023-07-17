@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #10]大鱼弱智</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1482 [Contest #10]大鱼弱智</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>胖头鱼是一只聪明的<img src="../upload/e6037bfc1c.png" alt="img">，但是有时候会陷入大智(鱼)若(弱)愚(智)的状态</p><p>今天他看到了一道这样的题：</p><p><strong>给出序列 $a, b$ (两个序列都是从 $1$ 开始编号。)，每次询问区间 $[l, r]$ ，求​ $\max\limits_{l \le i, j \le r}{\lfloor\frac{a_i-a_j}{b_i+b_j}\rfloor}$。</strong></p><p>当他看到这道题的时候，显然又陷入了大智(鱼)若(弱)愚(智)状态，于是他向你求助。</p><p>由于胖头鱼是一只聪明的<img src="../upload/4355f4e63a.png" alt="img">，于是他想增加一点难度，给出的询问​都是经过<strong>加密</strong>的，具体见输入描述。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $n$，表示序列 $a$ 和 $b$ 的长度都是 $n$。</p><p>第二行​ $n$ 个正整数 ​$a_1, a_2, \ldots, a_n$。</p><p>第三行​ $n$ 个正整数 ​$b_1, b_2, \ldots, b_n$。</p><p>第四行一个正整数​ $q$，表示询问次数</p><p>接下来每​行，一行两个整数 $l, r$，表示被加密的询问</p><p>由于胖头鱼是一只聪明的<img src="../upload/c6fa1761b2.png" alt="img">，于是他想增加一点难度，给出的询问​都是经过加密的，加密方式如下：</p><blockquote><p>$真正的​\ l = (读入的​\ l+lastans​)\ \%\ n + 1$</p><p>$真正的​\ r = (读入的\ r + lastans​)​\%\ n+1$</p></blockquote><p>$lastans​$ 为上一询问的答案，如果是第一次询问为 $​0$。</p><p>对于所有数据保证 $1 \le n,q \le 3 \times 10^5, 1 \le a_i,b_i \le 1000,0 \le l, r &lt; n, 真正的\ l \le 真正的\ r$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一共 $q$​ 行，每行为对应询问的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+193 904 772 713 132 86 307 224 573 419 
+39 31 47 42 33 45 27 66 76 7 
+10
+1 9
+3 5
+8 2
+6 7
+8 8
+0 5
+2 7
+6 7
+4 6
+4 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12
+3
+12
+1
+0
+12
+7
+7
+2
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

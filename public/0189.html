@@ -1,0 +1,117 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2008普及组-D]立体图</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0189 [2008普及组-D]立体图</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小渊是个聪明的孩子，他经常会给周围的小朋友们讲些自己认为有趣的内容。最近，他准备给小朋友们讲解立体图，请你帮他画出立体图。<br></p><p>小渊有一块面积为 $m*n$ 的矩形区域，上面有 $m*n$ 个边长为 $1$ 的格子，每个格子上堆了一些同样大小的吉姆（积木的长宽高都是 $14），小渊想请你打印出这些格子的立体图。我们定义每个积木为如下格式，并且不会做任何翻转旋转，只会严格以这一种形式摆放：</p><p><img alt="屏幕快照 2019-05-30 下午5.56.21.png" src="../upload/f576aafac9.png" width="100" height="119.23076923076923"><br></p><p>每个顶点用 $1$ 个加号 “+” 表示，长用 $3$个 “-” 表示，宽用 $1$ 个 “/” 表示，高用两个 “|” 表示。字符 ‘+’ ‘-’ ‘/’ ‘|’ 的ASCII码分别为 43，45，47，124。字符 ‘.’（ASCII码 46）需要作为背景输出，即立体图里的空白部分需要用 ‘.’ 代替。立体图的画法如下面的规则：<br></p><p><img alt="屏幕快照 2019-05-30 下午5.58.47.png" src="../upload/a219fbbf9d.png" width="600" height="222.85714285714286"><br></p><p>立体图中，定义位于第 $(m,1)$ 的格子（即第 $m$ 行第 $1$ 列的格子）上面自底向上的第一块积木（即最下面的一块积木）的左下角顶点为整张图最左下角的点。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有用空格隔开的两个整数 $m$ 和 $n$，表示有 $m*n$ 个格子 $(1 \le m，n \le 50)$。</p><p>接下来的 $m$ 行，是一个 $m*n$ 的矩阵，每行有 $n$ 个用空格隔开的整数，其中第 $i$ 行第 $j$ 列上的整数表示第 $i$ 行第 $j$ 列的格子上摞有多少个积木 $(1\le$ 每个格子上的积木数 $\le100)$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>包含题目要求的立体图，是一个 $K$ 行 $L$ 列的字符矩阵，其中 $K$ 和 $L$ 表示最少需要 $K$ 行 $L$ 列才能按规定输出立体图。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 4
+2 2 1 2
+2 2 1 1
+3 2 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>......+---+---+...+---+
+..+---+  /   /|../   /|
+./   /|-+---+ |.+---+ |
++---+ |/   /| +-|   | +
+|   | +---+ |/+---+ |/|
+|   |/   /| +/   /|-+ |
++---+---+ |/+---+ |/| +
+|   |   | +-|   | + |/.
+|   |   |/  |   |/| +..
++---+---+---+---+ |/...
+|   |   |   |   | +....
+|   |   |   |   |/.....
++---+---+---+---+......</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day2]Linear Congruential Generator</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1650 [Wannafly冬令营2018Day2]Linear Congruential Generator</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给定一个递归定义的生成器，其满足的递归关系为</p><p>$X_{n + 1} = ((a X_n + c) \bmod m),$</p><p>这里 $X$ 是生成的伪随机数序列，而 $m$, $a$, $c$, $X_0$ 则是定义这个生成器所给出的整数常量。</p><p>另外，两个整数区间 $[l_1, r_1]$ 和 $[l_2, r_2]$ 也被指定，请你计算下面这个式子的值：</p><p>$\sum_{i = l_1}^{r_1}\sum_{j = l_2}^{r_2}{(X_i \bmod (X_j + 1))}$</p><p>在第一组样例测试数据中，${X_n}_{n = 0}^{\infty} = {1, 5, 2, 6, 3, 0, \cdots}$。</p><p>在第二组样例测试数据中，${X_n}_{n = 0}^{\infty} = {1, 9, 3, 5, \cdots}$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含多组测试数据。第一行包含一个整数 $T$，表示测试数据的组数。随后的内容是各组测试数据。对于每组测试数据：</p><p>仅一行，包含八个整数 $m, a, c, X_0, l_1, r_1, l_2, r_2$。</p><ul><li>$1 \leq T \leq 10^5$</li><li>$1 \leq m \leq 10^6$</li><li>$0 \leq a, c, X_0 &lt; m$</li><li>$0 \leq l_1 \leq r_1 \leq 10^6$</li><li>$0 \leq l_2 \leq r_2 \leq 10^6$</li><li>所有数据的 $m$ 之和不超过 $2 \times 10^6$。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组测试数据，输出一行<code>Case #x: y</code>，其中<code>x</code>是测试数据的编号（从 $1$ 开始编号），<code>y</code>是这组数据的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+7 1 4 1 2 3 4 5
+10 3 6 1 2 3 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Case #1: 4
+Case #2: 12</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

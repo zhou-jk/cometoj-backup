@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[国庆欢乐赛]不存在的粉丝群</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1765 [国庆欢乐赛]不存在的粉丝群</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>传说中鸡尾酒创建了一个比赛群，短时间内有很多人加入，这些人里有真正的参赛选手，也有鸡尾酒的粉丝——他们声称这就是鸡尾酒的粉丝群。但是，群里还会有一些奇奇怪怪的广告号进群卖茶叶。于是，鸡尾酒设置了一个入群问题，只有正确回答入群问题的人才可以加入他的群。首先，他的群有一些神奇的性质：</p><ol><li>群友的好友关系是双向的，$a$ 加了 $b$ 的好友，等于 $b$ 也加了 $a$ 的好友。</li><li>有 $n$ 个群友。</li><li>有 $k$ 个群友在群内的好友数量为奇数。</li></ol><p>鸡尾酒想考考你，在这个群中，最多可能有多少对好友呢？</p><p>可能这个世界上根本没有鸡尾酒的粉丝群，又或者说——人人都在鸡尾酒的粉丝群中。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行，包含一个整数 $T$，表示输入询问组数。接下来 $T$ 行，每行两个整数，依次表示该组询问的 $n,k$。</p><ul><li>$T \le 1000$</li><li>$1 \le n,k \le 10^9$</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组询问，输出一行，若存在至少一个满足描述里的性质的鸡尾酒粉丝群，则输出一个整数表示满足性质时鸡尾酒粉丝群内最多的好友数量，否则输出<code>renrendoushijwj</code>。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+7 8
+7 4
+3 1
+5 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>renrendoushijwj
+19
+renrendoushijwj
+8</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

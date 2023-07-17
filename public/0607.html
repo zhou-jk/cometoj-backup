@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2017]新生舞会</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0607 [SDOI2017]新生舞会</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>学校组织了一次新生舞会，Cathy 作为经验丰富的老学姐，负责为同学们安排舞伴。</p><p>有 $n$ 个男生和 $n$ 个女生参加舞会，一个男生和一个女生一起跳舞，互为舞伴。</p><p>Cathy 收集了这些同学之间的关系，比如两个人之前是否认识，计算得出 $a_{i, j}$，表示第 $i$ 个男生和第 $j$ 个女生一起跳舞时他们喜悦程度。</p><p>Cathy 还需要考虑两个人一起跳舞是否方便，比如身高体重差别会不会太大，计算得出 $b_{i, j}$ 表示第 $i$ 个男生和第 $j$ 个女生一起跳舞时的不协调裎度。</p><p>当然，还需要考虑很多其他间题。</p><p>Cathy 想先用一个程序通过 $a_{i, j}$ 和 $b_{i, j}$ 求出一种方案，再手动对方案进行微调。</p><p>Cathy 找到你，希望你帮她写那个程序。</p><p>一个方案中有 $n$ 对舞伴，假设每对舞伴的喜悦程度分别是 $a'_1, a'_2, \ldots, a'_n$，假设每对舞伴不协调程度分别是 $b'_1, b'_2, \ldots, b'_n$。令</p><p>$C = \frac{a'_1 + a'_2 + \cdots + a'_n}{b'_1 + b'_2 + \cdots + b'_n}$</p><p>Cathy 希望 $C$ 值最大。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个整数 $n$。</p><p>接下来 $n$ 行，每行 $n$ 个正整数，第 $i$ 行第 $j$ 个数表示 $a_{i, j}$。</p><p>接下来 $n$ 行，每行 $n$ 个正整数，第 $i$ 行第 $j$ 个数表示 $b_{i, j}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个数，表示 $C$ 的最大值。四舍五入保留六位小数，选手输出的小数需要与标准输出相等。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+19 17 16
+25 24 23
+35 36 31
+9 5 6
+3 4 2
+7 8 9</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5.357143</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $10\%$ 的数据，$1 \leq n \leq 5$；</p><p>对于 $40\%$ 的数据，$1 \leq n \leq 18$；</p><p>另外存在 $20\%$ 的数据，$b_{i, j} = 1$；</p><p>对于 $100\%$ 的数据，$1 \leq n \leq 100, 1 \leq a_{i, j} \leq 10 ^ 4,1 \leq b_{i, j} \leq 10 ^ 4$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

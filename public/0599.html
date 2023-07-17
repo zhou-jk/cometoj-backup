@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ZJOI2019]线段树</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0599 [ZJOI2019]线段树</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>九条可怜是一个喜欢数据结构的女孩子，在常见的数据结构中，可怜最喜欢的就是线段树。</p><p>线段树的核心是懒标记，下面是一个带懒标记的线段树的伪代码，其中<code>tag</code>数组为懒标记：</p><p><img alt="image.png" src="../upload/99be72b173.png" width="499" height="444"></p><p>其中函数 $\texttt{Lson}(\text{Node})$ 表示 $\text{Node}$ 的左儿子，$\texttt{Rson}(\text{Node})$ 表示 $\text{Node}$ 的右儿子。</p><p>现在可怜手上有一棵 $[1, n]$ 上的线段树，编号为 $1$。这棵线段树上的所有节点的<code>tag</code>均为 $0$。接下来可怜进行了 $m$ 次操作，操作有两种：</p><p>$1\ l\ r$，假设可怜当前手上有 $t$ 棵线段树，可怜会把每棵线段树复制两份（<code>tag</code>数组也一起复制），原先编号为 $i$ 的线段树复制得到的两棵编号为 $2i − 1$ 与 $2i$，在复制结束后，可怜手上一共有 $2t$ 棵线段树。接着，可怜会对所有编号为奇数的线段树进行一次 $\texttt{Modify}(\text{root}, 1, n, l, r)$。</p><p>$2$，可怜定义一棵线段树的权值为它上面有多少个节点<code>tag</code>为 $1$。可怜想要知道她手上所有线段树的权值和是多少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入两个整数 $n, m$ 表示初始区间长度和操作个数。</p><p>接下来 $m$ 行每行描述一个操作，输入保证 $1 \le l \le r \le n$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每次询问，输出一行一个整数表示答案，答案可能很大，对 $998244353$ 取模后输出即可。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+2
+1 1 3
+2
+1 3 5
+2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+1
+6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>$[1, 5]$ 上的线段树如下图所示：</p><p><img alt="image.png" src="../upload/e57bcc4489.png" width="500" height="334.53237410071944"></p><p>在第一次询问时，可怜手上有一棵线段树，它所有点上都没有标记，因此答案为 $0$。</p><p>在第二次询问时，可怜手上有两棵线段树，按照编号，它们的标记情况为：</p><ol><li>点 $[1, 3]$ 上有标记，权值为 $1$。</li><li>没有点有标记，权值为 $0$。</li></ol><p>因此答案为 $1$。</p><p>在第三次询问时，可怜手上有四棵线段树，按照编号，它们的标记情况为：</p><ol><li>点 $[1, 2], [3, 3], [4, 5]$ 上有标记，权值为 $3$。</li><li>点 $[1, 3]$ 上有标记，权值为 $1$。</li><li>点 $[3, 3], [4, 5]$ 上有标记，权值为 $2$。</li><li>没有点有标记，权值为 $0$。</li></ol><p>因此答案为 $6$。</p><p>【数据范围与提示】</p><p><img alt="image.png" src="../upload/6a4b520877.png" width="667" height="465"><br></p><p>对于 $100\%$ 的数据，$1 \le l \le r \le n$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]商店购物</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0353 [USACO]商店购物</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>在商店中，每一种商品都有一个价格（用整数表示）。例如,一朵花的价格是 2 zorkmids （z），而一个花瓶的价格是 5z 。为了吸引更多的顾客，商店举行了促销活动。</p><p>促销活动把一个或多个商品组合起来降价销售，例如：</p><p>三朵花的价格是 5z 而不是 6z， 两个花瓶和一朵花的价格是 10z 而不是 12z。 编写一个程序，计算顾客购买一定商品的花费，尽量利用优惠使花费最少。尽管有时候添加其他商品可以获得更少的花费，但是你不能这么做。</p><p>对于上面的商品信息，购买三朵花和两个花瓶的最少花费是：以优惠价购买两个花瓶和一朵花（10z），以原价购买两朵花（4z）。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包括一些商店提供的优惠信息，接着是购物清单。</p><p>第一行：优惠商品的种类数（$0 \le s \le 99$）。</p><p>第二行...第 $s+1$ 行：每一行都用几个整数来表示一种优惠方式。第一个整数 $n （1 \le n \le 5）$，表示这种优惠方式由 $n$ 种商品组成。后面 $n$ 对整数 $c$ 和 $k$ 表示 $k （1 \le k \le 5）$个编号为 $ c （1 \le c \le 999）$的商品共同构成这种优惠，最后的整数 $p$ 表示这种优惠的优惠价（$1 \le p \le 9999$）。优惠价总是比原价低。</p><p>第 $s+2$ 行：这一行有一个整数 $b （0 \le b \le 5）$，表示需要购买 $b$ 种不同的商品。</p><p>第 $s+3$ 行...第 $s+b+2$ 行：这 $b$ 行中的每一行包括三个整数：$c ，k$ ，和 $p$ 。 $C$ 表示唯一的商品编号（$1 \le c \le 999$），$k$ 表示需要购买的 $c$ 商品的数量（$1 \le k \le 5$）。$p$ 表示 $c$ 商品的原价（$1 \le p \le999$）。最多购买 $5*5=25$ 个商品。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>只有一行，输出一个整数：购买这些物品的最低价格。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+1 7 3 5
+2 7 1 8 2 10
+2
+7 3 2
+8 2 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>14</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

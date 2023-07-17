@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI1999Day1-B]钉子和小球</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0285 [NOI1999Day1-B]钉子和小球</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有一个三角形木板,竖直立放，上面钉着 $n(n+1)/2$ 颗钉子，还有 $(n+1)$ 个格子（当 $n=5$ 时如图 1）。每颗钉子和周围的钉子的距离都等于 $d$，每个格子的宽度也都等于 $d$，且除了最左端和最右端的格子外每个格子都正对着最下面一排钉子的间隙。</p><p>让一个直径略小于 $d$ 的小球中心正对着最上面的钉子在板上自由滚落，小球每碰到一个钉子都可能落向左边或右边（概率各 $1/2$ ），且球的中心还会正对着下一颗将要碰上的钉子。例如图 2 就是小球一条可能的路径。</p><p>我们知道小球落在第 $i$ 个格子中的概率 $p_i=C^i_n/2^n=\frac{n!}{i!(n-i)!}/2^n$，其中 $i$ 为格子的编号，从左至右依次为 $0,1,...,n$。</p><p>现在的问题是计算拔掉某些钉子后，小球落在编号为 $m$ 的格子中的概率 $p_m$。假定最下面一排钉子不会被拔掉。例如图3是某些钉子被拔掉后小球一条可能的路径。<br></p><p><img alt="屏幕快照 2019-06-13 上午10.42.46.png" src="../upload/ebb43d2c75.png" width="500" height="186.29173989455185"><br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行为整数 $n（2 \le n \le 50）$和 $m（0 \le m \le n）$。以下 $n$ 行依次为木板上从上至下 $n$ 行钉子的信息，每行中 ‘*’ 表示钉子还在，‘.’ 表示钉子被拔去，注意在这 $n$ 行中空格符可能出现在任何位置。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅一行，是一个既约分数 $(0$ 写成 $0/1)$，为小球落在编号为 $m$ 的格子中的概率 $p_m$。既约分数的定义：$A/B$ 是既约分数，当且仅当 $A、B$ 为正整数且 $A$ 和 $B$ 没有大于 $1$ 的公因子。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 2
+*
+   * .
+  * * *
+ * . * *
+* * * * *</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7/16</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

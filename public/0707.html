@@ -1,0 +1,145 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2019]世界地图</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0707 [SDOI2019]世界地图</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>在遥远的艾莉芬特星球上，有着繁荣的艾莉芬特文明。和地球人一样，艾莉芬特人使用经纬度来标记星球上的每个位置。他们把艾莉芬特星球从北到南划分为 $n$ 个纬度，从西到东划分为 $m$ 个经度。在每条经线和纬线相交的地方都有一个国家，他们用 $(i, j)$ 来表示纬度为 $i$，经度为 $j$ 的国家，显然一共有 $n \times m$ 个国家。</p><p>艾莉芬特人在任意两个经度或者纬度相邻的国家之间都修建了一条双向道路。</p><p>考虑经度相邻的情况：对于任意一个国家 $(i, j)\ (1 \le i \le n, 1 \le j \le m)$，它和国家 $(i, j + 1)$ 之间都有一条道路，特别地当 $j = m$ 时，$(i, m)$ 和 $(i, 1)$ 之间也有一条道路。</p><p>考虑纬度相邻的情况：对于任意一个国家 $(i, j)\ (1 \le i &lt; n, 1 \le j \le m)$，它和国家 $(i + 1, j)$ 之间都有一条道路。注意：南北极并不相邻。</p><p>艾莉芬特星球并不和平，部分国家卷入了世界大战之中。在接下来 $q$ 个世纪的第 $i$ 个世纪里，经度在 $[l_i, r_i]$ 之间的所有国家都卷入了该世纪发生的世界大战中。当世界大战发生时，被卷入战争的国家都很危险。如果一个国家未被卷入战争，那么它就是一个和平的国家；如果一条道路两端点都是和平的国家，那么它就是一条和平的道路。处于安全考虑，艾莉芬特联合政府会选择只开放一些和平的道路，使得任意两个和平的国家在战争期间都能仅通过这些开放的和平的道路直接或间接连通。</p><p>对于任意一条道路，将它保留下来所需的安保代价都不尽相同。请写一个程序，帮助联合政府找到安保代价之和最少的方案。</p><p>注意：一个世纪结束后，该世纪的世界大战将会结束，下一场战争的参战国与当前战争的参战国之间没有任何联系。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含六个正整数 $n, m, \text{SA}, \text{SB}, \text{SC}, \text{lim}$，其中 $n$ 表示纬度的范围，$m$ 表示经度的范围。</p><p>为了减少输入量，每条道路的安保代价将由以下代码生成，其中<code>addedge(a,b,c,d,w)</code>表示 $(a, b)$ 和 $(c, d)$ 之间道路的安保代价为 $w$：</p><pre><code>unsigned int SA, SB, SC;
+int lim;
+
+int getweight() {
+    SA^=SA&lt;&lt;16;
+    SA^=SA&gt;&gt;5;
+    SA^=SA&lt;&lt;1;
+    unsigned int t=SA;
+    SA=SB;
+    SB=SC;
+    SC^=t^SA;
+    return SC % lim + 1;
+}
+
+void gen() {
+
+    scanf("%d%d%u%u%u%d",&amp;n,&amp;m,&amp;SA,&amp;SB,&amp;SC,&amp;lim);
+    int i, j, w;
+
+    for(i=1; i&lt;=n; i++)
+    for(j=1; j&lt;=m; j++) {
+        w=getweight();
+        if (j&lt;m) {
+            addedge(i, j, i, j+1, w);
+        } else {
+        addedge(i, j, i,1, w);
+        }
+
+    }
+
+    for(i=1; i&lt;n; i++)
+    for(j=1; j&lt;=m; j++) {
+        w=getweight();
+        addedge(i, j, i+1, j, w);
+    }
+}
+
+</code></pre><p>第二行包含一个正整数 $q$，表示询问次数。</p><p>接下来 $q$ 行，每行两个正整数 $l_i, r_i$，依次表示每个询问。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $q$ 行，每行一个整数，依次回答每个询问，即安保代价之和。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 4 1 2 3 5
+3
+2 2
+2 3
+3 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9
+5
+13</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于$100\%$的数据，$1 &lt; l_i \le r_i &lt; m, 1 \le \text{SA}, \text{SB}, \text{SC} \le 10^9$。</p><p><img alt="image.png" src="../upload/075fdaeea6.png" width="702"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

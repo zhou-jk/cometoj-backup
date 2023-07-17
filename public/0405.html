@@ -1,0 +1,141 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2017Day1-B]蚯蚓排队</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0405 [NOI2017Day1-B]蚯蚓排队</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>蚯蚓幼儿园有n只蚯蚓。幼儿园园长神刀手为了管理方便，时常让这些蚯蚓们列队表演。</p><p>所有蚯蚓用从1到n的连续正整数编号。每只蚯蚓的长度可以用一个正整数表示，根据入园要求，所有蚯蚓的长度都不超过6。神刀手希望这些蚯蚓排成若干个队伍，初始时，每只蚯蚓各自排成一个仅有一只蚯蚓的队伍，该蚯蚓既在队首，也在队尾。</p><p>神刀手将会依次进行m次操作，每个操作都是以下三种操作中的一种：</p><ol><li><p>给出$i$和$j$，令$i$号蚯蚓与$j$号蚯蚓所在的两个队伍合并为一个队伍，具体来说，令$j$号蚯蚓紧挨在$i$号蚯蚓之后，其余蚯蚓保持队伍的前后关系不变。</p></li><li><p>给出$i$，令$i$号蚯蚓与紧挨其后的一只蚯蚓分离为两个队伍，具体来说，在分离之后，$i$号蚯蚓在其中一个队伍的队尾，原本紧挨其后的那一只蚯蚓在另一个队伍的队首，其余蚯蚓保持队伍的前后关系不变。</p></li><li><p>给出一个正整数$k$和一个长度至少为$k$的数字串$s$，对于$s$的每个长度为$k$的连续子串$t$（这样的子串共有$|s|−k+1$个，其中$|s|$为$s$的长度），定义函数$f(t)$，询问所有这些$f(t)$的<b>乘积</b>对998244353取模后的结果。其中$f(t)$的定义如下：</p></li></ol><p>对于当前的蚯蚓队伍，定义某个蚯蚓的<b>向后k数字串</b>为：从该蚯蚓出发，沿队伍的向后方向，寻找最近的$k$只蚯蚓（包括其自身），将这些蚯蚓的长度视作字符连接而成的数字串;如果这样找到的蚯蚓不足$k$只，则其没有<b>向后$k$数字串</b>。例如蚯蚓的队伍为10号蚯蚓在队首，其后是22号蚯蚓，其后是3号蚯蚓（为队尾），这些蚯蚓的长度分别为4、5、6，则10号蚯蚓的<b>向后3数字串</b>为<u>456</u>，22号蚯蚓没有<b>向后3数字串</b>，但其<b>向后2数字串</b>为<u>56</u>，其<b>向后1数字串</b>为<u>5</u>。<br>而$f(t)$表示所有蚯蚓中，<span></span><b>向后k数字串</b><span></span>恰好为$t$的蚯蚓只数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有两个正整数$n,m$，分别表示蚯蚓的只数与操作次数。</p><p>第二行包含$n$个不超过6的正整数，依次表示编号为1,2, . . . ,n的蚯蚓的长度</p><p>接下来m行，每行表示一个操作。每个操作的格式可以为：</p><ul><li>1 $i$ $j（1≤i,j≤n）$表示：令$i$号与$j$号蚯蚓<b>所在</b>的两个队伍合并为一个队伍，新队伍中，$j$号蚯蚓紧挨在$i$号蚯蚓之后。保证在此操作之前，$i$号蚯蚓在某个队伍的队尾，$j$号蚯蚓在某个队伍的队首，且两只蚯蚓不在同一个队伍中。</li><li>2 $i（1≤i≤n）$表示：令$i$号蚯蚓与紧挨其后一个蚯蚓分离为两个队伍。保证在此操作之前，$i$号蚯蚓不是某个队伍的队尾。</li><li>3 $s$ $k（k$为正整数，$s$为一个长度至少为$k$的数字串）表示：询问s的每个长度为$k$的子串$t$的$f(t)$的乘积，对998244353取模的结果。$f(t)$的定义见题目描述。</li></ul><p>同一行输入的相邻两个元素之间，用恰好一个空格隔开。</p><p>输入文件可能较大，请不要使用过于缓慢的读入方式。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>依次对于每个形如3 s k的操作，输出一行，仅包含一个整数，表示询问的结果。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 9
+3 1 3 5 3
+3 333135 2
+3 333135 1
+1 1 3
+1 2 5
+1 3 2
+1 5 4
+3 333135 2
+3 333135 1
+3 333135 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0
+81
+1
+81
+0</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 10
+6 6
+3 666666 1
+1 1 2
+3 666666 2
+3 666666 4
+3 666666666666666666666666666666 1
+2 1
+1 2 1
+3 666666 2
+3 666666 4
+3 666666666666666666666666666666 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>64
+1
+0
+75497471
+1
+0
+75497471</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例1解释】<br></p><p>第一次询问：由于每个队伍均只有一只蚯蚓，所以没有任何蚯蚓有<b>向后2数字串</b>，答案为$f(33)×f(33)×f(31)×f(13)×f(35) = 0×0×0×0×0 = 0。$</p><p>第二次询问：每个队伍仍只有一只蚯蚓，每只蚯蚓的<b>向后1数字串</b>就是将自己的长度视为字符的数字串，即：得到的5个<b>向后1数字串</b>为1、3、3、3、5（不分先后顺序，下同），答案为$f(3)×f(3)×f(3)×f(1)×f(3)×f(5) = 3×3×3×1×3×1 = 81$。接下来进行了若干次队伍的合并操作，使得所有蚯蚓合并成了一个队伍，这个队伍从前到后的蚯蚓依次为：1号蚯蚓（长度为3）、3号蚯蚓（长度为3）、2号蚯蚓（长度为1）、5号蚯蚓（长度为3）、4号蚯蚓（长度为5）。</p><p>第三次询问：4号蚯蚓没有<b>向后2数字串</b>，而其他蚯蚓都有。得到的4个<b>向后2数字串</b>为13、31、33、35，答案为$f(33)×f(33)×f(31)×f(13)×f(35) = 1×1×1×1×1 = 1$。</p><p>第四次询问：虽然队伍的排列方式改变了，但是每只蚯蚓的<b>向后1数字串</b>没有发生改变，所以答案同第二次询问。</p><p>第五次询问：4号蚯蚓、5号蚯蚓没有<b>向后3数字串</b>，而其他蚯蚓都有。得到的3个<b>向后3数字串</b>为135、331、313，答案为$f(333)×f(331)×f(313)×f(135) = 0×1×1×1 = 0$。</p><p>【样例2解释】<br></p><p>对于第四次、第七次询问，输入的s为30个字符1，所有$f(t)$的乘积是$2^30=1073741824$，输出的结果是这个数对于998244353取模的结果。<br></p><p>【子任务】<br></p><p>保证$n≤2×105，m≤5×105，k≤50$。<br>设$\sum |s|$为某个输入文件中所有询问的$s$的长度总和，则$\sum |s| ≤10^7$。设$c$为某个输入文件中形如2.$i$的操作的次数，则$c≤10^3$。</p><p>每个测试点的详细信息见下表：<br></p><p><img alt="屏幕快照 2019-06-03 下午6.19.09.png" src="../upload/ff8333e793.png" width="600" height="654"><br></p><p>如果一个测试点的‘‘全为1’’的一列为“Yes’’，表示该测试点的所有蚯蚓的长度均为1，并且所有询问串s的每一位也均为1。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[APIO2019-B]奇怪装置</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0213 [APIO2019-B]奇怪装置</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>考古学家发现古代文明留下了一种奇怪的装置。该装置包含两个屏幕，分别显示两个整数 $x$ 和 $y$。</p><p>经过研究，科学家对该装置得出了一个结论：该装置是一个特殊的时钟，它从过去的某个时间点开始测量经过的时刻数 $t$，但该装置的创造者却将 $t$ 用奇怪的方式显示出来。若从该装置开始测量到现在所经过的时刻数为 $t$，装置会显示两个整数：$x=((t+\lfloor \frac{t}{B} \rfloor)\mod A)$，与 $y=(t \mod B)$。这里 $\lfloor x \rfloor$ 是下取整函数，表示小于或等于 $x$ 的最大整数。</p><p>考古学家通过进一步研究还发现，该装置的屏幕无法一直工作。实际上，该装置的屏幕只在 $n$ 个连续的时间区间段中能正常工作。第 $i$个 时间段从时刻 $l_i$ 到时刻 $r_i$。现在科学家想要知道有多少个不同的数对 $(x,y)$ 能够在该装置工作时被显示出来。</p><p>两个数对 $(x_1,y_1)$ 和 $(x_2,y_2)$ 不同当且仅当 $x_1 \ne x_2$ 或 $y_1 \ne y_2$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含三个整数 $n,A$ 与 $B$。</p><p>接下来 $n$ 行每行两个整数 $l_i, r_i$，表示装置可以工作的第 $i$ 个时间区间。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数表示问题的答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 3 3
+4 4
+7 9
+17 18</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5 10
+1 20
+50 68
+89 98</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>31</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 16 13
+2 5
+18 18</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例 1 说明】</p><p>对于第一个样例，装置屏幕将显示如下这些数对。</p><p><img alt="屏幕快照 2019-07-10 下午12.25.37.png" src="../upload/9ddb485917.png" width="90" height="181.28571428571428"><br></p><p>共有四个不同的数对：$(0,0),(0,1),(1,2),(2,1)$。<br></p><p>【数据范围与提示】</p><p>对于全部数据，$1 \le n \le 10^6,1 \le A,B \le 10^{18},0\le l_i \le r_i \le 10^{18},r_i &lt; l_i+1$。</p><p>令 $S=\sum^n_{i=1}(r_i-l_i+1)$与$L=\max_{i=1}^n(r_i-l_i+1)$。</p><p>详细子任务附加限制与分值如下表。（comet 不支持APIO评分方式）</p><p><img alt="屏幕快照 2019-07-10 下午12.30.19.png" src="../upload/2e6cc5bfda.png" width="600" height="354.4227886056972"><br></p><p>子任务 1：测试点 4-20<br>子任务 2：测试点 21-24<br>子任务 3：测试点 25-29<br>子任务 4：测试点 30-33<br>子任务 5：测试点 34-38<br>子任务 6：测试点 39-57<br>子任务 7：测试点 58-74<br>子任务 8：测试点 75-87</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

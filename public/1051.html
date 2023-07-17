@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2001]软件开发</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1051 [HNOI2001]软件开发</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>某软件公司正在规划一项 $n$ 天的软件开发计划，根据开发计划第 $i$ 天需要 $n_i$ 个软件开发人员，为了提高软件开发人员的效率，公司给软件人员提供了很多的服务，其中一项服务就是要为每个开发人员每天提供一块消毒毛巾，这种消毒毛巾使用一天后必须再做消毒处理后才能使用。</p><p>消毒方式有两种，A 种方式的消毒需要 $a$ 天时间，B 种方式的消毒需要 $b$ 天（$b&gt;a$），A 种消毒方式的费用为每块毛巾$f_A$，B 种消毒方式的费用为每块毛巾 $f_B$，而买一块新毛巾的费用为 $f$（新毛巾是已消毒的，当天可以使用）；而且 $f&gt;f_A&gt;f_B$。</p><p>公司经理正在规划在这 $n$ 天中，每天买多少块新毛巾、每天送多少块毛巾进行 A 种消毒和每天送多少块毛巾进行 B 种消毒。当然，公司经理希望费用最低。你的任务就是：为该软件公司计划每天买多少块毛巾、每天多少块毛巾进行 A 种消毒和多少毛巾进行 B 种消毒，使公司在这项 $n$ 天的软件开发中，提供毛巾服务的总费用最低。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第 $1$ 行为 $n,a,b,f,f_A,f_B$。</p><p>第 $2$ 行为 $n_1$，$n_2$，……，$n_n$。</p><p>（注：$1≤f,f_A,f_B≤60，1≤n≤1000$）<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>最少费用。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 1 2 3 2 1
+8 2 1 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>38</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

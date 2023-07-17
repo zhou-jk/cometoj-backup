@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]篮球校赛</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1019 [欢乐赛]篮球校赛</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">JWJU注重培养学生的“唱，跳，rap，篮球”能力。于是每年JWJU都会举办篮球校赛，来给同学们一个切磋篮球技术的平台。校赛冠军的奖励是看wls女装一次，为了这个目标，大家都努力训练，希望自己能看到wls女装。</p><p>教练$my$手下有 $n$ 名队员，现在他要挑选 $5$ 人组成一个篮球队来参赛。众所周知，一个篮球队伍有五个不同的位置（控球后卫，得分后卫，小前锋，大前锋，中锋），现在教练$my$给出每名队员在每个位置的能力。</p><p>注：如果一个队员作为控球后卫出战，则他只能发挥他的控球后卫的能力值。（其他位置类似）</p><p>教练$my$想让你帮忙选择出 $5$ 名队员，分别放置在队伍中的不同位置。求他们组成的队伍的最大能力值之和。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">输出第一行包含一个正整数 $n$ ($5 \le n \le 10^{5}$)。</p><p>接下来包含 $n$ 行，每行包含 $5$ 个正整数，描述每个队员在每个位置的能力值。每项能力值的取值范围都在 $[1,10^{9}]$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个正整数代表组成的队伍的最大能力值之和。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+10 11 12 15 10
+10 15 12 11 10
+15 10 15 15 15
+19 20 114000 10 300
+14 10 155 200 469</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>114514</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一个人放在位置4，发挥15的能力值</p><p>第二个人放在位置2，发挥15的能力值</p><p>第三个人放在位置1，发挥15的能力值</p><p>第四个人放在位置3，发挥114000的能力值</p><p>第五个人放在位置5，发挥469的能力值</p><p>团队总能力值：$15+15+15+114000+469=114514$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

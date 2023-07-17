@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[欢乐赛]Gree的心房</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1014 [欢乐赛]Gree的心房</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">据说每一个走进Gree哥哥心房的小姑娘都没有能够再走出来……</p><p>我们将Gree哥哥的心房抽象成一个$n \times m$的地图，初始所有点均为空。当小姑娘走入他的心房时(此时小姑娘的位置为 $(1,1)$ 点)，他会将$k$ 个 $1 \times 1$ 障碍物放入地图来阻止小姑娘的行动，每个位置最多只能放置一个障碍物（即不能叠加放置）。但由于Gree哥哥被小姑娘的美貌所捕获，并没有一套很好的策略去放置这些障碍物，于是就随机放置这些障碍物。</p><p>在Gree随机地把所有障碍物放置好之后，小姑娘要从地图的左上角 $(1,1)$ 走到右下角 $(n,m)$。（起点和终点不能放置障碍物）</p><p>小姑娘每一步可以往上下左右的任意一个方向移动一个单位，在所有的障碍物放置方案中，小姑娘从左上角走到右下角需要的最少步数是多少？（小姑娘会尽量走最短的路线）</p><p>如果没有一个合理的放置方案，或无论怎样放置障碍物小姑娘都无法到达右下角，输出 $-1$.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含三个正整数 $n,m,k$。 ($1 \le n, m, k \le 10^{5}$)<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个整数表示答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 3 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">若用 $0$ 表示空地，$1$ 表示此地被放置了障碍物。则其中的一种放置方案为：</p><p>$0$ $0$ $1$</p><p>$1$ $0$ $0$</p><p>$0$ $0$ $0$</p><p>在这种情况下，从左上角到右下角的步数为 $4$。且这种方案是小姐姐需要步数最少的方案。（当然也有其他方案也可以让小姐姐4步就能到达终点）</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

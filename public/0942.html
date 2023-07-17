@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2017]方案数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0942 [HAOI2017]方案数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>考虑定义非负整数间的 “$\subseteq$”，如果 $a \subseteq b$，那么 $a \land b = a$，其中 $\land$ 表示二进制下的 “与” 操作。</p><p>考虑现在有一个无限大的空间，现在你在 $(0, 0, 0)$，有三种位移操作。</p><ol><li>$(x,y, z) \to (ax, y, z)$ 当且仅当 $x \subseteq ax$；</li><li>$(x, y, z) \to (x, ay, z)$ 当且仅当 $y \subseteq ay$；</li><li>$(x, y, z) \to (x, y, az)$当且仅当 $z \subseteq az$。</li></ol><p>由于来自东方的神秘力量，有些点被屏蔽了，也就是不能经过了。现在问你到某个点 $(n, m, r)$ 的方案数，答案对 $998244353$ 取模。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行三个整数 $n, m, r$。</p><p>接下来一行一个整数 $o$，表示障碍物的数量。</p><p>接下来 $o$ 行，每行三个整数 $x, y, z$ 表示障碍物的坐标，$0 \le x \le n, 0 \le y \le m, 0 \le z \le r$，且障碍物不在 $(0, 0, 0)$ 和 $(n, m, r)$ 上，障碍物不会重复。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数，代表要求的答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 1 1
+0</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>有 $8$ 种状态 $(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)$，分别方案数为 $1, 1, 1, 2, 1, 2, 2, 6$。</p><p>【数据规模】</p><p>对于 $20\%$ 的数据，$n, m, r \le 100$；</p><p>对于 $50\%$ 的数据，$n, m, r \le 10^6$；</p><p>对于另外 $20\%$ 的数据，$o \le 10$；</p><p>对于 $100\%$ 的数据，$n, m, r \le 10^{18}, o \le 10^4$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

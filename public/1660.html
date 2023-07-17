@@ -1,0 +1,134 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day3]最大独立集</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1660 [Wannafly冬令营2018Day3]最大独立集</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>树上最大独立集是个非常简单的问题，可怜想让它变得稍微难一点。</p><p>可怜最开始有一棵 $n$ 个点无根树 $T$，令 $T(i)$ 为将点 $i$ 作为根后得到的有根树。</p><p>可怜用 $m$ 次操作构造了 $m+1$ 棵树 $T'_0$ 至 $T'_m$，其中 $T'_0 = T(1)$。第 $i$ 次操作，可怜选择了一个节点 $k_i$，它用如下的方式构造了 $T'_i$：</p><ul><li>新建一棵和 $T(k_i)$ 一样的有根树 $T_b$。</li><li>新建 $n$ 棵和 $T'_{i-1}$ 一样的有根树，并将第 $j$ 棵树的根节点的父亲设置为 $T_b$ 中第 $j$ 个点，即加上一条连接它们的边。</li><li>这样就得到了一个点数为 $\text{size}(T(k_i)) + n\times \text{size}(T'_{i-1})$ 的树 $T_i$，它的根节点是 $T_b$ 中的节点 $k_i$。</li></ul><p>现在可怜希望你对 $T_0$ 至 $T_m$，分别求出这 $m+1$ 棵树的最大独立集大小。</p><p>有根树 $T$ 的独立集 $S$ 的定义是 ：$S$ 是 $T$ 上节点的子集，同时对于任意 $S$ 中的点 $i$，$i$ 的父亲 $f_i$ 不在 $S$ 中。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入两个整数 $n,m(1 \leq n,m \leq 10^5)$，表示无根树上的节点个数与可怜进行的操作次数。</p><p>接下来 $n-1$ 行每行两个整数 $u,v(1 \leq u,v \leq n)$ 表示书上的一条边。</p><p>接下来 $m$ 行每行一个整数 $k_i(1 \leq k_i \leq n)$ 表示在第 $i$ 次操作中，可怜选择的节点。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $m+1$ 行，每行一个整数，表示对应的树的最大独立集的大小。答案可能很大， 对 $998244353$ 取模后输出。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 5
+1
+1
+1
+1
+1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+1
+2
+2
+3
+3</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+1 2
+2 3
+2 4
+1 5
+5
+4
+3
+2
+1</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+18
+93
+465
+2328
+11643</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

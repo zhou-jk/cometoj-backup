@@ -1,0 +1,118 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>【XR-1】分块</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1561 【XR-1】分块</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>xht37 喜欢分块，以至于对一道不需要分块的题也要分块做。</p><p>有一个长度为 $n$ 的序列，xht37 现在想分块维护它。</p><p>PinkRabbit 要求他只准将序列分成 $PR$ 种长度的块。</p><p>NaCly_Fish 要求他只准将序列分成 $NF$ 种长度的块。</p><p>同一个人可能会要求 xht37 多次相同的块长。</p><p>xht37 想同时满足 PinkRabbit 和 NaCly_Fish 要求，只好使用两个人都允许的长度分块。</p><p>xht37 想知道，有多少种不同的分块方案，答案对 $10 ^ 9 + 7$取模。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $n$，表示序列的长度。</p><p>第二行一个正整数 $PR$，表示 PinkRabbit 要求的分块长度的种类数。</p><p>第三行 $PR$ 个正整数，表示 PinkRabbit 要求的 $PR$ 种分块长度。</p><p>第四行一个正整数 $NF$，表示 NaCly_Fish 要求的分块长度的种类数。</p><p>第五行 $NF$ 个正整数，表示 NaCly_Fish 要求的 $NF$ 种分块长度。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数，表示不同分块方案的种类数对 $10 ^ 9 + 7$ 取模的值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+3
+1 2 3
+3
+1 2 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>19260817
+7
+8 9 6 3 7 2 1
+7
+4 5 2 9 7 8 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>859254329</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模与约定】</p><p>设最大块长为 $x$。</p><p>对于 $60 \%$ 的数据，$1 \le n \le 10 ^ 6$，$1 \le PR,NF,x \le 10$，保证同一个人不会要求多次相同的块长。</p><p>对于 $100 \%$ 的数据，$1 \le n \le 10 ^ {18}$，$1 \le PR,NF,x \le 100$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]玖凛两开花</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1698 [Wannafly冬令营2018Day8]玖凛两开花</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>为了拯救重要之人，御原玖音和Rinne Ohara都努力地进行时间机器的研究，为此她们正在学习一些必要的算法。在学习的过程中，她们发现了一个叫做开花（Blossom algorithm，也被称作带花树）的有趣算法。</p><p>开花算法可以用来解决一般图最大匹配问题，经过一些修改还可以用来解决一般图最大权匹配问题。原始的开花算法的时间复杂度为$O(|V|^2|E|)$，其中$|V|,|E|$分别为图的点数与边数。有很多人对开花算法进行了优化，如Gabow在《 Data structures for weighted matching and nearest common ancestors with linking》一文中将一般图最大权匹配的时间复杂度优化到了$O(|V|(|E|+|V| \log |V|))$。</p><p>本着不重复造轮子的心态，Rinne尝试在线搜索开花算法的代码，但是找到的却都是时间复杂度为$O(V^3)$的实现方式。玖音只好自己写出一份代码，对一道例题跑出结果，然后请你检验她的答案对不对。</p><p><strong>玖音的题目是这样的：</strong></p><p>给出一张点集为$V$，边集为$E$的无向图$G$，点的编号为$0$至$|V|-1$，边$(u,v)$的权值为$\min(u,v)$。一个边集$S$是图的一个匹配当且仅当$S \subseteq E$，且$\forall e_1,e_2 \in S \bigwedge e_1 \neq e_2$，满足$e_1,e_2$无公共端点。对于一个边集$S$，定义$W_S$为$S$中所有边的权值的集合。对于一个自然数集$W$，定义$Mex(W)$为最小的不属于$W$的自然数。求对于图$G$的匹配$S$，$Mex(W_S)$的最大值是多少。</p><p>好心的Rinne为了减少你的负担，将题目的做法告诉了你，你只需要实现一个高效的开花算法即可。<strong>当然，如果你已经会做这道题了，就可以不用继续看下去了。Rinne给出的做法是这样的：</strong></p><p>对于所有的边$e \in E$，若其原本的边权为$w$，将其改为$2^{|V|-w}$。求出新图的最大权匹配后，设其权值之和为$X$，将其二进制表示中的最低$|V|+1$位由高位到低位依次写出来，第一个为$0$的位的出现位置（从$0$开始编号）就是答案。要想证明正确性又要花费一些时间，不过Rinne是不会骗你的。</p><p>Note：公式渲染修正：<img src="../upload/add1e82942.png" alt="image"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个整数$n,m(1 \le n \le 10 ^4, 1 \le m \le 2 \times 10^4)$，分别代表图的点数与边数。</p><p>接下来$m$行，每行两个整数$u_i,v_i(0 \le u_i,v_i &lt; n)$，代表有一条连接$u_i, v_i$的边。保证没有重边和自环。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共一行一个整数，代表$Mex(W_S)$的最大值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 1
+1 2
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 10
+3 1
+4 0
+1 4
+0 3
+1 2
+2 3
+0 1
+4 2
+4 3
+0 2
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

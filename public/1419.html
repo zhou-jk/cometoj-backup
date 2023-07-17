@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2012]高速公路</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1419 [HAOI2012]高速公路</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Y901 高速公路是一条重要的交通纽带，政府部门建设初期的投入以及使用期间的养护费用都不低，因此政府在这条高速公路上设立了许多收费站。</p><p>Y901 高速公路是一条由 $N-1$ 段路以及 $N$ 个收费站组成的东西向的链，我们按照由西向东的顺序将收费站依次编号为 $1$~$N$，从收费站 $i$ 行驶到 $i+1$（或从 $i+1$ 行驶到 $i$）需要收取 $V_i$ 的费用。高速路刚建成时所有的路段都是免费的。</p><p>政府部门根据实际情况，会不定期地对连续路段的收费标准进行调整，根据政策涨价或降价。</p><p>无聊的小 A 同学总喜欢研究一些稀奇古怪的问题，他开车在这条高速路上行驶时想到了这样一个问题：对于给定的 $l,r(l&lt;r)$，在第 $l$ 个到第 $r$ 个收费站里等概率随机取出两个不同的收费站 $a$ 和 $b$，那么从 $a$ 行驶到 $b$ 将期望花费多少费用呢?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行 $2$ 个正整数 $N,M$，表示有 $N$ 个收费站，$M$ 次调整或询问。</p><p>接下来 $M$ 行，每行将出现以下两种形式中的一种：</p><ol><li><p><code>C l r v</code>表示将第 $l$ 个收费站到第 $r$ 个收费站之间的所有道路的通行费全部增加 $v$</p></li><li><p><code>Q l r</code>表示对于给定的 $l,r$，要求回答小 A 的问题</p></li></ol><p>所有<code>C</code>与<code>Q</code>操作中保证 $1 \le l&lt;r \le N$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每次询问操作回答一行，输出一个既约分数。</p><p>若答案为整数 $a$，输出 $a/1$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4 5
+C 1 4 2
+C 1 2 -1
+Q 1 2
+Q 2 4
+Q 1 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1/1
+8/3
+17/6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>所有<code>C</code>操作中的 $v$ 的绝对值不超过 $10000$</p><p>在任何时刻任意道路的费用均为不超过 $10000$ 的非负整数</p><p>所有测试点的详细情况如下表所示：</p><p>$\begin{array}{ccc}Test &amp; N &amp; M \\1 &amp; =10 &amp; =10 \\ 2 &amp; =100 &amp; =100 \\3 &amp; =1000 &amp; =1000 \\4 &amp; =10000 &amp; =10000 \\5 &amp; =50000 &amp; =50000 \\6 &amp; =60000 &amp; =60000 \\7 &amp; =70000 &amp; =70000 \\8 &amp; =80000 &amp; =80000 \\9 &amp; =90000 &amp; =90000 \\10 &amp; =100000 &amp; =100000 \end{array}$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

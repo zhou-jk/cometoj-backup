@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2010]扫雷机器人</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1328 [SHOI2010]扫雷机器人</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>扫雷是陆军战场上一项重要的而危险的任务。为此，AL 军工厂专门研制了一种扫雷机器人。这种机器人是专门针对直线形雷阵设计的。所谓直线形雷阵，就是所有的地雷都埋在同一条直线上。例如图 $1$ 中黑点表示的雷阵就是直线形雷阵。</p><p><img alt="image.png" src="../upload/a82ea54df3.png" width="373"><br></p><p>AL 军工厂生产的扫雷机器人的排雷方法只有一种，那就是安全引爆。每次，机器人在所有探测到的地雷中选择一颗引爆。被引爆的地雷会接连引爆不超过它的爆炸威力范围的其它地雷，这些被间接引爆的地雷还能引起进一步的连锁爆炸。例如图 $1$ 中，用一个圆的半径表示地雷的爆炸威力。如果引爆 $2$ 号雷，$1$、$2$ 号雷都会爆炸；如果引爆 $3$ 号雷，$4$ 颗地雷全都会爆炸；而如果引爆 $4$ 号雷，那就只有它一颗爆炸。</p><p>虽然是机器人，但引爆也是危险的。所以，扫雷机器人的订购人希望机器人能在实战中采取引爆次数尽可能少的排雷方案，即引爆次数尽可能少使得所有地雷都爆炸。于是 AL 军工厂想就此方面对机器人进行测试。为了评估机器人的表现，AL 军工厂想知道在一个直线形雷阵（即输入的）完成排雷，至少要进行多少次引爆，至多要进行多少次引爆。现在，请你帮助 AL 军工厂回答这个问题。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行是一个正整数 $n$，表示地雷的个数。</p><p>接下去 $n$ 行，按照地雷的位置顺序，每行描述一颗地雷。其中，第 $i+1$ 行有两个整数，$X_i,D_i$，分别是地雷的坐标和地雷的爆炸威力。也就是说，第 $i$ 号地雷的爆炸能直接进一步引爆第 $j$ 号地雷的条件是 $|x_i-y_i| \le D_i$</p><p>输入保证：$|X_i| \le 10^8,1 \le D_i \le 10^8$，且当 $i&lt;j$ 时，$X_i&lt;Y_i$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出只有两行，每行一个整数。第一行的是最少引爆次数，第二行的是最大引爆次数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+0 1
+2 2
+8 7
+11 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$N \le 10^6$</p><p>本题数据不足。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

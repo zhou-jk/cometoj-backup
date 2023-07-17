@@ -1,0 +1,121 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2018提高组Day2-A]旅行</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0149 [2018提高组Day2-A]旅行</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 Y 是一个爱好旅行的 OIer。她来到 X 国，打算将各个城市都玩一遍。<br></p><p>小 Y 了解到，X 国的 $𝑛$ 个城市之间有 $𝑚$ 条双向道路。每条双向道路连接两个城市。不存在两条连接同一对城市的道路，也不存在一条连接一个城市和它本身的道路。并且，从任意一个城市出发，通过这些道路都可以到达任意一个其他城市。小 Y 只能通过这些道路从一个城市前往另一个城市。<br></p><p>小 Y 的旅行方案是这样的:任意选定一个城市作为起点，然后从起点开始，每次可以选择一条与当前城市相连的道路，走向一个<b>没有去过</b>的城市，或者沿着<b>第一次</b>访问该城市时经过的道路后退到上一个城市。当小 Y 回到起点时，她可以选择结束这次旅行或继续旅行。需要注意的是，小 Y 要求在旅行方案中，每个城市都被访问到。<br></p><p>为了让自己的旅行更有意义，小 Y 决定在每到达一个新的城市（包括起点）时，将它的编号记录下来。她知道这样会形成一个长度为 $𝑛$ 的序列。她希望这个序列的字典序最小，你能帮帮她吗？<br></p><p>对于两个长度均为 $𝑛$ 的序列 $A$ 和 $B$，当且仅当存在一个正整数 $x$，满足以下条件时，我们说序列 $A$ 的字典序小于 $B$。<br></p><ul><li>对于任意正整数 $1 \le i &lt; x$，序列 $A$ 的第 $i$ 个元素 $A_i$ 和序列 $B$ 的第 $i$ 个元素 $B_i$ 相同。<br></li><li>序列 $A$ 的第 $x$ 个元素的值小于序列 $B$ 的第 $x$ 个元素的值。<br></li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入共 $𝑚 + 1$ 行。第一行包含两个整数 $𝑛, 𝑚(𝑚 \le 𝑛)$，中间用一个空格分隔。<br></p><p>接下来 $𝑚$ 行，每行包含两个整数 $𝑢, 𝑣 (1 \le 𝑢, 𝑣 \le 𝑛)$，表示编号为 $𝑢$ 和 $𝑣$ 的城市之间有一条道路，两个整数之间用一个空格分隔。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出包含一行，$𝑛$ 个整数，表示字典序最小的序列。相邻两个整数之间用一个空格分隔。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 5
+1 3
+2 3
+2 5
+3 4
+4 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 2 5 4 6</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 6
+1 3
+2 3
+2 5
+3 4
+4 5
+4 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 3 2 4 5 6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据规模与约定】</p><p>对于100%的数据和所有样例，$1 \le 𝑛 \le 5000$ 且 $𝑚 = 𝑛 − 1$ 或 $𝑚 = 𝑛$。<br></p><p>对于不同的测试点，我们约定数据的规模如下：<br></p><p><img alt="屏幕快照 2019-05-21 下午4.18.50.png" src="../upload/d0efe3140d.png" width="600" height="302.7355623100304"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

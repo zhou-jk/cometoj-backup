@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2017Day2] Chase</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1734 [CEOI2017Day2] Chase</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Tom the cat is chasing Jerry the mouse again! Jerry is trying to gain some advantage by running into crowds of pigeons, where it is harder for Tom to follow him. Conveniently, Jerry arrived to Central Park in Ljubljana. The park has $n$ statues, numbered $1...n$, and $n−1$ non-intersecting passages connecting them in such a way that it is possible to reach any statue from any other statue by traversing the passages. Clustered tightly around each statue $i$ there are $p_i$ pigeons. Jerry has $v$ breadcrumbs in his pocket. If he drops a breadcrumb by a statue at his current location, pigeons from neighbouring statues will immediately ﬂy to this statue to eat the breadcrumb. As a result the current number of pigeons $p$ around this and neighbouring statues changes.</p><p>It all happens in the following order: First, Jerry arrives to the statue $i$ and meets $p_i$ pigeons. Then, he drops the breadcrumb. He leaves the statue. The pigeons from neighbouring statues move to statue $i$ before Jerry arrives to the next statue (so they don’t count towards his count of the pigeons met).</p><p>Jerry may enter the park at any statue, run down some passages (but never using the same passage twice), and then leave the park anywhere he wants. After Jerry exits the park, Tom will enter and traverse exactly the same route. By dropping at most $v$ breadcrumbs, Jerry wants to maximize the diﬀerence between the number of pigeons Tom will meet on the route and the number of pigeons he meets. Note that only pigeons that are present at some statue right before Jerry arrives there count toward the total number of pigeons he meets. See the comment of the example for further explanation.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line contains the number of statues $n$ and number of breadcrumbs $v$. The second line contains $n$ integers separated with a space, $p_1 ...p_n$. The following $n−1$ lines describe the passages with pairs of numbers $a_i$ and $b_i$, which indicate there is a passage between statues $a_i$ and $b_i$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Output only one number, maximum diﬀerence between the number of pigeons Tom meets and the number of pigeons Jerry meets.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12 2
+2 3 3 8 1 5 6 7 8 3 5 4
+2 1
+2 7
+3 4
+4 7
+7 6
+5 6
+6 8
+6 9
+7 10
+10 11
+10 12</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>36</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Constraints</p><ul><li>$1≤ n ≤10^5$</li><li>$0≤ v ≤100$</li><li>$0≤ p_i ≤10^9$</li></ul><p>Subtask 1 (20 points)</p><ul><li>$1≤ n ≤10$</li></ul><p>Subtask 2 (20 points)</p><ul><li>$1≤ n ≤1000$</li></ul><p>Subtask 3 (30 points)</p><ul><li>An optimal route begins at statue $1$.</li></ul><p>Subtask 4 (30 points)</p><ul><li>No additional constraints.</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

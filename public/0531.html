@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2011] Matching</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0531 [CEOI2011] Matching</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>As a part of a new advertising campaign, a big company in Gdynia wants to put its logo somewhere in the city. The company is going to spend the whole advertising budget for this year on the logo, so it has to be really huge. One of the managers decided to use whole buildings as parts of the logo.<br></p><p>The logo consists of $n$ vertical stripes of diﬀerent heights. The stripes are numbered from $1$ to $n$ from left to right. The logo is described by a permutation ($s_1,s_2,...,s_n$) of numbers $1,2,...,n$. The stripe number $s_1$ is the shortest one, the stripe number $s_2$ is the second shortest etc., ﬁnally the stripe $s_n$ is the tallest one. The actual heights of the stripes do not really matter.<br></p><p>There are $m$ buildings along the main street in Gdynia. To your surprise, the heights of the buildings are distinct. The problem is to ﬁnd all positions where the logo matches the buildings.<br></p><p>Help the company and ﬁnd all contiguous parts of the sequence of buildings which match the logo. A contiguous sequence of buildings matches the logo if the building number $s_1$ within this sequence is the shortest one, the building number $s_2$ is the second shortest, etc. For example a sequence of buildings of heights $5,10,4$ matches a logo described by a permutation $(3,1,2)$, since the building number $3$ (of height $4$) is the shortest one, the building number $1$ is the second shortest and the building number $2$ is the tallest.<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line of the standard input contains two integers $n$ and $m$ ($2 \le n \le m \le 1000000$). The second line contains $n$ integers $s_i$, forming a permutation of the numbers $1,2,...,n$. That is, $1 \le s_i \le n$ and $s_i \ne s_j$ for $i \ne j$. The third line contains $m$ integers $h_i$ — the heights of the buildings ($1 \le h_i \le 10^9$ for $1 \le i \le m$). All the numbers $h_i$ are diﬀerent. In each line the integers are separated by single spaces.</p><p>Additionally, in test cases worth at least 35 points, $n \le 5000$ and $m \le 20000$, whereas in test cases worth at least 60 points, $n \le 50000$ and $m \le 200000$.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line of the standard output should contain an integer $k$, the number of matches. The second line should contain $k$ integers — $1$-based indices of buildings which correspond to the stripe number $1$ from the logo in a proper match. The numbers should be listed in an increasing order and separated by single spaces. If $k = 0$, your program should print an empty second line.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 10
+2 1 5 3 4
+5 6 3 8 12 7 1 10 11 9</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2 6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><b>Explanation</b>:</p><p>Both the sequences $6,3,8,12,7$ and $7,1,10,11,9$ match the logo described by the permutation $(2,1,5,3,4)$. In particular, in the ﬁrst sequence the building number $2$ (of height $3$) is the shortest one, the building number $1$ (of height $6$) is the second shortest, the building number $5$ (of height $7$) is the third shortest, and so on.<br></p><p><img alt="image.png" src="../upload/5febe67269.png" width="244" height="206"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

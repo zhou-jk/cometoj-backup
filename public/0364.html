@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2001Day2] Components of a Bitmap</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0364 [CEOI2001Day2] Components of a Bitmap</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：10000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Black and white pictures are usually stored as bitmaps. A bitmap is a rectangular grid of pixels.</p><p>A polyline between pixels $P$ and $Q$ is a sequence of black pixels $P=P_1, P_2, …, P_k=Q$, where $P_i$ and $P_{i+1} ( i=1, …, k-1)$ are (vertically or horizontally) adjacent pixels. A polyline $P_1, P_2, ..., P_k$ is closed if $P_1=P_k$, and $P_i≠P_j (i=1, …, k-1, j=2, …, k)$ for $i&lt;j$ unless $i=1$ and $j=k$ (that is the polyline does not contain the same pixel twice).</p><p>A set of black pixels $S$ is connected if for each pair of pixels $(P,Q)$ in $S$ there is at least one polyline $L$ between $P$ and $Q$ with all pixels of $L$ belonging to $S$.</p><p>A component of a bitmap is a maximal connected set of black pixels. A component may enclose holes. A hole consists of white pixels that are inside a closed polyline. A compact component encloses no holes.</p><p>Note that in Figure 1 the white pixel in the middle, marked with $x$, is not inside the highlighted closed polyline.<br></p><p><img alt="image.png" src="../upload/03a864c96a.png" width="132" height="159"><br></p><p><img alt="image.png" src="../upload/a272705f97.png" width="507" height="264"><br></p><p>Figure 2 shows a bitmap with five components, of which two are compact ones.</p><p>You are to write a program that computes the total number of components and the number of compact components of a given coded bitmap.</p><p><b>Encoding</b>. The bitmaps under investigation are coded (compressed) with the following method. Each row is coded with a sequence of integers $W_1, B_1, ..., W_k, B_k$, where $W_i$ is the number of consecutive white pixels, and Bi is the number of consecutive black pixels, respectively.</p><p>For example, the code of the first line of the bitmap in Figure 2 is the sequence 4 7 4 4 1 0. Components 4 and 5 are compact, while components 1, 2 and 3 are not compact.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The first line contains two positive integers, $N$ and $M$. $N (2 \le N \le 10000)$ is the number of rows and $M (2 \le M \le 1000)$ is the number of columns of the bitmap. The next $N$ lines contain the coded bitmap according to the paragraph on encoding. Each line terminates with -1.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The filemustcontain two lines, with a single integer in each line. The first line contains the number of all components and the second line contains the number of compact components of the input bitmap.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 20
+4 7 4 4 1 0 -1
+0 4 1 4 1 4 1 1 1 3 -1
+1 3 4 6 2 4 -1
+0 7 9 4 -1
+0 1 4 9 1 1 4 0 -1
+0 1 1 3 1 8 1 5 -1
+0 1 1 1 1 1 1 8 1 1 3 1 -1
+0 1 1 3 1 1 3 1 2 1 1 1 3 1 -1
+0 1 5 1 1 6 1 1 3 1 -1
+0 7 3 4 1 1 3 1 -1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>GRADING</p><p>If the first line of your output file contains the correct number of all components, then you obtain 50% of the scores. If the second line of your output file contains the correct number of compact components, then you obtain an additional 50% of the scores.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

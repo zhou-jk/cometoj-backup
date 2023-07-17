@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2012Day1-C]魔幻棋盘</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0382 [NOI2012Day1-C]魔幻棋盘</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>将要读二年级的小Q买了一款新型益智玩具——魔幻棋盘，它是一个𝑁行𝑀列的网格棋盘，每个格子中均有一个正整数。棋盘守护者在棋盘的第𝑋行第𝑌列（行与列均从1开始编号）并且始终不会移动。棋盘守护者会进行两种操作：</p><ul><li>询问：他会以自己所在位置为基础，向四周随机扩展出一块大小不定的矩形区域，向你询问这一区域内所有数的最大公约数是多少。</li><li>修改：他会随意挑选棋盘上的一块矩形区域，将这一区域内的所有数同时加上一个给定的整数。</li></ul><p>游戏说明书上附有这样一句话“聪明的小朋友，当你连续答对19930324次询问后会得到一个惊喜噢！”。小Q十分想得到这个惊喜，于是每天都在玩这个玩具。但由于他粗心大意，经常算错数，难以达到这个目标。于是他来向你寻求帮助，希望你帮他写一个程序来回答棋盘守护者的询问，并保证100%的正确率。</p><p>为了简化问题，你的程序只需要完成棋盘守护者的𝑇次操作，并且问题保证任何时刻棋盘上的数字均为不超过$2^{62}− 1$的正整数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行为两个正整数𝑁, 𝑀，表示棋盘的大小。<br>第二行为两个正整数𝑋, 𝑌，表示棋盘守护者的位置。<br>第三行仅有一个正整数𝑇，表示棋盘守护者将进行𝑇次操作。<br>接下来𝑁行，每行有𝑀个正整数，用来描述初始时棋盘上每个位置的数。<br>接下来𝑇行，按操作的时间顺序给出𝑇次操作。每行描述一次操作，以一个数字0或1开头：</p><p>若以数字0开头，表示此操作为询问，随后会有四个非负整数$𝑥_1, 𝑦_1, 𝑥_2, 𝑦_2$，表示询问的区域是以棋盘守护者的位置为基础向上扩展$𝑥_1$行，向下扩展$𝑥_2$行，向左扩展$𝑦_1$列，向右扩展$𝑦_2$列得到的矩形区域（详见样例）。</p><p>若以数字1开头，表示此操作为修改，随后会有四个正整数$𝑥_1, 𝑦_1, 𝑥_2, 𝑦_2$和一个整数$𝑐$，表示修改区域的上、下边界分别为第$𝑥_1, 𝑥_2$行，左、右边界分别为第$𝑦_1, 𝑦_2$列（详见样例），在此矩形区域内的所有数统一加上$𝑐$（注意𝑐可能为负数）。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每次询问操作，每行输出一个数，表示该区域内所有数的最大公约数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 2
+1 1
+4
+6 12
+18 24
+0 0 0 1 0
+1 1 1 1 2 6
+1 2 1 2 2 6
+0 0 0 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+6</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】<br></p><p><img alt="屏幕快照 2019-06-05 下午8.06.52.png" src="../upload/3321026633.png" width="600" height="73.2"><br></p><p>对于第一、第四次操作（查询操作）后，加粗部分表示查询区域。<br>对于第二、第三次操作（修改操作）后，加粗部分表示修改区域。</p><p>【数据规模】<br></p><p>测试数据分为A、B、C三类：<br>A类数据占20%，满足$𝑁 ≤ 100，𝑀 ≤ 100，𝑇 ≤ 20000$。<br>B类数据占40%，满足$𝑁 = 1，𝑀 ≤ 500000，𝑇 ≤ 100000$。<br>C类数据占40%，满足$𝑁 ∗ 𝑀 ≤ 500000，𝑇 ≤ 100000$。在每类数据中，均有50%的数据满足每次修改操作仅含一个格子（即$𝑥_1=𝑥_2, 𝑦_1=𝑦_2$）。</p><p>输入数据保证满足题目描述中的所有性质。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

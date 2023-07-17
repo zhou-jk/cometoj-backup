@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day2]Cosmic Cleaner</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1951 [Wannafly冬令营2018Day2]Cosmic Cleaner</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>在一片小行星带里有 $n$ 颗小行星，它们在万有引力的作用下绕着一颗行星旋转。在这一刻时，它们之间不存在碰撞的情况。一位清洁工奉命前来清理这颗行星，Ta 会动用某种先进技术使这颗行星顷刻间从宇宙中消失，任何距离这颗行星的中心在一定范围内的事物都会在一瞬间被清除。假设这些天体都是完整的球体，你能计算出清除的区域里有多少体积的事物原本属于这些小行星吗？</p><p>注意，这些天体在此刻满足两两不存在交集的条件。</p><p>下图是对样例的解释，其中清理区域是标记为红色的球体内部，而小行星则被依次标记为橙色、蓝色和绿色。</p><p><img src="../upload/3ea60b7f0b.png" alt="spheres.png"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含多组测试数据。第一行包含一个整数 $T$，表示测试数据的组数。随后的内容是各组测试数据。对于每组测试数据：</p><p>第一行包含一个整数 $n$。</p><p>接下来的 $n$ 行里，每行包含四个整数 $x, y, z$ 和 $r$，表示有一颗中心位于 $(x, y, z)$、半径为 $r$ 的小行星。</p><p>最后一行包含四个整数 $x', y', z'$ 和 $r'$，表示行星的中心位于 $(x', y', z')$，而清洁工的清理半径为 $r'$（一个大于该行星半径的值）。</p><ul><li>$1 \leq T \leq 6000$</li><li>$1 \leq n \leq 100$</li><li>$-10^3 \leq x, y, z, x', y', z' \leq 10^3$</li><li>$1 \leq r, r' \leq 10^3$</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组测试数据，输出一行<code>Case #x: y</code>，其中<code>x</code>是测试数据的编号（从 $1$ 开始编号），<code>y</code>是这组数据的答案，要求相对误差或绝对误差不超过 $10^{-6}$。</p><p>严格来讲，如果你的答案是 $a$，而标准答案是 $b$，那么当 $\frac{|a - b|}{\max{1, |b|}} \leq 10^{-6}$ 时你的答案会被认为是正确的。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+3
+5 5 5 2
+-6 -7 6 1
+6 -5 0 3
+1 -1 0 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Case #1: 142.76246874761383764962</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

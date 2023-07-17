@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]序言页码</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0308 [USACO]序言页码</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>一类书的序言是以罗马数字标页码的。传统罗马数字用单个字母表示特定的数值，以下是标准数字表：</p><pre><code>I 1  L 50  M 1000
+V 5  C 100
+X 10 D 500
+</code></pre><p>最多 $3$ 个同样的可以表示为 $10^n$ 的数字<code>(I,X,C,M)</code>可以连续放在一起，表示它们的和：</p><pre><code>III=3
+CCC=300
+</code></pre><p>可表示为 $5\times 10^n$ 的字符<code>(V,L,D)</code>从不连续出现。</p><p>除了下一个规则，一般来说，字符以递减的顺序接连出现：</p><pre><code>CCLXVIII = 100+100+50+10+5+1+1+1 = 268
+</code></pre><p>有时，一个可表示为 $10^n$ 的数出现在一个比它大 1 级或 2 级的数前（<code>I</code>在<code>V</code>或<code>X</code>前面，<code>X</code>在<code>L</code>或<code>C</code>前面，等等）。在这种情况下，数值等于后面的那个数减去前面的那个数：</p><pre><code>IV = 4
+IX = 9
+XL = 40
+</code></pre><p>This compound mark forms a unit and may not be combined to make another compound mark (e.g., IXL is wrong for 39; XXXIX is correct).</p><p>像<code>XD</code>,<code>IC</code>, 和<code>XM</code>这样的表达是非法的，因为前面的数比后面的数小太多。对于<code>XD</code>(490 的错误表达)，可以写成<code>CDXC</code>；对于<code>IC</code>(99 的错误表达)，可以写成<code>XCIX</code>；对于<code>XM</code>(990 的错误表达)，可以写成<code>CMXC</code>。 90 is expressed XC and not LXL, since L followed by X connotes that successive marks are X or smaller (probably, anyway).</p><p>给定 $N(1 \le N &lt; 3,500)$， 序言的页码数，请统计在第 $1$ 页到第 $N$ 页中，有几个<code>I</code>出现，几个<code>V</code>出现，等等（从小到大的顺序）。不要输出并没有出现过的字符。</p><p>比如 $N = 5$，那么页码数为：<code>I, II, III, IV, V</code>，总共有 7 个<code>I</code>出现，2 个<code>V</code>出现。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个整数 $N$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每行一个字符和一个数字 $k$，表示这个字符出现了 $k$ 次。字符必须按数字表中的递增顺序输出。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>I 7
+V 2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

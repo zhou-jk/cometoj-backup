@@ -1,0 +1,121 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HEOI2014]平衡</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1223 [HEOI2014]平衡</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>下课了，露露、花花和萱萱在课桌上用正三棱柱教具和尺子摆起了一个「跷跷板」。</p><p>这个「跷跷板」的结构是这样的：底部是一个侧面平行于地平面的正三棱柱教具，上面摆着一个尺子，尺子上摆着若干个相同的橡皮。尺子有 $2n + 1$ 条等距的刻度线，第 $n + 1$ 条刻度线恰好在尺子的中心，且与正三棱柱的不在课桌上的棱完全重合。</p><p>露露发现这个「跷跷板」是不平衡的（尺子不平行于地平面）。于是，她又在尺子上放了几个橡皮，并移动了一些橡皮的位置，使得尺子的 $2n + 1$ 条刻度线上都恰有一块相同质量的橡皮。「跷跷板」平衡了，露露感到很高兴。</p><p>花花觉得这样太没有意思，于是从尺子上随意拿走了 $k$ 个橡皮。令她惊讶的事情发生了：尺子依然保持着平衡！</p><p>萱萱是一个善于思考的孩子，她当然不对尺子依然保持平衡感到吃惊，因为这只是一个偶然的事件罢了。令她感兴趣的是，花花有多少种拿走 $k$ 个橡皮的方法，使得尺子依然保持平衡？</p><p>当然，为了简化问题，她不得不做一些牺牲——假设所有橡皮都是拥有相同质量的质点。但即使是这样，她也没能计算出这个数目。放学后，她把这个问题交给了她的哥哥/ 姐姐——Hibarigasaki 学园学生会会长，也就是你。当然，由于这个问题的答案也许会过于庞大，你只需要告诉她答案 $\bmod p$ 的值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行，一个正整数，表示数据组数 $T$（萱萱向你询问的次数）。</p><p>接下来 $T$ 行，每行三个正整数 $n, k, p$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共 $T$ 行，每行一个正整数，代表你得出的对应问题的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+6 5 10000
+4 1 10000
+9 6 10000
+4 6 10000
+5 1 10000
+8318 10 9973
+9862 9 9973
+8234 9 9973
+9424 9 9973
+9324 9 9973</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>73
+1
+920
+8
+1
+4421
+2565
+0
+446
+2549</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于所有的数据，$T \leq 20,\ 1 \leq n \leq 10000,\ 1 \leq k \leq 10,\ 2 \leq p \leq 10000$，且 $k \leq 2n+1$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

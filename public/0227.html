@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2016普及组-C]海港</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0227 [2016普及组-C]海港</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小K是一个海港的海关工作人员，每天都有许多船只到达海港，船上通常有很多来自不同国家的乘客。<code></code></p><p>小K对这些到达海港的船只非常感兴趣，他按照时间记录下了到达海港的每一艘船只情况；对于第$i$艘到达的船，他记录了这艘船到达的时间$t_i$ （单位：秒），船上的乘客数$k_i$​，以及每名乘客的国籍$x_{i,1},x_{i,2},…,x_{i,k_i}$​。</p><p>小K统计了n艘船的信息，希望你帮忙计算出以每一艘船到达时间为止的24小时(24小时=86400秒）内所有乘船到达的乘客来自多少个不同的国家。</p><p>形式化地讲，你需要计算n条信息。对于输出的第$i$条信息，你需要统计满足$t_i−86400&lt;t_p≤t_i$的船只p，在所有的$x_{p,j}$​中，总共有多少个不同的数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入一个正整数n，表示小K统计了n艘船的信息。</p><p>接下来n行，每行描述一艘船的信息：前两个整数$t_i$​和$k_i$​分别表示这艘船到达海港的时间和船上的乘客数量，接下来$k_i$​个整数$x_{i,j}$​表示船上乘客的国籍。</p><p>保证输入的$t_i$​是递增的，单位是秒；表示从小K第一次上班开始计时，这艘船在第$t_i$​秒到达海港。</p><p>保证$1≤n≤10^5$，$k_i \ge 1$，$\sum k_i≤3∗10^5$，$1≤x_{i,j}≤10^5$，$1≤t_{i−1}≤t_i≤10^9$。</p><p>其中$\sum k_i$表示所有的$k_i$​的和，$\sum k_i=k_1+k_2+...+k_n$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出$n$行，第$i$行输出一个整数表示第$i$艘船到达后的统计信息。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+1 4 4 1 2 2
+2 2 2 3
+10 1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+4
+4</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+1 4 1 2 2 3
+3 2 2 3
+86401 2 3 4
+86402 1 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+3
+3
+4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释1】</p><p>第一艘船在第1秒到达海港，最近24小时到达的船是第一艘船，共有4个乘客， 分别是来自国家4,1,2,2，共来自3个不同的国家；</p><p>第二艘船在第2秒到达海港，最近24小时到达的船是第一艘船和第二艘船，共有4+2=6个乘客，分别是来自国家4,1,2,2,2,3，共来自4个不同的国家；</p><p>第三艘船在第10秒到达海港，最近24小时到达的船是第一艘船、第二艘船和第 三艘船，共有4+2+1=7个乘客，分别是来自国家4,1,2,2,2,3,3，共来自4个不同的国家。</p><p>【样例解释2】</p><p>第一艘船在第1秒到达海港，最近24小时到达的船是第一艘船，共有4个乘客，分别是来自国家1,2,2,3，共来自3个不同的国家。</p><p>第二艘船在第3秒到达海港，最近24小时到达的船是第一艘船和第二艘船，共有4+2=6个乘客，分别是来自国家1,2,2,3,2,3，共来自3个不同的国家。</p><p>第三艘船在第86401秒到达海港，最近24小时到达的船是第二艘船和第三艘船，共有2+2=4个乘客，分别是来自国家2,3,3,4，共来自3个不同的国家。</p><p>第四艘船在第86402秒到达海港，最近24小时到达的船是第二艘船、第三艘船和第四艘船，共有2+2+1=5个乘客，分别是来自国家2,3,3,4,5，共来自4个不同的国家。</p><p>【数据范围】</p><p>对于10%的测试点，$n=1, \sum k_i \le 10, 1 \le x_{i,j} \le 10, 1 \le t_i \le 10$<br>对于20%的测试点，$1 \le n \le 10, \sum k_i \le 100, 1 \le x_{i,j} \le 100, 1 \le t_i \le 32767$<br>对于40%的测试点，$1 \le n \le 100, \sum k_i \le 100, 1 \le x_{i,j} \le 100, 1 \le t_i \le 86400$<br>对于70%的测试点，$1 \le n \le 1000, \sum k_i \le 3000, 1 \le x_{i,j} \le 1000, 1 \le t_i \le 10^9$<br>对于100%的测试点，$1 \le n \le 10^5, \sum k_i \le 3 \times 10^5, 1 \le x_{i,j} \le 10^5, 1 \le t_i \le 10^9$<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

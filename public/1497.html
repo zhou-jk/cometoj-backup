@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JLOI2011]不等式组</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1497 [JLOI2011]不等式组</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>旺汪与旺喵最近在做一些不等式的练习。这些不等式都是形如 $ax+b&gt;c$ 的一元不等式。当然，解这些不等式对旺汪来说太简单了，所以旺喵想挑战旺汪。旺喵给出一组一元不等式，并给出一个数值 。旺汪需要回答的是 $x=k$ 时成立的不等式的数量。聪明的旺汪每次都很快就给出了答案。你的任务是快速的验证旺汪的答案是不是正确的。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行为一个正整数 ，代表接下来有 $N$ 行。接下来每一行可能有 $3$ 种形式：</p><ol><li><code>Add a b c</code>，表明要往不等式组添加一条不等式 $ax+b&gt;c$；</li><li><code>Del i</code>，代表删除第 $i$ 条添加的不等式（最先添加的是第 $1$ 条）。</li><li><code>Query k</code>，代表一个询问，即当 $x=k$ 时，在当前不等式组内成立的不等式的数量。</li></ol><p>注意一开始不等式组为空，$a,b,c,i,k$ 均为整数，且保证所有操作均合法，不会出现要求删除尚未添加的不等式的情况。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每一个询问<code>Query k</code>，输出一行，为一个整数，代表询问的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9
+Add 1 1 1
+Add -2 4 3
+Query 0
+Del 1
+Query 0
+Del 2
+Query 0
+Add 8 9 100
+Query 10</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+1
+0
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>$20\%$ 的数据，$N \le 1000$；</p><p>$40\%$ 的数据，$N \le 10000$；</p><p>$100\%$ 的数据，$N \le 100000$，</p><p>$a,b,c$ 的范围为 $[-10^8,10^8]$，$k$ 的范围为 $[-10^6,10^6]$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

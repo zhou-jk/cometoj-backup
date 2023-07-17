@@ -1,0 +1,134 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2009]图的同构</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1063 [HNOI2009]图的同构</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>当学生们遇到某个难题时经常会说“这怎么做，这不是 NP 问题吗？”、“这个只有搜了，这己经被证明是 NP 问题了”。但是，你应该淸楚，大多数人此时所说的 NP 问题其实都是指 NPC 问题。很多人没有真正掌握 NP 问题和 NPC 问题这两个基本概念。其实 NP 问题并不是那种“只有搜才行”的问题，NPC 问题才是。</p><p>很久以前就有一个古老的传说：有―个著名的问题，即P是否等于NP的问题，传说中谁要是证明或者证伪了这个命题，他将获得幸福。这里P是指能在多项式时间里求解的问题的集合。而NP是指可在多项式时间里验证的问题的集合。显然 P 是 NP 的子集，因为能在多项式时间里求解的问题，必定可在多项式时间里验证。</p><p>到目前为止还没有人因这个命题得到幸福。但是，有一个总的趋势，也就是人们普遍认为，$P=NP$ 不成立，即，多数人相信，至少存在一个不可能有多项式时间复杂度的求解算法的NP问题。人们如此坚信 $P \neq NP$ 是有原因的，因为在研究 NP 问题的过程中找出了一类非常特殊的 NP 问题叫做 NP-完全问题，也就是所谓的 NPC 问题。正是因为存在 NPC 问题，才使人们相信 $P \neq NP$。</p><p>在提出 NPC 的概念之后，绝大多数“自然”的难题最后都被证明是 NPC 问题，只有三个例外，它们分别是：</p><ul><li>线形规划问题</li><li>图同构问题</li><li>素数判定问题与大数分解问题</li></ul><p>【题目描述】</p><p>小雪在了解到以上情况后，自认为直接挑战终极难题还有不少困难，于是决定先从简单的问题做起，具体来说，他对图同构问题产生了浓厚的兴趣。$A$ 图与 $B$ 图被认为是同构的是指：$A$ 图的顶点经过一定的重新标号以后，$A$ 图的顶点集和边集要完全与 $B$ 图一一对应。</p><p>小雪现在专注于如何判断两个图是否同构，同时他还想知道两两互不同构的含 $N$ 个点的图有多少种。众所周知含 $N$ 个点的简单图最多有 $N \times (N-1)/2$ 条边，这样含 $N$ 个点的图有 $2^{N\times(N-1)/2}$ 种可能的情况。显然这些图中有很多图是同构的，小雪想知道的便是：若同构的图算成一种，则有多少种不同的图。他把这个任务丢给了你，在他想出来之前快点解决吧！</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入一行一个整数 $N$，表示图的顶点数，$0 \le N \le 60$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数表示含 $N$ 个点的图在同构意义下互不同构的图的数目，答案对 $997$ 取模。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+							<h4>样例输入 4</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输出 4</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>34</span></div></code></pre>
+							</div>
+							<h4>样例输入 5</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9</span></div></code></pre>
+							</div>
+							<h4>样例输出 5</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>493</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

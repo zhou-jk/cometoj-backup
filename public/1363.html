@@ -1,0 +1,144 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #9]【XR-3】Namid[A]me</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1363 [Contest #9]【XR-3】Namid[A]me</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">小 X 给了你一棵 $n$ 个点的树，点有点权。</p><p>你需要求出下列式子模 $786433$ 的值：</p><p>$\sum_{1\leq u\leq v\leq n}f(u,v)^{f(u,v)}$</p><p>其中 $f(u,v)$ 表示 $u$ 到 $v$ 的最短路径上所有点的点权按位与在一起之后的值。</p><p>提示：为了方便你的计算，这里我们认为 $0^0=0$。另外，$786433$ 是一个质数，同时也是一个不常用的 NTT 模数，它的原根为 $10$，如果你不知道什么是 NTT 或者不知道什么是原根，你可以忽略这个提示。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行一个正整数 $n$，表示树的点数。</p><p>第二行 $n$ 个正整数 $a_{1\dots n}$，其中 $a_i$ 表示编号为 $i$ 的点的点权。</p><p>接下来 $n-1$ 行，每行 $2$ 个正整数 $u,v$，表示编号为 $u$ 和编号为 $v$ 的点之间有一条边。</p><p>数据范围：</p><ul><li>$2 \le n \le 2 \times 10^5$。</li><li>对于所有满足 $1\le i \le n$ 的 $i$ 都有 $1 \le a_i &lt; 2^{30}$。</li><li>$1 \le u,v \le n, u \ne v$。</li><li>设 $d$ 为树中叶子（度数为 $1$ 的点）的个数，数据保证 $4\le n \cdot d \le 3 \times 10 ^ 6$。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数，表示答案对 $786433$ 取模后的值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+15 50 89 9 38 73 38 23 6 52
+2 1
+3 2
+4 2
+5 3
+6 3
+7 5
+8 7
+9 1
+10 7
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>54184
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>20
+17 56 72 12 16 43 33 8 28 90 21 12 7 43 55 95 25 65 63 77
+2 1
+3 2
+4 1
+5 3
+6 5
+7 1
+8 7
+9 7
+10 3
+11 5
+12 7
+13 5
+14 7
+15 11
+16 6
+17 3
+18 15
+19 15
+20 13
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>503636
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

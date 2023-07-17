@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #13]蓬莱的弹枝-七色的弹幕</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1853 [Contest #13]蓬莱的弹枝-七色的弹幕</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：4000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给一个长为 $n$ 的序列 $a_1, a_2, ..., a_n$，和 $q$ 次操作，操作有三种：</p><ol><li><p>给定 $l,r$，对区间 $[l,r]$ 进行一次左移操作，即 $a_i=a_{i+1}~(l \le i &lt; r), a_r=a_l$。</p></li><li><p>给定 $l,r$，给区间 $[l,r]$ 中的所有元素加一。</p></li><li><p>给定 $x$，求离 $a_x$ 最近且与 $a_x$ 值相等的数到 $a_x$ 的距离 (两个数的距离定义为下标差的绝对值)，如果不存在其他与 $a_x$ 相等的数则输出 $-1$。</p></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个整数 $n,q~(1\le n,q \le 10^5)$，分别表示序列长度和询问个数。</p><p>接下来一行 $n$ 个整数 $a_1, a_2, \cdots, a_n~(1 \le a_i \le 10^5)$，表示给定的序列。</p><p>接下来 $q$ 行，每行的第一个整数 $op~(op \in \lbrace 1, 2, 3\rbrace)$ 表示当前操作的种类：</p><ol><li><p>当 $op = 1$ 时，接下来输入两个整数 $l,r~(1 \le l &lt; r \le n)$，表示一次左移操作</p></li><li><p>当 $op = 2$ 时，接下来输入两个整数 $l,r~(1 \le l \le r \le n)$，表示一次区间加一操作</p></li><li><p>当 $op = 3$ 时，接下来输入一个整数 $x~(1 \le x \le n)$，表示一次询问</p></li></ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出若干行，每行一个整数，表示一次询问的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+2 1 2 1 2
+3 2
+1 2 4
+3 5
+2 2 3
+3 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+3
+-1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

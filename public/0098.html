@@ -1,0 +1,118 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[WC2016-B]论战捆竹竿</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0098 [WC2016-B]论战捆竹竿</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>这是一个美好的下午，小 W 和小 C 在竹林里切磋捆竹竿的技艺。</p><p>竹林里有无数根完全一样的短竹子，每一根竹子由 $𝑛$ 节组成。这些竹子比较特别，每一节都被染上了颜色。可能的颜色一共 26 种，分别用小写英文字母 a 到 z 表示。也就是说，如果把竹子的底端到顶端的颜色按顺序写出来可以排成一个由小写英文字母组成的字符串。</p><p>小 W 和小 C 都是捆竹竿的高手，他们知道怎样才能把零散的短竹子捆成一整根长竹竿。初始时你拿着一根短竹子作为当前的竹竿。每次你可以选择一根短竹子，短竹子底端若干节（可以是 0 节）与竹竿的最上面若干节对应地一节一节捆起来，而短竹子前面剩下的节伸出去，这样就得到了一根更长的竹竿。注意，竹子的底端是靠近根部的那一端，不可以颠倒。</p><p>小 W 对竹竿的审美要求很高，他捆竹竿时有一个癖好：如果两根竹子的某两节被捆在了一起，那么它们的颜色必须相同。</p><p>我们假设一根短竹子从底端到顶端每节的颜色为 aba。</p><p>那么两根竹子可以首尾捆在一起，可以得到一根颜色为 abaaba 的竹竿；也可以将第一根顶端的一节 a 与第二根底端的一节 a 捆在一起，得到一根颜色为 ababa 的竹竿；还可以直接将每一节都对应起来，捆成一根颜色为 aba 的竹竿。</p><p>假设我们在颜色为 ababa 的竹竿顶端再捆一根竹子，则可以捆成 ababaaba， abababa 和 ababa 三种不同的情况。</p><p>但是小 C 在这个问题上有不同的看法，他认为小 W 捆不出很多种长度不同的竹竿。小 W 非常不服，于是他找到了你——现在请你求出在竹竿长度不超过 $𝑤$ 的情况下，小W可以捆出多少种长度不同的竹竿。其中，竹竿的长度指从底端到顶端的竹子的节的个数。</p><p>注意：如果 $𝑤 &lt; 𝑛$，则没有合法的长度，此时答案为 0。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含 1 个整数 $T$，为数据组数。</p><p>每组数据的第一行包含 2 个正整数 $𝑛$ 和 $𝑤$，表示短竹子的长度和竹竿的长度上限。</p><p>每组数据的第二行包含一个长度为 $𝑛$ 的字符串，该字符串仅由小写英文字母构成，表示短竹子从底端到顶端每节的颜色。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出共 $T$ 行，每行包含一个整数表示捆成竹竿的不同长度种数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+4 11
+bbab</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+44 1000
+baaaaaabaabbaaabbbbabbbaaabbbababaaabaaabaaa
+41 1000
+abaabbabaaabaabbbbbbbbbbbababbbbaaabaabbb
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>195
+24</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例1解释】<br></p><p>可以捆成长度不超过 11 的竹竿有 6 种不同的情况：</p><p>bbab<br>bbabbab<br>bbabbbab<br>bbabbabbab<br>bbabbabbbab<br>bbabbbabbab</p><p>后两种竹竿长度相同，因此不同长度的竹竿共有 5 种。长度分别为：4，7，8，10，11。</p><p>【数据规模和约定】<br></p><p>对于所有的测试数据，保证所有的字符串均由小写字母构成。</p><p>各测试点满足以下约定：</p><p><img alt="屏幕快照 2019-06-14 下午8.03.47.png" src="../upload/3583127812.png" width="500" height="593.8069216757741"><br></p><p>【comet 注】</p><p>已删除原测试点 7。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

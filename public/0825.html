@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ZJOI2011]营救皮卡丘</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0825 [ZJOI2011]营救皮卡丘</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>皮卡丘被火箭队用邪恶的计谋抢走了！这三个坏家伙还给小智留下了赤果果的挑衅！为了皮卡丘，也为了正义，小智和他的朋友们义不容辞的踏上了营救皮卡丘的道路。</p><p>火箭队一共有 $N$ 个据点，据点之间存在 $M$ 条双向道路。据点分别从 $<font>1$</font><font>到 $</font>N$ 标号。小智一行 $K$ 人从真新镇出发，营救被困在 $N$ 号据点的皮卡丘。为了方便起见，我们将真新镇视为 $<font>0$</font><font>号据点，一开始 $</font>K$ 个人都在 $0<font>$</font><font>号点。</font></p><p>由于火箭队的重重布防，要想摧毁 $K$ 号据点，必须按照顺序先摧毁 $<font>1$</font><font>到 $</font>K-1$<font>号据点，并且，如果 $</font>K-1$<font>号据点没有被摧毁，由于防御的连锁性，小智一行任何一个人进入据点 $</font>K$，都会被发现，并产生严重后果。因此，在 $K-1$<font>号据点被摧毁之前，任何人是不能够经过 $</font>K$ 号据点的。</p><p>为了简化问题，我们忽略战斗环节，小智一行任何一个人经过 $K$ 号据点即认为 $K$ 号据点被摧毁。被摧毁的据点依然是可以被经过的。</p><p>$K$ 个人是可以分头行动的，只要有任何一个人在 $K-1$<font>号据点被摧毁之后，经过 $</font>K$ 号据点，$K$ 号据点就被摧毁了。显然的，只要 $N$ 号据点被摧毁，皮卡丘就得救了。</p><p>野外的道路是不安全的，因此小智一行希望在摧毁 $N$ 号据点救出皮卡丘的同时，使得 $K$ 个人所经过的道路的长度总和最少。</p><p>请你帮助小智设计一个最佳的营救方案吧！</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含三个正整数 $N$，$M$，$K$。表示一共有 $N+1$<font>个据点，分别从 $0$</font><font>到 $N$</font>编号，以及 $M$ 条无向边。一开始小智一行共 $K$ 个人均位于 $0$<font>号点。</font></p><p>接下来 $M$ 行，每行三个非负整数，第 $i$ 行的整数为 $A_i$，$B_i$，$L_i$。表示存在一条从 $A_i$ 号据点到 $B_i$ 号据点的长度为 $L_i$ 的道路。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><font>仅包含一个整数 $</font>S$，为营救皮卡丘所需要经过的最小的道路总和。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 4 2
+0 1 1
+1 2 1
+2 3 100
+0 3 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>小智和小霞一起前去营救皮卡丘。在最优方案中，小智先从真新镇前往 $1$ 号点，接着前往 $2$ 号据点。当小智成功摧毁2号据点之后，小霞从真新镇出发直接前往 $3$ 号据点，救出皮卡丘。</p><p>【数据规模】</p><p>对于 100% 的数据满足 $N ≤ 150, M ≤ 20 000, 1 ≤ K ≤ 10, Li ≤ 10 000$，保证小智一行一定能够救出皮卡丘。</p><p>至于为什么 $K ≤ 10$，你可以认为最终在小智的号召下，小智，小霞，小刚，小建，小遥，小胜，小光，艾莉丝，天桐，还有去日本旅游的黑猫警长，一同前去大战火箭队。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

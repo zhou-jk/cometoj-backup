@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2013Day2-B]书法家</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0385 [NOI2013Day2-B]书法家</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小E同学非常喜欢书法，他听说NOI2013已经开始了，想题一幅“NOI”的字送给大家。</p><p>小E有一张非常神奇的纸，纸可以用一个$𝑛$行$𝑚$列的二维方格矩阵来表示，为了描述方便，我们定义矩阵左下角方格坐标为($1,1$)，右上角方格坐标为($𝑚, 𝑛$)。矩阵的每个方格有一个整数的幸运值。在格子上面写字可以增加大家的幸运度，幸运度的大小恰好是所有被笔写到的方格的幸运值之和。现在你要在上面写上’N’,’O’,’I’三个字母。</p><p>下面给出3个书法字的定义：<br></p><p>1、’N’由若干($≥ 3$)个边平行于坐标轴的矩形组成，设由𝐾个矩形组成（标号1 ~𝐾），第$𝑖$个矩形的左下角方格坐标设为($𝐿_𝑖, 𝐵_𝑖$)，右上角坐标设为($𝑅_𝑖, 𝑇_𝑖$)，要求满足：</p><ul><li>$𝐿_𝑖≤𝑅_𝑖，𝐵_𝑖≤𝑇_𝑖$；</li></ul><ul><li><p>对任意$1&lt;𝑖≤𝐾$，有$𝐿_𝑖=𝑅_{𝑖−1}+1$；</p></li><li><p>对任意$3≤𝑖&lt;𝐾$，有$𝐵_{𝑖−1}−1≤𝑇_𝑖≤𝑇_{𝑖−1}，𝐵_𝑖≤𝐵_{𝑖−1}$；</p></li><li><p>$𝐵_2&gt; 𝐵_1，𝑇_2= 𝑇_1，𝐵_{𝐾−1}= 𝐵_𝐾，𝑇_{𝐾−1}&lt; 𝑇_𝐾$；</p></li></ul><p>2、’O’由一个大矩形$A$，挖去一个小矩形$B$得到，这两个矩形的边都平行于坐标轴。设大矩形A左下角的方格坐标为($𝑢, 𝑣$)，长为$𝑊$，宽为$𝐻$，则小矩形$B$满足左下角方格坐标为($𝑢 + 1, 𝑣 + 1$)，长$𝑊 − 2$，宽$𝐻 − 2$。要求满足：</p><ul><li>$𝑊≥3,𝐻≥3$；</li><li>$𝑢&gt;𝑅_𝐾+1$；</li></ul><p>3、’I’为3个边平行于坐标轴的从下到上的实心矩形组成，从下到上依次标号为1,2,3，第$𝑖$个矩形的左下角格子坐标设为($𝑃_𝑖, 𝑄_𝑖$)，右上角格子坐标设为($𝐺_𝑖, 𝐻_𝑖$)，要求满足：</p><ul><li>$𝑃_𝑖≤𝐺_𝑖,𝑄_𝑖≤𝐻_𝑖$；</li><li>$𝑃_1=𝑃_3&gt;𝑢+𝑊,𝐺_1=𝐺_3$；</li><li>$𝑄_1=𝐻_1=𝑄_2−1,𝐻_2+1=𝑄_3=𝐻_3$；</li><li>$𝑃_1&lt;𝑃_2≤𝐺_2&lt;𝐺_1$</li></ul><p>下图是一个’N’,’O’,’I’的例子。<br></p><p><img alt="屏幕快照 2019-06-05 下午4.24.31.png" src="../upload/dbb6fdd704.png" width="400" height="123.82608695652173"><br></p><p>另外，所有画的图形均不允许超过纸张的边界。现在小E想要知道，他能画出的最大幸运度是多少。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含两个正整数$𝑛$和$𝑚$，分别表示矩阵的行数和列数。</p><p>接下来$𝑛$行，每行有$𝑚$个整数，第$𝑖 + 1$行的第$𝑗$个数表示格子($𝑗, 𝑛 − 𝑖 + 1$)的幸运值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一个整数𝑇，表示小E能够获得的最大幸运度。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 13
+1 1 -1 -1 1 -1 1 1 1 -1 1 1 1
+1 -1 1 -1 1 -1 1 -1 1 -1 -1 1 -1
+1 -1 -1 1 1 -1 1 1 1 -1 1 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>24</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 13
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>-20</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明1】<br></p><p><img alt="屏幕快照 2019-06-05 下午4.27.13.png" src="../upload/ca6180dfd2.png" width="500" height="69.08462867012089"><br></p><p>【样例说明2】</p><p>下面是一个最优解，还存在着其它的最优解</p><p><img alt="屏幕快照 2019-06-05 下午4.27.22.png" src="../upload/f43b3f0362.png" width="500" height="74.78991596638656"><br></p><p>【数据规模与约定】<br></p><p><img alt="屏幕快照 2019-06-05 下午4.27.32.png" src="../upload/7596644828.png" width="300" height="618.9759036144578"><br></p><p>对于所有的测试数据，保证$𝑛 ≥ 3, 𝑚 ≥ 12$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

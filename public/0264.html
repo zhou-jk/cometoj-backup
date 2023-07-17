@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI1997Day1-A]竞赛排名</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0264 [NOI1997Day1-A]竞赛排名</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>某市组织了一次中学生科技全能竞赛，每个选手要参加数学、物理、化学、天文、地理、生物、计算机和英语共八项竞赛，最后综合八项竞赛的成绩排出总名次。选手编号依次为：$1,2,...,N$（$N$为参赛总人数）。</p><p>设 $x_{ij}$ 分别表示编号为 $i$ 的选手第 $j$ 项竞赛的成绩 $(1≤i≤N,1≤j≤8)$。其它指标如下：</p><ul><li>第 $j$ 项竞赛的平均分<br>$avg_j =\frac{1}{N}\sum_{i=1}^N x_{ij},(1≤j≤8)$</li><li>选手 $i$ 的总分<br>$sumx_i=\sum^8_{j=1}x_{ij},(1≤i≤N)$</li><li>选手 $i$ 第 $j$ 项竞赛的位置分<br>$y_{ij}= \begin{cases} 0 &amp; (\sum^N_{j=1}|x_{ij}-avg_j|=0) \\ \frac{x_{ij}-avg_j}{\frac{1}{N}\sum^N_{i=1}|x_{ij}-avg_j|} &amp; (\sum^N_{j=1}|x_{ij}-avg_j| \ne 0) \end{cases} $$(1≤i≤N,1≤j≤8)$</li><li>选手$i$的总位置分<br>$sumy_i=\sum^3_{k=1}y_{jk}+0.8\sum^8_{k=4}y_{ik},(1≤i≤N)$</li></ul><p>排名规则如下:</p><ol><li>总位置分高的选手名次在前；</li><li>若两个或两个以上的选手总位置分相同，则总分高的选手名次在前；</li><li>若两个或两个以上的选手总位置分和总分均相同，则编号在前的选手名次在前。</li></ol><p>请你为竞赛组委会编一程序，计算本次全能竞赛的总排名情况。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行为参赛总人数 $N( 1≤N≤1000 )$，从第二行到第 $N$ 行依次为编号为 $1$ 到编号为 $N$ 的选手的成绩，每行有 $8$ 个 0～100 之间的整数，代表该选手的 $8$ 项竞赛成绩 $x_{i1},x_{i2}...x_{i8}$。同一行相邻两个数之间用一个空格符隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>有 $N$ 行，从第 $1$ 行到第 $N$ 行依次为排名第 $1$ 的选手的编号，排名第 $2$ 的选手的编号，…，排名第 $N$ 的选手的编号。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+72 82 73 68 95 86 82 90
+72 90 50 60 80 70 65 80
+72 82 73 68 95 86 82 90</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+3
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

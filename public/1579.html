@@ -1,0 +1,140 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #11]D-isaster</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1579 [Contest #11]D-isaster</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p><strong>※ 简洁题意在分隔线下方</strong></p><p>线段树掌心抵在墙上，纵横交错的纹路以其手掌为中心在四壁延展开来，随之一同蔓延的还有战前无形的紧张。</p><p>「我希望大家能将这<strong>张 $n$ 个点 $m$ 条边</strong>的地图铭记在心，尤其是每一个点的标号——我将其<strong>按照危险度从小到大的顺序编为 $1\sim n$ ，可以肯定的是，所有点都是联通的</strong>。因为这些位置在不久的将来便会成为你们执行任务的地点——」她停顿了一下，「或是生命终结的地点。」在座的众数据结构一言不发，凝神听着指挥官的安排。</p><p>「所以， splay ，这就是战前的情报工作？」一行小字从伸展树眼前掠过，她无须思索便得知这是替罪羊树传给她本体的询问。「没错。我们会被分组，深入敌军腹地。」她以同样的方式回答了替罪羊树。</p><p>「我会将各小队传送至不同地点。线段树已经计算出了每一队能探索区域的最大危险度，标记为该队的能力值。而你们需要做的，则是游走于你们能踏足的区域内，最后将信息回传。」一旁的女子起身道。线段树接着她的话继续说道：「根据估算，<strong>编号为 $i$ 的点在每一次行动中都会贡献 $a_i$ 的信息指数，而该次行动获取的总信息量为执行任务的小队能通过编号不大于该队能力值的点到达的所有点的信息指数乘积</strong>。当然，根据获得的结果，我们会适时地<strong>修改对某个 $a_i$ 的估算</strong>。」</p><p>额外的信息恰合时宜地在图上浮现。替罪羊树专注地分析着接下来的行动，读到伸展树传来的一条讯息：「我们一队，到时候要好好读题。」</p><p>你对这个种族的战前准备毫无兴趣，只想知道每次任务获取的信息量<strong>对 $998244353​$ 取模的值</strong>，也就是说——</p><p><br></p><hr><p><strong><br></strong></p><p><strong>简洁题意</strong>：</p><p>你需要支持对一张 $n$ 个点 $m$ 条边点带权的<strong>无向连通图</strong>进行以下两种操作：</p><ol><li><p>修改点 $x$ 的点权。</p></li><li><p>询问从点 $x$ 出发只经过编号不大于 $y$ 的点能到达的所有点的点权之积取模 $998244353$。</p></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行 $3$ 个整数 $n, m, q$ ($1\le n, q \le 10^5, 1 \le m \le 2 \times 10^5$)，依序表示图的点数、边数、操作次数。</p><p>接下来一行 $n$ 个整数，第 $i$ 个数 $a_i$ ($1\le a_i\le 10^9$) 表示点 $i$ 的信息指数 (点权)。</p><p>接下来的 $m$ 行，每行两个整数 $u, v$ ，表示图中连结 $u, v$ 的一条无向边。<strong>保证此图连通</strong>。</p><p>接下来一行一个整数 $q$ ，表示。</p><p>再接下来的 $q$ 行，每行三个整数 $op, x, y$ ($1\le op\le 2, 1 \le x \le n$) 。</p><ul><li><p>$op=1$ 时，表示询问从 $x$ 出发，只经过编号不大于 $y$ 的点能到达的所有点的点权之积取模 $998244353$ 。</p></li><li><p>$op=2$ 时，表示 $a_x$ 的值变为 $y$ ($1\le y \le 10^9$) 。</p></li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每个 $op=1$ 的操作，输出一行包含一个整数表示从 $x$ 出发，只经过编号不大于 $y$ 的点能到达的所有点的点权之积取模 $998244353$，特别地，<strong>当 $x \gt y$ 时答案为 0</strong>。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2 2
+2 3 3
+1 2
+2 3
+1 2 2
+1 3 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+0
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 7 9
+5 3 2
+1 1
+2 2
+3 3
+3 2
+2 3
+3 1
+3 1
+1 2 2
+1 2 3
+1 3 2
+2 1 1
+1 2 2
+1 2 3
+1 3 3
+2 1 1000000000
+1 1 1</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+30
+0
+3
+6
+6
+1755647</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

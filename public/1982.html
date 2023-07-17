@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #15]孤独的吉姆 6</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1982 [Contest #15]孤独的吉姆 6</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>省略狗血剧情，此题所求如下：</p><hr><p>给你一个 $n$ 个点 $m$ 条边的简单<strong>连通</strong>无向图，请拔掉一些边使得图中奇数度数的点尽可能多，并输出一种方案。 (拔掉后的图不需要是连通的。)</p><hr><p>虽然原本想要对参赛者亲切一点，输出任一种方案就好了，但不幸的，comet OJ 的 special judge 功能突然失灵了！所以你输出的解必须和出题者的作法所输出的一样！偷偷在这里告诉大家，出题者的做法，恰好是输出字典序最大的方案唷！(详情请见输出格式。)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有两个正整数 $n, m$，分别代表给定的简单<strong>连通</strong>无向图中点的个数和边的个数。</p><p>接下来有 $m$ 行，当中的第 $i$ 行有两个正整数 $x_i, y_i$，分别代表第 $i$ 条边连接编号 $x_i$ 和编号 $y_i$ 的点。点是由 $0$ 编号到 $n-1$。</p><ul><li><p>$2 \le n \le 6 \times 10^5$</p></li><li><p>$n - 1 \le m \le 9 \times 10^5$</p></li><li><p>$0 \le x_i &lt; y_i &lt; n$</p></li><li><p>如果 $i \ne j$, 那么 $(x_i, y_i) \ne (x_j, y_j)$</p></li><li><p>给定的图为连通图</p></li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>请输出一行长度为 $m$ 且由数字字符 <code>'0'</code> 和 <code>'1'</code> 组成的字符串，若第 $i$ 个数字是 <code>'0'</code>，代表奇数度数的点最多的时候第 $i$ 条边被拔掉了；若是 <code>'1'</code>，则没被拔掉。</p><p>若有多种拔掉边的方法能使奇数度数的点最多，那么出题者的代码会输出字典序最大的点，而你的输出和此代码的输出一样才算答对。(若不懂如何比较字典序，请参考提示)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 3
+0 1
+1 2
+0 2
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>110</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 10
+0 4
+1 4
+2 3
+1 3
+3 4
+2 4
+0 3
+0 1
+1 2
+0 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1111110101</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>假设有两个长度相同的由 <code>'0'</code> 和 <code>'1'</code> 组成的字符串 $s$ 和 $t$，我们称 $s$ 的字典序比 $t$ 大当且仅当 在 $s$ 和 $t$ 第一个字符不一样的位置上，$s$ 的该位置是 <code>'1'</code> 且 $t$ 的该位置是 <code>'0'</code>。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

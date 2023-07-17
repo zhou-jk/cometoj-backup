@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #2]她的想法、他的战斗</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1175 [Contest #2]她的想法、他的战斗</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">Takuru 是一名情报强者，所以他想利用他强大的情报搜集能力来当中间商赚差价。</p><p>Takuru 的计划是让 Hinae 帮他去市场上买一个商品，然后再以另一个价格卖掉它。Takuru 会给 Hinae 一定的钱 $p​$。($p​$ 是一个非负的实数)</p><p>这个商品的市场价是一个在 $[l, r]​$ 内均匀随机的实数。</p><p>如果 $p \geqslant$ 市场价，那么 Hinae 会买下这个商品，然后私吞剩下的钱。也就是说，Takuru 以 $p$ 的代价买来了这个商品。</p><p>如果 $p &lt;$ 市场价，那么 Hinae 既不会买下商品，又不会私吞任何钱。也就是说，Takuru 的利润为 $0​$。</p><p>当 Hinae 买下了商品后，Takuru 会生成一个在 $[L, R]$ 内均匀随机的实数 $q$，并把商品以 $q$ 的价格卖掉。那么 Takuru 的利润就是 $q - p​$。</p><p>Takuru 想要获得最多的利润，所以你要帮 Takuru 确定给 Hiane 的钱 $p$，使得 Takuru 的期望利润最大。请求出最大的期望利润。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行两个正整数 $l$ 和 $r$ ($1\leqslant l &lt; r \leqslant 2000$)。</p><p>第二行两个正整数 $L$ 和 $R$ ($1\leqslant L &lt; R \leqslant 2000$)。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">一个实数，表示最大的期望利润。(四舍五入后保留 $4$ 位小数，输出超过 $4$ 位或少于 $4$位都会获得 Wrong Answer。)</p><p>如果答案为 $0$，请不要输出多余的负号。<br></p><p>若答案为 $v$，保证 $v+10^{-6}$ 以及 $max(v-10^{-6},0)$ 四舍五入后保留 $4$ 位小数的结果不会改变。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>400 1200
+600 1800</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>200.0000</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1999 2000
+1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>0.0000</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SHOI2011]银行家</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1039 [SHOI2011]银行家</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：128 MB</span> <span class="ui label">时间限制：5000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>你在一家银行工作，任务是帮助客户取出他们存放在保险箱里的金币。</p><p>银行里有 $m$ 个保险箱，你没有办法打开这些保险箱，因为钥匙都在客户的手里。一个客户可能有很多个保险箱的钥匙，一个保险箱的钥匙也可能被多个客户拥有。今天早上，经理已经告知，你需要按照顺序接待 $n$ 个客户（任何客户都不会同时到场），你也知道，第 $i$ 个客户会要求取走 $c_i$ 枚金币。每个客户来到银行的时候，会打开所有他能打开的保险箱，然后从中取走 $c_i$ 枚金币（任何金币都没有区别），如果这些保险箱里的金币数量不足，他会感到不高兴，在取走尽量多的金币之后，到你的经理那里去投诉你们银行的服务质量太差了。</p><p>你当然不希望“上帝”的投诉让你丢了工作，于是想到了个补救的办法：虽然每个客户走的时候都会把保险箱重新关上，但是你可以在他取金币的时候，偷偷地调整被打开的保险箱里的金币数量，譬如说把 $1$ 号保险里多余的 $5$ 枚放到 $2$ 号里，这样说不定下个客户来的时候，就能取到更多的金币了。</p><p>尽管有这样的方法，还是可能没法完成所有客户的要求。然而，你希望，尽量帮助客户取走更多的金币，这样才能消除他们的怒气，保住这份来之不易的工作和薪水。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行有两个正整数：$n$ 和 $m$，$m$ 表示保险柜的数量，$n$ 表示客户的数量。</p><p>第二行有 $m$ 个非负正数，表示银行在开始营业前，第 $1$ 号保险柜到第 $m$ 号保险柜的金币数量。</p><p>接下来有 $n$ 行，按照前来银行的顺序，依次描述了每个客户的情况。每行的开始都是一个非负整数 $k$，接着有 $k$ 个 $1$ 到 $m$ 之间的整数 $a_1 , a_2 , \dots , a_k$，表示这个客户拥有 $a_1$ 号、$a_2$ 号，直到 $a_k$ 号保险箱的钥匙。最后还有一个非负整数 $c_i$，表示他需要的金币数量。</p><p>输入保证所有出现在输入数据中的整数都不超过 $10000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出只需要一个整数，表示所有客户可以取走的金币总数的最大值。</p><p>输入保证答案不会超过 $100000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 3
+3 1 10
+2 1 2 2
+2 1 3 3
+1 2 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 2
+2 3
+2 1 2 1
+1 2 2
+1 2 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5</span></div></code></pre>
+							</div>
+							<h4>样例输入 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6 6
+6 3 2 0 1 3
+2 1 2 0
+1 3 3
+1 1 1
+2 2 3 8
+2 4 5 2
+2 4 6 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 3</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>15</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><img alt="image.png" src="../upload/bb61702876.png" width="696"><br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

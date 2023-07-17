@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HAOI2018]字串覆盖</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0953 [HAOI2018]字串覆盖</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 C 对字符串颇有研究，他觉得传统的字符串匹配太无聊了，于是他想到了这样一个问题。</p><p>对于两个长度为 $n$ 的串 $A, B$，小 C 每次会给出给出 $4$ 个参数 $s, t, l, r$。令 $A$ 从 $s$ 到 $t$ 的子串（从 $1$ 开始标号）为 $T$，令 $B$ 从 $l$ 到 $r$ 的子串为 $P$。然后他会进行下面的操作：</p><p>如果 $T$ 的某个子串与 $P$ 相同，我们就可以覆盖 $T$ 的这个子串，并获得 $K - i$ 的收益，其中 $i$ 是初始时 $A$ 中（注意不是 $T$ 中）这个子串的起始位置，$K$ 是给定的参数。一个位置不能被覆盖多次。覆盖操作可以进行任意多次，你需要输出获得收益的最大值。</p><p>注意每次询问都是独立的，即进行一次询问后，覆盖的位置会复原。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个整数 $n, K$，表示字符串长度和参数。</p><p>接下来一行一个字符串 $A$。</p><p>接下来一行一个字符串 $B$。</p><p>接下来一行一个整数 $q$，表示询问个数。</p><p>接下来 $q$ 行，每行四个整数 $s, t, l, r$，表示一次询问。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $q$ 行，每行一个整数，表示一个询问的答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 11
+abcbababab
+ababcbabab
+5
+1 9 7 9
+3 10 8 10
+1 10 1 2
+5 7 2 3
+1 5 3 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+10
+22
+5
+10</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>对于第一组询问 $T$= abcb&lt;B&gt;aba&lt;/B&gt;ba，$P$= aba，覆盖加粗部分的子串，收益为 $K - 5 = 6$。</p><p>对于第二组询问 $T$= c&lt;B&gt;bab&lt;/B&gt;a&lt;B&gt;bab&lt;/B&gt;，$P$= bab，收益为 $(K - 4) + (K - 8) = 10$。</p><p>【数据规模与约定】</p><p>对于所有数据，有 $1 \le n, q \le 10^5$，$A, B$ 仅由小写英文字母组成，$1 \le s \le t \le n, 1 \le l \le r \le n, n &lt; K \le 10^9$。</p><p>对于 $n = 10^5$ 的测试点，满足 $51 \le r - l \le 2000$ 的询问不超过 $11000$ 个，且 $r - l$ 在该区间内均匀随机。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI1998Day1-B]免费馅饼</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0279 [NOI1998Day1-B]免费馅饼</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>SERKOI最新推出了一种叫做“免费馅饼”的游戏：游戏在一个舞台上进行。舞台的宽度为 $W$ 格，天幕的高度为 $H$ 格，游戏者占一格。开始时游戏者站在舞台的正中央，手里拿着一个托盘。下图为天幕的高度为 $4$ 格时某一个时刻游戏者接馅饼的情景。</p><p><img alt="屏幕快照 2019-06-13 下午12.46.00.png" src="../upload/f8e96762a4.png" width="400" height="238.5487528344671"><br></p><p>游戏开始后，从舞台天幕顶端的格子中不断出现馅饼并垂直下落。游戏者左右移动去接馅饼。游戏者每秒可以向左或向右移动一格或两格，也可以站在原地不动。</p><p>馅饼有很多种，游戏者事先根据自己的口味，对各种馅饼依次打了分。同时，在8-308电脑的遥控下，各种馅饼下落的速度也是不一样的，下落速度以格/秒为单位。</p><p>当馅饼在某一秒末恰好到达游戏者所在的格子中，游戏者就收集到了这块馅饼。</p><p>写一个程序，帮助我们的游戏者收集馅饼，使得所收集馅饼的分数之和最大。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入的第一行是用空格隔开的两个正整数，分别给出了舞台的宽度 $W$（$1$ 到 $99$ 之间的奇数）和高度 $H$（$1$ 到 $100$ 之间的整数）。</p><p>接下来依馅饼的初始下落时间顺序给出了所有馅饼的信息。每一行给出了一块馅饼的信息。由四个正整数组成，分别表示了馅饼的初始下落时刻（$0$ 到 $1000$ 秒），水平位置、下落速度（$1$ 到 $100$）以及分值。游戏开始时刻为 $0$。从 $1$ 开始自左向右依次对水平方向的每格编号。</p><p>输入中同一行相邻两项之间用一个或多个空格隔开。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行给出了一个正整数，表示你的程序所收集的最大分数之和。</p><p>其后的每一行依时间顺序给出了游戏者每秒的决策。输出 $0$ 表示原地不动、$1$ 或 $2$ 表示向右移动一步或两步、$-1$ 或 $-2$ 表示向左移动一步或两步。输出应持续到游戏者收集完他要收集的最后一块馅饼为止。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 3
+0 1 2 5 
+0 2 1 3
+1 2 1 3
+1 3 1 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>12
+-1
+1
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

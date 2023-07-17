@@ -1,0 +1,135 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2014Day2] Cake</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1712 [CEOI2014Day2] Cake</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Leopold and Molly love cake: While Leopold loves eating cake, Molly loves watching Leopold eat cake. Today, they have bought $N$ pieces of seedcake. The pieces are on a narrow plate with $N$ cake piece positions in a row. From left to right, the positions are numbered from $1$ to $N$. Also the pieces are numbered, with piece $i$ on position $i$.</p><p>When eating cake, Leopold considers how delicious the pieces are. For each piece $i$, he exactly knows about its initial deliciousness value $d_i$. He starts with some piece $a$; then, position a is empty. After that, the next piece he eats is always the least delicious piece next to any empty position. Hence, at any time, all empty positions are from a single closed interval. To make things even more interesting, Molly occasionally adds a topping to some piece to enhance its deliciousness. She will always do so in a way that makes the piece one of the 10 most delicious pieces. At any time, no two pieces will be equally delicious.</p><p>Sometimes, Molly wonders how many of the pieces Leopold will eat before he eats a certain piece $b$—assuming there are no future enhancements. Help Molly and write a program that can process instructions of the form “enhance a piece” or “ﬁnd the number of pieces Leopold will eat before a certain piece”.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line contains the two integers $N (1 ≤ N ≤ 250000)$, the number of pieces, and $a (1 ≤ a ≤ N)$, the piece Leopold will eat ﬁrst. The second line contains $N$ mutually distinct integers $1 ≤ d_1,...,d_N ≤ N$, the initial deliciousness values of the pieces. The third line contains $1 ≤ Q ≤ 500000$, the number of instructions to process. Each of the next $Q$ lines contains an instruction of one of the following two types:</p><ul><li><code>E i e</code>(the character “E” followed by two integers $1≤i ≤ N$ and $1≤e≤10$): an instruction of this type tells your program that piece $i$ is enhanced so that it becomes the unique $e$-th most delicious piece. The number of pieces that, before the enhancement, were more delicious than piece $i$ is guaranteed to be at least $e$.</li><li><code>F b</code>(the character “F” followed by an integer $1≤b≤ N$): an instruction of this type requests your program to tell how many pieces Leopold will eat before he eats piece $b$.</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>For each instruction of type “F”, in the order as these instructions appear in the input, output a line that contains a single integer: the requested number of pieces.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3
+5 1 2 4 3
+17
+F 1
+F 2
+F 3
+F 4
+F 5
+E 2 1
+F 1
+F 2
+F 3
+F 4
+F 5
+E 5 2
+F 1
+F 2
+F 3
+F 4
+F 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4
+1
+0
+2
+3
+4
+3
+0
+1
+2
+4
+3
+0
+1
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p><strong>Constraints</strong></p><p>$N ≤250000,Q≤500000$</p><p>Subtask 1 (15points). $N,Q≤10000$</p><p>Subtask 2 (15points). $N ≤25000$, and there are at most 500 instructions of type “F”.</p><p>Subtask 3 (20points). $Q≤100000$, and there are at most 100 instructions of type “E”.</p><p>Subtask 4 (50points). No further constraints.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

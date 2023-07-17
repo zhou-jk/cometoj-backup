@@ -1,0 +1,121 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ICPC WF 2019-G]First of Her Name</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1588 [ICPC WF 2019-G]First of Her Name</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：1024 MB</span> <span class="ui label">时间限制：10000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>In the Royal Family, names are very important! As the Royal Historian you have been charged with analyzing the patterns in the names of the Royal Ladies in the realm.</p><p>There have been $n$ Royal Ladies, for convenience numbered from $1$ to $n$. The name of each Lady is an uppercase letter concatenated with the name of her mother. The exception is the Lady numbered $1$, the founder of the Royal Family, whose name is just a single uppercase letter.</p><p>For example, ENERYS could be the mother of AENERYS (as the name AENERYS consists of the single uppercase letter ‘A’ concatenated with ENERYS, which is her mother’s name). Similarly, AENERYS could be the mother of DAENERYS and YAENERYS.</p><p>You are given the description of all the Royal Ladies. Your task is to determine, for certain interesting strings $s$, the number of Royal Ladies for whom $s$ is a prefix of their name.</p><p>For example, consider Sample Input 1 below, with a Royal Line that goes straight from the founder S to AENERYS (through YS, RYS, ERYS, NERYS and ENERYS), with each Lady having exactly one daughter. Then AENERYS has two daughters—DAENERYS and YAENERYS, with the latter having one daughter, RYAENERYS.</p><p>In such a family, RY is a prefix of the names of two ladies: RYS and RYAENERYS. E is a prefix of the names of ERYS and ENERYS. N is a prefix only of NERYS’s name, while S is a prefix only of the name of the founder, S. AY is not a prefix of any Royal Lady’s name.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The first line of input contains two integers $n$ and $k$, where $n(1 \le n \le 10^6)$ is the total number of Royal Ladies and&nbsp;$k(1 \le k&nbsp;\le10^6)$ is the number of query strings.<br></p><p>Then follow $n$ lines describing the Royal Ladies. The&nbsp;$i^\text{th}$ of these lines describes the Royal Lady numbered $i$, and contains an uppercase letter $c_i$ (‘A’–‘Z’) and an integer $p_i$, where $c_i$ is the first letter of the name of Lady $i$, and $p_i(p_1=0$ and $1 \le p_i &lt;i$ for $i&gt;1)$ is the number of her mother (or $0$, in the case of the First Lady). All the names are unique.</p><p>The remaining $k$ lines each contain one nonempty query string, consisting only of uppercase letters. The sum of the lengths of the query strings is at most $10^6$.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Output $k$ lines, with the $i^\text{th}$ line containing the number of Royal Ladies who have the&nbsp;$i^\text{th}$ query string as a prefix of their name.<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 5
+S 0
+Y 1
+R 2
+E 3
+N 4
+E 5
+A 6
+D 7
+Y 7
+R 9
+RY
+E
+N
+S
+AY</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+2
+1
+1
+0</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

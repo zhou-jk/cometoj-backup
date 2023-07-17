@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[ZJOI2017]字符串</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0597 [ZJOI2017]字符串</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>猪小侠最近学习了字符串相关理论，现在他遇到了这样一个题：</p><p>维护一个动态字符串 $s[1..n]$，字符串的字符集是所有 $|x| ≤ 10^9$ 的整数。要求支持两个操作：</p><ul><li>输入$l, r, d$，对于所有 $l ≤ i ≤ r$，将 $s[i]$ 修改为 $s[i] + d$，注意 $d$ 可能是负数。</li><li>输入 $l, r$，输出子串 $s[l..r]$ 的字ި序最小的后缀的起点位置。即，如果最小后缀是 $s[p..r],(l ≤p ≤ r)$，请输出 $p$。</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个非负整数 $n, q$。</p><p>接下来一行包含 $n$ 个正整数，表示初始时的字符串。</p><p>接下来 $q$ 行，每行为 $1$$l$$r$$d$或$2$$l$$r$，分别表示两种操作。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于所有的查询操作按顺序输出答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 5
+3 2 1 4 3
+2 1 5
+1 2 4 2
+2 1 5
+1 2 5 1
+2 1 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+5
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据范围与提示】</p><p><img alt="image.png" src="../upload/ce81b73349.png" width="720" height="471"><br></p><p>对于 $100\%$ 的数据，$1 ≤ l ≤ r ≤ n$，$|d| ≤ 10^3$，$|s_i| ≤ 10^8$。</p><p>注意，$6$ 和 $7$ 两个测试数据在随机生成时，$s_i$ 在 $[0, 1]$ 中随机，$d$ 在 $±1$ 中随机。操作种类和操作区间都是等概率随机的。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

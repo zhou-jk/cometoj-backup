@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>	 [AHOI/JSOI2014]保龄球</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1318 	 [AHOI/JSOI2014]保龄球</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>JYY 很喜欢打保龄球，虽然技术不高，但是还是总想着得高分。这里 JYY 将向你介绍他所参加的特殊保龄球比赛的规则，然后请你帮他得到尽量多的分数。</p><p>一场保龄球比赛一共有 $N$ 个轮次，每一轮都会有十个木瓶放置在木板道的另一端。每一轮中，选手都有两次投球的机会来尝试击倒全部的十个木瓶。对于每一次投球机会，选手投球的得分等于这一次投球所击倒的木瓶数量。选手每一轮的得分是他两次机会击倒全部木瓶的数量。</p><p>对于每一个轮次，有如下三种情况：</p><ol><li>「全中」：如果选手第一次尝试就击倒了全部十个木瓶，那么这一轮就称为「全中」。在一个「全中」轮中，由于所有木瓶在第一次尝试中都已经被击倒，所以选手不需要再进行第二次投球尝试。同时，在计算总分时，选手在下一轮的得分将会被乘二计入总分。</li><li>「补中」：如果选手使用两次尝试击倒了十个木瓶，那么这一轮就称为「补中」。同时，在计算总分时，选手在下一轮中的第一次尝试的得分将会被乘以二计入总分。</li><li>「失误」：如果选手未能通过两次尝试击倒全部的木瓶，那么这一轮就被称为「失误」。同时，在计算总分时，选手在下一轮的得分会被计入总分，没有分数被翻倍。</li></ol><p>此外，如果第 $N$ 轮是「全中」，那么选手可以进行一次附加轮：也就是，如果第 $N$ 轮是「全中」，那么选手将一共进行 $N+1$ 轮比赛。显然，在这种情况下，第 $N+1$ 轮的分数一定会被加倍。附加轮的规则只执行一次。也就是说，即使第 $N+1$ 轮选手又打出了「全中」，也不会进行第 $N+2$ 轮比赛。因而，附加轮的成绩不会使得其他轮的分数翻番。最后，选手的总得分就是附加轮规则执行过，并且分数按上述规则加倍后的每一轮分数之和。</p><p>JYY 刚刚进行了一场 $N$ 个轮次的保龄球比赛，但是，JYY 非常不满意他的得分。JYY 想出了一个办法：他可以把记分表上，他所打出的所有轮次的顺序重新排列，这样重新排列之后，由于翻倍规则的存在，JYY 就可以得到更高的分数了！当然了，JYY 不希望做的太假，他希望保证重新排列之后，所需要进行的轮数和重排前所进行的轮数是一致的：比如如果重排前 JYY 在第 $N$ 轮打出了「全中」，那么重排之后，第 $N$ 轮还得是「全中」以保证比赛一共进行 $N+1$ 轮；同样的，如果 JYY第 $N$ 轮没有打出「全中」，那么重排过后第 $N$ 轮也不能是「全中」。</p><p>请你帮助 JYY 计算一下，他可以得到的最高的分数。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含一个整数 $N$，表示保龄球比赛所需要进行的轮数。</p><p>接下来包含 $N$ 或者 $N+1$ 行，第 $i$ 行包含两个非负整数 $X_i$ 和 $Y_i$，表示 JYY 在这一轮两次投球尝试所得到的分数，$X_i$ 表示第一次尝试，$Y_i$ 表示第二次尝试。</p><p>我们用<code>10 0</code>表示一个「全中」轮。</p><p>读入数据存在 $N+1$ 行，当且仅当 $X_N=10$ 且 $Y_N=0$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数，表示JYY最大可能得到的分数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+5 2
+10 0
+3 7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>44</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例解释】</p><p>按照输入顺序，JYY 将得到 $37$ 分。</p><p>最佳方案是将三个轮次排列成如下顺序：<br></p><p>3 7</p><p>10 0</p><p>5 2<br></p><p>这样 JYY 将得到 $(3+7)+10\times 2+(5+2)\times 2=44$ 分。</p><p>【数据规模】</p><p>对于 $100\%$ 的数据，$N \leq 50$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

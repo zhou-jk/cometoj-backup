@@ -1,0 +1,139 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[USACO]跳棋的挑战</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0276 [USACO]跳棋的挑战</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>检查一个如下的 $6 \times 6$ 的跳棋棋盘，有六个棋子被放置在棋盘上，使得每行、每列最多有一个，每条对角线（包括两条主对角线的所有平行线）上至多有一个棋子。<br></p><pre><code><span style="color: rgb(204, 102, 204);">0</span>   <span style="color: rgb(204, 102, 204);">1</span>   <span style="color: rgb(204, 102, 204);">2</span>   <span style="color: rgb(204, 102, 204);">3</span>   <span style="color: rgb(204, 102, 204);">4</span>   <span style="color: rgb(204, 102, 204);">5</span>   <span style="color: rgb(204, 102, 204);">6</span>
+  -------------------------
+<span style="color: rgb(204, 102, 204);">1</span> |   | O |   |   |   |   |
+  -------------------------
+<span style="color: rgb(204, 102, 204);">2</span> |   |   |   | O |   |   |
+  -------------------------
+<span style="color: rgb(204, 102, 204);">3</span> |   |   |   |   |   | O |
+  -------------------------
+<span style="color: rgb(204, 102, 204);">4</span> | O |   |   |   |   |   |
+  -------------------------
+<span style="color: rgb(204, 102, 204);">5</span> |   |   | O |   |   |   |
+  -------------------------
+<span style="color: rgb(204, 102, 204);">6</span> |   |   |   |   | O |   |
+  -------------------------</code></pre><p>上面的布局可以用序列 2 4 6 1 3 5 来描述，第 $i$ 个数字表示在第 $i$ 行的相应位置有一个棋子，如下：<br></p><pre><code>行号 1 2 3 4 5 6 
+列号 2 4 6 1 3 5 </code></pre><p>这只是跳棋放置的一个解。请编一个程序找出所有跳棋放置的解。并把它们以上面的序列方法输出。解按字典顺序排列。请输出前 3 个解。最后一行是解的总个数。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个数字 $N (6 \le N \le 13)$ 表示棋盘是 $N \times N$ 大小的。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>前三行为前三个解，每个解的两个数字之间用一个空格隔开。第四行只有一个数字，表示解的总数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 4 6 1 3 5 
+3 6 2 5 1 4 
+4 1 5 2 6 3 
+4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【提示 1】</p><p>使用递归：<br></p><pre><code><span style="font-weight: bold;">function</span> placequeen<span style="color: rgb(102, 204, 102);">(</span>column<span style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(102, 204, 102);">{</span>   <span style="color: rgb(51, 153, 51);"># place columns 0..max-1</span>
+	<span style="color: rgb(177, 177, 0);">if</span> <span style="color: rgb(102, 204, 102);">(</span>column == max<span style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(102, 204, 102);">{</span> deal with answer; <span style="color: rgb(177, 177, 0);">return</span>; <span style="color: rgb(102, 204, 102);">}</span>
+        <span style="color: rgb(177, 177, 0);">for</span> <span style="color: rgb(102, 204, 102);">(</span>row = <span style="color: rgb(204, 102, 204);">0</span>; row &lt; max; row++<span style="color: rgb(102, 204, 102);">)</span>  <span style="color: rgb(102, 204, 102);">{</span>
+            <span style="color: rgb(177, 177, 0);">if</span> <span style="color: rgb(102, 204, 102);">(</span>canplacequeen <span style="color: rgb(102, 204, 102);">(</span>row<span style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(102, 204, 102);">{</span>
+		mark queen placed at column,row;
+		placequeen<span style="color: rgb(102, 204, 102);">(</span>column<span style="color: rgb(204, 102, 204);">+1</span><span style="color: rgb(102, 204, 102);">)</span>;
+		un-mark queen placed at column,row;
+	    <span style="color: rgb(102, 204, 102);">}</span>
+        <span style="color: rgb(102, 204, 102);">}</span>
+    <span style="color: rgb(102, 204, 102);">}</span></code></pre><p>【提示 2】<br></p><p>尽量减少频繁搜索的次数。通常最好的方法是以空间换时间。当检测某个皇后能否放在某一行时，存一个数组表示是否有皇后已经被放在那儿：<br></p><pre><code><span style="font-weight: bold;">function</span> placequeen<span style="color: rgb(102, 204, 102);">(</span>column<span style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(102, 204, 102);">{</span>   <span style="color: rgb(51, 153, 51);"># place columns 0..max-1</span>
+	<span style="color: rgb(177, 177, 0);">if</span> <span style="color: rgb(102, 204, 102);">(</span>column == max<span style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(102, 204, 102);">{</span> deal with answer; <span style="color: rgb(177, 177, 0);">return</span>; <span style="color: rgb(102, 204, 102);">}</span>
+        <span style="color: rgb(177, 177, 0);">for</span> <span style="color: rgb(102, 204, 102);">(</span>row = <span style="color: rgb(204, 102, 204);">0</span>; row &lt; max; row++<span style="color: rgb(102, 204, 102);">)</span>  <span style="color: rgb(102, 204, 102);">{</span>
+            <span style="color: rgb(177, 177, 0);">if</span> <span style="color: rgb(102, 204, 102);">(</span>rowok<span style="color: rgb(102, 204, 102);">[</span>row<span style="color: rgb(102, 204, 102);">]</span> &amp;&amp; canplacequeen<span style="color: rgb(102, 204, 102);">(</span>row,column<span style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(102, 204, 102);">{</span>
+		rowok<span style="color: rgb(102, 204, 102);">[</span>row<span style="color: rgb(102, 204, 102);">]</span> = <span style="color: rgb(204, 102, 204);">1</span>;
+		mark queen placed at column,row;
+		placequeen<span style="color: rgb(102, 204, 102);">(</span>column<span style="color: rgb(204, 102, 204);">+1</span><span style="color: rgb(102, 204, 102);">)</span>;
+		un-mark queen placed at column,row;
+		rowok<span style="color: rgb(102, 204, 102);">[</span>row<span style="color: rgb(102, 204, 102);">]</span> = <span style="color: rgb(204, 102, 204);">0</span>;
+	    <span style="color: rgb(102, 204, 102);">}</span>
+        <span style="color: rgb(102, 204, 102);">}</span>
+    <span style="color: rgb(102, 204, 102);">}</span></code></pre><p>【提示3】<br></p><p>使用“让一切绝对化（absolutely everything）”（在搜索中）您能避免程序中频繁的重复。不仅要记录下合法的皇后所在的那一行，还要标记所在的两条对角线（也就是象 ‘/’ 和 ‘\’ 的两条）使用大小为 $2*max - 1$ 的布尔数组来判断其他皇后所在的对角线是否合法。<br></p><p>【提示 4】<br></p><p>对称：您能否通过利用旋转、对称来削减一半或 3/4 的枚举量？[提示：能]<br></p><p>【提示5】<br></p><p>还是超时吗？如果你已经编好各个模块并且有检查对角线的子程序或者还有别的，把它们的代码移动到主过程中，调用子程序的消耗很重要。<br></p><p>【提示6】<br></p><p>多数成功的Java题解用位运算存储“用过的行（列、对角线）”。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

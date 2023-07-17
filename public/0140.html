@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[2017提高组Day2-A]奶酪</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0140 [2017提高组Day2-A]奶酪</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>现有一块大奶酪，它的高度为 $h$，它的长度和宽度我们可以认为是无限大的，奶酪中间有许多<b>半径相同</b>的球形空洞。我们可以在这块奶酪中建立空间坐标系，在坐标系中，奶酪的下表面为 $z = 0$，奶酪的上表面为 $z = h$。</p><p>现在，奶酪的下表面有一只小老鼠 Jerry，它知道奶酪中所有空洞的球心所在的坐标。如果两个空洞相切或是相交，则 Jerry 可以从其中一个空洞跑到另一个空洞，特别地，如果一个空洞与下表面相切或是相交，Jerry 则可以从奶酪下表面跑进空洞；如果一个空洞与上表面相切或是相交，Jerry 则可以从空洞跑到奶酪上表面。</p><p>位于奶酪下表面的 Jerry 想知道，在<b>不破坏奶酪</b>的情况下，能否利用已有的空洞跑到奶酪的上表面去?</p><p>空间内两点 $𝑃_1 (𝑥_1,𝑦_1,𝑧_1)、𝑃_2(𝑥_2 ,𝑦_2 ,𝑧_2 )$ 的距离公式如下：</p><p>$dist(𝑃_1,𝑃_2)=\sqrt{(𝑥_1−𝑥_2)^2+(𝑦_1−𝑦_2)^2+(𝑧_1−𝑧_2)^2}$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每个输入文件包含多组数据。</p><p>输入文件的第一行，包含一个正整数 $T$，代表该输入文件中所含的数据组数</p><p>接下来是 $T$ 组数据，每组数据的格式如下：</p><p>第一行包含三个正整数 $n，h$ 和 $r$，两个数之间以一个空格分开，分别代表奶酪中空洞的数量，奶酪的高度和空洞的半径。</p><p>接下来的 $n$ 行，每行包含三个整数 $x、y、z$，两个数之间以一个空格分开，表示空洞球心坐标为 $(𝑥, 𝑦, 𝑧)$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出文件包含 $T$ 行，分别对应 $T$ 组数据的答案，如果在第 $i$ 组数据中，Jerry 能从下表面跑到上表面，则输出“Yes”，如果不能，则输出“No”（均不包含引号）。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+2 4 1
+0 0 1
+0 0 3
+2 5 1
+0 0 1
+0 0 4
+2 5 2
+0 0 2
+2 0 4</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Yes
+No
+Yes</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】<br></p><p>第一组数据，由奶酪的剖面图可见：<br>第一个空洞在 (0，0，0) 与下表面相切<br>第二个空洞在 (0，0，4) 与上表面相切<br>两个空洞在 (0，0，2) 相切<br>输出 Yes</p><p><img alt="屏幕快照 2019-05-22 下午12.25.19.png" src="../upload/a80ffde746.png" width="200" height="98.32402234636872"><br></p><p>第二组数据，由奶酪的剖面图可见：<br>两个空洞既不相交也不相切<br>输出 No</p><p><img alt="屏幕快照 2019-05-22 下午12.25.30.png" src="../upload/e536ad3f1f.png" width="200" height="110.97560975609755"><br></p><p>第三组数据，由奶酪的剖面图可见：<br>两个空洞相交且与上下表面相切或相交<br>输出 Yes</p><p><img alt="屏幕快照 2019-05-22 下午12.25.40.png" src="../upload/afef6e7487.png" width="250" height="110"><br></p><p><br></p><p>【数据规模与约定】</p><p>对于20%的数据，$n = 1，1≤h , r≤10,000$，坐标的绝对值不超过 $10,000$。<br></p><p>对于40%的数据，$1≤n≤8，1≤h , r≤10,000$，坐标的绝对值不超过 $10,000$。</p><p>对于80%的数据，$1≤n≤1,000，1≤h , r≤10,000$，坐标的绝对值不超过 $10,000$。</p><p>对于100%的数据，$1≤n≤1,000，1≤h , r≤1,000,000,000，T≤20$，坐标的绝对值不超过 $1,000,000,000$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2013]保护出题人</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0952 [SDOI2013]保护出题人</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>出题人铭铭认为给 SDOI2012 出题太可怕了，因为总要被骂，于是他又给 SDOI2013 出题了。</p><p>参加 SDOI2012 的小朋友们释放出大量的僵尸，企图攻击铭铭的家。而你作为 SDOI2013 的参赛者，你需要保护出题人铭铭。</p><p>僵尸从唯一一条笔直道路接近，你们需要在铭铭的房门前放置植物攻击僵尸，避免僵尸碰到房子。</p><p>第一关，一只血量为 $a_1$ ​点的僵尸从距离房子 $x_1$ 米处速接近，你们放置了攻击力为 $y_1$ 点/秒的植物进行防御；第二关，在上一关基础上，僵尸队列排头增加一只血量为 $a_2$ ​点的僵尸，与后一只僵尸距离 $d$ 米，从距离房 $x_2$ ​米处匀速接近，你们重新放置攻击力为 $y_2$ ​点/秒的植物；……；第 $n$ 关，僵尸队列共有 $n$ 只僵尸，相邻两只僵尸距离 $d$ 米，排头僵尸血量为 $a_n$ ​点，排第二的僵尸血量 $a_{n-1}$，以此类推，排头僵尸从距离房子 $x_n$ ​米处匀速接近，其余僵尸跟随排头同时接近，你们重新放置攻击力为 $y_n$ ​点/秒的植物。</p><p>每只僵尸直线移动速度均为 $1$ 米/秒，由于植物射击速度远大于僵尸移动速度，可忽略植物子弹在空中的时间。所有僵尸同时出现并接近，因此当一只僵尸死亡后，下一只僵尸立刻开始受到植物子弹的伤害。</p><p>游戏得分取决于你们放置的植物攻击力的总和 $\sum \limits _{i=1} ^{n} y_i$，和越小分数越高，为了追求分数上界，你们每关都要放置攻击力尽量小的植物。</p><p>作为 SDOI2013 的参赛选手，你们能保护出题人么？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个空格隔开的正整数 $n$ 和 $d$，分别表示关数和相邻僵尸间的距离。接下来 $n$ 行每行两个空格隔开的正整数，第 $i + 1$ 行为 $A_i$ 和 $X_i$，分别表示相比上一关在僵尸队列排头增加血量为 $A_i$ 点的僵尸，排头僵尸从距离房子 $X_i$ 米处开始接近。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一个数，$n$ 关植物攻击力的最小总和，保留到整数。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 2
+3 3
+1 1
+10 8
+4 8
+2 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>7</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于 $100\%$ 的数据，$1≤n≤10^5$，$1≤d≤10^{12}$，$1≤x≤10^{12}$，$1≤a≤10^{12}$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

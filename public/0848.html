@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[JSOI2018]潜入行动</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0848 [JSOI2018]潜入行动</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>外星人又双叒叕要攻打地球了，外星母舰已经向地球航行！这一次，<code>JYY</code>已经联系好了黄金舰队，打算联合所有<code>JSOIer</code>抵御外星人的进攻。</p><p>在黄金舰队就位之前，<code>JYY</code>打算事先了解外星人的进攻计划。现在，携带了监听设备的特工已经秘密潜入了外星人的母舰，准备对外星人的通信实施监听。</p><p>外星人的母舰可以看成是一棵 $n$ 个节点、$n − 1$ 条边的<strong>无向树</strong>，树上的节点用 $1,2,\cdots,n$ 编号。<code>JYY</code>的特工已经装备了隐形模块，可以在外星人母舰中不受限制地活动，可以神不知鬼不觉地在节点上安装监听设备。</p><p>如果在节点 $u$ 上安装监听设备，则<code>JYY</code>能够监听与 $u$<strong>直接相邻</strong>所有的节点的通信。换言之，如果在节点 $u$ 安装监听设备，则对于树中每一条边 $(u,v)$，节点 $v$ 都会被监听。特别注意<strong>放置在节点 $u$ 的监听设备并不监听 $u$ 本身的通信</strong>，这是<code>JYY</code>特别为了防止外星人察觉部署的战术。</p><p><code>JYY</code>的特工一共携带了 $k$ 个监听设备，现在<code>JYY</code>想知道，有多少种不同的放置监听设备的方法，能够使得母舰上<strong>所有节点</strong>的通信都被监听？为了避免浪费，<strong>每个节点至多只能安装一个监听设备，且监听设备必须被用完</strong>。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入第一行包含两个整数 $n,k$，表示母舰节点的数量 $n$ 和监听设备的数量 $k$。</p><p>接下来 $n−1$ 行，每行两个整数 $u,v$（$1\le u,v\le n$），表示树中的一条边。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行，表示满足条件的方案数。因为答案可能很大，你只需要输出答案 $\bmod 1,000,000,007$ 的余数即可。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1 2
+2 3
+3 4
+4 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>存在 $10\%$ 的数据，$1 \le n \le 20$；</p><p>存在另外 $10\%$ 的数据，$1 \le n \le 100$；</p><p>存在另外 $10\%$ 的数据，$1 \le k \le 10$；</p><p>存在另外 $10\%$ 的数据，输入的树保证是一条链；</p><p>对于所有数据，$1\le n\le 10^5$，$1\le k\le \min\{n,100\}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

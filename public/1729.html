@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CEOI2017Day1] One-Way Streets</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1729 [CEOI2017Day1] One-Way Streets</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Once upon a time there was a country with n cities and m bidirectional roads connecting them. Technical development led to faster and larger road vehicles which presented a problem—the roads were becoming too narrow for two vehicles travelling in opposite direction. A decision to solve this problem involved turning all the roads into single-lane, one-way (unidirectional) roads.</p><p>Making the roads one-way comes at a cost because some of those pairs of cities that were previously connected might no longer be reachable after the change. The government compiled a list of important pairs of cities for which it has to be possible to start in the ﬁrst city and reach the second one. Your task is to determine in which direction to direct the traﬃc on every road. It is guaranteed that a solution exists.</p><p>For some roads there is no choice about the direction of traﬃc if you want to obtain a solution. The traﬃc will ﬂow from the ﬁrst to the second city (right direction, indicated by letter $\texttt{R}$) or from the second city towards the ﬁrst (left direction, indicated by letter $\texttt{L}$). However, for some roads there exists a solution with this road directed left, and another (possibly diﬀerent) solution with the road directed right. You should indicate such roads with a letter $\texttt{B}$ for both directions.</p><p>Output a string of length $m$. Its $i$-th character should be</p><ul><li>$\texttt{R}$  if all solutions require the $i$-th road to be directed right</li><li>$\texttt{L}$  if all solutions require the $i$-th road to be directed left</li><li>$\texttt{B}$  if a solution exists where the $i$-th road is directed left, and a solution also exists where the $i$-th road is directed right</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>The ﬁrst line contains the number of cities $n$ and the number of roads $m$. The following m lines describe the roads with pairs of numbers $a_i$ and $b_i$, which indicate that there is a road between cities $a_i$ and $b_i$. There can be more than one road between the same pair of cities and a road can even connect the city with itself.</p><p>The next line contains the number of pairs of cities $p$ that have to be reachable. The next $p$ lines contain pairs of cities $x_i$ and $y_i$, meaning that there has to be a way to start in city $x_i$ and reach $y_i$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Output a string of length m as described in the description of the task.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 6
+1 2
+1 2
+4 3
+2 3
+1 3
+5 1
+2
+4 5
+1 3</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>BBRBBL</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>Constraints</p><ul><li>$1≤ n,m,p ≤100000$</li><li>$1≤ a_i,b_i,x_i,y_i ≤ n$</li></ul><p>Subtask 1 (30 points)</p><ul><li>$n,m ≤1000$</li><li>$p ≤100$</li></ul><p>Subtask 2 (30 points)</p><ul><li>$p ≤100$</li></ul><p>Subtask 3 (40 points)</p><ul><li>no additional constraints</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

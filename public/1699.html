@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]御坂妹妹</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1699 [Wannafly冬令营2018Day8]御坂妹妹</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>有 $n$ 个御坂妹妹升级到了 Lv.5，能发射超电磁炮了，所以她们想找一方通行（学园都市最强 Lv.5）复仇。</p><p>每个御坂妹妹都在平面上发射了一个直线型超电磁炮，在此使用二维直角坐标系下的直线方程 $y = k_ix + b_i$ 描述其轨迹。一方通行作为玩矢量的大爷，自然可以轻易防御这些超电磁炮。所以他想在平面中制造一个矢量反射镜（可以看做是平面中的一条与 $x$ 轴垂直的线段），使得所有超电磁炮轨迹都与该反射镜有公共点。一方通行想知道他最少要做多长的矢量反射镜。</p><p>也就是说：记 $f(x) = \max${$k_ix + b_i | i = 1,2,\cdots,n $} - $\min${$k_ix + b_i | i = 1,2,\cdots,n $}，求 $\min${$f(x) | x \in R$}。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $n(1 \le n \le 5\times10^5)$。</p><p>接下来 $n$ 行，每行两个数 $k_i,b_i (0 \le |k_i|, |b_i| \le 10^6)$ 表示一条直线，其中 $k_i$ 是整数，$b_i$ 是小数，且最多到小数点后三位。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出仅一行一个小数，表示答案。假设你的答案为 $a$，标准答案为 $b$</p><p><img src="../upload/300f9b723d.png" alt="image">你的答案会被视为正确。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 0
+-1 -1
+0 0
+0 -2
+1 -2
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2.0000000000
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

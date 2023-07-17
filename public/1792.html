@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[模拟赛 #测试-D1]计算机 (computer)</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1792 [模拟赛 #测试-D1]计算机 (computer)</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 X 有一台奇怪的计算机。</p><p>这台计算机首先会读入一个正整数 $n$，然后生成一个包含 $n$ 个数的序列 $a$。</p><p>一开始 $a_i(1 \le i \le n)$ 的值均为 $1$。</p><p>接下来，小 X 会进行 $n-1$ 次操作，每次操作会输入一个指令，这个指令有 $2$ 种情况：</p><ol><li><p><code>x +</code>表示把此时序列中第 $x$ 个数 $a_x$ 和第 $x+1$ 个数 $a_{x+1}$ 合并为一个数，值为 $a_x + a_{x+1}$。</p></li><li><p><code>x *</code>表示把此时序列中第 $x$ 个数 $a_x$ 和第 $x+1$ 个数 $a_{x+1}$ 合并为一个数，值为 $a_x \times a_{x+1}$。</p></li></ol><p>假设某个时刻序列中元素的个数为 $k$，小 X 必须保证 $1 \le x &lt; k$。</p><p>那么，经过 $n-1$ 次操作后，序列只剩下了一个数，此时计算机会输出这个数。</p><p>小 X 想知道，当他输入 $n$ 时，这台计算器输出的数<strong>最大</strong>会是多少。</p><p>由于这个数可能会很大，你只需要求出这个数模 $10^9+7$ 的值。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个正整数 $n$。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行一个整数，表示答案对 $10^9+7$ 取模后的值。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>6
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>9
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>37
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>708588
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【数据范围与提示】</p><p>对于 $10\%$ 的数据，$1 \le n \le 2$。</p><p>对于 $25\%$ 的数据，$1 \le n \le 10$。</p><p>对于 $40\%$ 的数据，$1 \le n \le 100$。</p><p>对于 $55\%$ 的数据，$1 \le n \le 1000$。</p><p>对于 $70\%$ 的数据，$1 \le n \le 10^6$。</p><p>对于 $85\%$ 的数据，$1 \le n \le 10^9$。</p><p>对于 $100\%$ 的数据，$1 \le n \le 10^{18}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

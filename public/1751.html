@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[CCPC2017秦皇岛站-E] String of CCPC</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1751 [CCPC2017秦皇岛站-E] String of CCPC</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：64 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>BaoBao has just found a string $s$ of length $n$ consisting of 'C' and 'P' in his pocket. As a big fan of the China Collegiate Programming Contest, BaoBao thinks a substring $s_is_{i+1}s_{i+2}s_{i+3}$ of $s$ is "good", if and only if $s_i=s_{i+1}=s_{i+3}=$ 'C', and $s_{i+2}=$ 'P', where $s_i$ denotes the $i$-th character in string $s$. The value of $s$ is the number of different "good" substrings in $s$. Two "good" substrings $s_is_{i+1}s_{i+2}s_{i+3}$ and $s_js_{j+1}s_{j+2}s_{j+3}$ are different, if and only if $i \ne j$.</p><p>To make this string more valuable, BaoBao decides to buy some characters from a character store. Each time he can buy one 'C' or one 'P' from the store, and insert the character into any position in $s$. But everything comes with a cost. If it's the $i$-­th time for BaoBao to buy a character, he will have to spend $i-1$ units of value.</p><p>The final value BaoBao obtains is the final value of $s$ minus the total cost of all the characters bought from the store. Please help BaoBao maximize the final value.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>There are multiple test cases. The first line of the input contains an integer $T$, indicating the number of test cases. For each test case:</p><p>The first line contains an integer $n(1 \le n \le 2 \times 10^5)$, indicating the length of string $s$.</p><p>The second line contains the string $s(|s|=n)$ consisting of 'C' and 'P'.</p><p>It's guaranteed that the sum of $n$ over all test cases will not exceed $10^6$.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>For each test case output one line containing one integer, indicating the maximum final value BaoBao can obtain.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3
+3
+CCC
+5
+CCCCP
+4
+CPCP</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+1
+1</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2012]与非</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1134 [HNOI2012]与非</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>NAND（与非）是一种二元逻辑运算，其运算结果为真当且仅当两个输入的布尔值不全为真。NAND运算的真值表如下（$1$ 表示真，$0$ 表示假）:<br></p><p><img alt="image.png" src="../upload/c164be8037.png" width="250" height="166.66666666666666"><br></p><p>两个非负整数的 NAND 是指将它们表示成二进制数，再在对应的二进制位进行 NAND 运算。由于两个二进制数的长度可能不等，因此一般约定一个最高位 $K$，使得两个数的二进制表示都不超过 $K$ 位，不足 $K$ 位的在高位补零。<br></p><p>譬如 12 NAND 9（K=4）的计算过程如下：</p><p><img alt="image.png" src="../upload/ed483a2d5c.png" width="220" height="152.9"><br></p><p>故 12 NAND 9（K=4）=7。</p><p>容易验证，NAND 运算满足交换律但不满足结合律，故计算若干个数的 NAND 时，应先计算括号内的，无括号时从左往右计算。</p><p>给定 $N$ 个非负整数 $A_1,A_2 \cdots A_N$ 和约定位数 $K$，利用 NAND 运算与括号，每个数可以使用任意次，请你求出范围 $[L,R]$ 内可以被计算出的数有多少个。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行是用空格隔开的四个正整数 $N$，$K$，$L$ 和 $R$，接下来的一行是 $<font>N$</font>个非负整数 $<font>A_1,A_2……A_N$</font>，其含义如上所述。</p><p><font>$100\%$ 的数据满足 $K≤60$ 且 $N \le 1000, 0 \le A_i \le 2^{k-1}, 0 \le L \le R \le 10^{18}$。</font></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含一个整数，表示 $[L,R]$ 内可以被计算出的数的个数。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 3 1 4
+3 4 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>4</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>(3 NAND 4) NAND (3 NAND 5) = 1，5 NAND 5 = 2，3和4直接可得。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

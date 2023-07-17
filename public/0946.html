@@ -1,0 +1,128 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[SDOI2013]escape</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0946 [SDOI2013]escape</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>髙考又来了，对于不认真读书的来讲真不是个好消息为了小杨能在家里认真读书，他 的亲戚决定驻扎在他的家里监督他学习，有爷爷奶奶、外公外婆、大舅、大嫂、阿姨......</p><p>小杨实在是忍无可忍了，这种生活跟监狱有什么区别！为了他亲爱的小红，为了他的 dota,他决定越狱！</p><p>假设小杨的家是个 $n \times m$ 的矩阵，左下角坐标为 $(0, 0)$，右上角坐标为（$x_1, y_1$)。小杨有 $n$ 个亲戚，驻扎在矩阵里（位置不同，且不在矩阵的边上）。小杨家里的每个地方都被亲戚监控着，而且只被距离最近的亲戚监控。</p><p>也就是说假设小杨所在的位置是 $(3,3)$，亲戚 $A$ 在 $(3,0)$，$A$ 距离小杨距离是 $3$；亲戚 $B$ 在 $(6,7)$，则 $B$ 距离小杨距离是 $5$。距离 $A$ $&lt;$ 距离 $B$，所以 $(3,3)$ 位置由 $A$ 监控。</p><p>如果“最近距离”出现同时有几个亲戚，那么那个位置同时被那几个亲戚监控。</p><p>给出小杨的坐标（$x_0, y_0$)。因为被发现的人数越少，越狱成功的机会越大，所以小杨需要你设计一条越狱路线到达矩形的边上，且被发现的人数最少。</p><p>ps：小杨做的方向是任意的，也就是说路线上的任意位置 $H$ 需要是实数。</p><p>保证一开始小杨只被一个亲戚监控着。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $t \le 3$ 表示数据个数。</p><p>接下来 $t$ 个数据：</p><p>第一行 $n$ 表示亲戚个数</p><p>第二行 $4$ 个正整数表示举行右上角坐标 $(x_1,y_1)$ 和小杨的坐标 $(x_0,y_0)$</p><p>接下来 $n$ 行，每行 $2$ 个正整数表示一个亲戚的位置</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每个数据一个正整数表示越狱被发现人数的最小值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2
+4
+10 10 5 5
+5 6
+3 5
+7 5
+5 3
+17
+14 12 7 6
+7 11
+6 9
+7 7
+1 10
+2 20
+1 6
+2 6
+1 1
+2 2
+5 1
+5 2
+13 1
+12 2
+12 7
+13 7
+12 11
+13 11</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+2</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>前 $50\%$ 数据，$n \le 200$。</p><p>其余数据 $n \le 600$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Contest #5]迫真大游戏</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1083 [Contest #5]迫真大游戏</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：3000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p style="margin-left: 0px;">H君喜欢复制别人的东西，也喜欢复制自己，所以他将复制一段题目背景做为这道题的题目背景。</p><p>"分！身！术！"——H君。</p><p>H君已经厌倦了边喝红茶边打小游戏的日子，他想和自己的分身一起玩个大游戏。</p><p>$n$ 个H君的分身围成一个环，顺时针编号为从 $1$ 到 $n$ 。游戏从 $1$ 号分身开始，顺时针循环判定，每次被判定的分身有 $p$ 的概率将会消失。</p><p>现在，H君想要知道每个分身最后一个消失的概率是多少？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">第一行三个整数 $n, a, b$，题目描述中的 $p = \frac{a}{b}$，不保证 $a,b$ 互质。</p><p>保证 $\forall 1\le i\le n,(1-p)^i \not \equiv 1 \pmod{998244353}$</p><p>数据范围：</p><p>$1\leq n \leq 2 \times 10^5,0 &lt; a &lt; b &lt; 998244353$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>共 $n$ 行每行一个整数，第 $i$ 行的整数表示 $i$ 号分身最后一个消失的概率，可以证明此概率可以表示为有理数 $\frac{x}{y}$，且 $x,y$ 互质，此时需要输出 $x \times y^{-1} \bmod 998244353$，其中 $y^{-1}$ 表示 $y$ 在模 $998244353$ 意义下的乘法逆元，且保证在本题数据范围内，$y$ 的乘法逆元一定存在。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>2 1 2</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>332748118
+665496236
+</span></div></code></pre>
+							</div>
+							<h4>样例输入 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10 114 514</span></div></code></pre>
+							</div>
+							<h4>样例输出 2</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>833047696
+481899224
+313639472
+776418821
+192628251
+455756676
+947741194
+434924017
+602733801
+950676967
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p style="margin-left: 0px;">样例解释 1：</p><p>样例给出的 $p = \frac{1}{2}$，假设游戏进行到前 $i$ 轮没有死亡(一轮是指每个分身被判定一次)，第 $i+1$ 轮第二个分身死亡，第一个分身存活的概率是 $2^{-2(i+1)}$，因此第一个分身最后一个死亡的概率是$\sum_{i=0}^{\infty} 2^{-2(i+1)} = \frac{1}{3}$，那么第二个分身最后一个死亡的概率是 $1-\frac{1}{3}=\frac{2}{3}$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

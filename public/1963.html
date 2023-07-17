@@ -1,0 +1,105 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>中国式家长</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1963 中国式家长</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>中国式家长更新啦！现在可以养炒鸡可爱的女儿了。鸡尾酒像当初刚玩一样，又每天没日没夜地开始养孩子了。</p><p>游戏的每回合分为两个阶段，第一个阶段是学习阶段，可以花费一定的悟性学习技能。</p><p>有一条长度为 $N$ 的学习路径，只有当你学习了路径上的第 $i$ 个技能之后，才会在下一回合解锁第 $i+1$ 个技能。（即每回合最多学习一个技能）</p><p>第i个技能所需要花费的悟性为 $max(k_i-A-B,c_i)$。其中 $A,B$ 为当前的智商值和情商值。初始状态 $A=0,B=0$。</p><p>$k_i$ 为第 $i$ 个技能的最高花费，$c_i$ 为第 $i$ 个技能的最低花费。保证对于任意的 $i(0 &lt; i \le N)$有 $k_i&gt;c_i$</p><p>第二阶段是安排活动阶段，可以选择一个已学的技能，并获得这个技能所能提供的智商值和情商值。如果什么技能都没有学，则跳过该阶段。</p><p>鸡尾酒想在 $Q$ 回合后学完这条路径上所有 $N$ 个技能，请你帮帮忙算一下悟性值的最小花费。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行输入 $N,Q$。$(N \le Q \le 15)$</p><p>接下来 $N$ 行描述学习路径上的 $N$ 个技能，每行包括 $4$ 个数字，分别为 $k_i,c_i,a_i,b_i。a_i,b_i$为该技能所能提供的智商值和情商值。</p><p>$(0 \le a_i,b_i \le 10^9, 0 \le ci &lt; ki \le 10^9)$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出一行一个整数代表在 $Q$ 个回合后学完路径上的所有技能所需要的最小花费。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5
+10 0 3 3
+20 5 1 2
+50 10 100 100</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>41</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

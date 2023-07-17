@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2006]军机调度</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0991 [HNOI2006]军机调度</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>凯萨拥有一支由 $n$ 个人组成的雇佣军，他们靠在威尼斯商行接任务过活。这支军队的成份比较复杂，不同的人往往具有不同的技能，有的人还拥有多项技能。威尼斯商行的任务也参差不齐，有的需要几个人合作完成，有的只需要一个人独立完成：有的很简单，不需要耗多少时间，因此报酬也较低，有的很有难度，需要多个人长期合作完成，因此报酬就高。完成这些任务的时间不会超过一个月。并且，一个人不能同时执行两项任务，也不能中途加入或者退出任务。但可以不执行任何任务。一项只需要 $n$ 个人来完成的任务，如果执行该任务的人数 $p$ 大于 $n$，那么反而会得到更少的报酬，即原报酬的 $1/(p-n+1)$。凯萨是一位英明的领袖，他往往在每个月的月底召开军事会议，总结上个月的成果，发给大家报酬，并指派下个月的任务。请问，凯萨应该怎样指派任务，才能使总报酬最高？总报酬为多少？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>一行包含两个正整数 $n,m$。彼此用空格隔开，其中 $n&lt;10$ 表示雇佣军的人数，$m&lt;15$ 表示下个月可选的任务数。</p><p>接下来的 $n$ 行中第 $i$ 行（对应文件的第 $i+1$ 行）的第一个整数小于等于表示编号为i的雇佣军可执行的任务数。</p><p>后面的整数是编号为i的雇佣军可以执行的所有任务的编号，这些整数之间用空格隔开。</p><p>最后的 $m$ 行中，每行有四个整数 $b$、$e$、$p$ 和 $r$，彼此之间用空格隔开，其中第 $j$ 行（对应整个输入的第 $n+j+1$ 行）是编号为 $j$ 的任务的描述：</p><p>$0&lt;b&lt;32$ 表示该任务的开始日（这一天会被计入任务所需的时间中），</p><p>$0&lt;e&lt;32$ 表示该任务的结束日（这一天也会被计入任务所需的时间中），</p><p>$p&lt;10$ 表示该任务所需人数，$0&lt;r&lt;100000$ 表示该任务的报酬。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行只有一个整数 $t$，表示最多可获得的总报酬。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 5
+2 1 4
+2 2 4
+3 3 4 5
+2 20 1 100
+1 18 1 200
+3 28 1 800
+21 30 3 1500
+19 21 1 400</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1800</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

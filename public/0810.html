@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[HNOI2019]序列</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C0810 [HNOI2019]序列</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：2000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>给定一个长度为 $n$ 的序列 $A_1, \ldots , A_n$，以及 $m$ 个操作，每个操作将一个 $A_i$ 修改为 $k$。第一次修改之前及每次修改之后，都要求你找到一个同样长度为 $n$ 的单调不降序列 $B_1, \ldots , B_n$，使得 $\sum_{i=1}^n (A_i −B_i)^2$ 最小，并输出该最小值。需要注意的是每次操作的影响都是独立的，也即每次操作只会对当前询问造成影响。为了避免精度问题，我们保证这个最小值是个分数，也即能表示为两个非负整数相除的形式：$x/y$。那么你将要输出 $(x\times y^{P-2})\bmod P$ 的值，表示模意义下 $x/y$ 的值。其中 $P=998244353$ 是一个大质数。<br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行两个非负整数 $n,m$，代表序列长度和操作数。</p><p>第二行有 $n$ 个由空格隔开的正整数，代表序列 $A_1, \ldots , A_n$。</p><p>接下来 $m$ 行每行两个正整数 $i, k$，代表将 $A_i$ 修改为 $k$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输出 $m + 1$ 行每行一个整数，第 $i$ 行输出第 $i − 1$ 次修改后的答案。特别的，第 $1$ 行应为初始局面的答案。<br></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5 3
+9 2 4 6 4
+1 1
+1 4
+5 6</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>28
+2
+4
+26</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【样例说明】</p><p>第一个询问的最优 $B$ 序列为：$\{5, 5, 5, 5, 5\}$。</p><p>第二个询问的最优 $B$ 序列为：$\{1, 2, 4, 5, 5\}$。</p><p>第三个询问的最优 $B$ 序列为：$\{3, 3, 4, 5, 5\}$。</p><p>第四个询问的最优 $B$ 序列为：$\{5, 5, 5, 6, 6\}$。</p><p>样例是存在最优方案使 $B_i$ 皆为整数的特殊情况。</p><p>【数据规模】</p><p>对于前 $10\%$ 的数据，保证 $n, m \le 10$，$k, A_i ≤ 1000$，且存在一种最优方案，使得 $B_i$ 皆为整数。</p><p>对于前 $30\%$ 的数据，保证 $n, m \le 100$。</p><p>对于另外 $20\%$ 的数据，保证 $m = 0$。</p><p>对于另外 $20\%$ 的数据，保证 $n, m \le 3 \times 10^4$。</p><p>对于所有数据，保证 $3 \le n \le 10^5， 0 \le m \le 10^5， 1 \le k, A_i \le 10^9$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

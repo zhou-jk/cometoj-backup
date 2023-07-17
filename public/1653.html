@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day2]Square Substrings</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1653 [Wannafly冬令营2018Day2]Square Substrings</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：10000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>小 Q 给出了一个字符串 $s_{1} s_2 \cdots s_n$ 和 $q$ 个询问 $(l_i, r_i)$。对于每个询问 $(L, R)$，他想知道字符串 $s_{L} s_{L + 1} \cdots s_R$ 有多少个子串是平方串，你能帮他解决这个问题吗？</p><p>对于字符串 $t_{1} t_2 \cdots t_m$ 来说，它的子串 $t_{x} t_{x + 1} \cdots t_y$ ($1 \leq x \leq y \leq m$) 是平方串当且仅当：</p><ul><li>$(y - x + 1)$ 是偶数；</li><li>对于 $i = x, x + 1, \cdots, \frac{x + y - 1}{2}$，有 $t_i = t_{i + \frac{y - x + 1}{2}}$。</li></ul><p><code>bb</code>和<code>abab</code>以及<code>babbab</code>是平方串，但<code>abba</code>不是平方串。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>输入包含多组测试数据。第一行包含一个整数 $T$，表示测试数据的组数。随后的内容是各组测试数据。对于每组测试数据：</p><p>第一行包含两个整数 $n$ 和 $q$。</p><p>第二行包含一个由小写字母组成的长度为 $n$ 的字符串 $s_{1} s_2 \cdots s_n$。</p><p>在接下来的 $q$ 行中，第 $i$ 行包含两个整数 $l_i$ 和 $r_i$，表示关于 $s_{l_i} s_{l_i + 1} \cdots s_{r_i}$ 的一个询问。</p><ul><li>$1 \leq T \leq 100$</li><li>$1 \leq n, q \leq 10^6$</li><li>$1 \leq l_i \leq r_i \leq n$</li><li>所有测试数据的 $n$ 之和不超过 $10^6$。</li><li>所有测试数据的 $q$ 之和不超过 $10^6$。</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>对于每组测试数据，首先输出一行<code>Case #x:</code>，其中<code>x</code>是测试数据的编号（从 $1$ 开始编号）。</p><p>接下来，对于每个询问，输出一行，包含一个整数，表示这组询问的答案。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>1
+7 5
+ababbab
+1 4
+2 5
+3 6
+4 7
+1 7</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>Case #1:
+1
+1
+1
+1
+3</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

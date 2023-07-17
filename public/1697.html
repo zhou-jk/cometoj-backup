@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[Wannafly冬令营2018Day8]Aqours</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1697 [Wannafly冬令营2018Day8]Aqours</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：512 MB</span> <span class="ui label">时间限制：1500 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>Aqours 正在 LoveLive! 决赛中表演，舞台可以看作是一棵 $n$ 个点的有根树，其中根节点是 1 号点，$i$ 号点的父亲节点为 $p_i$，保证 $1 \le p_i &lt; i$，而且对于 $2 \le i &lt; j \le n$ 有 $p_i \le p_j$。</p><p>其中的叶子节点（定义为没有孩子节点的点）是与粉丝进行互动的节点，Aqours 会在这些叶子节点之间走动来与更多的粉丝互动，但是她们又要唱歌又要跳舞，要尽快节省走动时间，然后也要做到雨露均沾，所以每次要往编号更小的叶子节点走。</p><p>所以 Aqours 想知道对于每一个叶子节点 $u$，离它最近的编号 $&lt; u$ 的叶子节点到它的距离是多少，若不存在则视距离为 -1。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行一个正整数 $n (1 \le n \le 3 \times 10^6)$，表示树的大小。</p><p>第二行 $n-1$ 个正整数，其中第 $i$ 个数表示 $p_{i+1}(1 \le p_{i+1} \le i)$。</p><p>对于 $2 \le i &lt; j \le n$，保证 $p_i \le p_j$。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>每个叶子对应的答案输出一行。每行第一个数是叶子节点的编号 $u$，第二个数是离他最近的编号 $&lt; u$ 的叶子节点到它的距离，若不存在则输出 -1。</p><p>要求按叶子节点编号从小到大输出。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>10
+1 1 1 1 2 4 5 6 7
+</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3 -1
+8 3
+9 4
+10 4
+</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

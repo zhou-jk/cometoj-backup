@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="../image/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="../image/favicon.ico" sizes="192x192" />
+	<link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+	<script src="../static/jquery.min.js" type="text/javascript"></script>
+	<script src="../static/semantic.min.js" type="text/javascript"></script>
+	<title>[NOI2013]树的计数</title>
+	<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async src="../static/es5/tex-svg.js"></script>
+</head>
+
+<body>
+	<div class="ui three item menu"><a class="header item" href="../index.html"><img src="../image/favicon.ico"> Comet OJ</a>
+	</div>
+	<div class="ui main container">
+		<div class="ui center aligned grid">
+			<div class="row">
+				<h1 class="ui header">C1942 [NOI2013]树的计数</h1>
+			</div>
+				<div class="row" style="margin-top: -15px"><span class="ui label">内存限制：256 MB</span> <span class="ui label">时间限制：1000 ms</span></div>
+		</div>
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">题目描述</h4>
+					<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<p>我们知道一棵有根树可以进行深度优先遍历（DFS）以及广度优先遍历（BFS）来生成这棵树的 DFS 序以及 BFS 序。两棵不同的树的 DFS 序有可能相同，并且它们的 BFS 序也有可能相同，例如下面两棵树的 DFS 序都是 $1 2 4 5 3$，BFS 序都是 $1 2 3 4 5$。</p><p><img src="../upload/45f499bded.png" alt="屏幕快照 2019-06-05 下午3.19.55.png"></p><p>现给定一个 DFS 序和 BFS 序，我们想要知道，符合条件的有根树中，树的高度的平均值。即，假如共有 $K$ 棵不同的有根树具有这组 DFS 序和 BFS 序，且他们的高度分别是 $h_1,h_2,...,h_k$，那么请你输出 $\frac{h_1+h_2+\cdots+h_K}{K}$。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输入格式</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>第一行包含 $1$ 个正整数 $n$，表示树的节点个数。第二行包含 $n$ 个正整数，是一个 $1n$ 的排列，表示树的 DFS 序。第三行包含 $n$ 个正整数，是一个 $1n$ 的排列，表示树的 BFS 序。输入保证至少存在一棵树符合给定的两个序列。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">输出</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>仅包含 $1$ 个实数，四舍五入保留恰好 <strong>三位小数</strong>，表示树高的平均值。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">样例</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<h4>样例输入 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>5
+1 2 4 5 3
+1 2 3 4 5</span></div></code></pre>
+							</div>
+							<h4>样例输出 1</h4>
+							<div class="ui existing segment">
+								<pre style="margin-top:0; margin-bottom:0;"><code class="lang-plain"><div class=content><span class=sampledata>3.500</span></div></code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h4 class="ui top attached block header">提示</h4>
+						<div class="ui bottom attached segment font-content">
+						<div style="position: relative; overflow: hidden;">
+							<div class=content>
+								<p>【评分方式】</p><p>如果输出的答案与标准输出的差不超过 $0.001$，则将获得该测试点上的分数，否则不得分。</p><p>【数据规模和约定】</p><p>$20\%$ 的测试数据，满足：$n≤10$；</p><p>$40\%$ 的测试数据，满足：$n≤100$；</p><p>$85\%$ 的测试数据，满足：$n≤2000$；</p><p>$100\%$ 的测试数据，满足：$2≤n≤200000$。</p><p>【说明】</p><p>树的高度：一棵有根树如果只包含一个根节点，那么它的高度为 $1$。否则，它的高度为根节点的所有子树的高度的最大值加 $1$。</p><p>对于树中任意的三个节点 $a,b,c$，如果 $a,b$ 都是 $c$ 的儿子，则 $a,b$ 在 BFS 序中和 DFS 序中的相对前后位置是一致的，即要么 $a$ 都在 $b$ 的前方，要么 $a$ 都在 $b$ 的后方。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
